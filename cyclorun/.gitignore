@@ -6,3 +6,4 @@ wp-config.php
 /content/uploads
 /content/plugins/*
 /content/themes/*
+! /content/themes/cyclorun
