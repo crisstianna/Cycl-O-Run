@@ -8,7 +8,9 @@
     "require": {
         "johnpbloch/wordpress": "*",
         "wpackagist-plugin/akismet": "*",
-        "wpackagist-theme/twentytwenty": "*"
+        "wpackagist-theme/twentytwenty": "*",
+        "wpackagist-plugin/what-the-file": "^1.5",
+        "wpackagist-plugin/simply-show-hooks": "^1.2"
     },
     "extra": {
         "wordpress-install-dir": "wp",
