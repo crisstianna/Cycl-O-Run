@@ -9,5 +9,10 @@
     'base/base';
 
 @import
-    'components/navbar'
+    'layout/main';
+
+@import
+    'components/navbar',
+    'components/welcome-message',
+    'components/welcome-submessage'
 
