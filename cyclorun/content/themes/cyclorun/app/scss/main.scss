@@ -3,5 +3,11 @@
 
 @import
     '~bootstrap/scss/bootstrap',
-    '~font-awesome/scss/font-awesome'
+    '~font-awesome/scss/font-awesome';
+
+@import
+    'base/base';
+
+@import
+    'components/navbar'
 
