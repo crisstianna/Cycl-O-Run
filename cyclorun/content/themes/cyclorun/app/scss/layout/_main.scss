@@ -1,4 +1,8 @@
 .main{
+    display: flex;
 
+    &__right {
+        width: 20%;
+    }
    
 }
