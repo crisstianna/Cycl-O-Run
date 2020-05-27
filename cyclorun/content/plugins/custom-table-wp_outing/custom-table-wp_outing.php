@@ -12,6 +12,7 @@ if (!defined('WPINC')) {
 }
 
 
+
 class CustomTableWpOutingInstall
 {
     public function __construct()
@@ -23,12 +24,14 @@ class CustomTableWpOutingInstall
     {
         //WordPress Database Access Abstraction Object
         global $wpdb;
-
+        include_once('db_insert.php');
+        
+       
         // Creating the table
         $sql = "CREATE TABLE `{$wpdb->base_prefix}outing` (        
             `id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT,
-            `name` varchar(64) NOT NULL,
-            `author` varchar(64) NOT NULL,
+            `nom` varchar(64) NOT NULL,
+            `fait_par` varchar(64) NOT NULL,
             `address` varchar(255) NOT NULL,
             `lat` float(10.6) NOT NULL,
             `long` float(10.6) NOT NULL,
@@ -44,9 +47,13 @@ class CustomTableWpOutingInstall
             `updated_at` TIMESTAMP NOT NULL,
             PRIMARY KEY  (id)
         ) ";
-
+       
         require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
         dbDelta($sql);
+        
+        
+
+
     }
 
     public function customTableWpOuting_activate()
