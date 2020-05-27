@@ -8,51 +8,112 @@
 </head>
 <body>
   <header class="header">
-    <nav class="navbar navbar-expand-lg">
-      <a class="navbar-brand" href="#"><img src="images/logo-lightgrey.png" alt=""></a>
-      <button type="button" class="btn btn-dark connexion-button">Connexion</button>
+    <nav class="navbar authentified navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#"><img class="logo" src="images/logo-complet.png" alt=""></a>
+      <a class="navbar__item__is-active" href="#">Home</a>
+      <a class="navbar__item" href="#">Profil</a>
+      <a class="navbar__item" href="#">Participer à une sortie</a>
+      <a class="navbar__item" href="#">Organiser une sortie</a>   
+      <button type="logout-button" class="btn">Déconnexion</button>
     </nav>
   </header>
-  <main class="main">
-    <div class="right"></div>
-    <div class="welcome">
-      <div class="welcome__message">
-        <p>En France, il y a</p> 
-        <p><span class="span runner">12 Millions de runners</span> <span class=" span cyclist">9 Millions de cyclistes</span></p>
+  <main>
+
+    <!-- Near outing section -->
+    <section class="outing">
+      <h2 class="outing__title">Les dernières sorties ajoutées près de chez moi</h2>  
+      <div class="outing__section">
+        <article class="outing__article">
+          <div class="outing__article__image">
+            <img class="outing__article__img" src="images/logo-o.png" alt="">
+          </div>
+          <div>
+            <h3 class="outing__article__title">Nom de la sortie</h3>
+            <p class="outing__article__date">date</p>
+            <p class="outing__article__location">Lieu</p>
+            <p class="outing__article__distance">Distance</p>
+            <p class="outing__article__level">intensif</p>
+            <button class="outing__article__button" type="button">Etat de la sortie</button>
+          </div>  
+        </article>
+        <article class="outing__article">
+          <div class="outing__article__image">
+            <img class="outing__article__img" src="images/logo-o.png" alt="">
+          </div>
+          <div>
+            <h3 class="outing__article__title is-active">Nom de la sortie</h3>
+            <p class="outing__article__date">date</p>
+            <p class="outing__article__location">Lieu</p>
+            <p class="outing__article__distance">Distance</p>
+            <p class="outing__article__level">intensif</p>
+            <button class="outing__article__button" type="button">Etat de la sortie</button>
+          </div>  
+        </article>
+        <article class="outing__article">
+          <div class="outing__article__image">
+            <img class="outing__article__img" src="images/logo-o.png" alt="">
+          </div>
+          <div>
+            <h3 class="outing__article__title">Nom de la sortie</h3>
+            <p class="outing__article__date">date</p>
+            <p class="outing__article__location">Lieu</p>
+            <p class="outing__article__distance">Distance</p>
+            <p class="outing__article__level">intensif</p>
+            <button class="outing__article__button" type="button">Etat de la sortie</button>
+          </div>  
+        </article>
       </div>
-      <div class='welcome__question'>
-      <p>Pourquoi <span class=" span runner">courir</span> <span class="cyclist">pedaler</span> tout seul ?</p>
+    </section>
+
+    <!-- Participation section -->
+    <section class="outing">
+      <h2 class="outing__title">Les sorties auxquelles je participe</h2>
+      <div class="outing__section">
+        <article class="outing__article">
+          <div class="outing__article__image">
+            <img class="outing__article__img" src="images/logo-o.png" alt="">
+          </div>
+          <div>
+            <h3 class="outing__article__title">Nom de la sortie</h3>
+            <p class="outing__article__date">date</p>
+            <p class="outing__article__location">Lieu</p>
+            <p class="outing__article__distance">Distance</p>
+            <p class="outing__article__level">intensif</p>
+            <button class="outing__article__button" type="button">Etat de la sortie</button>
+          </div>  
+        </article>
+        <article class="outing__article">
+          <div class="outing__article__image">
+            <img class="outing__article__img" src="images/logo-o.png" alt="">
+          </div>
+          <div>
+            <h3 class="outing__article__title">Nom de la sortie</h3>
+            <p class="outing__article__date">date</p>
+            <p class="outing__article__location">Lieu</p>
+            <p class="outing__article__distance">Distance</p>
+            <p class="outing__article__level">intensif</p>
+            <button class="outing__article__button" type="button">Etat de la sortie</button>
+          </div>  
+        </article>
+        <article class="outing__article">
+          <div class="outing__article__image">
+            <img class="outing__article__img" src="images/logo-o.png" alt="">
+          </div>
+          <div>
+            <h3 class="outing__article__title">Nom de la sortie</h3>
+            <p class="outing__article__date">date</p>
+            <p class="outing__article__location">Lieu</p>
+            <p class="outing__article__distance">Distance</p>
+            <p class="outing__article__level">intensif</p>
+            <button class="outing__article__button" type="button">Etat de la sortie</button>
+          </div>  
+        </article>
       </div>
-      <div class="welcome__submessage">
-        <p>Rejoins <span class=" span submessage">Cycl'O'Run</span></p>
-        <p>Et trouve <span class="span submessage">des sorties programmées</span></p>
-        <p>par quelqu'un qui vit <span class="span submessage">près de chez toi</span></p>
-      </div>
-    </div>
-    <div class="left"></div>
+    </section>
+
   </main>
-
-  <div class="modal fade signin-modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
 
   <script src="js/app.js"></script>
 </body>
 </html>
+
