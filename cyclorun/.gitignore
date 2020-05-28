@@ -9,3 +9,4 @@ wp-config.php
 /content/themes/*
 !/content/themes/cyclorun
 !/content/plugins/crud-sortie
+!/content/plugins/outing
