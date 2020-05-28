@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Cycl'O'run</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar authentified navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#"><img class="logo" src="images/logo-complet.png" alt=""></a>
+            <a class="navbar__item" href="#">Home</a>
+            <a class="navbar__item" href="#">Profil</a>
+            <a class="navbar__item" href="#">Participer à une sortie</a>
+            <a class="navbar__item" href="#">Organiser une sortie</a>   
+            <button type="logout-button" class="btn">Déconnexion</button>
+        </nav>
+    </header>
+    <main>
+        <section class="outing__organisation">
+            <h1 class="page__title">Envie d'organiser une sortie? Vous êtes au bon endroit!</h1>
+            <h2 class="page__subtitle">Sur cette page vous allez pouvoir:</h2>
+            <a class="outing__new" href="#">Créer une nouvelle sortie</a>
+            <p>OU</p>
+            <a class="outing__old" href="#">Renouveller une sortie déjà créée</a>
+        
+        </section>
+        <form class="outing__creation" action="" method="post">
+            <div class="outing__title">
+                <input class="outing__input__name" type="text" id="outing_name" name="outing_name" placeholder="Nom de la sortie">
+            </div>
+            <div class="outing__rdv">
+                <input class="outing__input__date" type="date" id="date" name="date">
+                <input class="outing__input__hour" type="time" id="hour" name="time" required>
+            </div>
+            <div class="outing__length">
+                <input class="outing__input__length" type="number" id="length" name="distance" placeholder="Saisir la distance en km">
+            </div>
+            <div class="outing__location">
+                <label for="location">Lieu de Rendez-vous</label>
+                <input class="outing__input__address" type="text" id="address" name="address" placeholder="adresse">
+            </div>
+            <div class="outing__practice">
+                <h3 class="outing__practice__title">Type de sortie</h3>
+                <label for="running">Course à pieds</label>
+                <input class="outing__radio__running" type="radio" id="running" name="running">
+                <label for="cycling">Vélo</label>
+                <input class="outing__radio__cycling" type="radio" id="cycling" name="cycling">
+            </div>
+            <select class="form-control outing__level">
+                <option class="outing__level__option" value="leisure">Loisirs (-15km)</option>
+                <option class="outing__level__option" value="régular">Régulier (15-30km)</option>
+                <option class="outing__level__option" value="advanced">Avancé( (30-60km)</option>
+                <option class="outing__level__option" value="intensive">Intensif (+60km)</option>
+            </select>
+            <select class="form-control">
+                <option class="outing__level__option" value="leisure">Loisirs (-5km)</option>
+                <option class="outing__level__option" value="régular">Régulier (5-10km)</option>
+                <option class="outing__level__option" value="advanced">Avancé( (10-50km)</option>
+                <option class="outing__level__option" value="intensive">Intensif (+15km)</option>
+            </select>
+            <div class="outing__image">
+                <input class="outing__image__input" type="image" id="image" name="picture" alt="Image associée à la sortie" src="images/logo-o.png" placeholder="Insérer une image de la sortie">
+            </div>
+            <div class="outing__map">
+                <label for="outing-map">Insérez ici une map pour la sortie</label>
+                <input class="outing__map__input" type="image" id="map" name="outing-map" alt="Map associée à la sortie" src="" placeholder="Insérer une image de la sortie">
+            </div>
+            <div class="outing__description">
+                <label for="description">Saisir la description de la sortie</label>
+                <textarea class="outing__description__input" name="description" id="description" cols="30" rows="10"></textarea>
+            </div>
+            <div class="outing__submit">
+                <input class="outing__submit__button" type="submit" value="valider la course">
+            </div>
+        </form> 
+    </main>   
+</body>
+</html>
+
+

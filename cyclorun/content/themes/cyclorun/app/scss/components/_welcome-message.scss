@@ -1,0 +1,55 @@
+.welcome{
+    width: 55%;
+    font-size: 1.8rem;
+    font-weight: 800;
+    background-color: $ligthgrey;
+    border: 1px solid black;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 2rem;
+    position: absolute;
+    top:30%;
+    right:24%;
+
+    &__message{
+        line-height: 1rem;
+
+        &__runner {
+            color: $blueduck;
+        }
+    }
+
+    &__question {
+        margin: 2rem auto;
+    }
+
+    &__submessage{
+        line-height: 0.5rem;
+        text-align: left;
+        align-items: center;
+        font-size: 1.2rem;
+        background-color: $blueduck;
+        padding: 2rem;
+    }
+}
+
+.span {
+    color: $ligthgrey;
+
+    &.runner{
+        color: $blueduck;   
+    }
+
+    &.cyclist{
+        color:$blueduck;
+        display: none;
+    }
+
+}
+
+
+
+ 
+
+       
+
