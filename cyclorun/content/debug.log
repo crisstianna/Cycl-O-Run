@@ -2698,3 +2698,106 @@ Stack trace:
 [27-May-2020 13:12:44 UTC] PHP   4. WP_Hook->apply_filters() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/class-wp-hook.php:311
 [27-May-2020 13:12:44 UTC] PHP   5. crudAdminPage() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/class-wp-hook.php:287
 [27-May-2020 13:12:44 UTC] WordPress database error You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'long,level,date,time,distance,practiced_sport,picture,course,user_id,created_at,' at line 1 for query INSERT INTO wp_outing(outing_name,author,address,lat,long,level,date,time,distance,practiced_sport,picture,course,user_id,created_at,updated_at) VALUES('','', '', '', '', '', '', '', '', '', '', '') made by do_action('toplevel_page_outing2/outing2'), WP_Hook->do_action, WP_Hook->apply_filters, crudAdminPage
+[28-May-2020 10:26:23 UTC] PHP Notice:  Undefined index: email in /var/www/html/projet-cycl-o-run/cyclorun/content/themes/twentytwenty/Registration-Form.php/login.php on line 53
+[28-May-2020 10:26:23 UTC] PHP Stack trace:
+[28-May-2020 10:26:23 UTC] PHP   1. {main}() /var/www/html/projet-cycl-o-run/cyclorun/index.php:0
+[28-May-2020 10:26:23 UTC] PHP   2. require() /var/www/html/projet-cycl-o-run/cyclorun/index.php:17
+[28-May-2020 10:26:23 UTC] PHP   3. require_once() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-blog-header.php:19
+[28-May-2020 10:26:23 UTC] PHP   4. include() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/template-loader.php:106
+[28-May-2020 10:26:23 UTC] PHP Notice:  Undefined index: password in /var/www/html/projet-cycl-o-run/cyclorun/content/themes/twentytwenty/Registration-Form.php/login.php on line 56
+[28-May-2020 10:26:23 UTC] PHP Stack trace:
+[28-May-2020 10:26:23 UTC] PHP   1. {main}() /var/www/html/projet-cycl-o-run/cyclorun/index.php:0
+[28-May-2020 10:26:23 UTC] PHP   2. require() /var/www/html/projet-cycl-o-run/cyclorun/index.php:17
+[28-May-2020 10:26:23 UTC] PHP   3. require_once() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-blog-header.php:19
+[28-May-2020 10:26:23 UTC] PHP   4. include() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/template-loader.php:106
+[28-May-2020 10:26:43 UTC] PHP Notice:  Undefined index: email in /var/www/html/projet-cycl-o-run/cyclorun/content/themes/twentytwenty/Registration-Form.php/login.php on line 53
+[28-May-2020 10:26:43 UTC] PHP Stack trace:
+[28-May-2020 10:26:43 UTC] PHP   1. {main}() /var/www/html/projet-cycl-o-run/cyclorun/index.php:0
+[28-May-2020 10:26:43 UTC] PHP   2. require() /var/www/html/projet-cycl-o-run/cyclorun/index.php:17
+[28-May-2020 10:26:43 UTC] PHP   3. require_once() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-blog-header.php:19
+[28-May-2020 10:26:43 UTC] PHP   4. include() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/template-loader.php:106
+[28-May-2020 10:26:43 UTC] PHP Notice:  Undefined index: password in /var/www/html/projet-cycl-o-run/cyclorun/content/themes/twentytwenty/Registration-Form.php/login.php on line 56
+[28-May-2020 10:26:43 UTC] PHP Stack trace:
+[28-May-2020 10:26:43 UTC] PHP   1. {main}() /var/www/html/projet-cycl-o-run/cyclorun/index.php:0
+[28-May-2020 10:26:43 UTC] PHP   2. require() /var/www/html/projet-cycl-o-run/cyclorun/index.php:17
+[28-May-2020 10:26:43 UTC] PHP   3. require_once() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-blog-header.php:19
+[28-May-2020 10:26:43 UTC] PHP   4. include() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/template-loader.php:106
+[28-May-2020 10:26:53 UTC] PHP Notice:  Undefined index: email in /var/www/html/projet-cycl-o-run/cyclorun/content/themes/twentytwenty/Registration-Form.php/login.php on line 53
+[28-May-2020 10:26:53 UTC] PHP Stack trace:
+[28-May-2020 10:26:53 UTC] PHP   1. {main}() /var/www/html/projet-cycl-o-run/cyclorun/index.php:0
+[28-May-2020 10:26:53 UTC] PHP   2. require() /var/www/html/projet-cycl-o-run/cyclorun/index.php:17
+[28-May-2020 10:26:53 UTC] PHP   3. require_once() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-blog-header.php:19
+[28-May-2020 10:26:53 UTC] PHP   4. include() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/template-loader.php:106
+[28-May-2020 10:26:53 UTC] PHP Notice:  Undefined index: password in /var/www/html/projet-cycl-o-run/cyclorun/content/themes/twentytwenty/Registration-Form.php/login.php on line 56
+[28-May-2020 10:26:53 UTC] PHP Stack trace:
+[28-May-2020 10:26:53 UTC] PHP   1. {main}() /var/www/html/projet-cycl-o-run/cyclorun/index.php:0
+[28-May-2020 10:26:53 UTC] PHP   2. require() /var/www/html/projet-cycl-o-run/cyclorun/index.php:17
+[28-May-2020 10:26:53 UTC] PHP   3. require_once() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-blog-header.php:19
+[28-May-2020 10:26:53 UTC] PHP   4. include() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/template-loader.php:106
+[28-May-2020 10:27:10 UTC] PHP Notice:  Undefined index: email in /var/www/html/projet-cycl-o-run/cyclorun/content/themes/twentytwenty/Registration-Form.php/login.php on line 53
+[28-May-2020 10:27:10 UTC] PHP Stack trace:
+[28-May-2020 10:27:10 UTC] PHP   1. {main}() /var/www/html/projet-cycl-o-run/cyclorun/index.php:0
+[28-May-2020 10:27:10 UTC] PHP   2. require() /var/www/html/projet-cycl-o-run/cyclorun/index.php:17
+[28-May-2020 10:27:10 UTC] PHP   3. require_once() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-blog-header.php:19
+[28-May-2020 10:27:10 UTC] PHP   4. include() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/template-loader.php:106
+[28-May-2020 10:27:10 UTC] PHP Notice:  Undefined index: password in /var/www/html/projet-cycl-o-run/cyclorun/content/themes/twentytwenty/Registration-Form.php/login.php on line 56
+[28-May-2020 10:27:10 UTC] PHP Stack trace:
+[28-May-2020 10:27:10 UTC] PHP   1. {main}() /var/www/html/projet-cycl-o-run/cyclorun/index.php:0
+[28-May-2020 10:27:10 UTC] PHP   2. require() /var/www/html/projet-cycl-o-run/cyclorun/index.php:17
+[28-May-2020 10:27:10 UTC] PHP   3. require_once() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-blog-header.php:19
+[28-May-2020 10:27:10 UTC] PHP   4. include() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/template-loader.php:106
+[28-May-2020 10:30:28 UTC] PHP Notice:  Undefined index: email in /var/www/html/projet-cycl-o-run/cyclorun/content/themes/twentytwenty/Registration-Form.php/login.php on line 53
+[28-May-2020 10:30:28 UTC] PHP Stack trace:
+[28-May-2020 10:30:28 UTC] PHP   1. {main}() /var/www/html/projet-cycl-o-run/cyclorun/index.php:0
+[28-May-2020 10:30:28 UTC] PHP   2. require() /var/www/html/projet-cycl-o-run/cyclorun/index.php:17
+[28-May-2020 10:30:28 UTC] PHP   3. require_once() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-blog-header.php:19
+[28-May-2020 10:30:28 UTC] PHP   4. include() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/template-loader.php:106
+[28-May-2020 10:30:28 UTC] PHP Notice:  Undefined index: password in /var/www/html/projet-cycl-o-run/cyclorun/content/themes/twentytwenty/Registration-Form.php/login.php on line 56
+[28-May-2020 10:30:28 UTC] PHP Stack trace:
+[28-May-2020 10:30:28 UTC] PHP   1. {main}() /var/www/html/projet-cycl-o-run/cyclorun/index.php:0
+[28-May-2020 10:30:28 UTC] PHP   2. require() /var/www/html/projet-cycl-o-run/cyclorun/index.php:17
+[28-May-2020 10:30:28 UTC] PHP   3. require_once() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-blog-header.php:19
+[28-May-2020 10:30:28 UTC] PHP   4. include() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/template-loader.php:106
+[28-May-2020 10:34:15 UTC] PHP Fatal error:  Cannot redeclare authentication() (previously declared in /var/www/html/projet-cycl-o-run/cyclorun/content/themes/twentytwenty/functions.php:763) in /var/www/html/projet-cycl-o-run/cyclorun/content/themes/twentytwenty/Registration-Form.php/login.php on line 58
+[28-May-2020 10:34:15 UTC] PHP Stack trace:
+[28-May-2020 10:34:15 UTC] PHP   1. {main}() /var/www/html/projet-cycl-o-run/cyclorun/index.php:0
+[28-May-2020 10:34:15 UTC] PHP   2. require() /var/www/html/projet-cycl-o-run/cyclorun/index.php:17
+[28-May-2020 10:34:15 UTC] PHP   3. require_once() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-blog-header.php:19
+[28-May-2020 10:37:41 UTC] PHP Fatal error:  Cannot redeclare authentication() (previously declared in /var/www/html/projet-cycl-o-run/cyclorun/content/themes/twentytwenty/functions.php:763) in /var/www/html/projet-cycl-o-run/cyclorun/content/themes/twentytwenty/Registration-Form.php/login.php on line 58
+[28-May-2020 10:37:41 UTC] PHP Stack trace:
+[28-May-2020 10:37:41 UTC] PHP   1. {main}() /var/www/html/projet-cycl-o-run/cyclorun/index.php:0
+[28-May-2020 10:37:41 UTC] PHP   2. require() /var/www/html/projet-cycl-o-run/cyclorun/index.php:17
+[28-May-2020 10:37:41 UTC] PHP   3. require_once() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-blog-header.php:19
+[28-May-2020 10:37:46 UTC] PHP Fatal error:  Cannot redeclare authentication() (previously declared in /var/www/html/projet-cycl-o-run/cyclorun/content/themes/twentytwenty/functions.php:763) in /var/www/html/projet-cycl-o-run/cyclorun/content/themes/twentytwenty/Registration-Form.php/login.php on line 58
+[28-May-2020 10:37:46 UTC] PHP Stack trace:
+[28-May-2020 10:37:46 UTC] PHP   1. {main}() /var/www/html/projet-cycl-o-run/cyclorun/index.php:0
+[28-May-2020 10:37:46 UTC] PHP   2. require() /var/www/html/projet-cycl-o-run/cyclorun/index.php:17
+[28-May-2020 10:37:46 UTC] PHP   3. require_once() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-blog-header.php:19
+[28-May-2020 12:24:01 UTC] PHP Fatal error:  Cannot redeclare wp_authenticate() (previously declared in /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/pluggable.php:521) in /var/www/html/projet-cycl-o-run/cyclorun/content/themes/twentytwenty/Registration-Form.php/login.php on line 54
+[28-May-2020 12:24:01 UTC] PHP Stack trace:
+[28-May-2020 12:24:01 UTC] PHP   1. {main}() /var/www/html/projet-cycl-o-run/cyclorun/index.php:0
+[28-May-2020 12:24:01 UTC] PHP   2. require() /var/www/html/projet-cycl-o-run/cyclorun/index.php:17
+[28-May-2020 12:24:01 UTC] PHP   3. require_once() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-blog-header.php:19
+[28-May-2020 12:29:09 UTC] PHP Fatal error:  Cannot redeclare wp_authenticate() (previously declared in /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/pluggable.php:521) in /var/www/html/projet-cycl-o-run/cyclorun/content/themes/twentytwenty/Registration-Form.php/login.php on line 54
+[28-May-2020 12:29:09 UTC] PHP Stack trace:
+[28-May-2020 12:29:09 UTC] PHP   1. {main}() /var/www/html/projet-cycl-o-run/cyclorun/index.php:0
+[28-May-2020 12:29:09 UTC] PHP   2. require() /var/www/html/projet-cycl-o-run/cyclorun/index.php:17
+[28-May-2020 12:29:09 UTC] PHP   3. require_once() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-blog-header.php:19
+[28-May-2020 12:39:50 UTC] PHP Parse error:  syntax error, unexpected 'you' (T_STRING), expecting '(' in /var/www/html/projet-cycl-o-run/cyclorun/content/themes/twentytwenty/Registration-Form.php/login.php on line 56
+[28-May-2020 12:39:52 UTC] PHP Parse error:  syntax error, unexpected 'you' (T_STRING), expecting '(' in /var/www/html/projet-cycl-o-run/cyclorun/content/themes/twentytwenty/Registration-Form.php/login.php on line 56
+[28-May-2020 12:40:02 UTC] PHP Parse error:  syntax error, unexpected 'you' (T_STRING), expecting '(' in /var/www/html/projet-cycl-o-run/cyclorun/content/themes/twentytwenty/Registration-Form.php/login.php on line 56
+[28-May-2020 13:06:20 UTC] PHP Fatal error:  Cannot redeclare wp_signon() (previously declared in /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/user.php:33) in /var/www/html/projet-cycl-o-run/cyclorun/content/themes/twentytwenty/Registration-Form.php/login.php on line 54
+[28-May-2020 13:06:20 UTC] PHP Stack trace:
+[28-May-2020 13:06:20 UTC] PHP   1. {main}() /var/www/html/projet-cycl-o-run/cyclorun/index.php:0
+[28-May-2020 13:06:20 UTC] PHP   2. require() /var/www/html/projet-cycl-o-run/cyclorun/index.php:17
+[28-May-2020 13:06:20 UTC] PHP   3. require_once() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-blog-header.php:19
+[28-May-2020 13:12:56 UTC] PHP Fatal error:  Cannot redeclare wp_signon() (previously declared in /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/user.php:33) in /var/www/html/projet-cycl-o-run/cyclorun/content/themes/twentytwenty/Registration-Form.php/login.php on line 54
+[28-May-2020 13:12:56 UTC] PHP Stack trace:
+[28-May-2020 13:12:56 UTC] PHP   1. {main}() /var/www/html/projet-cycl-o-run/cyclorun/index.php:0
+[28-May-2020 13:12:56 UTC] PHP   2. require() /var/www/html/projet-cycl-o-run/cyclorun/index.php:17
+[28-May-2020 13:12:56 UTC] PHP   3. require_once() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-blog-header.php:19
+[28-May-2020 13:12:58 UTC] PHP Fatal error:  Cannot redeclare wp_signon() (previously declared in /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/user.php:33) in /var/www/html/projet-cycl-o-run/cyclorun/content/themes/twentytwenty/Registration-Form.php/login.php on line 54
+[28-May-2020 13:12:58 UTC] PHP Stack trace:
+[28-May-2020 13:12:58 UTC] PHP   1. {main}() /var/www/html/projet-cycl-o-run/cyclorun/index.php:0
+[28-May-2020 13:12:58 UTC] PHP   2. require() /var/www/html/projet-cycl-o-run/cyclorun/index.php:17
+[28-May-2020 13:12:58 UTC] PHP   3. require_once() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-blog-header.php:19

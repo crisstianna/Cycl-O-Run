@@ -8,3 +8,4 @@ wp-config.php
 !/content/plugins/custom-table-wp_outing
 /content/themes/*
 !/content/themes/cyclorun
+!/content/plugins/crud-sortie
