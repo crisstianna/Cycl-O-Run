@@ -23,118 +23,87 @@ $attachment_id = intval( $attachment_id );
 $profile_pic_img =  wp_get_attachment_image( $attachment_id, array('700', '600'), "", array( "class" => "wf-profile-page-prof-img" ) );
 ?>
 
-<!--
-<form action="" method="post" enctype="multipart/form-data">
-    <label for=""
-    <label for="first_name">Prénom
-        <input id="first_name" type="text" name="first_name" value="<?php echo $existing_firstname; ?>">
-    </label>
-    <label for="last_name">Nom
-        <input id="first_name" type="text" name="first_name" value="<?php echo $existing_lastname; ?>">
-    </label>
-    <label for="user_age">Age
-        <input id="user_age" type="number" name="user_age" value="<?php echo $existing_age; ?>">
-    </label>
-        <div class="existing-prof-pic-cont"><?php echo $profile_pic_img; ?></div>
-    <label for="user_profile_pic">Profile pic
-        <input type="file" name="user_profile_pic" id="user_profile_pic" />
-    </label>
-    <input type="submit" name="submit" value="Submit">
-</form>
--->
+<main class="inscription">
+    <div class="inscription__page">
+      <h1 class="inscription__title">Inscription</h1>
 
-<form id="wp_signup_form" action="" method="post" enctype="multipart/form-data">  
+      <form class="inscription__form" id="wp_signup_form" action="" method="post" enctype="multipart/form-data">  
+            <div class="inscription__form__subsection__left">
+                <label class="inscription__form__label__title" for="form-group-connexion-infos">Mes Informations de connexion</label>
+                
+                <input class="inscription__form__input" type="text" name="first_name" id="first_name" value="<?php echo $existing_firstname; ?>" placeholder="Prénom"/>
+                
+                
+                <input class="inscription__form__input" type="text" name="last_name" id="last_name" value="<?php echo $existing_lastname; ?>" placeholder="Nom"/>
+                
+                <label class="inscription__form__label__birthdate" for="birthdate">Date de naissance</label>
+                <div class="birthdate">
+                    <input class="inscription__form__input__birthdate" type="text" name="day_birth" id="day_birth" value="<?php echo $existing_daybirth; ?>" placeholder="JJ"/>
+                    <input class="inscription__form__input__birthdate" type="text" name="month_birth" id="month_birth" value="<?php echo $existing_monthbirth; ?>" placeholder="MM"/>
+                    <input class="inscription__form__input__birthdate" type="text" name="year_birth" id="year_birth" value="<?php echo $existing_yearbirth; ?>" placeholder="AAAA"/>
+                </div>
 
-    
-<div >
-<label class="form-group connexion-infos" for="form-group-connexion-infos">Mes Informations de connexion
-    <label for="first_name">Prénom
-        <input type="text" name="first_name" id="first_name" value="<?php echo $existing_firstname; ?>"/>
-    </label>
-
-    <label for="last_name">Nom
-        <input type="text" name="last_name" id="last_name" value="<?php echo $existing_lastname; ?>"/>
-    </label>
-
-    <div class="birthdate">
-        <label for="birthdate">Date de naissance
-            <label for="day_birth"> Jour
-                <input type="text" name="day_birth" id="day_birth" value="<?php echo $existing_daybirth; ?>">
-            </label>
-            <label for="month_birth"> Mois
-                <input type="text" name="month_birth" id="month_birth" value="<?php echo $existing_monthbirth; ?>">
-            </label>
-            <label for="year_birth"> Année
-                <input type="text" name="year_birth" id="year_birth" value="<?php echo $existing_yearbirth; ?>">
-            </label>
-        </label>
+                <div class="existing-prof-pic-cont"><?php echo $profile_pic_img; ?></div>
+                <label class="inscription__form__label" for="user_profile_pic">Avatar
+                    <input type="file" name="user_profile_pic" id="user_profile_pic" />
+                </label>
+                <label class="inscription__form__label" for="email">Adresse Email
+                    <input class="inscription__form__input" type="email" name="email" id="email" value="<?php echo $existing_email; ?>"/>
+                </label>
+                <label class="inscription__form__label" for="password"> Mot de Passe
+                    <input class="inscription__form__input" type="password" name="password" id="password"/>  
+                </label>
+                <label class="inscription__form__label" for="password_confimation"> Confirmation du mot de passe
+                    <input class="inscription__form__input" type="password" name="password_confirmation" id="password_confirmation"/>
+                </label>
+                <label class="inscription__form__label" for="address"> Adresse Postale
+                    <textarea class="inscription__form__input" name="address" id="address" value="<?php echo $existing_address; ?>"></textarea>
+                </label>
+                <label class="inscription__form__label" for="postcode"> Code Postal
+                    <input class="inscription__form__input" type="text" name="postcode" id="postcode" value="<?php echo $existing_postcode; ?>"/>
+                </label>
+                <label class="inscription__form__label" for="city"> Ville
+                    <input class="inscription__form__input" type="text" name="city" id="city" value="<?php echo $existing_city; ?>"/>
+                </label>
+            </div>
+            <div class="form__subsection">
+                <label class="inscription__form__label__title form-group sport-profile" for="form-group-sport-profile">Mon Profil Sportif</label>
+                <div class="inscription__form__selects">
+                    <div class="custom-control custom-switch inscription__form__select">
+                        <input class="inscription__form__input custom-control-input" type="checkbox" name="cycling" value="cycling" id="cycling">
+                        <label class="inscription__form__label custom-control-label" for="cycling">Vélo</label>
+                        <label class="inscription__form__label mr-sm-2 sr-only" for="cycling-level">Mon Niveau</label>
+                            <select class="custom-select mr-sm-2" name="cycling_level" id="cycling_level_select">
+                                <option value="" selected>Choisir</option>
+                                <option value="loisirs">Loisirs (inferieur à 15km/sortie)</option>
+                                <option value="regulier">Régulier (15-30 km)</option>
+                                <option value="avance">Avancé (30-60 km)</option>
+                                <option value="intensif">Intensif (+60 km)</option>
+                            </select>
+                        
+                    </div>
+                    <div class="custom-control custom-switch inscription__form__select">
+                        <input class="inscription__form__input custom-control-input" type="checkbox" name="running" value="running" id="running">
+                        <label class="inscription__form__label custom-control-label" for="running">Running</label>
+                        <label class="inscription__form__label mr-sm-2 sr-only" for="running_level">Mon Niveau </label>
+                        <select class="custom-select mr-sm-2" name="running_level" id="running_level_select">
+                            <option value="" selected>Choisir</option>
+                            <option value="loisirs">Loisirs (inferieur à 15km/sortie)</option>
+                            <option value="regulier">Régulier (15-30 km)</option>
+                            <option value="avance">Avancé (30-60 km)</option>
+                            <option value="intensif">Intensif (+60 km)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="inscription__form__conditions">
+                    <input class="inscription__form__input" name="terms" id="terms" type="checkbox" value="Yes">  
+                    <label class="inscription__form__label" for="terms">J'ai lu et j'accepte les <a href="#">Conditions Générales d'Utilisation</a></label>  
+                </div>
+                <input class="inscription__form__submit" type="submit" id="submitbtn" name="submit" value="S'inscrire"/>
+            </div>
+        </form>
     </div>
-
-    <div class="existing-prof-pic-cont"><?php echo $profile_pic_img; ?></div>
-    <label for="user_profile_pic">Avatar
-        <input type="file" name="user_profile_pic" id="user_profile_pic" />
-    </label>
-    
-    <label for="email">Adresse Email
-        <input type="email" name="email" id="email" value="<?php echo $existing_email; ?>"/>
-    </label>
-
-    <label for="password"> Mot de Passe
-        <input type="password" name="password" id="password"/>  
-    </label>
-
-    <label for="password_confimation"> Confirmation du mot de passe
-        <input type="password" name="password_confirmation" id="password_confirmation"/>
-    </label>
-
-    <label for="address"> Adresse Postale
-        <textarea name="address" id="address" value="<?php echo $existing_address; ?>""></textarea>
-    </label>
-
-    <label for="postcode"> Code Postal
-        <input type="text" name="postcode" id="postcode" value="<?php echo $existing_postcode; ?>"/>
-    </label>
-
-    <label for="city"> Ville
-        <input type="text" name='city' id="city" value="<?php echo $existing_city; ?>"/>
-    </label>
-</label>
-<label class="form-group sport-profile" for="form-group-sport-profile">Mon Profil Sportif
-
-    <div class="custom-control custom-switch">
-        <input type="checkbox" name="cycling" value="cycling" class="custom-control-input" id="cycling">
-        <label class="custom-control-label" for="cycling">Vélo</label>
-        <label class="mr-sm-2 sr-only" for="cycling-level">Mon Niveau
-            <select class="custom-select mr-sm-2" name="cycling_level" id="cycling_level_select">
-                <option value="" selected>Choisir</option>
-                <option value="loisirs">Loisirs (inferieur à 15km/sortie)</option>
-                <option value="regulier">Régulier (15-30 km)</option>
-                <option value="avance">Avancé (30-60 km)</option>
-                <option value="intensif">Intensif (+60 km)</option>
-            </select>
-        </label>
-    </div>
-    <div class="custom-control custom-switch">
-        <input type="checkbox" name="running" value="running" class="custom-control-input" id="running">
-        <label class="custom-control-label" for="running">Running</label>
-        <label class="mr-sm-2 sr-only" for="running_level">Mon Niveau
-            <select class="custom-select mr-sm-2" name="running_level" id="running_level_select">
-                <option value="" selected>Choisir</option>
-                <option value="loisirs">Loisirs (inferieur à 15km/sortie)</option>
-                <option value="regulier">Régulier (15-30 km)</option>
-                <option value="avance">Avancé (30-60 km)</option>
-                <option value="intensif">Intensif (+60 km)</option>
-            </select>
-        </label>
-    </div>
-</label>
-
-    <input name="terms" id="terms" type="checkbox" value="Yes">  
-    <label for="terms">J'ai lu et j'accepte les <a href="#">Conditions Générales d'Utilisation</a></label>  
-
-    <input type="submit" id="submitbtn" name="submit" value="S'inscrire"/>  
-
-</form>
+  </main>
 
 
 
@@ -379,7 +348,7 @@ if ( isset( $_POST['submit'] ) ) {
     // Update/upload media/attachment.
     wf_handle_profile_media( $post_id, $user_id );
     // Once everything is done redirect the user back to the same page
-    $location = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+    $location = 'http://localhost/Projets/projet-cycl-o-run/cyclorun/login/';
     wp_safe_redirect( $location );
     exit;
 }

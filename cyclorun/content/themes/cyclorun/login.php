@@ -15,25 +15,7 @@ if(! is_user_logged_in()) {
 
 
 
-    $login_form_arg= array(
-        
-            'echo'           => true,
-            // Default 'redirect' value takes the user back to the request URI.
-            'redirect'       => 'http://localhost/Projets/projet-cycl-o-run/cyclorun/custom-home/',
-            'form_id'        => 'loginform',
-            'label_username' => __( 'Email' ),
-            'label_password' => __( 'Mot de passe' ),
-            'label_remember' => __( 'Se souvenir de moi'),
-            'label_log_in'   => __( 'Se Connecter' ),
-            'id_username'    => 'email',
-            'id_password'    => 'password',
-            'id_remember'    => 'rememberme',
-            'id_submit'      => 'wp-submit',
-            'remember'       => true,
-            'value_username' => '',
-            // Set 'value_remember' to true to default the "Remember me" checkbox to checked.
-            'value_remember' => false,
-        );
+   
 
         if(isset($_GET['login']) && $_GET['login'] == 'failed'){
             
@@ -42,26 +24,31 @@ if(! is_user_logged_in()) {
             echo '</div>';
             
         } 
-
-        wp_login_form( $login_form_arg);
-
-       
+ 
             
-           
-
-
 }else {
     wp_loginout(home_url());
 }
-
-
-
-
-       
-
-
+   
 
 ?>
 
+<form name="loginform" id="loginform" action="http://localhost/Projets/projet-cycl-o-run/cyclorun/wp/wp-login.php" method="post">
+            <p class="login-username">
+                <label for="user_login">Identifiant ou adresse e-mail</label>
+                <input type="text" name="log" id="user_login" class="input" value="" size="20" />
+            </p>
+            <p class="login-password">
+                <label for="user_pass">Mot de passe</label>
+                <input type="password" name="pwd" id="user_pass" class="input" value="" size="20" />
+            </p>
+            <p class="login-remember"><label><input name="rememberme" type="checkbox" id="rememberme" value="forever" /> Se souvenir de moi</label></p>
+            <p class="login-submit">
+                <input type="submit" name="wp-submit" id="wp-submit" class="button button-primary" value="Se connecter" />
+                <input type="hidden" name="redirect_to" value="http://localhost/Projets/projet-cycl-o-run/cyclorun/wp" />
+            </p>
+
+            <button type="button" class="btn btn-dark connexion-button"><a href="http://localhost/Projets/projet-cycl-o-run/cyclorun/registration/">S'inscrire</a></button>
+</form>
 
 
