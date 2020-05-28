@@ -17,7 +17,7 @@
       <?php if(is_user_logged_in()): ?>
          <button type="logout-button" class="btn"><?= wp_loginout(home_url());?></button>
       <?php  else: ?>
-        <button type="button" class="btn btn-dark connexion-button"><a href="http://localhost/Projets/projet-cycl-o-run/cyclorun/login/">Connexion</a></button>
+        <button type="button" class="btn btn-dark connexion-button"><a href="<?= get_bloginfo('url') . '/login/' ?>">Connexion</a></button>
        <?php endif; ?>
     
 

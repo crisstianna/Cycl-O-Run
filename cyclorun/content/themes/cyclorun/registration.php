@@ -348,7 +348,7 @@ if ( isset( $_POST['submit'] ) ) {
     // Update/upload media/attachment.
     wf_handle_profile_media( $post_id, $user_id );
     // Once everything is done redirect the user back to the same page
-    $location = 'http://localhost/Projets/projet-cycl-o-run/cyclorun/login/';
+    $location =  get_bloginfo('url') . '/login/';
     wp_safe_redirect( $location );
     exit;
 }

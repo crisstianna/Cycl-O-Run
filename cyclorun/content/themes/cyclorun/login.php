@@ -33,7 +33,7 @@ if(! is_user_logged_in()) {
 
 ?>
 
-<form name="loginform" id="loginform" action="http://localhost/Projets/projet-cycl-o-run/cyclorun/wp/wp-login.php" method="post">
+<form name="loginform" id="loginform" action="<?= get_bloginfo('url') . '/wp/wp-login.php'; ?>" method="post">
             <p class="login-username">
                 <label for="user_login">Identifiant ou adresse e-mail</label>
                 <input type="text" name="log" id="user_login" class="input" value="" size="20" />
@@ -45,10 +45,10 @@ if(! is_user_logged_in()) {
             <p class="login-remember"><label><input name="rememberme" type="checkbox" id="rememberme" value="forever" /> Se souvenir de moi</label></p>
             <p class="login-submit">
                 <input type="submit" name="wp-submit" id="wp-submit" class="button button-primary" value="Se connecter" />
-                <input type="hidden" name="redirect_to" value="http://localhost/Projets/projet-cycl-o-run/cyclorun/wp" />
+                <input type="hidden" name="redirect_to" value=<?= get_bloginfo('url') . '/custom-home/'?>" />
             </p>
 
-            <button type="button" class="btn btn-dark connexion-button"><a href="http://localhost/Projets/projet-cycl-o-run/cyclorun/registration/">S'inscrire</a></button>
+            <button type="button" class="btn btn-dark connexion-button"><a href="<?= get_bloginfo('url') . '/registration/'?>">S'inscrire</a></button>
 </form>
 
 
