@@ -1,0 +1,54 @@
+.connexion{
+    width: 30%;
+    margin: auto;
+    background-color: $ligthgrey;
+    border-radius: $font-size-md;
+    color: $blueduck;
+    padding: $gutter-large;
+
+    &__page{
+        background: url('../assets/images/cycl/cycl1.jpg'),  url('../assets/images/run/run1.jpg');
+        background-size: 50%;
+        background-repeat: no-repeat, no-repeat;
+        background-position: left, right;
+
+        &__buttons{
+            width: 20%;
+            margin: auto;
+            display: flex;
+            justify-content: space-around;
+
+            &__connexion{
+                margin-bottom: $gutter-large-very*4;
+                margin-top: $gutter-large-very*2;
+                background-color: $blueduck;
+                padding: $gutter-small;
+                border-radius: $gutter-small;
+                color: $ligthgrey;
+            }
+            &__inscription{
+                margin-bottom: $gutter-large-very*4;
+                margin-top: $gutter-large-very*2;
+                background-color: $blueduck;
+                padding: $gutter-small;
+                border-radius: $gutter-small;
+                color: $ligthgrey;
+                vertical-align: auto;
+                text-decoration: none;
+                border: 1px solid black;
+            }
+        }
+    }
+    
+    &__title{
+        width: 20%;
+        margin: auto;
+        font-weight: bolder;
+        color: $blueduck;
+        text-align: center;
+        padding-top: $gutter-large-very;
+        padding-bottom: $gutter-large-very;
+    }
+
+}
+

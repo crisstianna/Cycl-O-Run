@@ -5,5 +5,6 @@ wp-config.php
 /content/upgrade
 /content/uploads
 /content/plugins/*
+!/content/plugins/custom-table-wp_outing
 /content/themes/*
 !/content/themes/cyclorun

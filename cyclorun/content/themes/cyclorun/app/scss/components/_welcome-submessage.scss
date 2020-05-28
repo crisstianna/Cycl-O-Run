@@ -1,0 +1,10 @@
+.welcome-submessage {
+    background-color: $blueduck;
+    margin-top: 1rem;
+    padding: 1rem;
+    text-align: left;
+
+    &.submessage{
+        color:red;
+    }
+}
