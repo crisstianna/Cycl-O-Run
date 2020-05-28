@@ -1,16 +1,29 @@
 $fa-font-path: '~font-awesome/fonts';
 
+//coleurs de la police
 $blueduck: #00757F;
 $dark: #333333;
 $ligthgrey:#F5F5F5;
 
+//taille de la police
 $font-size-s: 0.5rem;
 $font-size-default: 1rem;
+$font-size-md: 2rem;
 $font-size-lg: 3rem;
 
+//polices du site
 $font-family: 'Prompt', sans-serif;
 $font-family-fallback: 'Helvetica', 'Arial', sans-serif;
 
 $transition-fast: 0.3s;
 $transition-medium: 0.5s;
 $transition-slow: 0.7s;
+
+//taille du logo
+$logo: 5rem;
+
+//margin
+$gutter: 1rem;
+$gutter-large: $gutter*2;
+$gutter-large-very: $gutter*4;
+$gutter-small: $gutter/2;
