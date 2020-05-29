@@ -33,9 +33,13 @@ if(! is_user_logged_in()){
 <?php
 /* 
 require 'template-parts/home.php';
-$id = get_current_user_id();
-var_dump($id); 
 */
+$id = get_current_user_id();
+$postcodeId = get_user_meta($id, 'postcode');
+$department = substr($postcodeId[0], 0, -3);
+//var_dump($postcodeId);
+//var_dump($department); 
+
 
 global $wpdb;
 
@@ -44,7 +48,7 @@ $wp_outings = $wpdb->prefix . 'outings';
 $outings_query = $wpdb->get_results(
     "SELECT *
     FROM $wp_outings
-    WHERE `address` LIKE '%74%'
+    WHERE `address` LIKE '%$department%'
     ORDER BY created_at DESC
     LIMIT 3",
     $output = ARRAY_A   
@@ -53,10 +57,10 @@ $outings_query = $wpdb->get_results(
 foreach($outings_query as $key => $value) {
     echo '<div>';
     echo '<h3 class="outing__article__title">' . $value['outing_name'] . '</h3>';
-    echo '<p class="outing__article__date">' . date("d-m-Y", strtotime($value['date'])) . '</p>';
-    echo '<p class="outing__article__location">' . $value['address'] . '</p>';
-    echo '<p class="outing__article__distance">' . $value['distance'] . '</p>';
-    echo '<p class="outing__article__level">' . $value['level'] . '</p>';
+    echo '<p class="outing__article__date">horaire : ' . date("d-m-Y", strtotime($value['date'])) . '</p>';
+    echo '<p class="outing__article__location">lieu de rdv : ' . $value['address'] . '</p>';
+    echo '<p class="outing__article__distance">distance : ' . $value['distance'] . 'km</p>';
+    echo '<p class="outing__article__level">niveau : ' . $value['level'] . '</p>';
     echo '<button class="outing__article__button" type="button">Etat de la sortie</button>';
     echo '</div>';       
 }

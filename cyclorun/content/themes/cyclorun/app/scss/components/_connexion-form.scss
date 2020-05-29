@@ -5,30 +5,24 @@
     border-radius: $font-size-md;
     color: $blueduck;
     padding: $gutter-large;
-
     &__page{
         background: url('../assets/images/cycl/cycl1.jpg'),  url('../assets/images/run/run1.jpg');
         background-size: 50%;
         background-repeat: no-repeat, no-repeat;
         background-position: left, right;
-
         &__buttons{
             width: 20%;
             margin: auto;
             display: flex;
             justify-content: space-around;
-
-            &__connexion{
-                margin-bottom: $gutter-large-very*4;
+            &__connexion{    
                 margin-top: $gutter-large-very*2;
                 background-color: $blueduck;
                 padding: $gutter-small;
                 border-radius: $gutter-small;
                 color: $ligthgrey;
             }
-            &__inscription{
-                margin-bottom: $gutter-large-very*4;
-                margin-top: $gutter-large-very*2;
+            &__inscription{   
                 background-color: $blueduck;
                 padding: $gutter-small;
                 border-radius: $gutter-small;
@@ -44,11 +38,9 @@
         width: 20%;
         margin: auto;
         font-weight: bolder;
-        color: $blueduck;
+        color: $ligthgrey;
         text-align: center;
         padding-top: $gutter-large-very;
         padding-bottom: $gutter-large-very;
     }
-
 }
-

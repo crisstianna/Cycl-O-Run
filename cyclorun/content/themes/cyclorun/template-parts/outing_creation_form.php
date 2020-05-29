@@ -46,7 +46,7 @@
                 </select>
         </div>    
         <div class="outing__image">
-            <label for="outing-image">Insérez ici ul'image du parcours</label>
+            <label for="outing-image">Insérez ici l'image du parcours</label>
             <input type="file" id="image" name="picture" alt="image du parcours" src="">
         </div>
         <!-- Le visuel du point de départ se verra uniquement sur la page détails de la course

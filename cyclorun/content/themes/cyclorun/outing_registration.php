@@ -1,6 +1,10 @@
 <?php
 
-require 'template-parts/outing-creation-form.php';
+/*
+Template Name: Outing Registration
+*/
+
+require 'template-parts/outing_creation_form.php';
 
 //var_dump($_POST);
 $id = get_current_user_id();
