@@ -52,7 +52,7 @@ function crudAdminPage() {
         $level = filter_input(INPUT_POST, 'level');
         $picture = filter_input(INPUT_POST, 'picture', FILTER_SANITIZE_URL);
         $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_SPECIAL_CHARS);
-        $wpdb->query("INSERT INTO $table_name(outing_name,address,date,time,distance,practicedSport,level,picture,description) VALUES('$outingName','$address', '$date', '$time, '$distance', '$practicedSport', '$level', '$picture', '$description')");
+        $wpdb->query("INSERT INTO $table_name(outing_name,address,date,time,distance,practicedSport,level,picture,description) VALUES('$outingName','$address', '$date', '$time, '$distance', '$practicedSport', '$level', '$picture', '$description',)");
         echo "<script>location.replace('admin.php?page=crud%2Fcrud.php');</script>";
     }
      ?>

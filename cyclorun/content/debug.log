@@ -143,3 +143,14 @@
 [30-May-2020 09:07:02 UTC] PHP   5. WP_Hook->apply_filters() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/class-wp-hook.php:311
 [30-May-2020 09:07:02 UTC] PHP   6. wp_update_plugins() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/class-wp-hook.php:287
 [30-May-2020 09:07:02 UTC] PHP   7. trigger_error() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/update.php:388
+[30-May-2020 10:09:03 UTC] PHP Warning:  Cannot modify header information - headers already sent in /var/www/html/projet-cycl-o-run/cyclorun/content/plugins/simply-show-hooks/index.php on line 84
+[30-May-2020 10:09:03 UTC] PHP Stack trace:
+[30-May-2020 10:09:03 UTC] PHP   1. {main}() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-cron.php:0
+[30-May-2020 10:09:03 UTC] PHP   2. require_once() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-cron.php:44
+[30-May-2020 10:09:03 UTC] PHP   3. require_once() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-load.php:42
+[30-May-2020 10:09:03 UTC] PHP   4. require_once() /var/www/html/projet-cycl-o-run/cyclorun/wp-config.php:141
+[30-May-2020 10:09:03 UTC] PHP   5. include_once() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-settings.php:377
+[30-May-2020 10:09:03 UTC] PHP   6. CX_Simply_Show_Hooks::get_instance() /var/www/html/projet-cycl-o-run/cyclorun/content/plugins/simply-show-hooks/index.php:573
+[30-May-2020 10:09:03 UTC] PHP   7. CX_Simply_Show_Hooks->init() /var/www/html/projet-cycl-o-run/cyclorun/content/plugins/simply-show-hooks/index.php:39
+[30-May-2020 10:09:03 UTC] PHP   8. CX_Simply_Show_Hooks->set_active_status() /var/www/html/projet-cycl-o-run/cyclorun/content/plugins/simply-show-hooks/index.php:67
+[30-May-2020 10:09:03 UTC] PHP   9. setcookie() /var/www/html/projet-cycl-o-run/cyclorun/content/plugins/simply-show-hooks/index.php:84
