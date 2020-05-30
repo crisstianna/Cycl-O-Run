@@ -15,6 +15,7 @@ if (!defined('WPINC')) {
 // require of differents classes
 require plugin_dir_path(__FILE__) . 'inc/CustomTablesInstall.php';
 require plugin_dir_path(__FILE__) . 'inc/Outing_cpt.php';
+require plugin_dir_path(__FILE__) . 'inc/outing_registration.php';
 
 
 

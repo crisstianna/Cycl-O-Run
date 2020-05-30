@@ -201,7 +201,7 @@ if ( ! function_exists( 'wf_save_profile_media' ) ) {
         $file_ext = ( ! empty( $file_ext_arr[1] ) ) ? $file_ext_arr[1] : '';
         $expensions= array( "jpeg", "jpg", "png", "pdf" );
         // Check if the file has the required format.
-        if( false === in_array( $file_ext, $expensions ) ){
+        if (false === array( $file_ext, $expensions )) {
             $errors[]="Extension not allowed, please choose a JPEG or PNG file.";
         }
         // Check if the file has the required size . Below unit is in Bytes ( 2097152 = 2 Mb )

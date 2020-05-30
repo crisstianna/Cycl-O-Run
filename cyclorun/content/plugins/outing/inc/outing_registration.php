@@ -1,6 +1,6 @@
 <?php
 
-require 'template-parts/outing-creation-form.php';
+
 
 //var_dump($_POST);
 $id = get_current_user_id();

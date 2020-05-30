@@ -1,0 +1,145 @@
+[29-May-2020 15:20:31 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, class 'Outing_cpt' does not have a method 'custom_tables_activate' in /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/class-wp-hook.php on line 287
+[29-May-2020 15:20:31 UTC] PHP Stack trace:
+[29-May-2020 15:20:31 UTC] PHP   1. {main}() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/plugins.php:0
+[29-May-2020 15:20:31 UTC] PHP   2. activate_plugin() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/plugins.php:44
+[29-May-2020 15:20:31 UTC] PHP   3. do_action() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/includes/plugin.php:690
+[29-May-2020 15:20:31 UTC] PHP   4. WP_Hook->do_action() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/plugin.php:478
+[29-May-2020 15:20:31 UTC] PHP   5. WP_Hook->apply_filters() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/class-wp-hook.php:311
+[30-May-2020 05:34:01 UTC] PHP Warning:  mysqli_real_connect(): php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/wp-db.php on line 1626
+[30-May-2020 05:34:01 UTC] PHP Stack trace:
+[30-May-2020 05:34:01 UTC] PHP   1. {main}() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/index.php:0
+[30-May-2020 05:34:01 UTC] PHP   2. require_once() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/index.php:10
+[30-May-2020 05:34:01 UTC] PHP   3. require_once() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/admin.php:34
+[30-May-2020 05:34:01 UTC] PHP   4. require_once() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-load.php:42
+[30-May-2020 05:34:01 UTC] PHP   5. require_once() /var/www/html/projet-cycl-o-run/cyclorun/wp-config.php:141
+[30-May-2020 05:34:01 UTC] PHP   6. require_wp_db() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-settings.php:126
+[30-May-2020 05:34:01 UTC] PHP   7. wpdb->__construct() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/load.php:426
+[30-May-2020 05:34:01 UTC] PHP   8. wpdb->db_connect() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/wp-db.php:631
+[30-May-2020 05:34:01 UTC] PHP   9. mysqli_real_connect() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/wp-db.php:1626
+[30-May-2020 05:34:01 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/wp-db.php on line 1626
+[30-May-2020 05:34:01 UTC] PHP Stack trace:
+[30-May-2020 05:34:01 UTC] PHP   1. {main}() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/index.php:0
+[30-May-2020 05:34:01 UTC] PHP   2. require_once() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/index.php:10
+[30-May-2020 05:34:01 UTC] PHP   3. require_once() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/admin.php:34
+[30-May-2020 05:34:01 UTC] PHP   4. require_once() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-load.php:42
+[30-May-2020 05:34:01 UTC] PHP   5. require_once() /var/www/html/projet-cycl-o-run/cyclorun/wp-config.php:141
+[30-May-2020 05:34:01 UTC] PHP   6. require_wp_db() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-settings.php:126
+[30-May-2020 05:34:01 UTC] PHP   7. wpdb->__construct() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/load.php:426
+[30-May-2020 05:34:01 UTC] PHP   8. wpdb->db_connect() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/wp-db.php:631
+[30-May-2020 05:34:01 UTC] PHP   9. mysqli_real_connect() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/wp-db.php:1626
+[30-May-2020 06:06:09 UTC] PHP Warning:  An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/update.php on line 578
+[30-May-2020 06:06:09 UTC] PHP Stack trace:
+[30-May-2020 06:06:09 UTC] PHP   1. {main}() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-cron.php:0
+[30-May-2020 06:06:09 UTC] PHP   2. do_action_ref_array() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-cron.php:138
+[30-May-2020 06:06:09 UTC] PHP   3. WP_Hook->do_action() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/plugin.php:544
+[30-May-2020 06:06:09 UTC] PHP   4. WP_Hook->apply_filters() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/class-wp-hook.php:311
+[30-May-2020 06:06:09 UTC] PHP   5. wp_update_themes() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/class-wp-hook.php:287
+[30-May-2020 06:06:09 UTC] PHP   6. trigger_error() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/update.php:578
+[30-May-2020 06:06:20 UTC] WordPress database error Table 'cyclorun.wp_userstable' doesn't exist for query SELECT * FROM wp_userstable made by do_action('toplevel_page_crud-sortie/outing2'), WP_Hook->do_action, WP_Hook->apply_filters, crudAdminPage
+[30-May-2020 06:11:20 UTC] WordPress database error Table 'cyclorun.wp_userstable' doesn't exist for query SELECT * FROM wp_userstable made by do_action('toplevel_page_crud-sortie/outing2'), WP_Hook->do_action, WP_Hook->apply_filters, crudAdminPage
+[30-May-2020 06:16:20 UTC] PHP Parse error:  syntax error, unexpected end of file in /var/www/html/projet-cycl-o-run/cyclorun/content/plugins/crud-sortie/outing2.php on line 130
+[30-May-2020 06:17:38 UTC] PHP Parse error:  syntax error, unexpected end of file in /var/www/html/projet-cycl-o-run/cyclorun/content/plugins/crud-sortie/outing2.php on line 130
+[30-May-2020 06:17:40 UTC] PHP Parse error:  syntax error, unexpected end of file in /var/www/html/projet-cycl-o-run/cyclorun/content/plugins/crud-sortie/outing2.php on line 130
+[30-May-2020 06:22:55 UTC] PHP Warning:  An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/update.php on line 388
+[30-May-2020 06:22:55 UTC] PHP Stack trace:
+[30-May-2020 06:22:55 UTC] PHP   1. {main}() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/plugins.php:0
+[30-May-2020 06:22:55 UTC] PHP   2. require_once() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/plugins.php:10
+[30-May-2020 06:22:55 UTC] PHP   3. do_action() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/admin.php:367
+[30-May-2020 06:22:55 UTC] PHP   4. WP_Hook->do_action() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/plugin.php:478
+[30-May-2020 06:22:55 UTC] PHP   5. WP_Hook->apply_filters() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/class-wp-hook.php:311
+[30-May-2020 06:22:55 UTC] PHP   6. wp_update_plugins() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/class-wp-hook.php:287
+[30-May-2020 06:22:55 UTC] PHP   7. trigger_error() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/update.php:388
+[30-May-2020 06:23:04 UTC] PHP Warning:  An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/update.php on line 388
+[30-May-2020 06:23:04 UTC] PHP Stack trace:
+[30-May-2020 06:23:04 UTC] PHP   1. {main}() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/plugins.php:0
+[30-May-2020 06:23:04 UTC] PHP   2. require_once() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/plugins.php:10
+[30-May-2020 06:23:04 UTC] PHP   3. do_action() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/admin.php:367
+[30-May-2020 06:23:04 UTC] PHP   4. WP_Hook->do_action() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/plugin.php:478
+[30-May-2020 06:23:04 UTC] PHP   5. WP_Hook->apply_filters() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/class-wp-hook.php:311
+[30-May-2020 06:23:04 UTC] PHP   6. wp_update_plugins() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/class-wp-hook.php:287
+[30-May-2020 06:23:04 UTC] PHP   7. trigger_error() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/update.php:388
+[30-May-2020 06:23:16 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, class 'Outing_cpt' does not have a method 'custom_tables_deactivate' in /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/class-wp-hook.php on line 287
+[30-May-2020 06:23:16 UTC] PHP Stack trace:
+[30-May-2020 06:23:16 UTC] PHP   1. {main}() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/plugins.php:0
+[30-May-2020 06:23:16 UTC] PHP   2. deactivate_plugins() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/plugins.php:194
+[30-May-2020 06:23:16 UTC] PHP   3. do_action() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/includes/plugin.php:812
+[30-May-2020 06:23:16 UTC] PHP   4. WP_Hook->do_action() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/plugin.php:478
+[30-May-2020 06:23:16 UTC] PHP   5. WP_Hook->apply_filters() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/class-wp-hook.php:311
+[30-May-2020 06:46:24 UTC] PHP Warning:  require(template-parts/outing_creation_form.php): failed to open stream: No such file or directory in /var/www/html/projet-cycl-o-run/cyclorun/content/plugins/outing/inc/outing_registration.php on line 3
+[30-May-2020 06:46:24 UTC] PHP Stack trace:
+[30-May-2020 06:46:24 UTC] PHP   1. {main}() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/plugins.php:0
+[30-May-2020 06:46:24 UTC] PHP   2. activate_plugin() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/plugins.php:44
+[30-May-2020 06:46:24 UTC] PHP   3. include_once() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/includes/plugin.php:659
+[30-May-2020 06:46:24 UTC] PHP   4. require() /var/www/html/projet-cycl-o-run/cyclorun/content/plugins/outing/outing.php:18
+[30-May-2020 06:46:24 UTC] PHP Fatal error:  require(): Failed opening required 'template-parts/outing_creation_form.php' (include_path='.:/usr/share/php') in /var/www/html/projet-cycl-o-run/cyclorun/content/plugins/outing/inc/outing_registration.php on line 3
+[30-May-2020 06:46:24 UTC] PHP Stack trace:
+[30-May-2020 06:46:24 UTC] PHP   1. {main}() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/plugins.php:0
+[30-May-2020 06:46:24 UTC] PHP   2. activate_plugin() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/plugins.php:44
+[30-May-2020 06:46:24 UTC] PHP   3. include_once() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/includes/plugin.php:659
+[30-May-2020 06:46:24 UTC] PHP   4. require() /var/www/html/projet-cycl-o-run/cyclorun/content/plugins/outing/outing.php:18
+[30-May-2020 06:46:24 UTC] PHP Warning:  require(template-parts/outing_creation_form.php): failed to open stream: No such file or directory in /var/www/html/projet-cycl-o-run/cyclorun/content/plugins/outing/inc/outing_registration.php on line 3
+[30-May-2020 06:46:24 UTC] PHP Stack trace:
+[30-May-2020 06:46:24 UTC] PHP   1. {main}() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/plugins.php:0
+[30-May-2020 06:46:24 UTC] PHP   2. plugin_sandbox_scrape() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/plugins.php:177
+[30-May-2020 06:46:24 UTC] PHP   3. include() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/includes/plugin.php:2255
+[30-May-2020 06:46:24 UTC] PHP   4. require() /var/www/html/projet-cycl-o-run/cyclorun/content/plugins/outing/outing.php:18
+[30-May-2020 06:46:24 UTC] PHP Fatal error:  require(): Failed opening required 'template-parts/outing_creation_form.php' (include_path='.:/usr/share/php') in /var/www/html/projet-cycl-o-run/cyclorun/content/plugins/outing/inc/outing_registration.php on line 3
+[30-May-2020 06:46:24 UTC] PHP Stack trace:
+[30-May-2020 06:46:24 UTC] PHP   1. {main}() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/plugins.php:0
+[30-May-2020 06:46:24 UTC] PHP   2. plugin_sandbox_scrape() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/plugins.php:177
+[30-May-2020 06:46:24 UTC] PHP   3. include() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/includes/plugin.php:2255
+[30-May-2020 06:46:24 UTC] PHP   4. require() /var/www/html/projet-cycl-o-run/cyclorun/content/plugins/outing/outing.php:18
+[30-May-2020 06:46:25 UTC] PHP Warning:  require(template-parts/outing_creation_form.php): failed to open stream: No such file or directory in /var/www/html/projet-cycl-o-run/cyclorun/content/plugins/outing/inc/outing_registration.php on line 3
+[30-May-2020 06:46:25 UTC] PHP Stack trace:
+[30-May-2020 06:46:25 UTC] PHP   1. {main}() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/plugins.php:0
+[30-May-2020 06:46:25 UTC] PHP   2. plugin_sandbox_scrape() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/plugins.php:177
+[30-May-2020 06:46:25 UTC] PHP   3. include() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/includes/plugin.php:2255
+[30-May-2020 06:46:25 UTC] PHP   4. require() /var/www/html/projet-cycl-o-run/cyclorun/content/plugins/outing/outing.php:18
+[30-May-2020 06:46:25 UTC] PHP Fatal error:  require(): Failed opening required 'template-parts/outing_creation_form.php' (include_path='.:/usr/share/php') in /var/www/html/projet-cycl-o-run/cyclorun/content/plugins/outing/inc/outing_registration.php on line 3
+[30-May-2020 06:46:25 UTC] PHP Stack trace:
+[30-May-2020 06:46:25 UTC] PHP   1. {main}() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/plugins.php:0
+[30-May-2020 06:46:25 UTC] PHP   2. plugin_sandbox_scrape() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/plugins.php:177
+[30-May-2020 06:46:25 UTC] PHP   3. include() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/includes/plugin.php:2255
+[30-May-2020 06:46:25 UTC] PHP   4. require() /var/www/html/projet-cycl-o-run/cyclorun/content/plugins/outing/outing.php:18
+[30-May-2020 06:47:42 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, class 'Outing_cpt' does not have a method 'custom_tables_activate' in /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/class-wp-hook.php on line 287
+[30-May-2020 06:47:42 UTC] PHP Stack trace:
+[30-May-2020 06:47:42 UTC] PHP   1. {main}() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/plugins.php:0
+[30-May-2020 06:47:42 UTC] PHP   2. activate_plugin() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/plugins.php:44
+[30-May-2020 06:47:42 UTC] PHP   3. do_action() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/includes/plugin.php:690
+[30-May-2020 06:47:42 UTC] PHP   4. WP_Hook->do_action() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/plugin.php:478
+[30-May-2020 06:47:42 UTC] PHP   5. WP_Hook->apply_filters() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/class-wp-hook.php:311
+[30-May-2020 06:55:21 UTC] WordPress database error Unknown column 'description' in 'field list' for query INSERT INTO `wp_outings` (`outing_name`, `author`, `address`, `date`, `time`, `distance`, `practiced_sport`, `level`, `picture`, `description`) VALUES ('ma balade', '0', 'Meudon', '2020-05-08', '04:50', '', 'vélo', '', '', 'dsjfhlkjfh') made by require('wp-blog-header.php'), require_once('wp-load.php'), require_once('/var/www/html/projet-cycl-o-run/cyclorun/wp-config.php'), require_once('wp-settings.php'), include_once('/plugins/outing/outing.php'), require('/plugins/outing/inc/outing_registration.php')
+[30-May-2020 09:00:31 UTC] PHP Warning:  Illegal string offset 'file' in /var/www/html/projet-cycl-o-run/cyclorun/content/themes/cyclorun/registration.php on line 266
+[30-May-2020 09:00:31 UTC] PHP Stack trace:
+[30-May-2020 09:00:31 UTC] PHP   1. {main}() /var/www/html/projet-cycl-o-run/cyclorun/index.php:0
+[30-May-2020 09:00:31 UTC] PHP   2. require() /var/www/html/projet-cycl-o-run/cyclorun/index.php:17
+[30-May-2020 09:00:31 UTC] PHP   3. require_once() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-blog-header.php:19
+[30-May-2020 09:00:31 UTC] PHP   4. include() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/template-loader.php:106
+[30-May-2020 09:00:31 UTC] PHP   5. wf_handle_profile_media() /var/www/html/projet-cycl-o-run/cyclorun/content/themes/cyclorun/registration.php:349
+[30-May-2020 09:06:13 UTC] PHP Warning:  An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/update.php on line 388
+[30-May-2020 09:06:13 UTC] PHP Stack trace:
+[30-May-2020 09:06:13 UTC] PHP   1. {main}() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/plugins.php:0
+[30-May-2020 09:06:13 UTC] PHP   2. require_once() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/plugins.php:10
+[30-May-2020 09:06:13 UTC] PHP   3. do_action() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/admin.php:367
+[30-May-2020 09:06:13 UTC] PHP   4. WP_Hook->do_action() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/plugin.php:478
+[30-May-2020 09:06:13 UTC] PHP   5. WP_Hook->apply_filters() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/class-wp-hook.php:311
+[30-May-2020 09:06:13 UTC] PHP   6. wp_update_plugins() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/class-wp-hook.php:287
+[30-May-2020 09:06:13 UTC] PHP   7. trigger_error() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/update.php:388
+[30-May-2020 09:06:42 UTC] PHP Warning:  An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/update.php on line 388
+[30-May-2020 09:06:42 UTC] PHP Stack trace:
+[30-May-2020 09:06:42 UTC] PHP   1. {main}() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/plugins.php:0
+[30-May-2020 09:06:42 UTC] PHP   2. require_once() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/plugins.php:10
+[30-May-2020 09:06:42 UTC] PHP   3. do_action() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/admin.php:367
+[30-May-2020 09:06:42 UTC] PHP   4. WP_Hook->do_action() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/plugin.php:478
+[30-May-2020 09:06:42 UTC] PHP   5. WP_Hook->apply_filters() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/class-wp-hook.php:311
+[30-May-2020 09:06:42 UTC] PHP   6. wp_update_plugins() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/class-wp-hook.php:287
+[30-May-2020 09:06:42 UTC] PHP   7. trigger_error() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/update.php:388
+[30-May-2020 09:07:02 UTC] PHP Warning:  An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/update.php on line 388
+[30-May-2020 09:07:02 UTC] PHP Stack trace:
+[30-May-2020 09:07:02 UTC] PHP   1. {main}() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/plugins.php:0
+[30-May-2020 09:07:02 UTC] PHP   2. require_once() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/plugins.php:10
+[30-May-2020 09:07:02 UTC] PHP   3. do_action() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-admin/admin.php:367
+[30-May-2020 09:07:02 UTC] PHP   4. WP_Hook->do_action() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/plugin.php:478
+[30-May-2020 09:07:02 UTC] PHP   5. WP_Hook->apply_filters() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/class-wp-hook.php:311
+[30-May-2020 09:07:02 UTC] PHP   6. wp_update_plugins() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/class-wp-hook.php:287
+[30-May-2020 09:07:02 UTC] PHP   7. trigger_error() /var/www/html/projet-cycl-o-run/cyclorun/wp/wp-includes/update.php:388
