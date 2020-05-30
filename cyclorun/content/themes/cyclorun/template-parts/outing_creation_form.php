@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cycl'O'run</title>
-</head>
+<?php
+get_header();
+?>
+
 <body>
     <form class="outing__creation" action="" method="post">
         <div class="outing__location">
