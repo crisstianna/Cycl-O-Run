@@ -8,6 +8,7 @@
 
 get_header();
 
+
 if(! is_user_logged_in()){
   // retrieving the id of the custom home page
   $login = get_permalink(5);
@@ -53,6 +54,7 @@ $outings_query = $wpdb->get_results(
     LIMIT 3",
     $output = ARRAY_A   
 );
+
 
 foreach($outings_query as $key => $value) {
     echo '<div>';

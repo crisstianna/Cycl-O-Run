@@ -17,12 +17,13 @@ $address = filter_input(INPUT_POST, 'address');
 $date = filter_input(INPUT_POST, 'date', FILTER_SANITIZE_NUMBER_FLOAT);
 $time = filter_input(INPUT_POST, 'time');
 $distance = filter_input(INPUT_POST, 'distance', FILTER_SANITIZE_NUMBER_INT);
-$practicedSport = filter_input(INPUT_POST, 'practicedSport');
-$level = filter_input(INPUT_POST, 'level');
+$practicedSport = filter_input(INPUT_POST, 'practicedSport', FILTER_SANITIZE_NUMBER_INT);
+$level = filter_input(INPUT_POST, 'level', FILTER_SANITIZE_NUMBER_INT);
 $picture = filter_input(INPUT_POST, 'picture', FILTER_SANITIZE_URL);
 $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_SPECIAL_CHARS);
 
-//var_dump($outingName);
+//var_dump($practicedSport);
+//var_dump($level);
 
 
 if (empty($outingName && $address && $date && $time && $distance && $practicedSport && $level)) {
@@ -63,10 +64,9 @@ else {
 
     // todo : Afficher un message de succès pour l'utilisateur
 
-    $customHome = get_permalink(7);
+    // todo : redirection vers la page détails
 
-    header("Location: $customHome");
-    exit;
+    
 }
 
 
