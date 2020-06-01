@@ -45,20 +45,19 @@ get_header();
             <label for="outing-image">Insérez ici l'image du parcours</label>
             <input type="file" id="image" name="picture" alt="image du parcours" src="">
         </div>
-        <!-- Le visuel du point de départ se verra uniquement sur la page détails de la course
-            <div class="outing__map">
-                <label for="outing-map">Insérez ici une map pour la sortie</label>
-            </div>     
-        -->
         <div class="outing__description">
-            <label for="description">Saisir la description de la sortie</label>
-            <textarea name="description" id="description" cols="30" rows="10"></textarea>
+            <label for="description">Description de la sortie</label>
+            <textarea name="description" id="description" cols="30" rows="10" placeholder=""></textarea>
         </div>
         <div class="outing__course">
         </div>
         <div class="outing__submit">
-            <input type="submit" value="valider la course">
+            <input type="submit" value="Valider la sortie">
         </div>
-    </form>    
+    </form>   
+    
+    <template class="last-outings">
+        
+    </template>
 </body>
 </html>

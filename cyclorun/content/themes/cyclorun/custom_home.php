@@ -72,7 +72,7 @@ foreach($outings_query as $key => $value) {
     </section>
     <!-- Participation section -->
     <section class="outing">
-      <h2 class="outing__title">Les sorties auxquelles je participe</h2>
+      <h2 class="outing__title">Les prochaines sorties auxquelles je participe</h2>
       <div class="outing__section">
         <article class="outing__article">
           <div class="outing__article__image">
@@ -93,7 +93,9 @@ $outings_participations = $wpdb->get_results(
     ON $wp_outings.`outing_id` = $wp_participations.`outing_id`
   INNER JOIN $wp_users
     ON $wp_users.`ID` = $wp_participations.`user_id`
-  WHERE $wp_users.`ID` = $id AND $wp_outings.`date` >= $currentDateTime",
+  WHERE $wp_users.`ID` = $id AND $wp_outings.`date` >= $currentDateTime
+  ORDER BY `date` ASC
+  LIMIT 3",
   ARRAY_A  
 );
 
