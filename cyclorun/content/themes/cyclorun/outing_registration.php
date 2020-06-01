@@ -1,6 +1,6 @@
 <?php
 
-require 'template-parts/outing-creation-form.php';
+require 'template-parts/outing_creation_form.php';
 
 //var_dump($_POST);
 $id = get_current_user_id();
@@ -67,6 +67,8 @@ else {
             'description' => $description
         )
     );
+
+    var_dump($wpdb);
     // header("Location: ");
     // exit;
 }
