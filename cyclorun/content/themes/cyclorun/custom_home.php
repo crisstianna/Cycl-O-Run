@@ -63,9 +63,9 @@ foreach($outings_query as $key => $value) {
     echo '<p class="outing__article__time">heure de rdv : ' . substr($value['time'], 0, -3) . '</p>';
     echo '<p class="outing__article__location">lieu de rdv : ' . $value['address'] . '</p>';
     echo '<p class="outing__article__distance">distance : ' . $value['distance'] . 'km</p>';
-    echo '<p class="outing__article__level">niveau : ' . $value['level'] . '</p>';
+    echo '<p class="outing__article__level">niveau : ' . getLevel($value['level'], $value['practiced_sport']) . '</p>';
     echo '<button class="outing__article__button" type="button">Etat de la sortie</button>';
-    echo '</div>';       
+    echo '</div>';    
 }
 
 ?>           
@@ -121,7 +121,7 @@ foreach ($outings_participations as $key => $currentValue) {
     echo '<p class="outing__article__time">heure de rdv : ' . substr($currentValue['time'], 0, -3) . '</p>';
     echo '<p class="outing__article__location">lieu de rdv : ' . $currentValue['address'] . '</p>';
     echo '<p class="outing__article__distance">distance : ' . $currentValue['distance'] . 'km</p>';
-    echo '<p class="outing__article__level">niveau : ' . $currentValue['level'] . '</p>';
+    echo '<p class="outing__article__level">niveau : ' . getLevel($currentValue['level'], $currentValue['practiced_sport']) . '</p>';
     foreach($numberParticipants as $key => $nbRows) {
       echo '<p class="outing__article__number-participants">nombre de participants : ' . $nbRows['COUNT(*)'] . '</p>';
     }    

@@ -5,7 +5,11 @@ Template Name: Participation Outing
 */
 
 require 'template-parts/participation-outing.php';
+?>        
 
+        <article class="outing__article">
+
+<?php
 $id = get_current_user_id();
 $postcodeId = get_user_meta($id, 'postcode');
 $department = substr($postcodeId[0], 0, -3);
@@ -18,7 +22,7 @@ $date = filter_input(INPUT_POST, 'date', FILTER_SANITIZE_NUMBER_FLOAT);
 // var_dump($level);
 // var_dump($date);
 
-function getOutingFilteredResults($practicedSport, $level, $date, $department) {
+/* function getOutingFilteredResults($practicedSport, $level, $date, $department) {
 
     global $wpdb;
     $wp_outings = $wpdb->prefix . 'outings';
@@ -64,7 +68,7 @@ function getOutingFilteredResults($practicedSport, $level, $date, $department) {
     else {
         return $wpdb->get_results($sql, ARRAY_A);
     }
-};
+}; */
 
 $results = getOutingFilteredResults($practicedSport, $level, $date, $department);
 
@@ -72,7 +76,6 @@ $results = getOutingFilteredResults($practicedSport, $level, $date, $department)
 
 foreach($results as $key => $filteredValue) : ?>
 
-        <article class="outing__article">
             <div class="outing__article__image">
                 <img class="outing__article__img" src="images/logo-o.png" alt="">
             </div>
@@ -81,7 +84,7 @@ foreach($results as $key => $filteredValue) : ?>
             <p class="outing__article__date"><?php echo date("d-m-Y", strtotime($filteredValue['date'])); ?></p>
             <p class="outing__article__time"><?php echo substr($filteredValue['time'], 0, -3); ?></p>
             <p class="outing__article__sport"><?php echo $filteredValue['practiced_sport']; ?></p>
-            <p class="outing__article__level"><?php echo $filteredValue['level']; ?></p>
+            <p class="outing__article__level"><?php getLevel($filteredValue['level'], $filteredValue['practiced_sport']); ?></p>
             <p class="outing__article__location"><?php echo $filteredValue['address']; ?></p>
             <p class="outing__article__distance"><?php echo $filteredValue['distance']; ?></p>
             <h4>Organisateur de la sortie</h4>
