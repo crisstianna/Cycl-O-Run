@@ -9,3 +9,16 @@ body {
 p {
     margin: 1rem;
 }
+
+a {
+    color: $dark;
+}
+
+a:hover{
+    color: $dark;
+    text-decoration: none;
+}
+
+a:visited{
+    color: $dark;
+}
