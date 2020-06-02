@@ -1,11 +1,18 @@
 <?php
 
+<<<<<<< HEAD:cyclorun/content/plugins/outing/inc/outing_registration.php
 
+=======
+/*
+Template Name: Outing Registration
+*/
+
+require 'template-parts/outing_creation_form.php';
+>>>>>>> Dev:cyclorun/content/themes/cyclorun/outing_registration.php
 
 //var_dump($_POST);
 $id = get_current_user_id();
-
-// TODO récupérer l'id de l'auteur et ajouter le textarea dans la table
+//var_dump($id);
 
 global $wpdb;
 
@@ -14,44 +21,23 @@ $address = filter_input(INPUT_POST, 'address');
 $date = filter_input(INPUT_POST, 'date', FILTER_SANITIZE_NUMBER_FLOAT);
 $time = filter_input(INPUT_POST, 'time');
 $distance = filter_input(INPUT_POST, 'distance', FILTER_SANITIZE_NUMBER_INT);
-$practicedSport = filter_input(INPUT_POST, 'practicedSport');
-$level = filter_input(INPUT_POST, 'level');
+$practicedSport = filter_input(INPUT_POST, 'practicedSport', FILTER_SANITIZE_NUMBER_INT);
+$level = filter_input(INPUT_POST, 'level', FILTER_SANITIZE_NUMBER_INT);
 $picture = filter_input(INPUT_POST, 'picture', FILTER_SANITIZE_URL);
 $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_SPECIAL_CHARS);
 
-//var_dump($description);
+//var_dump($practicedSport);
+//var_dump($level);
 
-$errors = [];
 
-
-if (empty($outingName)) {
-    $errors['outing_name'] = 'Veuillez entrer un nom pour votre sortie';
-}
-if (empty($address)) {
-    $errors['address'] = 'Veuillez entrer une adresse pour votre sortie';
-}    
-if (empty($date)) {
-    $errors['date'] = 'Veuillez renseigner la date de votre sortie';
-}
-if (empty($time)) {
-    $errors['time'] = 'Veuillez saisir l\'heure de rendez-vous pour votre sortie';
-}
-if (empty($distance)) {
-    $errors['distance'] = 'Veuillez entrer la distance prévue pour le parcours';
-}   
-if (empty($practicedSport)) {
-    $errors['practiced_sport'] = 'Veuillez choisir le type de sport pour la sortie';
-} 
-if (empty($level)) {
-    $errors['level'] = 'Veuillez sélectionner le niveau de votre sortie';
-}
-if (empty($picture)) {
-    // TODO $picture = 'A déterminer';
-}
-if (empty($description)) {
-    $errors['course'] = 'Veuillez donner une description du parcours';
+if (empty($outingName && $address && $date && $time && $distance && $practicedSport && $level)) {
+    echo 'Veuillez remplir tous les champs requis';
+    // todo : afficher la bordure rouge pour notifier les champs obligatoires
 }
 else {
+    if(empty($picture)) {
+        $picture = 'arbre.jpg';
+    }
     $wpdb->insert(
         $wpdb->prefix . 'outings',
         array(
@@ -67,6 +53,24 @@ else {
             'description' => $description
         )
     );
-    // header("Location: ");
-    // exit;
+
+    $outingId = $wpdb->insert_id;
+
+    if (!empty($id && $outingId)) {
+        $wpdb->insert(
+            $wpdb->prefix . 'participations',
+            array(
+                'user_id' => $id,
+                'outing_id' => $outingId
+            )
+        );
+    }
+
+    // todo : Afficher un message de succès pour l'utilisateur
+
+    // todo : redirection vers la page détails
+
+    
 }
+
+
