@@ -20,45 +20,44 @@ get_header();
             <input type="text" id="address" name="address" placeholder="Lieu du rendez-vous (ne pas oublier le code postal">
         </div>
         <div class="outing__practice">
-            <label for="running">Vélo</label>
-            <input type="radio" id="running" name="practicedSport" value="vélo">
+            <label for="cycling">Vélo</label>
+            <input type="radio" id="cycling" name="practicedSport" value="1">
                 <!-- Select à afficher uniquement si le bouton est coché - A voir en JS-->
                 <select class="form-control" name="level">
                     <option value="" selected>Niveau de la sortie</option>
-                    <option value="Loisirs (-15km)">Loisirs (-15km)</option>
-                    <option value="Régulier (15-30km)">Régulier (15-30km)</option>
-                    <option value="Avancé (30-60km)">Avancé (30-60km)</option>
-                    <option value="Intensif (+60km)">Intensif (+60km)</option>
+                    <option value="1">Loisirs (-15km)</option>
+                    <option value="2">Régulier (15-30km)</option>
+                    <option value="3">Avancé (30-60km)</option>
+                    <option value="4">Intensif (+60km)</option>
                 </select>
-            <label for="cycling">Course à pieds</label>
-            <input type="radio" id="cycling" name="practicedSport" value="course à pieds">
+            <label for="running">Course à pieds</label>
+            <input type="radio" id="running" name="practicedSport" value="2">
                 <!-- Select à afficher uniquement si le bouton est coché-->
                 <select class="form-control" name="level">
                     <option value="" selected>Niveau de la sortie</option>
-                    <option value="Loisirs (-5km)">Loisirs (-5km)</option>
-                    <option value="Régulier (5-10km)">Régulier (5-10km)</option>
-                    <option value="Avancé (10-50km)">Avancé (10-50km)</option>
-                    <option value="Intensif (+15km)">Intensif (+15km)</option>
+                    <option value="1">Loisirs (-5km)</option>
+                    <option value="2">Régulier (5-10km)</option>
+                    <option value="3">Avancé (10-15km)</option>
+                    <option value="4">Intensif (+15km)</option>
                 </select>
         </div>    
         <div class="outing__image">
             <label for="outing-image">Insérez ici l'image du parcours</label>
             <input type="file" id="image" name="picture" alt="image du parcours" src="">
         </div>
-        <!-- Le visuel du point de départ se verra uniquement sur la page détails de la course
-            <div class="outing__map">
-                <label for="outing-map">Insérez ici une map pour la sortie</label>
-            </div>     
-        -->
         <div class="outing__description">
-            <label for="description">Saisir la description de la sortie</label>
-            <textarea name="description" id="description" cols="30" rows="10"></textarea>
+            <label for="description">Description de la sortie</label>
+            <textarea name="description" id="description" cols="30" rows="10" placeholder=""></textarea>
         </div>
         <div class="outing__course">
         </div>
         <div class="outing__submit">
-            <input type="submit" value="valider la course">
+            <input type="submit" value="Valider la sortie">
         </div>
-    </form>    
+    </form>   
+    
+    <template class="last-outings">
+        
+    </template>
 </body>
 </html>

@@ -8,6 +8,7 @@
 
 get_header();
 
+
 if(! is_user_logged_in()){
   // retrieving the id of the custom home page
   $login = get_permalink(5);
@@ -54,6 +55,7 @@ $outings_query = $wpdb->get_results(
     $output = ARRAY_A   
 );
 
+
 foreach($outings_query as $key => $value) {
     echo '<div>';
     echo '<h3 class="outing__article__title">' . $value['outing_name'] . '</h3>';
@@ -61,9 +63,9 @@ foreach($outings_query as $key => $value) {
     echo '<p class="outing__article__time">heure de rdv : ' . substr($value['time'], 0, -3) . '</p>';
     echo '<p class="outing__article__location">lieu de rdv : ' . $value['address'] . '</p>';
     echo '<p class="outing__article__distance">distance : ' . $value['distance'] . 'km</p>';
-    echo '<p class="outing__article__level">niveau : ' . $value['level'] . '</p>';
+    echo '<p class="outing__article__level">niveau : ' . getLevel($value['level'], $value['practiced_sport']) . '</p>';
     echo '<button class="outing__article__button" type="button">Etat de la sortie</button>';
-    echo '</div>';       
+    echo '</div>';    
 }
 
 ?>           
@@ -72,7 +74,7 @@ foreach($outings_query as $key => $value) {
     </section>
     <!-- Participation section -->
     <section class="outing">
-      <h2 class="outing__title">Les sorties auxquelles je participe</h2>
+      <h2 class="outing__title">Les prochaines sorties auxquelles je participe</h2>
       <div class="outing__section">
         <article class="outing__article">
           <div class="outing__article__image">
@@ -93,7 +95,9 @@ $outings_participations = $wpdb->get_results(
     ON $wp_outings.`outing_id` = $wp_participations.`outing_id`
   INNER JOIN $wp_users
     ON $wp_users.`ID` = $wp_participations.`user_id`
-  WHERE $wp_users.`ID` = $id AND $wp_outings.`date` >= $currentDateTime",
+  WHERE $wp_users.`ID` = $id AND $wp_outings.`date` >= $currentDateTime
+  ORDER BY `date` ASC
+  LIMIT 3",
   ARRAY_A  
 );
 
@@ -117,7 +121,7 @@ foreach ($outings_participations as $key => $currentValue) {
     echo '<p class="outing__article__time">heure de rdv : ' . substr($currentValue['time'], 0, -3) . '</p>';
     echo '<p class="outing__article__location">lieu de rdv : ' . $currentValue['address'] . '</p>';
     echo '<p class="outing__article__distance">distance : ' . $currentValue['distance'] . 'km</p>';
-    echo '<p class="outing__article__level">niveau : ' . $currentValue['level'] . '</p>';
+    echo '<p class="outing__article__level">niveau : ' . getLevel($currentValue['level'], $currentValue['practiced_sport']) . '</p>';
     foreach($numberParticipants as $key => $nbRows) {
       echo '<p class="outing__article__number-participants">nombre de participants : ' . $nbRows['COUNT(*)'] . '</p>';
     }    
