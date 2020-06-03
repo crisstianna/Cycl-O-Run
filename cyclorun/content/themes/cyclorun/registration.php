@@ -51,9 +51,7 @@ $profile_pic_img =  wp_get_attachment_image( $attachment_id, array('700', '600')
                 <div class="form-control">
                 <label class="inscription__form__label__birthdate" for="birthdate">Date de naissance</label>
                 <div class="birthdate">
-                    <input class="inscription__form__input__birthdate" type="text" name="day_birth" id="day_birth" value="<?php echo $existing_daybirth; ?>" placeholder="JJ"/>
-                    <input class="inscription__form__input__birthdate" type="text" name="month_birth" id="month_birth" value="<?php echo $existing_monthbirth; ?>" placeholder="MM"/>
-                    <input class="inscription__form__input__birthdate" type="text" name="year_birth" id="year_birth" value="<?php echo $existing_yearbirth; ?>" placeholder="AAAA"/>
+                    <input class="inscription__form__input__birthdate" type="date" name="birthdate" id="birthdate" value=""/>
                 </div>
                 <i class="fa fa-check-circle"></i>
                 <i class="fa fa-exclamation-circle"></i>

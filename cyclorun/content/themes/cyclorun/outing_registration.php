@@ -69,4 +69,7 @@ else {
     
 }
 
+get_footer();
+
+
 

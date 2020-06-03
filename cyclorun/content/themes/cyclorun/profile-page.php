@@ -77,8 +77,10 @@ if(empty($sport[0])) {
 
 ?>
                 <img class="profile__infos__sports__practice__svg" src="images/Cycling.svg" alt="">
+                <img src="https://img.icons8.com/metro/26/000000/cycling-track.png"/> <!-- j'ai trouvé ces icônes que nous pourrions ettre à la place de fichiers images non ?-->
 
                 <img class="profile__infos__sports__practice__svg" src="images/Running.svg" alt="">
+                <img src="https://img.icons8.com/android/24/000000/running.png"/>
           </div>
         </div>
     </div>
@@ -111,7 +113,11 @@ $outingUserAuthor = $wpdb->get_results(
             <div class="profile__outings_created__content">
                 <?php foreach($outingUserAuthor as $key => $currentouting) : ?>
                     <div>  <!-- en liste ça pourrait être pas mal + lien vers la page détail-->
-                        <img src="" alt="logo vélo ou running">  
+                    <?php if($currentouting['practiced_sport'] == 1) : ?>
+                        <img src="https://img.icons8.com/metro/26/000000/cycling-track.png"/>
+                    <?php else : ?>
+                        <img src="https://img.icons8.com/android/24/000000/running.png"/>
+                    <?php endif; ?>
                         <p><strong><?php echo $currentouting['outing_name']; ?></strong></p>
                         <p> prévue le <?php echo date("d-m-Y", strtotime($currentouting['date'])); ?></p>
                         <p> à <?php echo substr($currentouting['time'], 0, -3); ?></p>
@@ -144,7 +150,11 @@ $outingUserParticipant = $wpdb->get_results(
             <div class="profile__outings_future__content">
                 <?php foreach($outingUserParticipant as $index => $currentParticipation) : ?>
                     <div>  <!-- en liste ça pourrait être pas mal + lien vers la page détail-->
-                        <img src="" alt="logo vélo ou running">  
+                    <?php if($currentouting['practiced_sport'] == 1) : ?>
+                        <img src="https://img.icons8.com/metro/26/000000/cycling-track.png"/>
+                    <?php else : ?>
+                        <img src="https://img.icons8.com/android/24/000000/running.png"/>
+                    <?php endif; ?>  
                         <p><strong><?php echo $currentParticipation['outing_name']; ?></strong></p>
                         <p> prévue le <?php echo date("d-m-Y", strtotime($currentParticipation['date'])); ?></p>
                         <p> à <?php echo substr($currentParticipation['time'], 0, -3); ?></p>

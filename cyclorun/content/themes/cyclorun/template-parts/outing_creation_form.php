@@ -54,10 +54,4 @@ get_header();
         <div class="outing__submit">
             <input type="submit" value="Valider la sortie">
         </div>
-    </form>   
-    
-    <template class="last-outings">
-        
-    </template>
-</body>
-</html>
+    </form>
