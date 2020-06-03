@@ -1,9 +1,12 @@
 <?php
 
+<<<<<<< HEAD
+=======
 /*
 Template Name: Outing Registration
 */
 
+>>>>>>> 0c79283dbcf43434709a6a86eb6082cca17d6558
 require 'template-parts/outing_creation_form.php';
 
 //var_dump($_POST);
@@ -50,6 +53,12 @@ else {
         )
     );
 
+<<<<<<< HEAD
+    var_dump($wpdb);
+    // header("Location: ");
+    // exit;
+}
+=======
     $outingId = $wpdb->insert_id;
 
     if (!empty($id && $outingId)) {
@@ -70,3 +79,4 @@ else {
 }
 
 
+>>>>>>> 0c79283dbcf43434709a6a86eb6082cca17d6558

@@ -1,0 +1,91 @@
+.details{
+    padding: $gutter-large-very;
+
+    &__header{
+        padding-bottom: $gutter-large-very;
+
+        &__img{
+            display: block;
+            max-width: 10%;
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: $gutter-large-very;
+        }
+
+        &__title{
+            text-align: center;
+            padding-bottom: $gutter-large-very;
+        }
+    }
+
+    &__content{
+        display: flex;
+
+        &__informations{
+            &__date{
+                margin-bottom: $gutter-large-very;
+            }
+
+            &__author{
+                margin-bottom: $gutter-large-very;
+
+                &__title{
+                    margin-bottom: $gutter-large;
+                }
+
+                &__img{
+                    max-width: 5%;
+                    float: left;
+                }
+            }
+
+            &__practice{
+                display: flex;
+                justify-content: space-around;
+                padding-bottom: $gutter-large-very;
+                margin-top: $gutter-large-very;
+
+                &__div{
+                    margin-left:$gutter-large-very*2;
+
+                    &__svg{
+                        width: 3%;
+                    }
+                }
+            }
+
+            &__level{
+                margin-right: $gutter-large-very*2;
+            }
+
+            &__rdv{
+                margin-bottom: $gutter-large;
+            }
+
+            &__description{
+
+                &__text{
+                    max-width: 80%;
+                }
+            }
+        }
+
+        &__map{
+            float: right;
+
+            &__button{
+                background-color: $blueduck;
+                border-radius: $font-size-s;
+                font-size: $font-size-default*1.5;
+                display: block;
+                margin-top: $gutter-large-very*2;
+                margin-left: auto;
+                margin-right: auto;
+
+                &__content{
+                    color: $ligthgrey;
+                }
+            }
+        }
+    }
+}
