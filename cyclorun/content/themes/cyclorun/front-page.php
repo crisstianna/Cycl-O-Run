@@ -4,17 +4,8 @@
 get_header();
 
 
-
 ?>
 
-
-<!--
-<header class="header">
-    <nav class="navbar navbar-expand-lg">
-      <a class="navbar-brand" href="#"><img src="images/logo-lightgrey.png" alt=""></a>
-      <button type="button" class="btn btn-dark connexion-button"><a href="" Connexion</button>
-    </nav>
-</header>-->
 
   <main class="main">
     <div class="right"></div>
