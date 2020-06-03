@@ -4,7 +4,6 @@
 # Any changes to the directives between these markers will be overwritten.
 <IfModule mod_rewrite.c>
 RewriteEngine On
-<<<<<<< HEAD
 RewriteBase /Projets/projet-cycl-o-run/cyclorun/
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
@@ -12,12 +11,4 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /Projets/projet-cycl-o-run/cyclorun/index.php [L]
 </IfModule>
 
-=======
-RewriteBase /projet-cycl-o-run/cyclorun/
-RewriteRule ^index\.php$ - [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /projet-cycl-o-run/cyclorun/index.php [L]
-</IfModule>
->>>>>>> Dev
 # END WordPress
