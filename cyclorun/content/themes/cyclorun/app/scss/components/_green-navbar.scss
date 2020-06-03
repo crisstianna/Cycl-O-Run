@@ -3,15 +3,16 @@
     display: flex;
     justify-content: space-between;
 
-    &__item{
-        color: $dark;
-    }
+    &__link{
+        color: $ligthgrey;
 
-    &__item__is-active{
-        color: $blueduck;
-        border-bottom: $font-size-s/3 solid $blueduck ;
+        &:visited{
+            color: $ligthgrey;
+        }
     }
 }
+
+
 
 .authentified{
     border-bottom: $font-size-s/3 solid $blueduck;

@@ -1,0 +1,14 @@
+.profile{
+    background-color: red($color: #000000);
+    &__infos{
+        &__sports{
+            &__practice{
+                &__svg{
+                    width: 3rem;;
+                }
+                
+            }
+        }
+    }
+}
+

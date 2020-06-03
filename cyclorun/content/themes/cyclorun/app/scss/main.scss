@@ -12,10 +12,15 @@
     'layout/main';
 
 @import
+    'components/participation-outing-page',
+    'components/outing-details-page',
+    'components/profile-page',
     'components/outing-article',
+    'components/outing-registration',
     'components/connexion-form',
     'components/inscription-form',
-    'components/navbar',
+    'components/green-navbar',
+    'components/grey-navbar',
     'components/welcome-message',
     'components/welcome-submessage';
 
