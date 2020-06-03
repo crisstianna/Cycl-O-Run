@@ -104,7 +104,7 @@ foreach($results as $key => $filteredValue) { ?>
                 </ul>    
         
                 
-                <a class="outing__article__button"type="button" href="<?php echo get_permalink(74); ?>"value ="<?php echo $filteredValue['outing_id']; ?>">Détails de la sortie</a>
+                <a class="outing__article__button"type="button" href="<?php echo get_permalink(74); ?>" value ="<?php echo $filteredValue['outing_id']; ?>">Détails de la sortie</a>
                 <form action="" method="post">
                     <input type="hidden" id="userId" name="userId" value="<?php echo $id; ?>">
                     <input type="hidden" id="outingId" name="outingId" value="<?php echo $filteredValue['outing_id']; ?>">
