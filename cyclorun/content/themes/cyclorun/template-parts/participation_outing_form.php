@@ -8,12 +8,13 @@ if(! is_user_logged_in()){
     $login = get_permalink(5);
     //automatic redirection
     header("Location: $login");
-  }
+}
 
 ?>
 
 <body>
     <h1>Les sorties organisées</h1>
+    <!-- Form to apply filters -->
     <form class="outing-filters" action="" method="post">
         <section class="filter-outing">
             <p>Filtrer par ...</p>
