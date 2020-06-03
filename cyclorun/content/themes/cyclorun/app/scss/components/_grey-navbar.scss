@@ -1,0 +1,28 @@
+.menu{
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+   
+}
+
+.menu-list{
+    width: 75%;
+    padding-top: 2.5rem;
+}
+
+.menu-item{
+    margin-right: 1.5rem;
+    color: $dark;
+}
+
+.current-menu-item{
+    color: $blueduck;
+    border-bottom: $font-size-s/3 solid $blueduck ;
+}
+
+
+
+.authentified{
+    background-color: $ligthgrey;
+    border-bottom: $font-size-s/3 solid $blueduck;
+}
