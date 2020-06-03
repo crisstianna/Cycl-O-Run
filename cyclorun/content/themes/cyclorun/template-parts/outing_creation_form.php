@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 <?php
 get_header();
 ?>
@@ -63,4 +61,3 @@ get_header();
     </template>
 </body>
 </html>
->>>>>>> Dev

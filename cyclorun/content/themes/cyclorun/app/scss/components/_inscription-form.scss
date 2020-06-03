@@ -11,13 +11,8 @@
         color: $ligthgrey;
     }
 
-    &__form{
-        background-color: $ligthgrey;
-        display: flex;
-        width: 60%;
-        margin: auto;
-        border: 1px solid $dark;
-        border-radius: $font-size-default;
+    
+        
 
         &__selects{
             display: flex;
@@ -71,7 +66,7 @@
             }
         }
     }
-}
+
 
 
 

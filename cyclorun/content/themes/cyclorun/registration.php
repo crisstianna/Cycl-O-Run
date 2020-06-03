@@ -31,45 +31,104 @@ $profile_pic_img =  wp_get_attachment_image( $attachment_id, array('700', '600')
             <div class="inscription__form__subsection__left">
                 <label class="inscription__form__label__title" for="form-group-connexion-infos">Mes Informations de connexion</label>
                 
+                <div class="form-control ">
+                <label>Nom</label>
                 <input class="inscription__form__input" type="text" name="first_name" id="first_name" value="<?php echo $existing_firstname; ?>" placeholder="Prénom"/>
+                <i class="fa fa-check-circle"></i>
+                <i class="fa fa-exclamation-circle"></i>
+                <small>Error Message</small>
+                </div>
                 
-                
+                <div class="form-control error">
+                    <label>Prenom</label>
                 <input class="inscription__form__input" type="text" name="last_name" id="last_name" value="<?php echo $existing_lastname; ?>" placeholder="Nom"/>
+                <i class="fa fa-check-circle"></i>
+                <i class="fa fa-exclamation-circle"></i>
+                <small>Error Message</small>
+                </div>
+                </div>
                 
+                <div class="form-control">
                 <label class="inscription__form__label__birthdate" for="birthdate">Date de naissance</label>
                 <div class="birthdate">
                     <input class="inscription__form__input__birthdate" type="text" name="day_birth" id="day_birth" value="<?php echo $existing_daybirth; ?>" placeholder="JJ"/>
                     <input class="inscription__form__input__birthdate" type="text" name="month_birth" id="month_birth" value="<?php echo $existing_monthbirth; ?>" placeholder="MM"/>
                     <input class="inscription__form__input__birthdate" type="text" name="year_birth" id="year_birth" value="<?php echo $existing_yearbirth; ?>" placeholder="AAAA"/>
                 </div>
-
+                <i class="fa fa-check-circle"></i>
+                <i class="fa fa-exclamation-circle"></i>
+                <small>Error Message</small>
+                </div>
+                </div>
+                
+                <div class="from-control">
                 <div class="existing-prof-pic-cont"><?php echo $profile_pic_img; ?></div>
-                <label class="inscription__form__label" for="user_profile_pic">Avatar
+                <label class="inscription__form__label" for="user_profile_pic">Avatar</label>
                     <input type="file" name="user_profile_pic" id="user_profile_pic" />
-                </label>
-                <label class="inscription__form__label" for="email">Adresse Email
+                
+                <i class="fa fa-check-circle"></i>
+                <i class="fa fa-exclamation-circle"></i>
+                <small>Error Message</small>
+                </div>
+
+                <div class="form-control">
+                <label class="inscription__form__label" for="email">Adresse Email</label>
                     <input class="inscription__form__input" type="email" name="email" id="email" value="<?php echo $existing_email; ?>"/>
-                </label>
-                <label class="inscription__form__label" for="password"> Mot de Passe
+                
+                <i class="fa fa-check-circle"></i>
+                <i class="fa fa-exclamation-circle"></i>
+                <small>Error Message</small>
+                </div>
+
+                <div class="form-control">
+                <label class="inscription__form__label" for="password"> Mot de Passe</label>
                     <input class="inscription__form__input" type="password" name="password" id="password"/>  
-                </label>
-                <label class="inscription__form__label" for="password_confimation"> Confirmation du mot de passe
+                
+                <i class="fa fa-check-circle"></i>
+                <i class="fa fa-exclamation-circle"></i>
+                <small>Error Message</small>
+                </div>
+
+                <div class="form-control">
+                <label class="inscription__form__label" for="password_confimation"> Confirmation du mot de passe</label>
                     <input class="inscription__form__input" type="password" name="password_confirmation" id="password_confirmation"/>
-                </label>
-                <label class="inscription__form__label" for="address"> Adresse Postale
+                
+                <i class="fa fa-check-circle"></i>
+                <i class="fa fa-exclamation-circle"></i>
+                <small>Error Message</small>
+                </div>
+
+                <div class="form-control">
+                <label class="inscription__form__label" for="address"> Adresse Postale</label>
                     <textarea class="inscription__form__input" name="address" id="address" value="<?php echo $existing_address; ?>"></textarea>
-                </label>
-                <label class="inscription__form__label" for="postcode"> Code Postal
+                
+                <i class="fa fa-check-circle"></i>
+                <i class="fa fa-exclamation-circle"></i>
+                <small>Error Message</small>
+                </div>
+
+                <div class="form-control">
+                <label class="inscription__form__label" for="postcode"> Code Postal</label>
                     <input class="inscription__form__input" type="text" name="postcode" id="postcode" value="<?php echo $existing_postcode; ?>"/>
-                </label>
-                <label class="inscription__form__label" for="city"> Ville
+                
+                <i class="fa fa-check-circle"></i>
+                <i class="fa fa-exclamation-circle"></i>
+                <small>Error Message</small>
+                </div>
+
+                <div class="form-control">
+                <label class="inscription__form__label" for="city"> Ville</label>
                     <input class="inscription__form__input" type="text" name="city" id="city" value="<?php echo $existing_city; ?>"/>
-                </label>
+                
+                <i class="fa fa-check-circle"></i>
+                <i class="fa fa-exclamation-circle"></i>
+                <small>Error Message</small>
+                </div>
             </div>
             <div class="form__subsection">
                 <label class="inscription__form__label__title form-group sport-profile" for="form-group-sport-profile">Mon Profil Sportif</label>
                 <div class="inscription__form__selects">
-                    <div class="custom-control custom-switch inscription__form__select">
+                    <div class="custom-control control-form custom-switch inscription__form__select">
                         <input class="inscription__form__input custom-control-input" type="checkbox" name="cycling" value="cycling" id="cycling">
                         <label class="inscription__form__label custom-control-label" for="cycling">Vélo</label>
                         <label class="inscription__form__label mr-sm-2 sr-only" for="cycling-level">Mon Niveau</label>
@@ -80,9 +139,12 @@ $profile_pic_img =  wp_get_attachment_image( $attachment_id, array('700', '600')
                                 <option value="avance">Avancé (30-60 km)</option>
                                 <option value="intensif">Intensif (+60 km)</option>
                             </select>
+                            <i class="fa fa-check-circle"></i>
+                            <i class="fa fa-exclamation-circle"></i>
+                            <small>Error Message</small>
                         
                     </div>
-                    <div class="custom-control custom-switch inscription__form__select">
+                    <div class="custom-controlcontrol-form custom-switch inscription__form__select">
                         <input class="inscription__form__input custom-control-input" type="checkbox" name="running" value="running" id="running">
                         <label class="inscription__form__label custom-control-label" for="running">Running</label>
                         <label class="inscription__form__label mr-sm-2 sr-only" for="running_level">Mon Niveau </label>
@@ -130,35 +192,7 @@ if ( ! function_exists( 'wf_insert_update_user_meta' ) ) {
         }
     }
 }
-if ( ! function_exists( 'wf_create_update_user_post' ) ) {
-    function wf_create_update_user_post( $user_id, $user_display_name, $post_status ) {
-        $post_id = get_user_meta( $user_id, 'user_custom_post', true );
-        if ( $post_id ) {
-            // The custom post already exists , we just update .
-            $my_post = array(
-                'ID'           => $post_id,
-                'post_title'   => sanitize_text_field( $user_display_name ),
-                'post_status'   => $post_status,
-                'post_content'   => '',
-                'post_name' => sanitize_text_field( $user_display_name )
-            );
-            wp_update_post( $my_post, false );
-        } else {
-            // Custom post does not exist for this user
-            $my_post = array(
-                'post_author' => $user_id,
-                'post_title'   => sanitize_text_field( $user_display_name ),
-                'post_status'   => 'pending',
-                'post_content'   => 'test',
-                'post_name' => sanitize_text_field( $user_display_name ),
-                'post_type' => 'post'
-            );
-            $post_id = wp_insert_post( $my_post ); // It will return the new inserted $post_id
-            $meta_existed = wf_insert_update_user_meta( $user_id, 'user_custom_post', $post_id );
-        }
-        return $post_id;
-    }
-}
+
 if ( ! function_exists( 'wf_move_attach_to_upload_dir' ) ) {
     /**
      * Uses wordpress function wp_handle_upload() to move the uploaded file into
@@ -249,34 +283,7 @@ if ( ! function_exists( 'wf_update_post_with_attach' ) ) {
         require_once( ABSPATH . 'wp-admin/includes/image.php' );
     }
 }
-if ( ! function_exists( 'wf_handle_profile_media' ) ) {
-    /**
-     * Handles media upload.
-     * Checks if the media is uploaded, uses custom functions to move the media to WordPress uploads directory,
-     * deletes previous uploaded media from uploads dir and the attachment post and creates/updates the new one.
-     *
-     * @param {int} $post_id Post Id.
-     * @param {int} $user_id User Id.
-     */
-    function wf_handle_profile_media( $post_id, $user_id ) {
-        if( ! empty( $_FILES ) ){
-            // Profile Pic
-            if ( ! empty( $_FILES['user_profile_pic'] ) ) {
-                $inserted_file_obj = wf_save_profile_media( 'user_profile_pic' );
-                $file_path = ( ! empty( $inserted_file_obj ) ) ? $inserted_file_obj['file'] : '';
-                // If any new file is inserted only then add the file path.
-                if ( ! empty( $file_path ) ) {
-                    // Get existing attach post id for this user first, delete img from the uploads folder and the existing post attach from wp_posts and then save the new one.
-//                  unlink( $file_path);
-                    $profile_attach_post_id = ( get_user_meta( $user_id, 'user_prfl_img_post_id', true ) ) ? get_user_meta( $user_id, 'user_prfl_img_post_id', true ) : '';
-                    wp_delete_post( $profile_attach_post_id, true );
-                    wf_update_post_with_attach( $file_path, $post_id, $user_id, 'profile-pic' );
-                }
-            }
-        }
-        unset( $_FILES );
-    }
-}
+
 // If the form is submitted
 if ( isset( $_POST['submit'] ) ) {
     // Get form values.
@@ -341,12 +348,7 @@ if ( isset( $_POST['submit'] ) ) {
         wf_insert_update_user_meta($new_user_id, 'running_level', $runninglevel );
     }
 
-    // Get current username.
-    $user_display_name = wp_get_current_user()->display_name;
-    // Create or update post for the current user and get the new/existing post id.
-    $post_id = wf_create_update_user_post( $user_id, $user_display_name, 'pending' );
-    // Update/upload media/attachment.
-    wf_handle_profile_media( $post_id, $user_id );
+    
     // Once everything is done redirect the user back to the same page
     $location =  get_bloginfo('url') . '/login/';
     wp_safe_redirect( $location );
