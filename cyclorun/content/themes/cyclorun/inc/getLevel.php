@@ -28,12 +28,12 @@ if (!function_exists('getLevel')) {
                 $level = 'Régulier (5-10km)';
             }
             else if ($idLevel === '3') {
-                $level = 'Avancé (10-50km)';
+                $level = 'Avancé (10-15km)';
             }
             else if ($idLevel === '4') {
                 $level = 'Avancé (+15km)';
             }
-        } 
+        }
         echo $level;       
     }
 }
