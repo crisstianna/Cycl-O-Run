@@ -55,8 +55,8 @@ $outings_query = $wpdb->get_results(
     $output = ARRAY_A   
 );
 
-
-foreach($outings_query as $key => $value) {
+if(!empty($outings_query){
+  foreach($outings_query as $key => $value) {
     echo '<div>';
     echo '<h3 class="outing__article__title">' . $value['outing_name'] . '</h3>';
     echo '<p class="outing__article__date">date : ' . date("d-m-Y", strtotime($value['date'])) . '</p>';
@@ -65,8 +65,20 @@ foreach($outings_query as $key => $value) {
     echo '<p class="outing__article__distance">distance : ' . $value['distance'] . 'km</p>';
     echo '<p class="outing__article__level">niveau : ' . getLevel($value['level'], $value['practiced_sport']) . '</p>';
     echo '<button class="outing__article__button" type="button">Etat de la sortie</button>';
-    echo '</div>';    
+    echo '</div>';
+
 }
+  foreach($outings_query as $key => $value) {
+      echo '<div>';
+      echo '<h3 class="outing__article__title">' . $value['outing_name'] . '</h3>';
+      echo '<p class="outing__article__date">date : ' . date("d-m-Y", strtotime($value['date'])) . '</p>';
+      echo '<p class="outing__article__time">heure de rdv : ' . substr($value['time'], 0, -3) . '</p>';
+      echo '<p class="outing__article__location">lieu de rdv : ' . $value['address'] . '</p>';
+      echo '<p class="outing__article__distance">distance : ' . $value['distance'] . 'km</p>';
+      echo '<p class="outing__article__level">niveau : ' . getLevel($value['level'], $value['practiced_sport']) . '</p>';
+      echo '<button class="outing__article__button" type="button">Etat de la sortie</button>';
+      echo '</div>';    
+  }
 
 ?>           
         </article>        

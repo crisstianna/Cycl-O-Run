@@ -100,7 +100,7 @@ let config = {
     hot: true,
     watchContentBase: true,
     port: 3100,
-    host: '0.0.0.0',
+    host: 'localhost',
     before: function(app, server) {
       // Gestion manuelle de la recharge tous les websockets de watching à la modification des fichiers HTML à l'aide de chokidar
       chokidar.watch([
@@ -136,7 +136,7 @@ const plugins = [
   new webpack.HotModuleReplacementPlugin(),
   new BrowserSyncPlugin(
     {
-      host: '0.0.0.0',
+      host: 'localhost',
       port: 3000,
       proxy: 'http://localhost:3100/',
       open: 'external',
