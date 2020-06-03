@@ -1,9 +1,12 @@
 <?php
 
+<<<<<<< HEAD
+=======
 /*
 Template Name: Outing Registration
 */
 
+>>>>>>> 0c79283dbcf43434709a6a86eb6082cca17d6558
 require 'template-parts/outing_creation_form.php';
 
 //var_dump($_POST);

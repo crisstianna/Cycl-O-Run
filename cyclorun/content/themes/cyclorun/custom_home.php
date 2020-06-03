@@ -103,7 +103,7 @@ $outings_participations = $wpdb->get_results(
 
 //var_dump($outings_participations);
 
-foreach ($outings_participations as $key => $currentValue) {
+foreach ($outings_participations as $index => $currentValue) {
 
   $currentOutingId = $currentValue['outing_id'];
   //var_dump($currentOutingId);
