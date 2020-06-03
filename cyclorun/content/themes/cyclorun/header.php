@@ -8,18 +8,30 @@
 <body>
 
 <header class="header">
-    <nav class="navbar authentified navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="<?php echo get_permalink(7); ?>"><img class="logo" src=" <?= get_stylesheet_directory_uri() .'/public/images/logo-complet.png';?>" alt=""></a>
-      <a class="navbar__item__is-active" href="<?php echo get_permalink(7); ?>">Home</a>
-      <a class="navbar__item" href="#">Profil</a>
-      <a class="navbar__item" href="<?php echo get_permalink(40); ?>">Participer à une sortie</a>
-      <a class="navbar__item" href="<?php echo get_permalink(16); ?>">Organiser une sortie</a>
-      <?php if(is_user_logged_in()): ?>
-         <button type="logout-button" class="btn"><?= wp_loginout(home_url());?></button>
-      <?php  else: ?>
-        <button type="button" class="btn btn-dark connexion-button"><a href="<?= get_bloginfo('url') . '/login/' ?>">Connexion</a></button>
-       <?php endif; ?>
-    
+    <?php if(is_user_logged_in()): ?>
+      <nav class="menu authentified navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="<?= get_bloginfo('url') . '/custom-home/' ?>""><img class="logo" src="<?= get_stylesheet_directory_uri(). '/public/images/logo-complet.png'?>" alt=""></a>
+      <?php
 
-    </nav>
+        $args = [
+          'menu' => 'Menu de Navigation Login',
+          'container_class' => 'menu-list'
+        ];
+    
+      
+        wp_nav_menu($args);
+       ?>
+        <button type="button" class="btn"><a href="<?= wp_logout_url(home_url()) ?>">Déconnexion</a></button>
+      </nav>
+    
+    <?php else : ?>
+      <nav class="navbar navbar-expand-lg">
+        <a class="navbar__brand" href="<?php home_url() ?>"><img src="<?= get_stylesheet_directory_uri(). '/public/images/logo-lightgrey.png'?>" alt=""></a>
+        <button type="button" class="btn btn-dark navbar__button"><a class="navbar__link" href="<?= get_bloginfo('url') . '/login/' ?>">Connexion</a></button>
+      </nav>
+    <?php endif; ?>
+
+
+
+
 </header>
