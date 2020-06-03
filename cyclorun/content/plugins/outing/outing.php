@@ -18,6 +18,7 @@ require plugin_dir_path(__FILE__) . 'inc/Outing_cpt.php';
 
 
 
+
 $customTables = new CustomTablesInstall();
 $outingCpt = new Outing_cpt();
 

@@ -7,33 +7,27 @@ Version: 1.0
 Author: Cristiana
 */
 
-if (!defined('WPINC')){
-    die;
-}
 
-
-register_activation_hook( __FILE__, 'crudOutingTable');
-function crudOutingTable() {
+register_activation_hook( __FILE__, 'crudOperationsTable');
+function crudOperationsTable() {
   global $wpdb;
   $charset_collate = $wpdb->get_charset_collate();
-  $table_name = $wpdb->prefix . 'outing';
-  $sql = "CREATE TABLE IF NOT EXISTS `{$wpdb->base_prefix}outing` (        
-    `id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT,
-    `outing_name` varchar(64) NOT NULL,
-    `author` varchar(64) NOT NULL,
-    `address` varchar(255) NOT NULL,
-    `lat` float(10.6) NOT NULL,
-    `long` float(10.6) NOT NULL,
-    `level` int(6) UNSIGNED NOT NULL,
-    `date` DATE NOT NULL,
-    `time` TIME NOT NULL,
-    `distance` int(6) NOT NULL,
-    `practiced_sport` int(6) NOT NULL,
-    `picture` varchar(255),
-    `course` varchar(255) NOT NULL,
-  
-    PRIMARY KEY  (`id`)
-
+  $table_name = $wpdb->prefix . 'outings';
+  $sql = "CREATE TABLE `$table_name` (
+      `outing_id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+      `outing_name` varchar(64) NOT NULL,
+      `author` varchar(64) NOT NULL,
+       `address` varchar(255) NOT NULL,
+      `level` varchar(64) NOT NULL,
+      `date` DATE NOT NULL,
+      `time` TIME NOT NULL,
+      `distance` int(6) NOT NULL,
+      `practiced_sport` varchar(64) NOT NULL,
+      `picture` varchar(255),
+      `description` varchar(255),
+      `created_at` TIMESTAMP NOT NULL,
+      `updated_at` TIMESTAMP NOT NULL,
+      PRIMARY KEY  (`outing_id`)
   ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
   ";
   if ($wpdb->get_var("SHOW TABLES LIKE '$table_name'") != $table_name) {
@@ -46,179 +40,80 @@ function addAdminPageContent() {
   add_menu_page('CRUD', 'CRUD', 'manage_options' ,__FILE__, 'crudAdminPage', 'dashicons-wordpress');
 }
 function crudAdminPage() {
-  global $wpdb;
-  $table_name = $wpdb->prefix . 'outing';
-  if (isset($_POST['newsubmit'])) {
-   
-    $outing_name = $_POST['outing_name'];
-    $author = $_POST['author'];
-    $address = $_POST['address'];
-    $lat = $_POST['lat'];
-    $long= $_POST['long'];
-    $level = $_POST['level'];
-    $date = $_POST['date'];
-    $time = $_POST['time'];
-    $distance = $_POST['distance'];
-    $practiced_sport = $_POST['practiced_sport'];
-    $picture = $_POST['picture'];
-    $course = $_POST['course'];
-    
-    
-
-
-    $wpdb->query("INSERT INTO $table_name(outing_name,author,address,lat,long,level,date,time,distance,practiced_sport,picture,course,user_id,created_at,updated_at) VALUES('$outing_name','$author','$address', '$lat', '$long', '$level', '$date', '$time', '$distance', '$practiced_sport', '$picture', '$course')");
-    echo "<script>location.replace('admin.php?page=outing2.php%2Fouting2.php');</script>";
-  }
-  if (isset($_POST['uptsubmit'])) {
-    $id = $_POST['uptid'];
-    $outing_name = $_POST['uptouting_name'];
-    $author = $_POST['uptauthor'];
-    $address = $_POST['uptaddress'];
-    $lat = $_POST['uptlat'];
-    $long = $_POST['uptlong'];
-    $level = $_POST['uptlevel'];
-    $date = $_POST['uptdate'];
-    $time = $_POST['upttime'];
-    $distance= $_POST['uptdistance'];
-    $practiced_sport = $_POST['uptpracticed_sport'];
-    $picture= $_POST['uptpicture'];
-    $course = $_POST['uptcourse'];
-    
-    
-    $wpdb->query("UPDATE $table_name SET outing_name='$outing_name', author='$author', address='$address', lat='$lat', long='$long', level=''$level, date='$date', time='$time', distance='$distance', practiced_sport='$practiced_sport', picture='$picture', course='$course' WHERE user_id='$id'");
-    echo "<script>location.replace('admin.php?page=outing2.php%2Fouting2.php');</script>";
-  }
-  if (isset($_GET['del'])) {
-    $del_id = $_GET['del'];
-    $wpdb->query("DELETE FROM $table_name WHERE user_id='$del_id'");
-    echo "<script>location.replace('admin.php?page=outing2.php%2Fouting2.php');</script>";
-  }
-  ?>
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'outings';
+    if (isset($_POST['submit'])) {
+        $outingName = filter_input(INPUT_POST, 'outing_name');
+        $address = filter_input(INPUT_POST, 'address');
+        $date = filter_input(INPUT_POST, 'date', FILTER_SANITIZE_NUMBER_FLOAT);
+        $time = filter_input(INPUT_POST, 'time');
+        $distance = filter_input(INPUT_POST, 'distance', FILTER_SANITIZE_NUMBER_INT);
+        $practicedSport = filter_input(INPUT_POST, 'practicedSport');
+        $level = filter_input(INPUT_POST, 'level');
+        $picture = filter_input(INPUT_POST, 'picture', FILTER_SANITIZE_URL);
+        $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_SPECIAL_CHARS);
+        $wpdb->query("INSERT INTO $table_name(outing_name,address,date,time,distance,practicedSport,level,picture,description) VALUES('$outingName','$address', '$date', '$time, '$distance', '$practicedSport', '$level', '$picture', '$description',)");
+        echo "<script>location.replace('admin.php?page=crud%2Fcrud.php');</script>";
+    }
+     ?>
   <div class="wrap">
-    <h2>Ajouter une sortie</h2>
-    <table class="wp-list-table widefat striped">
-      <thead>
-        <tr>
-          <th width="25%">User ID</th>
-          <th width="25%">Nom de la sortie</th>
-          <th width="25%">Author</th>
-          <th width="25%">Address</th>
-          <th width="25%">Latitude</th>
-          <th width="25%">Longitude</th>
-          <th width="25%">Niveau</th>
-          <th width="25%">Date</th>
-          <th width="25%">Heure</th>
-          <th width="25%">Distance</th>
-          <th width="25%">Sport Pratique</th>
-          <th width="25%">Photo</th>
-          <th width="25%">Course</th>
-          
-        </tr>
-      </thead>
-      <tbody>
-        <form action="" method="post">
-          <tr>
-            <td><input type="text" value="AUTO_GENERATED" disabled></td>
-            <td><input type="text" id="newouting_name" name="newouting_name"></td>
-            <td><input type="text" id="newauthor" name="newauthor"></td>
-            <td><input type="text" id="newaddress" name="newaddress"></td>
-            <td><input type="text" id="newlat" name="newlat"></td>
-            <td><input type="text" id="newlat" name="newlat"></td>
-            <td><input type="text" id="newlong" name="newlong"></td>
-            <td><input type="text" id="newdate" name="newdate"></td>
-            <td><input type="text" id="newtime" name="newetime"></td>
-            <td><input type="text" id="newdistance" name="newdistance"></td>
-            <td><input type="text" id="newpracticed_sport" name="newpracticed_sport"></td>
-            <td><input type="text" id="newpicture" name="newpicture"></td>
-            <td><input type="text" id="newcourse" name="newcourse"></td>
-            
-            
-            <td><button id="newsubmit" name="newsubmit" type="submit">INSERT</button></td>
-          </tr>
-        </form>
-        <?php
-          $result = $wpdb->get_results("SELECT * FROM $table_name");
-          foreach ($result as $print) {
-            echo "
-              <tr>
-                <td width='25%'>$print->user_id</td>
-                <td width='25%'>$print->outing_name</td>
-                <td width='25%'>$print->author</td>
-                <td width='25%'>$print->address</td>
-                <td width='25%'>$print->lat</td>
-                <td width='25%'>$print->long</td>
-                <td width='25%'>$print->date</td>
-                <td width='25%'>$print->time</td>
-                <td width='25%'>$print->practiced_sport</td>
-                <td width='25%'>$print->picture</td>
-                <td width='25%'>$print->course</td>
-                
-                <td width='25%'><a href='admin.php?page=outing2.php%2Fouting2.php&upt=$print->user_id'><button type='button'>UPDATE</button></a> <a href='admin.php?page=outing2.php%2Fouting2.php&del=$print->user_id'><button type='button'>DELETE</button></a></td>
-              </tr>
-            ";
-          }
-        ?>
-      </tbody>  
-    </table>
-    <br>
-    <br>
+    <h2>CRUD Operations</h2>
+    <form class="outing__creation" action="" method="post">
+        <div class="outing__location">
+            <input type="text" id="outing_name" name="outing_name" placeholder="Nom de la sortie">
+        </div>
+        <div class="outing__rdv">
+            <input type="date" id="date" name="date">
+            <label for="hour">Choix de l'heure</label>
+            <input type="time" id="hour" name="time">
+        </div>
+        <div class="outing__length">
+            <input type="number" id="length" name="distance" placeholder="Distance du parcours (en km)">
+        </div>
+        <div class="outing__location">
+            <label for="location">Lieu de Rendez-vous</label>
+            <input type="text" id="address" name="address" placeholder="Lieu du rendez-vous (ne pas oublier le code postal">
+        </div>
+        <div class="outing__practice">
+            <label for="running">Vélo</label>
+            <input type="radio" id="running" name="practicedSport" value="vélo">
+                <!-- Select à afficher uniquement si le bouton est coché - A voir en JS-->
+                <select class="form-control" name="level">
+                    <option value="" selected>Niveau de la sortie</option>
+                    <option value="Loisirs (-15km)">Loisirs (-15km)</option>
+                    <option value="Régulier (15-30km)">Régulier (15-30km)</option>
+                    <option value="Avancé (30-60km)">Avancé (30-60km)</option>
+                    <option value="Intensif (+60km)">Intensif (+60km)</option>
+                </select>
+            <label for="cycling">Course à pieds</label>
+            <input type="radio" id="cycling" name="practicedSport" value="course à pieds">
+                <!-- Select à afficher uniquement si le bouton est coché-->
+                <select class="form-control" name="level">
+                    <option value="" selected>Niveau de la sortie</option>
+                    <option value="Loisirs (-5km)">Loisirs (-5km)</option>
+                    <option value="Régulier (5-10km)">Régulier (5-10km)</option>
+                    <option value="Avancé (10-50km)">Avancé (10-50km)</option>
+                    <option value="Intensif (+15km)">Intensif (+15km)</option>
+                </select>
+        </div>    
+        <div class="outing__image">
+            <label for="outing-image">Insérez ici ul'image du parcours</label>
+            <input type="file" id="image" name="picture" alt="image du parcours" src="">
+        </div>
+        <!-- Le visuel du point de départ se verra uniquement sur la page détails de la course
+            <div class="outing__map">
+                <label for="outing-map">Insérez ici une map pour la sortie</label>
+            </div>     
+        -->
+        <div class="outing__description">
+            <label for="description">Saisir la description de la sortie</label>
+            <textarea name="description" id="description" cols="30" rows="10"></textarea>
+        </div>
+        <div class="outing__course">
+        </div>
+        <div class="outing__submit">
+            <input type="submit" value="valider la course">
+        </div>
+    </form>    
     <?php
-      if (isset($_GET['upt'])) {
-        $upt_id = $_GET['upt'];
-        $result = $wpdb->get_results("SELECT * FROM $table_name WHERE user_id='$upt_id'");
-        foreach($result as $print) {
-          
-                $outing_name=$print->outing_name;
-                $author=$print->author;
-                $address=$print->address;
-                $lat=$print->lat;
-                $long=$print->long;
-                $date=$print->date;
-                $time=$print->time;
-                $practiced_sport=$print->practiced_sport;
-                $picture=$print->picture;
-                $course=$print->course;
-        }
-        echo "
-        <table class='wp-list-table widefat striped'>
-          <thead>
-            <tr>
-            <th width='25%'>User ID</th>
-            <th width='25%'>Nom de la sortie</th>
-            <th width='25%'>Author</th>
-            <th width='25%'>Address</th>
-            <th width='25%'>Latitude</th>
-            <th width='25%'>Longitude</th>
-            <th width='25%'>Niveau</th>
-            <th width='25%'>Date</th>
-            <th width='25%'>Heure</th>
-            <th width='25%'>Distance</th>
-            <th width='25%'>Sport Pratique</th>
-            <th width='25%'>Photo</th>
-            <th width='25%'>Course</th>
-            </tr>
-          </thead>
-          <tbody>
-            <form action='' method='post'>
-              <tr>
-                <td width='25%'>$print->user_id <input type='hidden' id='uptid' name='uptid' value='$print->user_id'></td>
-                <td width='25%'><input type='text' id='uptouting_name' name='uptouting_name' value='$print->outing_name'></td>
-                <td width='25%'><input type='text' id='uptaddress' name='uptaddress' value='$print->address'></td>
-                <td width='25%'><input type='text' id='uptlat' name='uptlat' value='$print->lat'></td>
-                <td width='25%'><input type='text' id='uptlong' name='uptlong' value='$print->long'></td>
-                <td width='25%'><input type='text' id='uptdate' name='uptdate' value='$print->date'></td>
-                <td width='25%'><input type='text' id='upttime' name='upttime' value='$print->time'></td>
-                <td width='25%'><input type='text' id='uptracticed_sport' name='uptpracticed_sport' value='$print->practiced_sport'></td>
-                <td width='25%'><input type='text' id='uptpicture' name='uptpicture' value='$print->picture'></td>
-                <td width='25%'><input type='text' id='uptcourse' name='uptcourse' value='$print->course'></td>
-
-                <td width='25%'><button id='uptsubmit' name='uptsubmit' type='submit'>UPDATE</button> <a href='admin.php?page=outing2.php%2Fouting2.php'><button type='button'>CANCEL</button></a></td>
-              </tr>
-            </form>
-          </tbody>
-        </table>";
-      }
-    ?>
-  </div>
-  <?php
 }
