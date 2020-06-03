@@ -2,6 +2,7 @@
     background-color: $blueduck;
     display: flex;
     justify-content: space-between;
+    padding-top: 2rem;
 
     &__link{
         color: $ligthgrey;
@@ -12,8 +13,3 @@
     }
 }
 
-
-
-.authentified{
-    border-bottom: $font-size-s/3 solid $blueduck;
-}

@@ -9,9 +9,6 @@
 
 get_header();
 
-//? PROCESSING LOGIN FORM
-
-$errors= [];
 
 ?>
 
@@ -20,15 +17,8 @@ $errors= [];
                 <img src="<?= get_stylesheet_directory_uri() . '/public/images/logo-o.png'?>" alt="">
             </div>
 
-            <div class="connexion__page__errors">
-                <?php
-                    if($errors){
-                        foreach($errors as $key => $error){
-                            echo '<p>' . $error . '</p>';
-                        }
-                    }
-                ?>
-            </div>
+            <div class="connexion__page__errors"></div>
+                
             <div class="connexion__page__inputs">
                 <div class="login-username connexion__email">
                     <label class="connexion__label" for="user_login">Adresse e-mail</label>
@@ -43,7 +33,6 @@ $errors= [];
             </div>
             <div class="login-submit  connexion__page__buttons">
                 <button type="submit" name="wp-submit" id="wp-submit" class="button button-primary connexion__page__buttons__connexion"/>Se connecter</button>
-                <input type="hidden" name="redirect_to" value=<?= get_bloginfo('url') . '/custom-home/'?>" />
                 <button type="button" class="connexion__page__buttons__inscription"><a class="connexion__page__buttons__inscription__link" href="<?= get_bloginfo('url') . '/registration/'?>">S'inscrire</a></button>
             </div>        
 </form>
@@ -51,9 +40,8 @@ $errors= [];
 
 <?php 
 
+get_footer() 
 
-
-
-get_footer() ?>
+?>
 
 
