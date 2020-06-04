@@ -25,7 +25,7 @@ class CustomTablesInstall
             `time` TIME NOT NULL,
             `distance` int(6) NOT NULL,
             `practiced_sport` int(20) NOT NULL,
-            `picture` varchar(255),
+            `picture` longblob NOT NULL,
             `description` varchar(255),
             `created_at` TIMESTAMP NOT NULL,
             `updated_at` TIMESTAMP NOT NULL,

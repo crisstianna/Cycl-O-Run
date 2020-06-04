@@ -13,6 +13,7 @@ get_header();
 
 ?>
 
+
 <form class="connexion" name="loginform" id="loginform" action="<?= get_bloginfo('url') . '/wp/wp-login.php'; ?>" method="post">
             <div class="connexion__page__logo">
                 <img src="<?= get_stylesheet_directory_uri() . '/public/images/logo-o.png'?>" alt="">
@@ -56,6 +57,7 @@ get_header();
 
 
 <?php 
+
 
 get_footer() 
 
