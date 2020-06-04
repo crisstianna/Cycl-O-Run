@@ -20,16 +20,16 @@ get_header();
             <?php 
             $url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
             if (strpos($url, 'login/?user=empty')!==false) {
-                echo "<div class='login_failed' style=\"color:red;font-weight:bold;\">Veuillez renseigner l'adresse email</div>"; // style a intégrer
+                echo "<div class='login_failed' style=\"color:red;font-weight:bold; margin-bottom:1.5rem; margin-bottom:1.5rem; margin-left: 2rem;\">Veuillez renseigner l'Adresse mail !</div>"; // style a intégrer
             }
             if (strpos($url, 'login/?pwd=empty')!==false) {
-                echo "<div class='login_failed' style=\"color:red;font-weight:bold;\">Veuillez renseigner le mot de passe</div>"; // style à intégrer
+                echo "<div class='login_failed' style=\"color:red;font-weight:bold; margin-bottom:1.5rem; margin-left: 2rem;\">Veuillez renseigner le Mot de passe !</div>"; // style à intégrer
             }
             if (strpos($url, 'login/?login=empty')!==false) {
-                echo "<div class='login_failed' style=\"color:red;font-weight:bold;\">Les champs \"email\" et \"mot de passe\" sont vides</div>"; // style à intégrer
+                echo "<div class='login_failed' style=\"color:red;font-weight:bold; margin-bottom:1.5rem;\">Les champs \"Adresse E-mail\" et \"Mot de passe\" sont vides !</div>"; // style à intégrer
             }
             if (strpos($url,'login/?login=failed') !== false) {
-                echo "<div class='login_failed' style=\"color:red;font-weight:bold;\">Email et/ou mot de passe incorrect(s)</div>"; // style à intégrer
+                echo "<div class='login_failed' style=\"color:red;font-weight:bold; margin-bottom:1.5rem;\">Adresse E-mail et/ou  Mot de passe incorrect(s) !</div>"; // style à intégrer
             } 
             ?>
             <div class="connexion__page__errors"></div>
