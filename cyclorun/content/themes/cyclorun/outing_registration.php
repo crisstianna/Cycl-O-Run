@@ -20,7 +20,7 @@ $distance = filter_input(INPUT_POST, 'distance', FILTER_SANITIZE_NUMBER_INT);
 $practicedSport = filter_input(INPUT_POST, 'practiced_sport', FILTER_SANITIZE_NUMBER_INT);
 $cycling_level = filter_input(INPUT_POST, 'cycling_level', FILTER_SANITIZE_NUMBER_INT);
 $running_level = filter_input(INPUT_POST, 'running_level', FILTER_SANITIZE_NUMBER_INT);
-$picture = filter_input(INPUT_POST, 'running_level', FILTER_SANITIZE_URL);
+$picture = filter_input(INPUT_POST, 'picture');
 $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_SPECIAL_CHARS);
 
 //var_dump($picture);
