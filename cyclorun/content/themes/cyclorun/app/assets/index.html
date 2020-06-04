@@ -3,158 +3,228 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Webpack</title>
+  <title>Cycl'O'Run</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
-<<<<<<< HEAD
-  <header class="header">
-    <nav class="navbar navbar-expand-lg">
-      <a class="navbar-brand" href="#"><img src="images/logo-lightgrey.png" alt=""></a>
-      <button type="button" class="btn btn-dark connexion-button">Connexion</button>
-    </nav>
-  </header>
-  <main class="registration">
-
-    <div class="left"></div>
-
-    <div class="registration__page">
-      <form class="registration__form" id="wp_signup_form" action="" method="post" enctype="multipart/form-data">  
-            <div class="registration__form__subsection__left">
-                <label class="registration__form__label__title" for="form-group-connexion-infos">Mes Informations de connexion</label>
-                
-                <input class="registration__form__input" type="text" name="first_name" id="first_name" value="<?php echo $existing_firstname; ?>" placeholder="Prénom"/>
-                
-                
-                <input class="registration__form__input" type="text" name="last_name" id="last_name" value="<?php echo $existing_lastname; ?>" placeholder="Nom"/>
-                
-                <label class="registration__form__label__birthdate" for="birthdate">Date de naissance</label>
-                <div class="birthdate">   
-                    <input class="registration__form__input__birthdate" type="text" name="day_birth" id="day_birth" value="<?php echo $existing_daybirth; ?>"/>
-                    <input class="registration__form__input__birthdate" type="text" name="month_birth" id="month_birth" value="<?php echo $existing_monthbirth; ?>"/>
-                    <input class="registration__form__input__birthdate" type="text" name="year_birth" id="year_birth" value="<?php echo $existing_yearbirth; ?>"/>
+<body class="body">
+    <header class="header">
+        <nav class="navbar navbar-expand-lg">
+          <a class="navbar-brand" href="#"><img src="images/logo-lightgrey.png" alt=""></a>
+          <button type="button" class="btn btn-dark connexion-button">Connexion</button>
+        </nav>
+    </header>
+  
+	<main class="inscription">
+        <div class="inscription__page">
+          <h1 class="inscription__title">Inscription</h1>
+    
+          <form class="inscription__form" id="wp_signup_form" action="" method="post" enctype="multipart/form-data">  
+                <div class="inscription__form__subsection__left">
+                    <!-- <label class="inscription__form__label__title" for="form-group-connexion-infos">Mes Informations de connexion</label> -->
+                    
+                    <div class="form-control ">
+                    <!-- <label>Nom</label> -->
+                    <input class="inscription__form__input" type="text" name="first_name" id="first_name" value="" placeholder="Prénom"/>
+                    <i class="fa fa-check-circle"></i>
+                    <i class="fa fa-exclamation-circle"></i>
+                    <small>Error Message</small>
+                    </div>
+                    
+                    <div class="form-control error">
+                        <!-- <label>Prenom</label> -->
+                    <input class="inscription__form__input" type="text" name="last_name" id="last_name" value="" placeholder="Nom"/>
+                    <i class="fa fa-check-circle"></i>
+                    <i class="fa fa-exclamation-circle"></i>
+                    <small>Error Message</small>
+                    </div>
+                    
+                    
+                    <div class="form-control">
+                    <!-- <label class="inscription__form__label__birthdate" for="birthdate">Date de naissance</label> -->
+                    <div class="birthdate">
+                        <input class="inscription__form__input__birthdate" type="date" name="day_birth" id="day_birth" value="" placeholder="JJ"/>
+                        <!-- <input class="inscription__form__input__birthdate" type="text" name="month_birth" id="month_birth" value="" placeholder="MM"/> -->
+                        <!-- <input class="inscription__form__input__birthdate" type="text" name="year_birth" id="year_birth" value="" placeholder="AAAA"/> -->
+                    </div>
+                    <i class="fa fa-check-circle"></i>
+                    <i class="fa fa-exclamation-circle"></i>
+                    <small>Error Message</small>
+                    </div>
+                    
+                    
+                    <div class="form-control">
+                    <div class="existing-prof-pic-cont">
+                    <!-- <label class="inscription__form__label" for="user_profile_pic">Avatar</label> -->
+                        <input type="file" name="user_profile_pic" id="user_profile_pic" />
+                    </div>
+                    <i class="fa fa-check-circle"></i>
+                    <i class="fa fa-exclamation-circle"></i>
+                    <small>Error Message</small>
+                    </div>
+    
+                    <div class="form-control">
+                    <!-- <label class="inscription__form__label" for="email">Adresse Email</label> -->
+                        <input class="inscription__form__input" type="email" name="email" id="email" value="" placeholder="email"/>
+                    
+                    <i class="fa fa-check-circle"></i>
+                    <i class="fa fa-exclamation-circle"></i>
+                    <small>Error Message</small>
+                    </div>
+    
+                    <div class="form-control">
+                    <!-- <label class="inscription__form__label" for="password"> Mot de Passe</label> -->
+                        <input class="inscription__form__input" type="password" name="password" id="password" placeholder="Mot de passe"/>  
+                    
+                    <i class="fa fa-check-circle"></i>
+                    <i class="fa fa-exclamation-circle"></i>
+                    <small>Error Message</small>
+                    </div>
+    
+                    <div class="form-control">
+                    <!-- <label class="inscription__form__label" for="password_confimation"> Confirmation du mot de passe</label> -->
+                        <input class="inscription__form__input" type="password" name="password_confirmation" id="password_confirmation" placeholder="Confirmation du mot de passe"/>
+                    
+                    <i class="fa fa-check-circle"></i>
+                    <i class="fa fa-exclamation-circle"></i>
+                    <small>Error Message</small>
+                    </div>
+    
+                    <div class="form-control">
+                    <!-- <label class="inscription__form__label" for="address"> Adresse Postale</label> -->
+                        <textarea class="inscription__form__input" name="address" id="address" value="" placeholder="Adresse"></textarea>
+                    
+                    <i class="fa fa-check-circle"></i>
+                    <i class="fa fa-exclamation-circle"></i>
+                    <small>Error Message</small>
+                    </div>
+    
+                    <div class="form-control">
+                    <!-- <label class="inscription__form__label" for="postcode"> Code Postal</label> -->
+                        <input class="inscription__form__input" type="text" name="postcode" id="postcode" value="" placeholder="Code postal"/>
+                    
+                    <i class="fa fa-check-circle"></i>
+                    <i class="fa fa-exclamation-circle"></i>
+                    <small>Error Message</small>
+                    </div>
+    
+                    <div class="form-control">
+                    <!-- <label class="inscription__form__label" for="city"> Ville</label> -->
+                        <input class="inscription__form__input" type="text" name="city" id="city" value="" placeholder="Ville"/>
+                    
+                    <i class="fa fa-check-circle"></i>
+                    <i class="fa fa-exclamation-circle"></i>
+                    <small>Error Message</small>
+                    </div>
                 </div>
-
-                <div class="existing-prof-pic-cont"><?php echo $profile_pic_img; ?></div>
-                <label class="registration__form__label" for="user_profile_pic">Avatar
-                    <input type="file" name="user_profile_pic" id="user_profile_pic" />
-                </label>
-                <label class="registration__form__label" for="email">Adresse Email
-                    <input class="registration__form__input" type="email" name="email" id="email" value="<?php echo $existing_email; ?>"/>
-                </label>
-                <label class="registration__form__label" for="password"> Mot de Passe
-                    <input class="registration__form__input" type="password" name="password" id="password"/>  
-                </label>
-                <label class="registration__form__label" for="password_confimation"> Confirmation du mot de passe
-                    <input class="registration__form__input" type="password" name="password_confirmation" id="password_confirmation"/>
-                </label>
-                <label class="registration__form__label" for="address"> Adresse Postale
-                    <textarea class="registration__form__input" name="address" id="address" value="<?php echo $existing_address; ?>"></textarea>
-                </label>
-                <label class="registration__form__label" for="postcode"> Code Postal
-                    <input class="registration__form__input" type="text" name="postcode" id="postcode" value="<?php echo $existing_postcode; ?>"/>
-                </label>
-                <label class="registration__form__label" for="city"> Ville
-                    <input class="registration__form__input" type="text" name="city" id="city" value="<?php echo $existing_city; ?>"/>
-                </label>
-            </div>
-            <div class="form__subsection">
-                <label class="registration__form__label__title form-group sport-profile" for="form-group-sport-profile">Mon Profil Sportif</label>
-                <div class="registration__form__selects">
-                    <div class="custom-control custom-switch registration__form__select">
-                        <input class="registration__form__input custom-control-input" type="checkbox" name="cycling" value="cycling" id="cycling">
-                        <label class="registration__form__label custom-control-label" for="cycling">Vélo</label>
-                        <label class="registration__form__label mr-sm-2 sr-only" for="cycling-level">Mon Niveau</label>
-                            <select class="custom-select mr-sm-2" name="cycling_level" id="cycling_level_select">
+                <div class="form__subsection__right">
+                    <!-- <label class="inscription__form__label__title form-group sport-profile" for="form-group-sport-profile">Mon Profil Sportif</label> -->
+                    <div class="inscription__form__selects">
+                        <div class="custom-control control-form custom-switch inscription__form__select">
+                            <input class="inscription__form__input custom-control-input" type="checkbox" name="cycling" value="cycling" id="cycling">
+                            <!-- <label class="inscription__form__label custom-control-label" for="cycling">Vélo</label> -->
+                            <!-- <label class="inscription__form__label mr-sm-2 sr-only" for="cycling-level">Mon Niveau</label> -->
+                                <select class="custom-select mr-sm-2" name="cycling_level" id="cycling_level_select">
+                                    <option value="" selected>Choisir</option>
+                                    <option value="loisirs">Loisirs (inferieur à 15km/sortie)</option>
+                                    <option value="regulier">Régulier (15-30 km)</option>
+                                    <option value="avance">Avancé (30-60 km)</option>
+                                    <option value="intensif">Intensif (+60 km)</option>
+                                </select>
+                                <i class="fa fa-check-circle"></i>
+                                <i class="fa fa-exclamation-circle"></i>
+                                <small>Error Message</small>
+                            
+                        </div>
+                        <div class="custom-controlcontrol-form custom-switch inscription__form__select">
+                            <input class="inscription__form__input custom-control-input" type="checkbox" name="running" value="running" id="running">
+                            <!-- <label class="inscription__form__label custom-control-label" for="running">Running</label> -->
+                            <!-- <label class="inscription__form__label mr-sm-2 sr-only" for="running_level">Mon Niveau </label> -->
+                            <select class="custom-select mr-sm-2" name="running_level" id="running_level_select">
                                 <option value="" selected>Choisir</option>
                                 <option value="loisirs">Loisirs (inferieur à 15km/sortie)</option>
                                 <option value="regulier">Régulier (15-30 km)</option>
                                 <option value="avance">Avancé (30-60 km)</option>
                                 <option value="intensif">Intensif (+60 km)</option>
                             </select>
-                        
+                        </div>
                     </div>
-                    <div class="custom-control custom-switch registration__form__select">
-                        <input class="registration__form__input custom-control-input" type="checkbox" name="running" value="running" id="running">
-                        <label class="registration__form__label custom-control-label" for="running">Running</label>
-                        <label class="registration__form__label mr-sm-2 sr-only" for="running_level">Mon Niveau </label>
-                        <select class="custom-select mr-sm-2" name="running_level" id="running_level_select">
-                            <option value="" selected>Choisir</option>
-                            <option value="loisirs">Loisirs (inferieur à 15km/sortie)</option>
-                            <option value="regulier">Régulier (15-30 km)</option>
-                            <option value="avance">Avancé (30-60 km)</option>
-                            <option value="intensif">Intensif (+60 km)</option>
-                        </select>
+                    <div class="inscription__form__conditions">
+                        <input class="inscription__form__input" name="terms" id="terms" type="checkbox" value="Yes">  
+                        <!-- <label class="inscription__form__label" for="terms">J'ai lu et j'accepte les <a href="#">Conditions Générales d'Utilisation</a></label>   -->
                     </div>
+                    <input class="inscription__form__submit" type="submit" id="submitbtn" name="submit" value="S'inscrire"/>
                 </div>
-                <div class="registration__form__conditions">
-                    <input class="registration__form__input" name="terms" id="terms" type="checkbox" value="Yes">  
-                    <label class="registration__form__label" for="terms">J'ai lu et j'accepte les <a href="#">Conditions Générales d'Utilisation</a></label>  
-                </div>
-                <input class="registration__form__submit" type="submit" id="submitbtn" name="submit" value="S'inscrire"/>
-            </div>
-        </form>
-    </div>
-    <div class="right"></div>
-  </main>
+            </form>
+        </div>
+      </main>
 
-  <script src="js/app.js"></script>
-=======
-    <header class="header">
-        <nav class="navbar authentified navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#"><img class="logo" src="images/logo-complet.png" alt=""></a>
-        <a class="navbar__item__is-active" href="#">Home</a>
-        <a class="navbar__item" href="#">Profil</a>
-        <a class="navbar__item" href="#">Participer à une sortie</a>
-        <a class="navbar__item" href="#">Organiser une sortie</a>   
-        <button type="logout-button" class="btn">Déconnexion</button>
-        </nav>
-    </header>
-    <main>
-        <section>
-         <h1>Les sorties organisées</h1> 
-         <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Filtres
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </div>
+ <script>
+const form = document.getElementById('form');
+const username = document.getElementById('username');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
+const password2 = document.getElementById('password2');
 
-        </section>
-        <section class="outing">
-            <article class="outing__article">
-                <div class="outing__article__image">
-                    <img class="outing__article__img" src="images/logo-o.png" alt="">
-                </div>
-                    <h3 class="outing__article__title">Nom de l'évènement</h3>
-                    <p class="outing__article__date">date</p>
-                    <p class="outing__article__time">heure</p>
-                    <p class="outing__article__sport">sport pratiqué</p>
-                    <div class="outing__article__pict">
-                        <img src="images/Running.svg" alt="" class="outing__article__pict__svg">
-                        <img src="images/Cycling.svg" alt="" class="outing__article__pict__svg">
-                    </div>
-                    <p class="outing__article__level">Niveau</p>
-                    <p class="outing__article__location">Adresse du rdv</p>
-                    <p class="outing__article__distance">Distance parcourue</p>
-                    <h4>Organisateur de la sortie</h4>
-                    <img class="outing__article__img" src="images/avatar.png" alt="AVATAR DE L'AUTEUR">
-                    <p class="outing__article__author">Pseudo du créateur</p>
-                    <ul>
-                        <li>
-                            <img class="outing__article__img" src="images/avatar.png" alt="AVATAR DU PARTICIPANT">
-                            <p class="outing__article__author">Pseudo du participant</p>
-                        </li>            
-                    </ul>    
-                    <button class="outing__article__button" type="button">Détails de la sortie</button>
-                    <button class="outing__article__button" type="button">Je participe</button>                
-            </article>
-        </section> 
-    </main>
->>>>>>> Dev
+form.addEventListener('submit', e => {
+	e.preventDefault();
+	
+	checkInputs();
+});
+
+function checkInputs() {
+	// trim to remove the whitespaces
+	const usernameValue = username.value.trim();
+	const emailValue = email.value.trim();
+	const passwordValue = password.value.trim();
+	const password2Value = password2.value.trim();
+	
+	if(usernameValue === '') {
+		setErrorFor(username, 'Username cannot be blank'); 
+	} else {
+		setSuccessFor(username);
+	}
+	
+	if(emailValue === '') {
+		setErrorFor(email, 'Remplis le champ email');
+	} else if (!isEmail(emailValue)) {
+		setErrorFor(email, 'Email non valide');
+	} else {
+		setSuccessFor(email);
+	}
+	
+	if(passwordValue === '') {
+		setErrorFor(password, 'Remplir ce champ');
+	} else {
+		setSuccessFor(password);
+	}
+	
+	if(password2Value === '') {
+		setErrorFor(password2, 'Remplir ce champ');
+	} else if(passwordValue !== password2Value) {
+		setErrorFor(password2, 'Mot de passe non valide');
+	} else{
+		setSuccessFor(password2);
+	}
+}
+
+function setErrorFor(input, message) {
+	const formControl = input.parentElement;
+	const small = formControl.querySelector('small');
+	formControl.className = 'form-control error';
+	small.innerText = message;
+}
+
+function setSuccessFor(input) {
+	const formControl = input.parentElement;
+	formControl.className = 'form-control success';
+}
+	
+function isEmail(email) {
+	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+}
+
+</script>
+<script src="js/app.js"></script>
 </body>
 </html>
+
