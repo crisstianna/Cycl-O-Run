@@ -12,6 +12,10 @@
     'layout/main';
 
 @import
+    'pages/custom-home',
+    'pages/home-visitors';
+
+@import
     'components/participation-outing-page',
     'components/outing-details-page',
     'components/profile-page',
@@ -20,8 +24,8 @@
     'components/connexion-form',
     'components/registration-form',
     'components/green-navbar',
-    'components/grey-navbar',
-    'components/welcome-message',
-    'components/welcome-submessage';
+    'components/grey-navbar';
+
+
 
 
