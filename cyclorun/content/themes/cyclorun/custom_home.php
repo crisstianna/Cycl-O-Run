@@ -58,6 +58,7 @@ $outings_query = $wpdb->get_results(
 if(!empty($outings_query)){
   foreach ($outings_query as $key => $value) {
       echo '<div>';
+      echo '<img src="/' . $value['picture'] . '"alt="image du parcours"/>';
       echo '<h3 class="outing__article__title">' . $value['outing_name'] . '</h3>';
       echo '<p class="outing__article__date">date : ' . date("d-m-Y", strtotime($value['date'])) . '</p>';
       echo '<p class="outing__article__time">heure de rdv : ' . substr($value['time'], 0, -3) . '</p>';
@@ -71,17 +72,6 @@ if(!empty($outings_query)){
   echo 'Aucune sortie aupès de chez vous n\'est prévue pour le moment. Et si vous étiez la première personne à en proposer une ?';
   echo '<a href="' . get_permalink(16) . '">Ajouter une sortie</a>';
 }
-  foreach($outings_query as $key => $value) {
-      echo '<div>';
-      echo '<h3 class="outing__article__title">' . $value['outing_name'] . '</h3>';
-      echo '<p class="outing__article__date">date : ' . date("d-m-Y", strtotime($value['date'])) . '</p>';
-      echo '<p class="outing__article__time">heure de rdv : ' . substr($value['time'], 0, -3) . '</p>';
-      echo '<p class="outing__article__location">lieu de rdv : ' . $value['address'] . '</p>';
-      echo '<p class="outing__article__distance">distance : ' . $value['distance'] . 'km</p>';
-      echo '<p class="outing__article__level">niveau : ' . getLevel($value['level'], $value['practiced_sport']) . '</p>';
-      echo '<button class="outing__article__button" type="button">Etat de la sortie</button>';
-      echo '</div>';    
-  }
 
 ?>           
         </article>        

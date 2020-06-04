@@ -3,7 +3,7 @@ get_header();
 ?>
 
 <body>
-    <form class="outing__creation" action="" method="post">
+    <form class="outing__creation" action="" method="post" enctype="multipart/form-data">
         <div class="outing__location">
             <input type="text" id="outing_name" name="outing_name" placeholder="Nom de la sortie">
         </div>
@@ -21,9 +21,9 @@ get_header();
         </div>
         <div class="outing__practice">
             <label for="cycling">Vélo</label>
-            <input type="radio" id="cycling" name="practicedSport" value="1">
+            <input type="radio" id="cycling" name="practiced_sport" value="1">
                 <!-- Select à afficher uniquement si le bouton est coché - A voir en JS-->
-                <select class="form-control" name="level">
+                <select class="form-control" name="cycling_level">
                     <option value="" selected>Niveau de la sortie</option>
                     <option value="1">Loisirs (-15km)</option>
                     <option value="2">Régulier (15-30km)</option>
@@ -31,14 +31,14 @@ get_header();
                     <option value="4">Intensif (+60km)</option>
                 </select>
             <label for="running">Course à pieds</label>
-            <input type="radio" id="running" name="practicedSport" value="2">
+            <input type="radio" id="running" name="practiced_sport" value="2">
                 <!-- Select à afficher uniquement si le bouton est coché-->
-                <select class="form-control" name="level">
+                <select class="form-control" name="running_level">
                     <option value="" selected>Niveau de la sortie</option>
-                    <option value="1">Loisirs (-5km)</option>
-                    <option value="2">Régulier (5-10km)</option>
-                    <option value="3">Avancé (10-15km)</option>
-                    <option value="4">Intensif (+15km)</option>
+                    <option value="11">Loisirs (-5km)</option>
+                    <option value="12">Régulier (5-10km)</option>
+                    <option value="13">Avancé (10-15km)</option>
+                    <option value="14">Intensif (+15km)</option>
                 </select>
         </div>    
         <div class="outing__image">

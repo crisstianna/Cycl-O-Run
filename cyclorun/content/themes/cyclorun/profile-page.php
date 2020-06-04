@@ -111,17 +111,17 @@ $outingUserAuthor = $wpdb->get_results(
 
 
             <div class="profile__outings_created__content">
-                <?php foreach($outingUserAuthor as $key => $currentouting) : ?>
+                <?php foreach($outingUserAuthor as $key => $currentOuting) : ?>
                     <div>  <!-- en liste ça pourrait être pas mal + lien vers la page détail-->
-                    <?php if($currentouting['practiced_sport'] == 1) : ?>
+                    <?php if($currentOuting['practiced_sport'] == 1) : ?>
                         <img src="https://img.icons8.com/metro/26/000000/cycling-track.png"/>
                     <?php else : ?>
                         <img src="https://img.icons8.com/android/24/000000/running.png"/>
                     <?php endif; ?>
-                        <p><strong><?php echo $currentouting['outing_name']; ?></strong></p>
-                        <p> prévue le <?php echo date("d-m-Y", strtotime($currentouting['date'])); ?></p>
-                        <p> à <?php echo substr($currentouting['time'], 0, -3); ?></p>
-                        <a href="lien vers la page détail" id="<?php echo $currentouting['outing_id']; ?>">Voir le détail</a>
+                        <p><strong><?php echo $currentOuting['outing_name']; ?></strong></p>
+                        <p> prévue le <?php echo date("d-m-Y", strtotime($currentOuting['date'])); ?></p>
+                        <p> à <?php echo substr($currentOuting['time'], 0, -3); ?></p>
+                        <a href="lien vers la page détail" id="<?php echo $currentOuting['outing_id']; ?>">Voir le détail</a>
                     </div>                    
                 <?php endforeach; ?>
                 
@@ -148,9 +148,9 @@ $outingUserParticipant = $wpdb->get_results(
 
 ?>
             <div class="profile__outings_future__content">
-                <?php foreach($outingUserParticipant as $index => $currentParticipation) : ?>
+                <?php foreach($outingUserParticipant as $key => $currentParticipation) : ?>
                     <div>  <!-- en liste ça pourrait être pas mal + lien vers la page détail-->
-                    <?php if($currentouting['practiced_sport'] == 1) : ?>
+                    <?php if($currentParticipation['practiced_sport'] == 1) : ?>
                         <img src="https://img.icons8.com/metro/26/000000/cycling-track.png"/>
                     <?php else : ?>
                         <img src="https://img.icons8.com/android/24/000000/running.png"/>

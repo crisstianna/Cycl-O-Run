@@ -111,8 +111,9 @@ foreach($results as $key => $filteredValue) { ?>
                     <button class="outing__article__button" type="submit">Je participe</button>
                 </form>
                 
+<?php 
 
-    <?php
+} 
 
     $userId = intval(filter_input(INPUT_POST, 'userId'));
     $outingId = intval(filter_input(INPUT_POST, 'outingId'));
@@ -135,7 +136,7 @@ foreach($results as $key => $filteredValue) { ?>
             </div> 
 
 
-<?php } ?>
+
 
                
         </article>
