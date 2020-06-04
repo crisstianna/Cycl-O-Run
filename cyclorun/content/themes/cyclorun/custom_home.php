@@ -16,31 +16,14 @@ if(! is_user_logged_in()){
   header("Location: $login");
 }
 
-?>
+//? FIND USER INFORMATION:
 
-<main>
-    <!-- Near outing section -->
-    <section class="outing">
-      <h2 class="outing__title">Les dernières sorties ajoutées près de chez moi</h2>
-      <div class="outing__section">
-        <article class="outing__article">
-          <div class="outing__article__image">
-            <img class="outing__article__img" src="images/logo-o.png" alt="">
-          </div>
-          <div>
-
-<?php
-/* 
-require 'template-parts/home.php';
-*/
 $id = get_current_user_id();
 $postcodeId = get_user_meta($id, 'postcode');
 $department = substr($postcodeId[0], 0, -3);
 // TODO rajouter un filtre aussi pour ne pas prendre le numéro de la rue
-//var_dump($postcodeId);
-//var_dump($department); 
 
-// We want to see the 3 last outings registered in database where the postcode is the same as th current user
+//? FIND THE LAST 3 OUTINGS CREATED NEAR THE USER'S HOME:
 
 global $wpdb;
 
@@ -55,38 +38,7 @@ $outings_query = $wpdb->get_results(
     $output = ARRAY_A   
 );
 
-if(!empty($outings_query)){
-  foreach ($outings_query as $key => $value) {
-      echo '<div>';
-      echo '<img src="/' . $value['picture'] . '"alt="image du parcours"/>';
-      echo '<h3 class="outing__article__title">' . $value['outing_name'] . '</h3>';
-      echo '<p class="outing__article__date">date : ' . date("d-m-Y", strtotime($value['date'])) . '</p>';
-      echo '<p class="outing__article__time">heure de rdv : ' . substr($value['time'], 0, -3) . '</p>';
-      echo '<p class="outing__article__location">lieu de rdv : ' . $value['address'] . '</p>';
-      echo '<p class="outing__article__distance">distance : ' . $value['distance'] . 'km</p>';
-      echo '<p class="outing__article__level">niveau : ' . getLevel($value['level'], $value['practiced_sport']) . '</p>';
-      echo '<button class="outing__article__button" type="button">Etat de la sortie</button>';
-      echo '</div>';
-  }
-}else {
-  echo 'Aucune sortie aupès de chez vous n\'est prévue pour le moment. Et si vous étiez la première personne à en proposer une ?';
-  echo '<a href="' . get_permalink(16) . '">Ajouter une sortie</a>';
-}
-
-?>           
-        </article>        
-      </div>
-    </section>
-    <!-- Participation section -->
-    <section class="outing">
-      <h2 class="outing__title">Les prochaines sorties auxquelles je participe</h2>
-      <div class="outing__section">
-        <article class="outing__article">
-          <div class="outing__article__image">
-            <img class="outing__article__img" src="images/logo-o.png" alt="">
-          </div>
-
-<?php
+//? FIND NEWS ABOUT 3 OUTINGS IN WICH CURRENT USER IS A PARTICIPANT 
 
 $wp_participations = $wpdb->prefix . 'participations';
 $wp_users = $wpdb->prefix . 'users';
@@ -106,39 +58,113 @@ $outings_participations = $wpdb->get_results(
   ARRAY_A  
 );
 
-//var_dump($outings_participations);
-
-foreach ($outings_participations as $index => $currentValue) {
-
-  $currentOutingId = $currentValue['outing_id'];
-  //var_dump($currentOutingId);
-
-  $numberParticipants = $wpdb->get_results(
-  "SELECT COUNT(*)
-    FROM $wp_participations
-    WHERE `outing_id` = $currentOutingId",
-    ARRAY_A
-  );
-  
-    echo '<div>';
-    echo '<h3 class="outing__article__title">' . $currentValue['outing_name'] . '</h3>';
-    echo '<p class="outing__article__date">date : ' . date("d-m-Y", strtotime($currentValue['date'])) . '</p>';
-    echo '<p class="outing__article__time">heure de rdv : ' . substr($currentValue['time'], 0, -3) . '</p>';
-    echo '<p class="outing__article__location">lieu de rdv : ' . $currentValue['address'] . '</p>';
-    echo '<p class="outing__article__distance">distance : ' . $currentValue['distance'] . 'km</p>';
-    echo '<p class="outing__article__level">niveau : ' . getLevel($currentValue['level'], $currentValue['practiced_sport']) . '</p>';
-    foreach($numberParticipants as $key => $nbRows) {
-      echo '<p class="outing__article__number-participants">nombre de participants : ' . $nbRows['COUNT(*)'] . '</p>';
-    }    
-    echo '<button class="outing__article__button" type="button">Etat de la sortie</button>';
-    echo '</div>';
-}
 ?>
-        </article>
-      </div>
-    </section>
-  </main>
 
-  <?php
+
+
+<main class="custom-home__main">
+
+    <!-- NEW OUTINGS-->
+  <section class="custom-home__section">
+    <h2 class="custom-home__title"> Nouvelles sorties...</h2>
+
+    <div class="custom-home__wrap">
+
+    <?php foreach($outings_query as $key => $value): 
+  
+  
+        $outingName=$value['outing_name'];
+        $outingDate= date("d-m-Y", strtotime($value['date']));
+        $outingAddress= $value['address'];
+        $outingSportName= getPracticedSport($value['practiced_sport']);
+        $outingLevel= getLevel($value['level'], $value['practiced_sport']);
+  
+        if($outingSportName == 'course à pieds'){
+          $outingSportName= 'running';
+        } elseif( $outingSportName == 'vélo') {
+          $outingSportName= 'cycling';
+        }
+  
+    ?>
+      <!--OUTING-->
+      <article class=" card outing">
+        <div class="outing__attachments">
+          <img  src="<?= get_stylesheet_directory_uri(). '/public/images/logo-o.png'?>" class="card-img-top outing__attachments__image" alt="...">
+          <img src="<?= get_stylesheet_directory_uri(). '/public/images/'. $outingSportName .'.svg'?>" class=" outing__attachments__pycto" alt="...">
+        </div>
+        <div class="card-body outing__body" style="width:50%;" >
+          <h5 class="card-title"><?= $outingName ?></h5>
+          <p class="card-text"><?= $outingDate ?></p>
+          <p class="card-text"><?= $outingAddress ?></p>
+          <p class="card-text"><?= $outingLevel ?></p>
+
+
+          <a href="#" class="btn btn-primary outing__button">Details</a>
+        </div>
+      </article>
+    <?php endforeach; ?>
+    </div>
+
+  </section>
+
+
+  <section class="custom-home__section">
+
+     <!--NEWS ABOUT MY OUTINGS -->
+    <h2 class="custom-home__title"> News sur mes sorties...</h2>
+
+    <div class="custom-home__wrap">
+
+    <?php foreach ($outings_participations as $index => $currentValue):
+
+        $outingWichUserParticipate_Id = $currentValue['outing_id'];
+        $outingWichUserParticipate_Name = $currentValue['outing_name'];
+        $outingWichUserParticipate_Date = date("d-m-Y", strtotime($currentValue['date']));
+        $outingWichUserParticipate_Address = $currentValue['address'];
+        $outingWichUserParticipate_Level = getLevel($currentValue['level'], $currentValue['practiced_sport']);
+        $outingWichUserParticipate_Sport = getPracticedSport($currentValue['practiced_sport']);
+
+        if($outingWichUserParticipate_Sport == 'course à pieds'){
+          $outingWichUserParticipate_Sport= 'running';
+        } elseif( $outingWichUserParticipate_Sport == 'vélo') {
+          $outingWichUserParticipate_Sport= 'cycling';
+        }
+
+
+        $numberParticipants = $wpdb->get_results(
+        "SELECT COUNT(*)
+          FROM $wp_participations
+          WHERE `outing_id` = $outingWichUserParticipate_Id",
+          ARRAY_A
+        );
+    ?>
+
+    <!--OUTING-->
+    <article class=" card outing">
+      <div class="outing__attachments">
+        <img  src="<?= get_stylesheet_directory_uri(). '/public/images/logo-o.png'?>" class="card-img-top outing__attachments__image" alt="...">
+        <img src="<?= get_stylesheet_directory_uri(). '/public/images/'. $outingWichUserParticipate_Sport .'.svg'?>" class=" outing__attachments__pycto" alt="...">
+      </div>
+      <div class="card-body outing__body" style="width:50%;" >
+        <h5 class="card-title"><?= $outingWichUserParticipate_Name  ?></h5>
+        <p class="card-text"><?= $outingWichUserParticipate_Date  ?></p>
+        <p class="card-text"><?= $outingWichUserParticipate_Address  ?></p>
+        <p class="card-text"><?= $outingWichUserParticipate_Level ?></p>
+    <?php foreach($numberParticipants as $key => $nbrRows): ?>    
+        <p class="card-text"><?= $nbrRows['COUNT(*)']  ?></p>
+    <?php endforeach; ?>
+        <a href="#" class="btn btn-primary outing__button">Details</a>
+      </div>
+    </article>
+    <?php endforeach; ?>
+    </div>
+  </section>
+  </main>
+  <script src="js/app.js"></script>
+</body>
+</html>
+
+
+<?php
 
 get_footer();

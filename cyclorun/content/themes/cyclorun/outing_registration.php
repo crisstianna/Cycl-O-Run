@@ -2,6 +2,7 @@
 
 /*
 Template Name: Outing Registration
+
 */
 
 require 'template-parts/outing_creation_form.php';
