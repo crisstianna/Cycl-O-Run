@@ -34,6 +34,7 @@ if (!function_exists('getLevel')) {
                 $level = 'Avancé (+15km)';
             }
         }
-        echo $level;       
+        
+        return $level;       
     }
 }

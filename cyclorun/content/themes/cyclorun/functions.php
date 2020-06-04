@@ -7,3 +7,7 @@ require('inc/getOutingFilteredResults.php');
 require('inc/getLevel.php');
 require('inc/getPracticedSport.php');
 require('inc/age.php');
+require('inc/lostPasswordLink.php');
+require('inc/pippinLoginFail.php');
+require('inc/catchEmptyUser.php');
+require('inc/loginRedirect.php');
