@@ -1,0 +1,39 @@
+.home-main{
+    display: flex;
+
+    &__left{
+        width: 50%;
+        z-index: -1;
+    }
+
+    &__welcome{
+        font-size: $font-size-md;
+        line-height: 2rem;
+        text-align: center;
+        width:45%;
+        background-color: $lightgrey;
+        position:absolute;
+        top:45%;
+        left:28%;
+        padding: 2rem;
+        text-transform: uppercase;
+
+        &__sentence,
+        &__word{
+            color:$blueduck;
+        }
+
+        &__wrap{
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+
+
+    }
+
+    &__right{
+        width: 50%;
+        z-index: -1;
+    }
+}

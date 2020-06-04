@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;500;800&display=swap');
 
 body {
-    background-color: $ligthgrey;
+    margin-top: -32px;
+    background-color: $lightgrey;
     font-family: $font-family;
     color: $dark;
 }
 
 p {
-    margin: 1rem;
+    margin: 0.5rem;
 }
 
 a {

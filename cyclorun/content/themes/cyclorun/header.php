@@ -32,7 +32,4 @@
       </nav>
     <?php endif; ?>
 
-
-
-
 </header>

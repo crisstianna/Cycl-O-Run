@@ -1,0 +1,23 @@
+.outing{
+    width: 30%; 
+    display: flex; 
+    flex-direction: row;
+    margin-bottom: 0.5rem;
+    
+
+    &__attachments{
+        width:50%; 
+        position:relative;
+
+        &__pycto{
+            position: absolute; 
+            width:25%; 
+            top:0rem; 
+            left:0rem;
+        }
+    }
+
+    &__button{
+        background-color: $blueduck;
+    }
+}
