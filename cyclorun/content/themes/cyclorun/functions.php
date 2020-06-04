@@ -32,6 +32,8 @@ add_filter('login_form_bottom', 'lost_password_link');
 // Redirection after success login
 if (!function_exists('login_redirect')) {
     function login_redirect($redirect_to, $request, $user) {
+
+        //TODO: rajouter la condition "si l'utilsateur n'est pas admin"
         return home_url() . '/custom-home/';
     }
 }

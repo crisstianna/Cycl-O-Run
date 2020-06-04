@@ -1,3 +1,15 @@
 .custom-home{
-    
+    &__title{
+        text-align: center; 
+        margin:2rem;
+    }
+
+    &__wrap{
+        display:flex; 
+        justify-content: space-around; 
+    }
+
+    &__button{
+        background-color: $blueduck;
+    }
 }

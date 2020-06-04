@@ -14,6 +14,6 @@ if (!function_exists('getPracticedSport')) {
             $practicedSport = 'course à pieds';
             //return $practicedSport;
         }
-        echo $practicedSport;
+        return $practicedSport;
     }
 }
