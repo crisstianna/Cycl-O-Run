@@ -89,7 +89,7 @@ $outings_participations = $wpdb->get_results(
       <!--OUTING-->
       <article class=" card outing">
         <div class="outing__attachments">
-          <img  src="<?= get_stylesheet_directory_uri(). '/public/images/logo-o.png'?>" class="card-img-top outing__attachments__image" alt="...">
+          <img  src="<?= $value['picture']; ?>" class="card-img-top outing__attachments__image" alt="...">
           <img src="<?= get_stylesheet_directory_uri(). '/public/images/'. $outingSportName .'.svg'?>" class=" outing__attachments__pycto" alt="...">
         </div>
         <div class="card-body outing__body" style="width:50%;" >

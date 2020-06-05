@@ -98,7 +98,7 @@ $numberParticipants = $wpdb->get_results(
         </div>
         <div class="details__content__informations__participants">
           <h4 class="details__content__informations__participants__title">PARTICIPANTS</h4>
-          <p class="details__content__informations__participants__number">actuellement, <?= $numberParticipants; ?> personnes sont inscrites :</p>
+          <p class="details__content__informations__participants__number">Actuellement, <?= $numberParticipants; ?> personne(s) est(sont) inscrite(s) :</p>
             <?php
               // request to retrieve the participations name
                 $outings_participations = $wpdb->get_results(
