@@ -21,7 +21,7 @@ if(! is_user_logged_in()){
 $id = get_current_user_id();
 $postcodeId = get_user_meta($id, 'postcode');
 $department = substr($postcodeId[0], 0, -3);
-// TODO rajouter un filtre aussi pour ne pas prendre le numéro de la rue
+// TODO rajouter un filtre aussi pour ne pas prendre le numéro de la rue mais uniquement le code postal (version ultérieure)
 
 //? FIND THE LAST 3 OUTINGS CREATED NEAR THE USER'S HOME:
 
@@ -99,7 +99,7 @@ $outings_participations = $wpdb->get_results(
           <p class="card-text"><?= $outingLevel ?></p>
 
 
-          <a href="#" class="btn btn-primary outing__button">Details</a>
+          <a href="<?= get_bloginfo('url') . '/outing-details/?outingId=' . $value['outing_id']; ?>" class="btn btn-primary outing__button">Details</a>
         </div>
       </article>
     <?php endforeach; ?>
@@ -151,9 +151,9 @@ $outings_participations = $wpdb->get_results(
         <p class="card-text"><?= $outingWichUserParticipate_Address  ?></p>
         <p class="card-text"><?= $outingWichUserParticipate_Level ?></p>
     <?php foreach($numberParticipants as $key => $nbrRows): ?>    
-        <p class="card-text"><?= $nbrRows['COUNT(*)']  ?></p>
+        <p class="card-text">participants : <?= $nbrRows['COUNT(*)']  ?></p>
     <?php endforeach; ?>
-        <a href="#" class="btn btn-primary outing__button">Details</a>
+        <a href="<?= get_bloginfo('url') . '/outing-details/?outingId=' . $currentValue['outing_id']; ?>" class="btn btn-primary outing__button">Details</a>
       </div>
     </article>
     <?php endforeach; ?>
