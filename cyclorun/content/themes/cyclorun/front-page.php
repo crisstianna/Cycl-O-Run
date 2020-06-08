@@ -87,33 +87,4 @@ get_header();
 
 <?php
 
-$wp_outings = $wp_outings = $wpdb->prefix . 'outings';
-
-$randomOutingExemples = $wpdb->get_results(
-  "SELECT *
-  FROM $wp_outings
-  ORDER BY `outing_id`DESC
-  LIMIT 3",
-  ARRAY_A
-);
-?>
-
-<div class="exemples-outings">
-  <h4>Un petit aperçu des dernières sorties proposées sur notre site ....</h4>
-  
-    <?php foreach($randomOutingExemples as $key => $value) : ?>
-  <div class="exemples-outings-outing">
-    <div class="exemples-outings__title"><strong><?= $value['outing_name']; ?></strong></div>
-    <div class="exemples-outings__date">prévue le <?= date("d/m/Y", strtotime($value['date'])); ?></div>
-    <div class="exemples-outings__sport">sortie <?= getPracticedSport($value['practiced_sport']); ?></div>
-    <div class="exemples-outings__distance">parcours de <?= $value['distance']; ?> km</div>
-  </div>
-    <?php endforeach; ?>
-  
-  
-  <div class="exemples-outings__subscribe">
-    <h6>Nous n'attendons plus que vous pour partager ces moments conviviaux...</h6>
-    <p class="exemples-outings__more">...alors n'hésitez pas, rejoignez-nous en créant votre compte !</p>
-    <button type="button" class="btn btn-dark navbar__button"><a class="navbar__link" href="<?= get_bloginfo('url') . '/registration/' ?>">S'inscrire</a></button>
-  </div>  
-</div>
+get_footer();
