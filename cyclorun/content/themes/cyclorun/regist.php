@@ -18,7 +18,7 @@
             $dayBirth = filter_input(INPUT_POST, 'day_birth', FILTER_VALIDATE_INT);
             $monthBirth = filter_input(INPUT_POST, 'month_birth', FILTER_VALIDATE_INT);
             $yearBirth = filter_input(INPUT_POST, 'year_birth', FILTER_VALIDATE_INT );
-            $birthDate = $dayBirth . '/' . $monthBirth . '/' . $yearBirth
+            $birthDate = $dayBirth . '/' . $monthBirth . '/' . $yearBirth;
             $age = Age($birthDate);
             if($age < 18){
                 $errors[]= "Pour des raisons de sécurité, il faut être majeur pour s'inscrire sur Cycl'O'Run";

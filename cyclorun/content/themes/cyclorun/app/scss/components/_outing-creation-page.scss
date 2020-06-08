@@ -1,5 +1,104 @@
+/* Entete de la page */
 .outing-reg__organisation{
-    width: 70%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    text-align: center;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    border-bottom: 3px solid #00757F;
+}
+
+/* Formulaire global */
+.outing-reg__creation{
+   margin-top: 4rem;
+}
+
+/* Haut du formulaire */
+.outing-reg__top__form{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 3rem;
+}
+
+/* Partie gauche du form */
+.outing-reg__left{
+    width:33%;
+}
+
+/* Partie centrale du form */
+.outing-reg__practice{
+    display:flex;
+    flex-direction: column;
+}
+
+/* Partie insertion de l'image */
+.outing-reg__image{
+    width: 33%;
+}
+
+/* Input nom de la sortie */
+#outing_name{
+    display: block;
+    margin: auto;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+/* Inputs date et heure */
+.outing-reg__rdv{
+    width:50%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 5%;
+    padding-bottom: 3rem;
+    line-height: 2rem;
+}
+
+/* Input distance du parcours */
+.outing-reg__length{
+    width: 50%;
+    padding-left: 5%;
+}
+
+/* Titre de la sortie*/
+.outing-reg__title{
+    margin: auto;
+    width: 50%;
+}
+
+// Lieu de la sortie
+.outing-reg__location{
+    display: flex;
+    line-height: 2rem;
+    flex-direction: column;
+    padding-left: 5%;
+}
+
+//Selects de niveau
+.outing-reg__select{
+    margin-top: 1rem;
+    line-height: 2rem;
+    margin-bottom: 1rem;
+}
+
+
+//Description de la sortie
+.outing-reg__description{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    padding-left: 5%;
+}
+
+//Div contenant le bouton de soummission
+.outing-reg__submit{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    margin: auto;
+}
+
+//Bouton de soumission du formulaire
+.outing-reg__input__submit{
+    background-color: $blueduck;
 }

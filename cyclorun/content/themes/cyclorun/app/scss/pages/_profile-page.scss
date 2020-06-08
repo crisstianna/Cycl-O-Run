@@ -1,14 +1,72 @@
-.profile{
-    background-color: red($color: #000000);
-    &__infos{
-        &__sports{
-            &__practice{
-                &__svg{
-                    width: 3rem;;
-                }
-                
-            }
-        }
-    }
+/* Taille des icones cycling et running */
+.profile__infos__sports__practice__svg{
+    width: 3em;
+    color: #00757F;
 }
 
+/* photo de profile */
+.avatar__img{
+    display: block;
+    border-radius: 50%;
+}
+
+/* Toute la page */
+.profile{
+    display: flex;
+    margin-top: 3rem;
+}
+
+/* Partie gauche de la page */
+.profile__infos{
+    border-right: 2px solid #00757F;
+    max-width: 50%;
+    min-width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Infos perso sous la photo */
+.profile__infos__personal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* sport pratiqué */
+.profile__infos__sports__practice{
+    display: flex;
+}
+
+.profile__infos__sports{
+    min-width: 50%;
+}
+
+.my__practice__level{
+    margin: 3rem;
+}
+
+.selected__practice__level{
+    text-align: center;
+}
+
+/* Partie droite de la page (listes des sorties */
+.profile__outings{
+    padding-left: 5rem;
+}
+
+/* Titres des listes de sorties */
+.profile__outings__created__title, .profile__outings__future__title{
+    text-decoration: underline;
+    line-height: 1.5rem;
+}
+
+/* Les sorties que j'ai créé */
+.profile__outings__created{
+    padding-bottom: 3rem;
+}
+
+/* Infos de chacune des sorties */
+.profile__outings__list{
+    padding-left: 0;
+}
