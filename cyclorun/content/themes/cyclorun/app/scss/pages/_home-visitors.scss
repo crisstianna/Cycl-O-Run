@@ -1,20 +1,14 @@
 .home-main{
-    display: flex;
-
-    &__left{
-        width: 50%;
-        z-index: -1;
-    }
 
     &__welcome{
         font-size: $font-size-md;
         line-height: 2rem;
         text-align: center;
-        width:45%;
+        width:50%;
         background-color: $lightgrey;
         position:absolute;
-        top:45%;
-        left:28%;
+        top:40%;
+        left:25%;
         padding: 2rem;
         text-transform: uppercase;
 
@@ -32,8 +26,34 @@
 
     }
 
-    &__right{
-        width: 50%;
-        z-index: -1;
-    }
+   
+}
+
+.item-1, 
+.item-2 {
+
+    animation-duration: 10s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+}
+
+.item-1{
+	animation-name: anim-1;
+}
+
+.item-2{
+    margin-top: -2.5rem;
+	animation-name: anim-2;
+}
+
+@keyframes anim-1 {
+	0%, 8.3% { left: -100%; opacity: 0; }
+  8.3%, 50% { left: 25%; opacity: 1; }
+  53.33%, 100% { left: 110%; opacity: 0; }
+}
+
+@keyframes anim-2 {
+	0%, 53.33% { left: -100%; opacity: 0; }
+    56.50%, 95% { left: 25%; opacity: 1; }
+    100% { left: 110%; opacity: 0; }
 }
