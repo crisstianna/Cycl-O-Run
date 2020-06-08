@@ -1,18 +1,31 @@
+
 /*
 .inscription{
     background: url('../assets/images/cycl/cycl2.jpg'),  url('../assets/images/run/run2.jpg');
     background-size: 50%;
     background-repeat: no-repeat, no-repeat;
+
+    background-position: left, right;
+
 	background-position: left, right;
 	min-width: 100%;
 	min-height: 100%;
+
 
     &__title{
         width:30%;
         margin: auto;
         text-align: center;
-        color: $lightgrey;
+        color: $ligthgrey;
     }
+
+    &__form{
+        background-color: $ligthgrey;
+        display: flex;
+        width: 60%;
+        margin: auto;
+        border: 1px solid $dark;
+        border-radius: $font-size-default;
 
     &__form{
         background-color: $ligthgrey;
@@ -26,23 +39,22 @@
         &__selects{
             display: flex;
         }
-
         &__select{
             width: 50%;
         }
-
         &__submit{
             margin-top: $gutter-large-very;
             margin-left: 45%;
         }
-
         &__conditions{
             display: flex;
             margin-top: $gutter-large-very;
         }
-
         &__input{
             display: block;
+
+            margin: $gutter-small;
+
             margin: $gutter-large-very;
 
             &__birthdate{
@@ -50,31 +62,33 @@
                margin: $gutter-small;
             }
         }
-
         &__label{
             display: block;
+
+            margin: $gutter-small;
+
             margin: $gutter-large-very;
 
             &__birthdate{
                 display: flex;
                 margin: $gutter-small;
             }
-
             &__title{                
                 font-weight: bolder;
                 margin: $gutter;
             }
         }
-
         &__subsection{     
             padding: 2rem;
-
             &__left{
             border-right: 1px solid $dark;
             max-width: 50%;
             }
         }
     }
+
+}
+
 }*/
 //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 .inscription{
@@ -240,7 +254,5 @@
 		margin-top: 20px;
 		width: 100%;
 	}
-
-
 
 
