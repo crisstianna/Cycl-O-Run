@@ -111,6 +111,12 @@ else {
         );
     }    
 
+<<<<<<< HEAD
+    var_dump($wpdb);
+    // header("Location: ");
+    // exit;
+}
+=======
     $outingId = $wpdb->insert_id;
 
     if (!empty($id && $outingId)) {
@@ -134,3 +140,4 @@ get_footer();
 
 
 
+>>>>>>> 0c79283dbcf43434709a6a86eb6082cca17d6558

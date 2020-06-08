@@ -32,64 +32,58 @@ $profile_pic_img =  wp_get_attachment_image( $attachment_id, array('700', '600')
                 <label class="inscription__form__label__title" for="form-group-connexion-infos">Mes Informations de connexion</label>
                 
                 <div class="form-control ">
-                <label>Nom</label>
-                <input class="inscription__form__input" type="text" name="first_name" id="first_name" value="<?php echo $existing_firstname; ?>" placeholder="Prénom"/>
-                <i class="fa fa-check-circle"></i>
-                <i class="fa fa-exclamation-circle"></i>
+                <label>Prenom
+                <input class="inscription__form__input" type="text" name="first_name" id="first_name" value="<?php echo $existing_firstname; ?>" placeholder="Prenom"/></label>
+                
                 <small>Error Message</small>
                 </div>
                 
                 <div class="form-control error">
-                    <label>Prenom</label>
-                <input class="inscription__form__input" type="text" name="last_name" id="last_name" value="<?php echo $existing_lastname; ?>" placeholder="Nom"/>
-                <i class="fa fa-check-circle"></i>
-                <i class="fa fa-exclamation-circle"></i>
+                    <label>Nom
+                <input class="inscription__form__input" type="text" name="last_name" id="last_name" value="<?php echo $existing_lastname; ?>" placeholder="Nom"/></label>
+                
                 <small>Error Message</small>
-                </div>
                 </div>
                 
+                
                 <div class="form-control">
-                <label class="inscription__form__label__birthdate" for="birthdate">Date de naissance</label>
+                <label class="inscription__form__label__birthdate" for="birthdate">Date de naissance
                 <div class="birthdate">
-                    <input class="inscription__form__input__birthdate" type="date" name="birthdate" id="birthdate" value=""/>
+                    <input class="inscription__form__input__birthdate" type="date" name="birthdate" id="birthdate" value=""/></label>
                 </div>
-                <i class="fa fa-check-circle"></i>
-                <i class="fa fa-exclamation-circle"></i>
+                
                 <small>Error Message</small>
                 </div>
-                </div>
+                
                 
                 <div class="from-control">
                 <div class="existing-prof-pic-cont"><?php echo $profile_pic_img; ?></div>
-                <label class="inscription__form__label" for="user_profile_pic">Avatar</label>
-                    <input type="file" name="user_profile_pic" id="user_profile_pic" />
+                <label class="inscription__form__label" for="user_profile_pic">Avatar
+                    <input type="file" name="user_profile_pic" id="user_profile_pic" /></label>
                 
-                <i class="fa fa-check-circle"></i>
-                <i class="fa fa-exclamation-circle"></i>
+                
                 <small>Error Message</small>
                 </div>
 
                 <div class="form-control">
-                <label class="inscription__form__label" for="email">Adresse Email</label>
-                    <input class="inscription__form__input" type="email" name="email" id="email" value="<?php echo $existing_email; ?>"/>
+                <label class="inscription__form__label" for="email">Adresse Email
+                    <input class="inscription__form__input" type="email" name="email" id="email" value="<?php echo $existing_email; ?>"/></label>
                 
-                <i class="fa fa-check-circle"></i>
-                <i class="fa fa-exclamation-circle"></i>
+                
                 <small>Error Message</small>
                 </div>
 
                 <div class="form-control">
-                <label class="inscription__form__label" for="password"> Mot de Passe</label>
-                    <input class="inscription__form__input" type="password" name="password" id="password"/>  
+                <label class="inscription__form__label" for="password"> Mot de Passe
+                    <input class="inscription__form__input" type="password" name="password" id="password"/> </label> 
                 
-                <i class="fa fa-check-circle"></i>
-                <i class="fa fa-exclamation-circle"></i>
+                
                 <small>Error Message</small>
                 </div>
 
                 <div class="form-control">
-                <label class="inscription__form__label" for="password_confimation"> Confirmation du mot de passe</label>
-                    <input class="inscription__form__input" type="password" name="password_confirmation" id="password_confirmation"/>
+                <label class="inscription__form__label" for="password_confimation"> Confirmation du mot de passe
+                    <input class="inscription__form__input" type="password" name="password_confirmation" id="password_confirmation"/></label>
                 
                 <i class="fa fa-check-circle"></i>
                 <i class="fa fa-exclamation-circle"></i>
@@ -142,7 +136,7 @@ $profile_pic_img =  wp_get_attachment_image( $attachment_id, array('700', '600')
                             <small>Error Message</small>
                         
                     </div>
-                    <div class="custom-controlcontrol-form custom-switch inscription__form__select">
+                    <div class="custom-control control-form custom-switch inscription__form__select">
                         <input class="inscription__form__input custom-control-input" type="checkbox" name="running" value="running" id="running">
                         <label class="inscription__form__label custom-control-label" for="running">Running</label>
                         <label class="inscription__form__label mr-sm-2 sr-only" for="running_level">Mon Niveau </label>
