@@ -17,9 +17,9 @@
 }
 
 body {
-    
-    
-    background-repeat: no-repeat, no-repeat;
+	background-image: url('../assets/images/cycl/cycl2.jpg'),  url('../assets/images/run/run2.jpg');
+    background-size: 50%;
+	background-repeat: no-repeat, no-repeat;
     background-position: left, right;
 	font-family: 'Open Sans', sans-serif;
 	display: flex;
@@ -30,13 +30,10 @@ body {
 }
 
 .container {
-    background-image: url('../assets/images/cycl/cycl2.jpg'),  url('../assets/images/run/run2.jpg');
-    background-size: 50%;
+
 	border-radius: 5px;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 	overflow: hidden;
-	width: 400px;
-	max-width: 100%;
 }
 
 .header {
@@ -129,10 +126,11 @@ body {
 	width: 100%;
 }
 	</style>
-	<title>Inscription Form</title>
+	
 	
 </head>
 <body>
+<title>Inscription Form</title>
 <div class="container">
 	<div class="header">
 		<h2>Inscription</h2>
@@ -157,9 +155,8 @@ body {
         <div class="form-control">
                 <label class="inscription__form__label__birthdate" for="birthdate">Date de naissance</label>
                 <div class="birthdate">
-                    <input class="inscription__form__input__birthdate" type="text" name="day_birth" id="day_birth" value="" placeholder="JJ"/>
-                    <input class="inscription__form__input__birthdate" type="text" name="month_birth" id="month_birth" value="" placeholder="MM"/>
-                    <input class="inscription__form__input__birthdate" type="text" name="year_birth" id="year_birth" value="" placeholder="AAAA"/>
+                    <input class="inscription__form__input__birthdate" type="text" name="day_birth" id="day_birth" value="" placeholder="JJ/MM/AAAA"/>
+
                 </div>
                 <i class="fa fa-check-circle"></i>
                 <i class="fa fa-exclamation-circle"></i>
@@ -282,7 +279,7 @@ function checkInputs() {
 	const password2Value = password2.value.trim();
 	
 	if(usernameValue === '') {
-		setErrorFor(username, 'Username cannot be blank');
+		setErrorFor(username, 'Username cannot be blank');wp/wp-admin/
 	} else {
 		setSuccessFor(username);
 	}

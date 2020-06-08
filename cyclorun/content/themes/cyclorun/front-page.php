@@ -3,6 +3,8 @@
 
 get_header();
 
+// todo Ajouter 2 3 sorties pour avoir un premier visuel et donner envie de s'inscrire
+
 
 ?>
 
@@ -82,3 +84,7 @@ get_header();
         </div>
       </div>
     </div>
+
+<?php
+
+get_footer();

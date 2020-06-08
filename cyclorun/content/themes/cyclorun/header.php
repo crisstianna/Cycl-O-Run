@@ -11,7 +11,7 @@
   
     <?php if(is_user_logged_in()): ?>
       <nav class="menu authentified navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="<?= get_bloginfo('url') . '/custom-home/' ?>""><img class="logo" src="<?= get_stylesheet_directory_uri(). '/public/images/logo-complet.png'?>" alt=""></a>
+      <a class="navbar-brand" href="<?= get_bloginfo('url') . '/custom-home/' ?>"><img class="logo" src="<?= get_stylesheet_directory_uri(). '/public/images/logo-complet.png'?>" alt=""></a>
       <?php
 
         $args = [
