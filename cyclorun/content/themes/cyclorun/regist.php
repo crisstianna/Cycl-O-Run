@@ -18,7 +18,7 @@
             $dayBirth = filter_input(INPUT_POST, 'day_birth', FILTER_VALIDATE_INT);
             $monthBirth = filter_input(INPUT_POST, 'month_birth', FILTER_VALIDATE_INT);
             $yearBirth = filter_input(INPUT_POST, 'year_birth', FILTER_VALIDATE_INT );
-            $birthDate = $dayBirth . '/' . $monthBirth . '/' . $yearBirth
+            $birthDate = $dayBirth . '/' . $monthBirth . '/' . $yearBirth;
             $age = Age($birthDate);
             if($age < 18){
                 $errors[]= "Pour des raisons de sécurité, il faut être majeur pour s'inscrire sur Cycl'O'Run";
@@ -29,17 +29,17 @@
         if($_POST['address']){
             $address = sanitize_text_field($_POST['address']);
         } else{
-            $errors[]= "Veuillez reseigner votre adresse postale"
+            $errors[]= "Veuillez reseigner votre adresse postale";
         }
         if($_POST['postcode']){
             $postcode = filter_input(INPUT_POST, 'postcode', FILTER_VALIDATE_INT);
         } else {
-            $errors[] = 'Veuillez renseigner votre code postal'
+            $errors[] = 'Veuillez renseigner votre code postal';
         }
         if($_POST['city']){
         $city= sanitize_text_field($_POST['city']);
         } else {
-            $errors[] = 'Veuillez renseigner votre ville'
+            $errors[] = 'Veuillez renseigner votre ville';
         }
         if($_POST['cycling'] && $_POST['running']){
             $cycling= sanitize_text_field($_POST['cycling']);

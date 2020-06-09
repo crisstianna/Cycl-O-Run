@@ -16,27 +16,26 @@ if(! is_user_logged_in()){
 $id = get_current_user_id();
 $userData = get_userdata($id);
 $userMeta = get_user_meta($id);
-
+//var_dump($userdata);
+//var_dump($userMeta);
 // todo manque la récupération de la date de naissance au format AAAA-MM-JJ pour appeler la fonction qui va calculer l'âge automatiquement
 
-// $dayBirth = get_user_meta($id, 'day_birth');
-// $monthBirth = get_user_meta($id, 'month_birth');
-// $yearBirth = get_user_meta($id, 'year_birth');
+$dayBirth = get_user_meta($id, 'day_birth');
+$monthBirth = get_user_meta($id, 'month_birth');
+$yearBirth = get_user_meta($id, 'year_birth');
 
-// if(get_user_meta($id, 'day_birth')[0] < 10) {
-//     $dayBirth = intval(str_pad($dayBirth[0], 2, "0", STR_PAD_LEFT));
-// }else {
-//     $dayBirth = intval($dayBirth[0]);
-// }
-
-// if(get_user_meta($id, 'month_birth')[0] < 10) {
-//     $monthBirth = str_pad($monthBirth[0], 2, "0", STR_PAD_LEFT);
+//if(get_user_meta($id, 'day_birth')[0] < 10) {
+   //  $dayBirth = intval(str_pad($dayBirth[0], 2, "0", STR_PAD_LEFT));
+ //}else {
+   //$dayBirth = intval($dayBirth[0]);
+ //}
+//f(get_user_meta($id, 'month_birth')[0] < 10) {
+//$monthBirth = str_pad($monthBirth[0], 2, "0", STR_PAD_LEFT);
 //     // $monthBirth = intval($monthBirth);
-// }else {
-//     //$monthBirth = intval($monthBirth[0]);
-// }
+ //}else {
+//}
 
-// $birthdate = $yearBirth[0] . '-' . $monthBirth . '-' . $dayBirth;
+ //$birthdate = $yearBirth . '-' . $monthBirth . '-' . $dayBirth;
 
 //var_dump ($userMeta);
 // var_dump($dayBirth);
@@ -44,25 +43,32 @@ $userMeta = get_user_meta($id);
 // var_dump($yearBirth);
 // var_dump($birthdate);
 
+
+
 ?>
 
 
+
 <main class="profile">
+    
     <h1 class="profile__title">Mon Profil</h1>
     <div class="profile__infos">
       <div class="profile__infos__personal">
         <h2 class="profile__infos__title"><?php echo str_replace("_", " ", $userData->display_name) ;?></h2>
         <div class="profile__infos__personal__avatar"></div>
-          <img src="" alt="Here comes the user avatar"/>
+        <img src="<?php echo $userMeta['picture'][0]  ?>" alt="">
+        <i class="fa fa-user" aria-hidden="true"></i>
         </div>
         <div class="profile__infos__content">
-          <p>28 ans</p>
+          <p>Date de naissance:<?php echo $userMeta['day_birth'][0] . '/' . $userMeta['month_birth'][0] . '/'. $userMeta['year_birth'][0] ?></p>
         </div>
         <div class="profile__infos__sports">
           <div class="profile__infos__sports__practice">
               <h3>Mon profil sportif</h3>
-<?php
+              <p>Niveau Velo: <?php echo $userMeta['cycling_level'][0]?></p>
+              <p>Niveau Course a pied: <?php echo $userMeta['running_level'][0]?></p>
 
+<?php
 // todo Voir pour la gestion de l'affichage du profil sportif
 $sport = get_user_meta($id, 'sport');
 //var_dump($sport);

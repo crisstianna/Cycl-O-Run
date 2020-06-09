@@ -1,8 +1,10 @@
 <?php
 /**
  * Template Name: Registration-Form-Cris
- */
+ */ob_start();
+get_header();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -137,8 +139,8 @@ body {
 	</div>
 	<form id="form" class="form">
 		<div class="form-control">
-			<label for="username">Nom</label>
-			<input type="text" placeholder="Nom" id="username" />
+			<label for="username">Nom
+			<input type="text" placeholder="Nom" id="username" /></label>
 			<i class="fas fa-check-circle"></i>
 			<i class="fas fa-exclamation-circle"></i>
 			<small>Error message</small>
@@ -146,7 +148,7 @@ body {
         
         <div class="form-control">
 			<label for="username">Prenom</label>
-			<input type="text" placeholder="Prenom" id="username" />
+			<input type="text" placeholder="Prenom" id="username" /></label>
 			<i class="fas fa-check-circle"></i>
 			<i class="fas fa-exclamation-circle"></i>
 			<small>Error message</small>
@@ -155,7 +157,7 @@ body {
         <div class="form-control">
                 <label class="inscription__form__label__birthdate" for="birthdate">Date de naissance</label>
                 <div class="birthdate">
-                    <input class="inscription__form__input__birthdate" type="text" name="day_birth" id="day_birth" value="" placeholder="JJ/MM/AAAA"/>
+                    <input class="inscription__form__input__birthdate" type="date" name="day_birth" id="day_birth" value="" placeholder="JJ/MM/AAAA"/>
 
                 </div>
                 <i class="fa fa-check-circle"></i>
@@ -171,7 +173,7 @@ body {
                 <i class="fa fa-check-circle"></i>
                 <i class="fa fa-exclamation-circle"></i>
                 <small>Error Message</small>
-                </div>
+        </div>
                 
         
 		<div class="form-control">
@@ -279,7 +281,7 @@ function checkInputs() {
 	const password2Value = password2.value.trim();
 	
 	if(usernameValue === '') {
-		setErrorFor(username, 'Username cannot be blank');wp/wp-admin/
+		setErrorFor(username, 'Username cannot be blank');
 	} else {
 		setSuccessFor(username);
 	}
@@ -325,3 +327,7 @@ function isEmail(email) {
 
 </script>
 </html>
+<?php 
+get_footer();
+
+
