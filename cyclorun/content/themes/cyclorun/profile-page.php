@@ -15,7 +15,7 @@ if(! is_user_logged_in()){
     header("Location: $login");
 }
 
-//? "ELSE" WE RETRIEVE HIS DATAS   
+//? "ELSE" WE RETRIEVE CURRENT USER DATA  
 
 $id = get_current_user_id();
 $userData = get_userdata($id);
@@ -51,20 +51,18 @@ $yearBirth = get_user_meta($id, 'year_birth');
 
 ?>
 
-
-
 <main class="profile">
     
     <h1 class="profile__title">Mon Profil</h1>
     <div class="profile__infos">
       <div class="profile__infos__personal">
-        <h2 class="profile__infos__title"><?php echo str_replace("_", " ", $userData->display_name) ;?></h2>
+        <h2 class="profile__infos__title"></h2>
         <div class="profile__infos__personal__avatar"></div>
-        <img src="<?php echo $userMeta['picture'][0]  ?>" alt="">
+        <img src="" alt="">
         <i class="fa fa-user" aria-hidden="true"></i>
         </div>
         <div class="profile__infos__content">
-          <p>Date de naissance:<?php echo $userMeta['day_birth'][0] . '/' . $userMeta['month_birth'][0] . '/'. $userMeta['year_birth'][0] ?></p>
+          <p></p>
         </div>
         <div class="profile__infos__sports">
           <div class="profile__infos__sports__practice">
@@ -75,7 +73,6 @@ $yearBirth = get_user_meta($id, 'year_birth');
 <?php
 // todo Voir pour la gestion de l'affichage du profil sportif
 $sport = get_user_meta($id, 'sport');
-//var_dump($sport);
 
 if(empty($sport[0])) {
     $cycling = get_user_meta($id, 'cycling');
@@ -128,13 +125,13 @@ $outingUserParticipant = $wpdb->get_results(
   <main class="profile">
     <div class="profile__infos">
       <div class="profile__infos__personal__avatar">
-          <img class="avatar__img" src="images/avatar.png" alt="Here comes the user avatar"/>
+          <img class="avatar__img" src="<?php echo $userMeta['picture'][0]  ?>" alt="Here comes the user avatar"/>
       </div>
       <h1 class="profile__title">Mon Profil</h1>
       <div class="profile__infos__personal">
-        <h2 class="profile__infos__title">Eddy Murphy</h2>
+        <h2 class="profile__infos__title"><?php echo str_replace("_", " ", $userData->display_name) ;?></h2>
         <div class="profile__infos__content">
-          <p class="user__infos">25 ans</p>
+        Date de naissance:<?php echo $userMeta['day_birth'][0] . '/' . $userMeta['month_birth'][0] . '/'. $userMeta['year_birth'][0] ?>
           <p class="user__infos">Paris</p>
         </div>
         <div class="profile__infos__sports">
