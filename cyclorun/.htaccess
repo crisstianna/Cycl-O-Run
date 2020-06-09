@@ -1,4 +1,14 @@
+
+# BEGIN WordPress
+# Les directives (lignes) entre 'BEGIN WordPress' et 'END WordPress' sont
+# généré dynamiquement, et ne doivent uniquement être modifiées via les filtres WordPress.
+# Toute modification des directives entre ces marqueurs sera outrepassée.
+<IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-d
+RewriteBase /projet-cycl-o-run/cyclorun/
+RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$ ./content/themes/cyclorun/index.php [QSA,L]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /projet-cycl-o-run/cyclorun/index.php [L]
+</IfModule>
+# END WordPress
