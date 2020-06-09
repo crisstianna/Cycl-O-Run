@@ -49,7 +49,7 @@ get_header();
                 <a class="password_lost"href="<?= get_bloginfo('url') . '/wp/wp-login.php?action=lostpassword'?>">Mot de passe oublié</a>
             </div>
             <div class="login-submit  connexion__page__buttons">
-                <button type="submit" name="wp-submit" id="wp-submit" class="button button-primary connexion__page__buttons__connexion"/>Se connecter</button>
+                <button type="submit" name="wp-submit" id="wp-submit" class="button button-primary connexion__page__buttons__connexion">Se connecter</button>
                 <button type="button" class="connexion__page__buttons__inscription"><a class="connexion__page__buttons__inscription__link" href="<?= get_bloginfo('url') . '/registration/'?>">S'inscrire</a></button>
             </div>   
 </form>

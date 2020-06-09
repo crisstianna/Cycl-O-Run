@@ -1,7 +1,5 @@
 // Fichier de configuration à utiliser dans un environnement de développement
-
 // La fonction Node.js require permet d'importer un module Node.js installé par défaut ou installé avec NPM
-
 // Webpack (https://webpack.js.org/) : permet de transformer notre code front (Sass, JS avec dépendances, ...) en un code compréhensible par les navigateurs (CSS, JS, ...)
 const webpack = require('webpack');
 // path (https://nodejs.org/api/path.html) : met à disposition des fonctions utilitaires pour travailler avec les fichiers et répertoires de notre application
@@ -16,9 +14,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 const chokidar = require('chokidar');
 // webpack-build-notifier  (https://www.npmjs.com/package/webpack-build-notifier) : permet de recevoir des notifications au niveau du système d'exploitation à chaque nouveau build de Webpack
 const WebpackBuildNotifierPlugin = require('webpack-build-notifier');
-
 const watchMode = process.env.NODE_ENV === 'watch';
-
 let config = {
   entry: [
     './app/js/app.js',
@@ -94,7 +90,6 @@ let config = {
       }
     ]
 },
-
   // Configuration du serveur de développement qui rechargera automatiquement les contenus lors d'un changement
   devServer: {
     contentBase: path.join(__dirname, 'public'),
@@ -116,8 +111,6 @@ let config = {
     }
   },
 };
-
-
 const plugins = [
   new MiniCSSExtractPlugin({
     filename: 'css/style.css'
@@ -148,7 +141,6 @@ const plugins = [
     }
   ),
 ];
-
 if (watchMode) {
   plugins.push(
     new WebpackBuildNotifierPlugin({
@@ -157,7 +149,5 @@ if (watchMode) {
     })
   );
 }
-
 config.plugins = plugins;
-
 module.exports = config;

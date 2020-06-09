@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;500;800&display=swap');
 
-body {
-    margin-top: -32px;
+html {
+    height: 100%;
+  }
+  body {
     background-color: $lightgrey;
-    font-family: $font-family;
-    color: $dark;
-}
+    max-height: 100%;
+    margin: 0;
+    padding: 0;
+  }
 
 p {
     margin: 0.5rem;

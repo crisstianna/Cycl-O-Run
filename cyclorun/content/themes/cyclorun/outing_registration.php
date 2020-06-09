@@ -1,17 +1,12 @@
 <?php
-
 /*
 Template Name: Outing Registration
 */
-
 require 'template-parts/outing_creation_form.php';
-
 //var_dump($_POST);
 $id = get_current_user_id();
 //var_dump($id);
-
 global $wpdb;
-
 $outingName = filter_input(INPUT_POST, 'outing_name');
 $address = filter_input(INPUT_POST, 'address');
 $date = filter_input(INPUT_POST, 'date', FILTER_SANITIZE_NUMBER_FLOAT);
@@ -53,7 +48,6 @@ if(!empty($_POST)) {
     if (empty($outingName) && empty($address) && empty($date) && empty($time) && empty($distance) && empty($practicedSport)) {
     
         $errors = [];
-
         if (empty($outingName)) {
             $errors += [
                 'outingName' => 'Veuillez renseigner un titre',
@@ -89,7 +83,6 @@ if(!empty($_POST)) {
         if (!empty($errors)) {
             echo '<div style="font-size:24px;color:red;margin-top:40px;">Veuillez renseigner : ';
             echo '<ul>';
-
             foreach($errors as $errorKey) {
                 echo '<li style="font-size:1rem;color:red;margin-top:40px;">' . $errorKey . '</li>';
             }
@@ -100,11 +93,11 @@ if(!empty($_POST)) {
         
     }
 
+}
     else {
         if(empty($picture)) {
             $picture = get_bloginfo('url') . '/content/themes/public/images/logo-o.png';
         }   
-
         if ($practicedSport) {
             if ($practicedSport === 1 && empty($cycling_level) || $practicedSport === 2 && empty($running_level)) {
                 echo 'Veuillez renseigner le niveau associé au sport choisi';
@@ -118,7 +111,6 @@ if(!empty($_POST)) {
                 }
             }
         } 
-
         $wpdb->insert(
             $wpdb->prefix . 'outings',
             array(
@@ -150,7 +142,6 @@ if(!empty($_POST)) {
             )
         );
     }
-
     if ($wpError !== false && $id && $outingId) {
         echo '<div style="font-size:24px;color:#00757f;margin-top:40px;">Félicitations ! Votre sortie a bien été ajoutée !</div>';
         echo '<button type="button" class="btn btn-dark navbar__button"><a class="navbar__link" href="' . get_bloginfo('url') . '/outing-details/?outingId=' . $outingId . '">Voir ma sortie en détails</a></button>';
@@ -159,5 +150,4 @@ if(!empty($_POST)) {
         echo '<div style="font-size:24px;color:#00757f;margin-top:40px;">Quelque chose s\'est mal passé, veuillez recommencer</div>';
     }    
 }
-
 get_footer();
