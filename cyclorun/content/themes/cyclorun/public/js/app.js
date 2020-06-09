@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "522ce8ec85bf470b5c9b";
+/******/ 	var hotCurrentHash = "19170de7881fc2ddb6c9";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -806,6 +806,10 @@
 /* WEBPACK VAR INJECTION */(function($) {var app = {
   init: function() {
     console.log('init');
+
+    if(!document.getElementById('map')) {
+      return false;
+    }
 
     let latitude = Number(document.getElementById('map').dataset.lat);
     console.log(latitude);
