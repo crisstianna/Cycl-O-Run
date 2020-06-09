@@ -46,13 +46,9 @@ $yearBirth = get_user_meta($id, 'year_birth');
 // var_dump($monthBirth);
 // var_dump($yearBirth);
 // var_dump($birthdate);
-<<<<<<< HEAD
-var_dump(get_user_meta($id, 'first_name'));
-=======
 
 
 
->>>>>>> Dev
 ?>
 
 

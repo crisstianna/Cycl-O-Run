@@ -34,12 +34,7 @@
     "bootstrap": "^4.5.0",
     "file-loader": "^6.0.0",
     "font-awesome": "^4.7.0",
-<<<<<<< HEAD
-    "jquery": "^3.4.1",
-    "mapbox-gl": "^1.10.1",
-=======
     "jquery": "^3.5.1",
->>>>>>> 17073fa5b9d9b65077a75e7aec6b010fed7633a7
     "reset-css": "^5.0.1"
   }
 }
