@@ -2,9 +2,9 @@ var app = {
   init: function() {
     console.log('init');
 
-    llet latitude = Number(document.getElementById('map').dataset.lat);
+    let latitude = Number(document.getElementById('map').dataset.lat);
     console.log(latitude);
-let longitude = Number(document.getElementById('map').dataset.lgt);
+    let longitude = Number(document.getElementById('map').dataset.lgt);
     console.log(longitude);
     var map;
     function initMap() {

@@ -119,14 +119,15 @@ const plugins = [
     $: 'jquery',
     jQuery: 'jquery'
   }),
-  new CopyPlugin([
+  new CopyPlugin({
+    patterns: [
     {
       from: 'app/assets/**',
       to: '.',
       toType: 'dir',
       transformPath: (targetPath) => targetPath.replace(/^app\/assets\//, '')
-    }
-  ]),
+    }]
+  }),
   new webpack.HotModuleReplacementPlugin(),
   new BrowserSyncPlugin(
     {

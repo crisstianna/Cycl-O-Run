@@ -9918,7 +9918,6 @@ a:visited {
 
 }*/
 .inscription {
-  background: url(../images/cycl2.jpg), url(../images/run2.jpg);
   background-size: 50%;
   background-repeat: no-repeat, no-repeat;
   background-position: left, right;
@@ -9973,7 +9972,6 @@ a:visited {
 .container {
   background-repeat: no-repeat, no-repeat;
   background-position: left, right;
-  background-image: url(../images/cycl2.jpg), url(../images/run2.jpg);
   background-size: 50%;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
