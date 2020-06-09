@@ -161,6 +161,3 @@ if(!empty($_POST)) {
 }
 
 get_footer();
-
-
-

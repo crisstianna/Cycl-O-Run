@@ -1,4 +1,4 @@
-
-<?php wp_footer(); ?>
-</body>
+            </main>
+        <?php wp_footer(); ?>
+    </body>
 </html>

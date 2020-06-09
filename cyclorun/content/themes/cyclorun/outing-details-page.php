@@ -32,6 +32,23 @@ $outingQueries = $wpdb->get_results(
   ARRAY_A
 );
 
+//! 
+
+$adressePostale = $outingQueries[0]['address'];
+$address = str_replace(" ", "+", $adressePostale);
+//var_dump($address);
+$url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' . $address . '&key=AIzaSyBmSOdXll4S7xEjhUhMzhOk7wCIarU30Ek';
+$response = file_get_contents($url);
+$json = json_decode($response,TRUE);
+	// Latitude
+	$latitude = ($json['results'][0]['geometry']['location']['lat']) ? $json['results'][0]['geometry']['location']['lat'] : '--';
+	// Longitude
+	$longitude = ($json['results'][0]['geometry']['location']['lng']) ? $json['results'][0]['geometry']['location']['lng'] : '--';
+//var_dump($latitude);
+//var_dump($longitude);
+
+//! 
+
 // author id, usefull for the next request (to display the name instead of the id)
 $authorId = $outingQueries[0]['author'];
 // change the date format
@@ -65,7 +82,8 @@ $numberParticipants = $wpdb->get_results(
     <div class="details__content">
       <section class="details__content__informations">
         <h3 class="details__content__informations__title"><?= $outingQueries[0]['outing_name']; ?></h3>
-        <p class="details__content__informations__date"><?= date("d/m/Y", strtotime($outingQueries[0]['date'])); ?></p>
+        <p class="details__content__informations__date">Date de la sortie : <?= date("d/m/Y", strtotime($outingQueries[0]['date'])); ?></p>
+        <p class="details__content__informations__time">à <?= substr($outingQueries[0]['time'], 0, -3); ?></p>
         <div class="details__content__informations__author">
           <h3 class="details__content__informations__author__title">Sortie proposée par :</h3>
           <img src="images/avatar.png" alt="" class="details__content__informations__author__img">
@@ -122,7 +140,9 @@ $numberParticipants = $wpdb->get_results(
         </div>
       </section>
       <aside class="details__content__map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d46603.441767461125!2d5.850215753874818!3d43.110501634411385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e1!4m5!1s0x12c91b0fd79f6773%3A0x3524575272a0b303!2sPlace%20de%20la%20Libert%C3%A9%2C%2083000%20Toulon!3m2!1d43.1259535!2d5.9306111999999995!4m5!1s0x12c90160c00be73b%3A0x40819a5fd8fc8b0!2sSix-Fours-les-Plages!3m2!1d43.093061999999996!2d5.839225!5e0!3m2!1sfr!2sfr!4v1590561716077!5m2!1sfr!2sfr" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        <div id="map" data-lat="<?php echo $latitude; ?>" data-lgt="<?php  echo $longitude; ?>" style="width:600px; height:600px">
+      
+        </div>
         <form action="" method="post">
                     <input type="hidden" id="userId" name="userId" value="<?php echo $id; ?>">
                     <input type="hidden" id="outingId" name="outingId" value="<?php echo $outing_id; ?>">
@@ -168,3 +188,33 @@ if (!empty($_POST)) {
 }
 
 ?>
+
+    
+
+<script>
+  let latitude = Number(document.getElementById('map').dataset.lat);
+      console.log(latitude);
+  let longitude = Number(document.getElementById('map').dataset.lgt);
+      console.log(longitude);
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat:latitude, lng:longitude},
+          zoom: 17,
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          scrollwheel: false,
+        });
+        var marker = new google.maps.Marker({
+      // Nous définissons sa position (syntaxe json)
+      position: {lat: latitude, lng: longitude},
+      // Nous définissons à quelle carte il est ajouté
+      map: map
+});
+      }
+      window.onload = function(){
+				// Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
+				initMap(); 
+			};
+    </script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmSOdXll4S7xEjhUhMzhOk7wCIarU30Ek&callback=initMap"
+    async defer></script> -->

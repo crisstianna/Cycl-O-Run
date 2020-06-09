@@ -2,7 +2,11 @@
 <html <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://maps.google.com/maps/api/js?key=AIzaSyBmSOdXll4S7xEjhUhMzhOk7wCIarU30Ek" type="text/javascript">
+    // <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBG8fAzI2o9gRR9C9GRjoxvUgMXDrlI1U&callback=initMap"
+  type="text/javascript"></script>
     <?php wp_head(); ?>
 </head>
 <body>

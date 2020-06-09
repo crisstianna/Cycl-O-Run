@@ -21,16 +21,16 @@ if (!function_exists('getLevel')) {
         }
         else if($idSport === '2') {
 
-            if($idLevel === '1') {
+            if($idLevel === '11') {
                 $level = 'Loisirs (-5km)';
             }
-            else if($idLevel === '2') {
+            else if($idLevel === '12') {
                 $level = 'Régulier (5-10km)';
             }
-            else if ($idLevel === '3') {
+            else if ($idLevel === '13') {
                 $level = 'Avancé (10-15km)';
             }
-            else if ($idLevel === '4') {
+            else if ($idLevel === '14') {
                 $level = 'Avancé (+15km)';
             }
         }
