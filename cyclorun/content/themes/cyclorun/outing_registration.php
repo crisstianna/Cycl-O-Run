@@ -92,7 +92,6 @@ if(!empty($_POST)) {
         // todo l'affichage des erreurs pourait-il se faire sur la droite du formulaire ?
         
     }
-
     else {
         if(empty($picture)) {
             $picture = get_bloginfo('url') . '/content/themes/public/images/logo-o.png';
