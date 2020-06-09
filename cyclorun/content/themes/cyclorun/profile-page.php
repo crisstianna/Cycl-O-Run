@@ -43,7 +43,7 @@ $userMeta = get_user_meta($id);
 // var_dump($monthBirth);
 // var_dump($yearBirth);
 // var_dump($birthdate);
-
+var_dump(get_user_meta($id, 'first_name'));
 ?>
 
 
