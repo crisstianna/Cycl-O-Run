@@ -46,7 +46,7 @@ $profile_pic_img =  wp_get_attachment_image( $attachment_id, array('700', '600')
                     
                     
                     <!-- <label class="inscription__form__label__birthdate" for="birthdate">Date de naissance</label> -->
-                    <div class="birthdate">
+                    <!--<div class="birthdate">
                     <input type="date"
                        id="birthdate"
                        name="birthdate"
@@ -54,7 +54,12 @@ $profile_pic_img =  wp_get_attachment_image( $attachment_id, array('700', '600')
                        title="Please use YYYY-MM-DD as the date format."
                        pattern="(19[0-9][0-9]|20[0-9][0-9])-(1[0-2]|0[1-9])-(3[01]|[21][0-9]|0[1-9])"
                        required>
-                    </div>
+                    </div>-->
+                    <div class="birthdate">   
+                    <input class="inscription__form__input__birthdate" type="text" name="day_birth" id="day_birth" value="<?php echo $existing_daybirth; ?>"/>
+                    <input class="inscription__form__input__birthdate" type="text" name="month_birth" id="month_birth" value="<?php echo $existing_monthbirth; ?>"/>
+                    <input class="inscription__form__input__birthdate" type="text" name="year_birth" id="year_birth" value="<?php echo $existing_yearbirth; ?>"/>
+                </div>
                     
                     
                     
@@ -176,7 +181,7 @@ if (isset($_POST['submit'])) {
     $password = (! empty($_POST['password'])) ? sanitize_text_field($_POST['password']) : '';
     $daybirth = (! empty($_POST['day_birth'])) ? intval($_POST['day_birth'], 10) : '';
     $monthbirth = (! empty($_POST['month_birth'])) ? intval($_POST['month_birth'], 10) : '';
-    $yearbirt = (! empty($_POST['year_birth'])) ? intval($_POST['year_birth'], 10) : '';
+    $yearbirth = (! empty($_POST['year_birth'])) ? intval($_POST['year_birth'], 10) : '';
     $email = (! empty($_POST['email'])) ? sanitize_text_field($_POST['email']) : '';
     $address = (! empty($_POST['address'])) ? sanitize_text_field($_POST['address']) : '';
     $postcode = (! empty($_POST['postcode'])) ? intval($_POST['postcode'], 10) : '';
