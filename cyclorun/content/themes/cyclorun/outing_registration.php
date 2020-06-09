@@ -93,7 +93,6 @@ if(!empty($_POST)) {
         
     }
 
-}
     else {
         if(empty($picture)) {
             $picture = get_bloginfo('url') . '/content/themes/public/images/logo-o.png';

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cycl'O'Run</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar authentified navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"><img class="logo" src="images/logo-complet.png" alt=""></a>
+        <a class="navbar__item__is-active" href="#">Home</a>
+        <a class="navbar__item" href="#">Profil</a>
+        <a class="navbar__item" href="#">Participer à une sortie</a>
+        <a class="navbar__item" href="#">Organiser une sortie</a>   
+        <button type="logout-button" class="btn">Déconnexion</button>
+        </nav>
+    </header>
+    <main>
+        <section>
+         <h1>Les sorties organisées</h1> 
+         <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Filtres
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </div>
+
+        </section>
+        <section class="outing">
+            <article class="outing__article">
+                <div class="outing__article__image">
+                    <img class="outing__article__img" src="images/logo-o.png" alt="">
+                </div>
+                    <h3 class="outing__article__title">Nom de l'évènement</h3>
+                    <p class="outing__article__date">date</p>
+                    <p class="outing__article__time">heure</p>
+                    <p class="outing__article__sport">sport pratiqué</p>
+                    <div class="outing__article__pict">
+                        <img src="images/Running.svg" alt="" class="outing__article__pict__svg">
+                        <img src="images/Cycling.svg" alt="" class="outing__article__pict__svg">
+                    </div>
+                    <p class="outing__article__level">Niveau</p>
+                    <p class="outing__article__location">Adresse du rdv</p>
+                    <p class="outing__article__distance">Distance parcourue</p>
+                    <h4>Organisateur de la sortie</h4>
+                    <img class="outing__article__img" src="images/avatar.png" alt="AVATAR DE L'AUTEUR">
+                    <p class="outing__article__author">Pseudo du créateur</p>
+                    <ul>
+                        <li>
+                            <img class="outing__article__img" src="images/avatar.png" alt="AVATAR DU PARTICIPANT">
+                            <p class="outing__article__author">Pseudo du participant</p>
+                        </li>            
+                    </ul>    
+                    <button class="outing__article__button" type="button">Détails de la sortie</button>
+                    <button class="outing__article__button" type="button">Je participe</button>                
+            </article>
+        </section> 
+    </main>
+</body>
+</html>
+
