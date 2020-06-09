@@ -23,7 +23,7 @@ get_header();
           <p>Pourquoi,</p>
           <div class="home-main__welcome__word">
               <p class="item-1"><span>courir</span><p>       
-              <p class="item-2"><span>pedaler</span></p>
+              <p class="item-2"><span>ramper</span></p>
               
           </div>
           <p>tout seul ?</p>
