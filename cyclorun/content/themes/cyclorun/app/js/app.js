@@ -2,6 +2,10 @@ var app = {
   init: function() {
     console.log('init');
 
+    if(!document.getElementById('map')) {
+      return false;
+    }
+
     let latitude = Number(document.getElementById('map').dataset.lat);
     console.log(latitude);
     let longitude = Number(document.getElementById('map').dataset.lgt);
