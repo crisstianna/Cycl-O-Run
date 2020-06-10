@@ -51,39 +51,56 @@ if (isset($_POST['submit'])) {
     // Get form values.
 
     if(!empty($_POST['first_name'])){
-        $firstname = (! empty($_POST['first_name'])) ? sanitize_text_field($_POST['first_name']) : '';
+        $firstname = sanitize_text_field($_POST['first_name'];
     } else {
         $errors[]= "Veuillez renseigner votre prénom";
     }
 
     if(!empty($_POST['last_name'])){
-        $lastname = (! empty($_POST['last_name'])) ? sanitize_text_field($_POST['last_name']) : '';
+        $lastname = sanitize_text_field($_POST['last_name']);
         $username= $firstname . '_' . $lastname;
     } else {
         $errors[]= "Veuillez renseigner votre nom";
     }
 
     if(!empty($_POST['day_birth']) && !empty($_POST['month_birth']) && !empty($_POST['year_birth'])){
-        $daybirth = (! empty($_POST['day_birth'])) ? intval($_POST['day_birth'], 10) : '';
-        $monthbirth = (! empty($_POST['month_birth'])) ? intval($_POST['month_birth'], 10) : '';
-        $yearbirth = (! empty($_POST['year_birth'])) ? intval($_POST['year_birth'], 10) : '';
-
+        $daybirth = intval($_POST['day_birth'], 10);
+        $monthbirth = intval($_POST['month_birth'], 10);
+        $yearbirth = intval($_POST['year_birth'], 10);
     } else {
         $errors[]= "Veuillez renseigner votre date de naissance complète";
     }
 
-    if(!)
-    $email = (! empty($_POST['email'])) ? sanitize_text_field($_POST['email']) : '';
+    
+    if(!empty($_POST['email'])){
+        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+           return true;
+        } else {
+            $errors[]= "L'email renseigné est invalide";
+        }
+    }
 
+    if(!empty($_POST['address'])){
+        $address = sanitize_text_field($_POST['address']);
+    } else {
+        $errors[]="Veuillez renseignez votre adresse postale: N°, type et libellé de la voie";
+    }
 
-    $address = (! empty($_POST['address'])) ? sanitize_text_field($_POST['address']) : '';
-    $postcode = (! empty($_POST['postcode'])) ? intval($_POST['postcode'], 10) : '';
-    $city = (! empty($_POST['city'])) ? sanitize_text_field($_POST['city']) : '';
+    if(!empty($_POST['postcode'])){
+        $postcode = intval($_POST['postcode'], 10);
+    } else {
+        $errors[] = "Veuillez renseigner votre code postal";
+    }
 
+    if(!empty($_POST['city'])){
+        $city = sanitize_text_field($_POST['city']);
+    } else {
+        $errors[] = "Veuillez renseigner votre ville";
+    }
 
-    if (!empty($_POST)) {
+    if(!empty($_FILES)){
         $pictureData = $_FILES['picture']['name'];
-        //var_dump($picture);
+
         if (! function_exists('wp_handle_upload')) {
             require_once(ABSPATH . 'wp-admin/includes/file.php');
         }
@@ -91,35 +108,35 @@ if (isset($_POST['submit'])) {
         $upload_overrides = array(
             'test_form' => false
         );
+
         $action = wp_handle_upload($files, $upload_overrides);
+
         if ($action && !isset($action['error'])) {
             'Le fichier est valide et a été correctement téléchargé';
-        //var_dump($action);
+    
         } else {
-            echo $action['error'];
+            $errors[]= $action['error'];
         }
         $picture = $action['url'];
-
-        if ($_POST['cycling'] && $_POST['running']) {
-            $cycling = sanitize_text_field($_POST['cycling']);
-            $running= sanitize_text_field($_POST['running']);
-        } elseif ($_POST['cycling']) {
-            $sport= sanitize_text_field($_POST['cycling']);
-        } elseif ($_POST['running']) {
-            $sport= sanitize_text_field($_POST['running']);
-        }
-
-        if ($_POST['cycling_level']) {
-            $cyclinglevel = $_POST['cycling_level'];
-        }
-
-        if ($_POST['running_level']) {
-            $runninglevel = $_POST['running_level'];
-        }
     }
 
-    //TODO : Others checks
+    if (!empty($_POST['cycling']) && !empty($_POST['running'])) {
+        $cycling = sanitize_text_field($_POST['cycling']);
+        $running= sanitize_text_field($_POST['running']);
+    } elseif (!empty($_POST['cycling'])) {
+        $sport= sanitize_text_field($_POST['cycling']);
+    } elseif (!empty($_POST['running'])) {
+        $sport= sanitize_text_field($_POST['running']);
+    }
 
+    if ($_POST['cycling_level']) {
+        $cyclinglevel = $_POST['cycling_level'];
+    }
+
+    if ($_POST['running_level']) {
+        $runninglevel = $_POST['running_level'];
+    }
+}
     $new_user_id = wp_create_user($username, $password, $email);
 
     // Insert/Update the form values to user_meta table.
