@@ -36,11 +36,11 @@
                 
                 
                 <label class="birthdate" for="birthdate">Date de naissance</label>
-                    <input class=" input__birthdate" type="text" name="day_birth" id="day_birth" value="JJ"/>
-                    <input class=" input__birthdate" type="text" name="month_birth" id="month_birth" value="MM"/>
-                    <input class=" input__birthdate" type="text" name="year_birth" id="year_birth" value="AAAA"/>
+                    <input class=" input__birthdate" type="number" min="01" max="31" name="day_birth" id="day_birth"/>
+                    <input class=" input__birthdate" type="number" min="01" max="12" name="month_birth" id="month_birth"/>
+                    <input class=" input__birthdate" type="number" min="1950" max="2002" name="year_birth" id="year_birth"/>
+                <!--TODO: create a function to retrieve dynamically max year attribute. Ex: currentYear= 2020-18(min user age) = 2002 -->
                 
-             
                 
                 
                 

@@ -45,20 +45,41 @@ if ( ! function_exists( 'wf_insert_update_user_meta' ) ) {
 }
 
 // If the form is submitted
-$errors=[];
+
 if (isset($_POST['submit'])) {
+    $errors=arrray();
     // Get form values.
-    $firstname = (! empty($_POST['first_name'])) ? sanitize_text_field($_POST['first_name']) : '';
-    $lastname = (! empty($_POST['last_name'])) ? sanitize_text_field($_POST['last_name']) : '';
-    $username= $firstname . '_' . $lastname;
-    $password = (! empty($_POST['password'])) ? sanitize_text_field($_POST['password']) : '';
-    $daybirth = (! empty($_POST['day_birth'])) ? intval($_POST['day_birth'], 10) : '';
-    $monthbirth = (! empty($_POST['month_birth'])) ? intval($_POST['month_birth'], 10) : '';
-    $yearbirth = (! empty($_POST['year_birth'])) ? intval($_POST['year_birth'], 10) : '';
+
+    if(!empty($_POST['first_name'])){
+        $firstname = (! empty($_POST['first_name'])) ? sanitize_text_field($_POST['first_name']) : '';
+    } else {
+        $errors[]= "Veuillez renseigner votre prénom";
+    }
+
+    if(!empty($_POST['last_name'])){
+        $lastname = (! empty($_POST['last_name'])) ? sanitize_text_field($_POST['last_name']) : '';
+        $username= $firstname . '_' . $lastname;
+    } else {
+        $errors[]= "Veuillez renseigner votre nom";
+    }
+
+    if(!empty($_POST['day_birth']) && !empty($_POST['month_birth']) && !empty($_POST['year_birth'])){
+        $daybirth = (! empty($_POST['day_birth'])) ? intval($_POST['day_birth'], 10) : '';
+        $monthbirth = (! empty($_POST['month_birth'])) ? intval($_POST['month_birth'], 10) : '';
+        $yearbirth = (! empty($_POST['year_birth'])) ? intval($_POST['year_birth'], 10) : '';
+
+    } else {
+        $errors[]= "Veuillez renseigner votre date de naissance complète";
+    }
+
+    if(!)
     $email = (! empty($_POST['email'])) ? sanitize_text_field($_POST['email']) : '';
+
+
     $address = (! empty($_POST['address'])) ? sanitize_text_field($_POST['address']) : '';
     $postcode = (! empty($_POST['postcode'])) ? intval($_POST['postcode'], 10) : '';
     $city = (! empty($_POST['city'])) ? sanitize_text_field($_POST['city']) : '';
+
 
     if (!empty($_POST)) {
         $pictureData = $_FILES['picture']['name'];
@@ -96,6 +117,7 @@ if (isset($_POST['submit'])) {
             $runninglevel = $_POST['running_level'];
         }
     }
+
     //TODO : Others checks
 
     $new_user_id = wp_create_user($username, $password, $email);
@@ -160,15 +182,13 @@ if (isset($_POST['submit'])) {
                 
                 
                 <label class="birthdate" for="birthdate">Date de naissance</label>
-                    <input class=" input__birthdate" type="text" name="day_birth" id="day_birth" value="JJ"/>
-                    <input class=" input__birthdate" type="text" name="month_birth" id="month_birth" value="MM"/>
-                    <input class=" input__birthdate" type="text" name="year_birth" id="year_birth" value="AAAA"/>
+                    <input class=" input__birthdate" type="number" min="01" max="31" name="day_birth" id="day_birth"/>
+                    <input class=" input__birthdate" type="number" min="01" max="12" name="month_birth" id="month_birth"/>
+                    <input class=" input__birthdate" type="number" min="1950" max="2002" name="year_birth" id="year_birth"/>
+
+                <!--TODO: create a function to retrieve dynamically max year attribute. Ex: currentYear= 2020-18(min user age) = 2002 -->
                 
              
-                
-                
-                
-                
                 <div class="existing-prof-pic-cont">
                 <!-- <label class="inscription__form__label" for="user_profile_pic">Avatar</label> -->
                     <input class="inscription__form__input" type="file" name="picture" id="picture" />
