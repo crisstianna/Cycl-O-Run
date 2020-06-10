@@ -46,58 +46,84 @@ if ( ! function_exists( 'wf_insert_update_user_meta' ) ) {
 
 // If the form is submitted
 
-if (isset($_POST['submit'])) {
-    $errors=arrray();
-    // Get form values.
+if (!empty($_POST)) {
+        
+    $errors=[];
 
+    //*FIRSTNAME
     if(!empty($_POST['first_name'])){
-        $firstname = sanitize_text_field($_POST['first_name'];
+        $firstname = sanitize_text_field($_POST['first_name']);
     } else {
-        $errors[]= "Veuillez renseigner votre prénom";
+        $errors += [
+            'firstname' => "Veuillez renseigner votre prénom"
+        ];
     }
 
+    //*LASTNAME
     if(!empty($_POST['last_name'])){
         $lastname = sanitize_text_field($_POST['last_name']);
         $username= $firstname . '_' . $lastname;
     } else {
-        $errors[]= "Veuillez renseigner votre nom";
+        $errors += [
+            'lastname' => "Veuillez renseigner votre nom"
+        ];
     }
 
+    //*BIRTHDATE
     if(!empty($_POST['day_birth']) && !empty($_POST['month_birth']) && !empty($_POST['year_birth'])){
         $daybirth = intval($_POST['day_birth'], 10);
         $monthbirth = intval($_POST['month_birth'], 10);
         $yearbirth = intval($_POST['year_birth'], 10);
     } else {
-        $errors[]= "Veuillez renseigner votre date de naissance complète";
+        $errors += [
+            'birthdate' => "Veuillez renseigner votre date de naissance complète"
+        ];
     }
 
-    
+    //*EMAIL
     if(!empty($_POST['email'])){
-        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-           return true;
-        } else {
-            $errors[]= "L'email renseigné est invalide";
+        $email=$_POST['email'];
+
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $errors += [
+                'wrongEmail' => "L'email renseigné est invalide"
+            ];
         }
+
+    } else {
+        $errors += [
+            'emptyEmail' => "Veuillez renseigner votre adresse e-mail"
+        ];
     }
 
+    //*ADDRESS
     if(!empty($_POST['address'])){
         $address = sanitize_text_field($_POST['address']);
     } else {
-        $errors[]="Veuillez renseignez votre adresse postale: N°, type et libellé de la voie";
+        $errors += [
+            'address' => "Veuillez renseigner votre adresse postale: N°, type et libellé de la voie"
+        ];
     }
 
+    //*POSTCODE
     if(!empty($_POST['postcode'])){
         $postcode = intval($_POST['postcode'], 10);
     } else {
-        $errors[] = "Veuillez renseigner votre code postal";
+        $errors +=  [
+            'postcode' => "Veuillez renseigner votre code postal"
+        ];
     }
 
+    //*CITY
     if(!empty($_POST['city'])){
         $city = sanitize_text_field($_POST['city']);
     } else {
-        $errors[] = "Veuillez renseigner votre ville";
+        $errors += [
+            'city' => "Veuillez renseigner votre ville"
+        ];
     }
 
+    //*AVATAR
     if(!empty($_FILES)){
         $pictureData = $_FILES['picture']['name'];
 
@@ -112,70 +138,109 @@ if (isset($_POST['submit'])) {
         $action = wp_handle_upload($files, $upload_overrides);
 
         if ($action && !isset($action['error'])) {
-            'Le fichier est valide et a été correctement téléchargé';
-    
+            
+            $picture = $action['url'];
+            
         } else {
-            $errors[]= $action['error'];
+
+            if($action['error'] !== "No file was uploaded."){
+                $errors += [
+                    'picture' => $action['error']
+                ];
+            }
         }
-        $picture = $action['url'];
+
+      
+
     }
 
+    //*SPORT
     if (!empty($_POST['cycling']) && !empty($_POST['running'])) {
         $cycling = sanitize_text_field($_POST['cycling']);
         $running= sanitize_text_field($_POST['running']);
-    } elseif (!empty($_POST['cycling'])) {
-        $sport= sanitize_text_field($_POST['cycling']);
-    } elseif (!empty($_POST['running'])) {
-        $sport= sanitize_text_field($_POST['running']);
+    } else{
+        $errors += [
+            'sport' => "Veuillez choisir un sport"
+        ];
     }
 
-    if ($_POST['cycling_level']) {
+    //*CYCLING LEVEL
+    if (!empty($_POST['cycling']) && !empty($_POST['cycling_level'])) {
         $cyclinglevel = $_POST['cycling_level'];
+    } else {
+        $errors += [
+            'cyclingLevel' => "Veuillez renseigner votre niveau de cyclisme"
+        ];
     }
 
-    if ($_POST['running_level']) {
+    //*RUNNING LEVEL
+    if (!empty($_POST['running']) && !empty($_POST['running_level'])) {
         $runninglevel = $_POST['running_level'];
+    } else {
+        $errors += [
+            'runningLevel' => "Veuillez renseigner votre niveau de course à pied"
+        ];
     }
+
+    //* SEND DATA TO DB
+    if(empty($errors)){
+        $new_user_id = wp_create_user($username, $password, $email);
+
+        // Insert/Update the form values to user_meta table.
+
+        wf_insert_update_user_meta($new_user_id, 'first_name', $firstname);
+        wf_insert_update_user_meta($new_user_id, 'last_name', $lastname);
+        wf_insert_update_user_meta($new_user_id, 'day_birth', $daybirth);
+        wf_insert_update_user_meta($new_user_id, 'month_birth', $monthbirth);
+        wf_insert_update_user_meta($new_user_id, 'year_birth', $yearbirth);
+        wf_insert_update_user_meta($new_user_id, 'picture', $picture);
+        wf_insert_update_user_meta($new_user_id, 'email', $email);
+        wf_insert_update_user_meta($new_user_id, 'address', $address);
+        wf_insert_update_user_meta($new_user_id, 'postcode', $postcode);
+        wf_insert_update_user_meta($new_user_id, 'city', $city);
+
+        if ($cycling && $running) {
+            wf_insert_update_user_meta($new_user_id, 'cycling', $cycling);
+            wf_insert_update_user_meta($new_user_id, 'running', $running);
+        } elseif ($sport) {
+            wf_insert_update_user_meta($new_user_id, 'sport', $sport);
+        }
+
+        if ($cyclinglevel) {
+            wf_insert_update_user_meta($new_user_id, 'cycling_level', $cyclinglevel);
+        }
+
+        if ($runninglevel) {
+            wf_insert_update_user_meta($new_user_id, 'running_level', $runninglevel);
+        }
+         
+        // Once everything is done redirect the user back to the same page
+        $location =  get_bloginfo('url') . '/login/';
+        wp_safe_redirect($location);
+
+
+        exit;
+
+    } else {
+    
+        function displayErrors($errors){
+          echo '<div class="errors">';
+            echo '<ul class="errors__list">';
+            foreach($errors as $key){
+                echo '<li>' . $key . '</li>';
+            }  
+            echo '</ul>';
+            echo '</div>';
+        }
+            
+    }
+     
+
+} else {
+    $errors =['formulaire' => 'Le formulaire ne peut être vide'];
 }
-    $new_user_id = wp_create_user($username, $password, $email);
-
-    // Insert/Update the form values to user_meta table.
-
-    wf_insert_update_user_meta($new_user_id, 'first_name', $firstname);
-    wf_insert_update_user_meta($new_user_id, 'last_name', $lastname);
-    wf_insert_update_user_meta($new_user_id, 'day_birth', $daybirth);
-    wf_insert_update_user_meta($new_user_id, 'month_birth', $monthbirth);
-    wf_insert_update_user_meta($new_user_id, 'year_birth', $yearbirth);
-    wf_insert_update_user_meta($new_user_id, 'picture', $picture);
-    wf_insert_update_user_meta($new_user_id, 'email', $email);
-    wf_insert_update_user_meta($new_user_id, 'address', $address);
-    wf_insert_update_user_meta($new_user_id, 'postcode', $postcode);
-    wf_insert_update_user_meta($new_user_id, 'city', $city);
-
-    if ($cycling && $running) {
-        wf_insert_update_user_meta($new_user_id, 'cycling', $cycling);
-        wf_insert_update_user_meta($new_user_id, 'running', $running);
-    } elseif ($sport) {
-        wf_insert_update_user_meta($new_user_id, 'sport', $sport);
-    }
-
-    if ($cyclinglevel) {
-        wf_insert_update_user_meta($new_user_id, 'cycling_level', $cyclinglevel);
-    }
-
-    if ($runninglevel) {
-        wf_insert_update_user_meta($new_user_id, 'running_level', $runninglevel);
-    }
     
 
-    
-    // Once everything is done redirect the user back to the same page
-    $location =  get_bloginfo('url') . '/login/';
-    wp_safe_redirect($location);
-
-
-     exit;
-}
 
 ?>
 
@@ -188,20 +253,20 @@ if (isset($_POST['submit'])) {
                 
                 
                 <!-- <label>Nom</label> -->
-                <input class="inscription__form__input" type="text" name="first_name" id="first_name" value="" placeholder="Prénom" required/>
+                <input class="inscription__form__input" type="text" name="first_name" id="first_name" value="" placeholder="Prénom"/>
                 
                 
                 
                
                     <!-- <label>Prenom</label> -->
-                <input class="inscription__form__input" type="text" name="last_name" id="last_name" value="" placeholder="Nom" required/>
+                <input class="inscription__form__input" type="text" name="last_name" id="last_name" value="" placeholder="Nom"/>
                 
                 
                 
                 <label class="birthdate" for="birthdate">Date de naissance</label>
-                    <input class=" input__birthdate" type="number" min="01" max="31" name="day_birth" id="day_birth"/>
-                    <input class=" input__birthdate" type="number" min="01" max="12" name="month_birth" id="month_birth"/>
-                    <input class=" input__birthdate" type="number" min="1950" max="2002" name="year_birth" id="year_birth"/>
+                    <input class=" input__birthdate" type="number" pattern="[0-9]*" min="01" max="31" name="day_birth" id="day_birth" placeholder="JJ" />
+                    <input class=" input__birthdate" type="number" pattern="[0-9]*" min="01" max="12" name="month_birth" id="month_birth" placeholder="MM"/>
+                    <input class=" input__birthdate" type="number" pattern="[0-9]*" min="1950" max="2002" name="year_birth" id="year_birth" placeholder="AAAA"/>
 
                 <!--TODO: create a function to retrieve dynamically max year attribute. Ex: currentYear= 2020-18(min user age) = 2002 -->
                 
@@ -213,36 +278,36 @@ if (isset($_POST['submit'])) {
                 
 
                 <!-- <label class="inscription__form__label" for="email">Adresse Email</label> -->
-                    <input class="inscription__form__input" type="email" name="email" id="email" value="" placeholder="email" required/>
+                    <input class="inscription__form__input" type="email" name="email" id="email" value="" placeholder="email"/>
                 
                 
 
                
                 <!-- <label class="inscription__form__label" for="password"> Mot de Passe</label> -->
-                    <input class="inscription__form__input" type="password" name="password" id="password" placeholder="Mot de passe" required/>  
+                    <input class="inscription__form__input" type="password" name="password" id="password" placeholder="Mot de passe"/>  
                 
                 
 
                 
                 <!-- <label class="inscription__form__label" for="password_confimation"> Confirmation du mot de passe</label> -->
-                    <input class="inscription__form__input" type="password" name="password_confirmation" id="password_confirmation" placeholder="Confirmation du mot de passe" required/>
+                    <input class="inscription__form__input" type="password" name="password_confirmation" id="password_confirmation" placeholder="Confirmation du mot de passe"/>
                 
                 
 
                 
                 <!-- <label class="inscription__form__label" for="address"> Adresse Postale</label> -->
-                    <textarea class="inscription__form__input" name="address" id="address" value="" placeholder="Adresse" required></textarea>
+                    <textarea class="inscription__form__input" name="address" id="address" value="" placeholder="Adresse"></textarea>
                 
                
                 
                 <!-- <label class="inscription__form__label" for="postcode"> Code Postal</label> -->
-                    <input class="inscription__form__input" type="text" name="postcode" id="postcode" value="" placeholder="Code postal" required/>
+                    <input class="inscription__form__input" type="text" name="postcode" id="postcode" value="" placeholder="Code postal"/>
                 
                 
 
                 
                 <!-- <label class="inscription__form__label" for="city"> Ville</label> -->
-                    <input class="inscription__form__input" type="text" name="city" id="city" value="" placeholder="Ville" required/>
+                    <input class="inscription__form__input" type="text" name="city" id="city" value="" placeholder="Ville"/>
                 
                 
             </div>
@@ -280,9 +345,20 @@ if (isset($_POST['submit'])) {
                     <input class="input-checkbox" name="terms" id="terms" type="checkbox" value="Yes">  
                     <label class="inscription__form__label  terms" for="terms">J'ai lu et j'accepte les <a href="#">Conditions Générales d'Utilisation</a></label>
                 </div>
-                <input class="inscription__form__submit" type="submit" id="submitbtn" name="submit" value="S'inscrire"/>
-            </div>
+                
+                <input class="inscription__form__submit" type="submit" id="submitbtn" name="submit"/>
+
+                <?php 
+
+                    if(function_exists('displayErrors')){
+                        displayErrors($errors);
+                    } 
+                ?>
+
         </form>
+
+       
+        
     </div>
 
 
