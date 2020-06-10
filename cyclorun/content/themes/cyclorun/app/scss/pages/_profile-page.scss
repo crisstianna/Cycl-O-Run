@@ -1,7 +1,7 @@
 /* Taille des icones cycling et running */
 .profile__infos__sports__practice__svg{
     width: 3em;
-    color: #00757F;
+    
 }
 
 /* photo de profile */
@@ -15,7 +15,7 @@
     display: flex;
     margin-top: 3rem;
 }
-
+//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 /* Partie gauche de la page */
 .profile__infos{
     border-right: 2px solid #00757F;
@@ -26,11 +26,21 @@
     align-items: center;
 }
 
+//Titre "mon profile"
+.profile__title{
+    margin-bottom: 4rem;
+}
+
 /* Infos perso sous la photo */
 .profile__infos__personal{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+// age et ville
+.profile__infos__content{
+    text-align: center;
 }
 
 /* sport pratiqué */
@@ -55,11 +65,13 @@
     padding-left: 5rem;
 }
 
-/* Titres des listes de sorties */
+/* Titres des listes de la partie droite de la page */
 .profile__outings__created__title, .profile__outings__future__title{
     text-decoration: underline;
     line-height: 1.5rem;
+    margin-bottom: 3rem;
 }
+
 
 /* Les sorties que j'ai créé */
 .profile__outings__created{
@@ -69,4 +81,35 @@
 /* Infos de chacune des sorties */
 .profile__outings__list{
     padding-left: 0;
+}
+
+//Mise en palce des listes
+
+.profile__infos__sports__practice__svg__right{
+    width: 1.5rem;
+}
+
+
+// Sous titres de la partie droite
+.profile__outings__created__title__author, .profile__outings__created__title__participant{
+    font-size: 1.2rem;
+    margin-top: 3rem;
+}
+
+//Un item de la liste
+
+.profile__outings_created__content, .profile__outings__future__content{
+    display: flex;
+}
+
+.link__to__details:hover{
+    color: $blueduck;
+    text-decoration: underline;
+}
+
+.link__to__details{
+    font-size: 0.8rem;
+    margin: auto;
+    font-style: italic;
+    margin-left: 1rem;
 }

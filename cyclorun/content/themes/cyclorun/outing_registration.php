@@ -43,7 +43,7 @@ if(!empty($_POST)) {
     }
 
     $picture = $action['url'];
-    //var_dump($picture);
+    var_dump($picture);
 
     if (empty($outingName) && empty($address) && empty($date) && empty($time) && empty($distance) && empty($practicedSport)) {
     
