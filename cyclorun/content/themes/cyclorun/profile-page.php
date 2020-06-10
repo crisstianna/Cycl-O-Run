@@ -50,25 +50,7 @@ $yearBirth = get_user_meta($id, 'year_birth');
 
 
 ?>
-
-<main class="profile">
-    
-    <h1 class="profile__title">Mon Profil</h1>
-    <div class="profile__infos">
-      <div class="profile__infos__personal">
-        <h2 class="profile__infos__title"></h2>
-        <div class="profile__infos__personal__avatar"></div>
-        <img src="" alt="">
-        <i class="fa fa-user" aria-hidden="true"></i>
-        </div>
-        <div class="profile__infos__content">
-          <p></p>
-        </div>
-        <div class="profile__infos__sports">
-          <div class="profile__infos__sports__practice">
-              <h3>Mon profil sportif</h3>
-              <p>Niveau Velo: <?php echo $userMeta['cycling_level'][0]?></p>
-              <p>Niveau Course a pied: <?php echo $userMeta['running_level'][0]?></p>
+              
 
 <?php
 // todo Voir pour la gestion de l'affichage du profil sportif
@@ -122,29 +104,29 @@ $outingUserParticipant = $wpdb->get_results(
 
 <!----------------VIEW------------------->
 
-  <main class="profile">
+
+
+<main class="profile">
     <div class="profile__infos">
       <div class="profile__infos__personal__avatar">
-          <img class="avatar__img" src="<?php echo $userMeta['picture'][0]  ?>" alt="Here comes the user avatar"/>
+          <img class="avatar__img" src="<?php get_bloginfo('url') . '/content/themes/cyclorun/app/assets/images/avatar.png' ?>" alt="Here comes the user avatar"/>
       </div>
       <h1 class="profile__title">Mon Profil</h1>
       <div class="profile__infos__personal">
         <h2 class="profile__infos__title"><?php echo str_replace("_", " ", $userData->display_name) ;?></h2>
         <div class="profile__infos__content">
-        Date de naissance:<?php echo $userMeta['day_birth'][0] . '/' . $userMeta['month_birth'][0] . '/'. $userMeta['year_birth'][0] ?>
+          <p class="user__infos"><?php echo $userMeta['day_birth'][0] . '/' . $userMeta['month_birth'][0] . '/'. $userMeta['year_birth'][0] ?></p>
           <p class="user__infos">Paris</p>
         </div>
         <div class="profile__infos__sports">
           <div class="profile__infos__sports__practice">
             <div class="my__practice__level">
-              <input class="profile__infos__sports__practice__svg" type="checkbox" id="profile__cycling" name="practicedSport" value="vélo">
               <img class="profile__infos__sports__practice__svg" src="images/Cycling.svg" alt="">
-              <p class="selected__practice__level">Avancé</p>
+              <p class="selected__practice__level">Vélo:<?php echo $userMeta['cycling_level'][0]?></p>
             </div>
             <div class="my__practice__level">
-              <input class="outing__input" type="checkbox" id="profile__running" name="practicedSport" value="course à pieds">
               <img class="profile__infos__sports__practice__svg" src="images/Running.svg" alt="">
-              <p class="selected__practice__level">Avancé</p>
+              <p class="selected__practice__level">Course a pied: <?php echo $userMeta['running_level'][0]?></p>
             </div>
           </div>
         </div>
