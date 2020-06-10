@@ -9637,8 +9637,7 @@ a:visited {
 
 /* Taille des icones cycling et running */
 .profile__infos__sports__practice__svg {
-  width: 3em;
-  color: #00757F; }
+  width: 3em; }
 
 /* photo de profile */
 .avatar__img {
@@ -9659,11 +9658,17 @@ a:visited {
   flex-direction: column;
   align-items: center; }
 
+.profile__title {
+  margin-bottom: 4rem; }
+
 /* Infos perso sous la photo */
 .profile__infos__personal {
   display: flex;
   flex-direction: column;
   align-items: center; }
+
+.profile__infos__content {
+  text-align: center; }
 
 /* sport pratiqué */
 .profile__infos__sports__practice {
@@ -9682,10 +9687,11 @@ a:visited {
 .profile__outings {
   padding-left: 5rem; }
 
-/* Titres des listes de sorties */
+/* Titres des listes de la partie droite de la page */
 .profile__outings__created__title, .profile__outings__future__title {
   text-decoration: underline;
-  line-height: 1.5rem; }
+  line-height: 1.5rem;
+  margin-bottom: 3rem; }
 
 /* Les sorties que j'ai créé */
 .profile__outings__created {
@@ -9694,6 +9700,26 @@ a:visited {
 /* Infos de chacune des sorties */
 .profile__outings__list {
   padding-left: 0; }
+
+.profile__infos__sports__practice__svg__right {
+  width: 1.5rem; }
+
+.profile__outings__created__title__author, .profile__outings__created__title__participant {
+  font-size: 1.2rem;
+  margin-top: 3rem; }
+
+.profile__outings_created__content, .profile__outings__future__content {
+  display: flex; }
+
+.link__to__details:hover {
+  color: #00757F;
+  text-decoration: underline; }
+
+.link__to__details {
+  font-size: 0.8rem;
+  margin: auto;
+  font-style: italic;
+  margin-left: 1rem; }
 
 /* Entete de la page */
 .outing-reg__organisation {
