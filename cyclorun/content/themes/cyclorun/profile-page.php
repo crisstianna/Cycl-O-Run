@@ -20,61 +20,34 @@ if(! is_user_logged_in()){
 $id = get_current_user_id();
 $userData = get_userdata($id);
 $userMeta = get_user_meta($id);
-//var_dump($userdata);
-//var_dump($userMeta);
-// todo manque la récupération de la date de naissance au format AAAA-MM-JJ pour appeler la fonction qui va calculer l'âge automatiquement
+// todo récupérer la date de naissance au format AAAA-MM-JJ pour appeler la fonction qui va calculer l'âge automatiquement
 
-$dayBirth = get_user_meta($id, 'day_birth');
-$monthBirth = get_user_meta($id, 'month_birth');
-$yearBirth = get_user_meta($id, 'year_birth');
-
-//if(get_user_meta($id, 'day_birth')[0] < 10) {
-   //  $dayBirth = intval(str_pad($dayBirth[0], 2, "0", STR_PAD_LEFT));
- //}else {
-   //$dayBirth = intval($dayBirth[0]);
- //}
-//f(get_user_meta($id, 'month_birth')[0] < 10) {
-//$monthBirth = str_pad($monthBirth[0], 2, "0", STR_PAD_LEFT);
-//     // $monthBirth = intval($monthBirth);
- //}else {
-//}
-
- //$birthdate = $yearBirth . '-' . $monthBirth . '-' . $dayBirth;
-
-//var_dump ($userMeta);
-// var_dump($dayBirth);
-// var_dump($monthBirth);
-// var_dump($yearBirth);
-// var_dump($birthdate);
+$dayBirth = intval(get_user_meta($id, 'day_birth')[0]);
+$monthBirth = intval(get_user_meta($id, 'month_birth')[0]);
+$yearBirth = intval(get_user_meta($id, 'year_birth')[0]);
 
 
-
-?>
-              
-
-<?php
-// todo Voir pour la gestion de l'affichage du profil sportif
-$sport = get_user_meta($id, 'sport');
-
-if(empty($sport[0])) {
-    $cycling = get_user_meta($id, 'cycling');
-    $running = get_user_meta($id, 'running');
-}else {
-    echo '<img class="profile__infos__sports__practice__svg" src="images/Cycling.svg" alt="">'; //? img du sport associé
-    // todo à voir comment faire pour afficher le niveau dans le sport sélectionné
+// to display a date with the format : jj/mm/aaaa, we change the days and/or months under 10 and add a "0" before the number
+// if day_birth <10
+if($dayBirth < 10) {
+    $dayBirth = 0 . $dayBirth;
+}
+// if month_birth <10
+if($monthBirth < 10) {
+  $monthBirth = 0 . $monthBirth;
 }
 
-//? DB CALLS:
-
+// we call the wordpress database
 global $wpdb;
 
+// we put the tables name in variables for using them
 $wp_outings = $wpdb->prefix . 'outings';
 $wp_participations = $wpdb->prefix . 'participations';
 $wp_users = $wpdb->prefix . 'users';
+// we recover the current date to display only the next outings
 $currentDateTime = date('Y-m-d');
 
 //? FIND OUTINGS WICH USER IS CREATOR
-
 $outingUserAuthor = $wpdb->get_results(
     "SELECT *
     FROM $wp_outings
@@ -86,7 +59,6 @@ $outingUserAuthor = $wpdb->get_results(
 );
 
 //? FIND OUTINGS WICH USER IS PARTICIPANT
-
 $outingUserParticipant = $wpdb->get_results(
     "SELECT *
     FROM $wp_outings
@@ -108,45 +80,81 @@ $outingUserParticipant = $wpdb->get_results(
 
 <main class="profile">
     <div class="profile__infos">
+      <h1 class="profile__title">Mon Profil</h1>
       <div class="profile__infos__personal__avatar">
           <img class="avatar__img" src="<?php get_bloginfo('url') . '/content/themes/cyclorun/app/assets/images/avatar.png' ?>" alt="Here comes the user avatar"/>
       </div>
-      <h1 class="profile__title">Mon Profil</h1>
       <div class="profile__infos__personal">
         <h2 class="profile__infos__title"><?php echo str_replace("_", " ", $userData->display_name) ;?></h2>
         <div class="profile__infos__content">
-          <p class="user__infos"><?php echo $userMeta['day_birth'][0] . '/' . $userMeta['month_birth'][0] . '/'. $userMeta['year_birth'][0] ?></p>
-          <p class="user__infos">Paris</p>
+        Date de naissance : <?php echo $dayBirth . '/' . $monthBirth . '/'. $yearBirth ?>
+          <p class="user__infos"><?= $userMeta['city'][0] ;?></p>
         </div>
         <div class="profile__infos__sports">
           <div class="profile__infos__sports__practice">
-            <div class="my__practice__level">
-              <img class="profile__infos__sports__practice__svg" src="images/Cycling.svg" alt="">
-              <p class="selected__practice__level">Vélo:<?php echo $userMeta['cycling_level'][0]?></p>
-            </div>
-            <div class="my__practice__level">
-              <img class="profile__infos__sports__practice__svg" src="images/Running.svg" alt="">
-              <p class="selected__practice__level">Course a pied: <?php echo $userMeta['running_level'][0]?></p>
-            </div>
+            <?php if(array_key_exists('sport', $userMeta)) : ?> 
+              <?php if (array_key_exists('cycling_level', $userMeta)) : ?>             
+              <div class="my__practice__level">
+                <img class="profile__infos__sports__practice__svg" src="<?php echo get_bloginfo('url') . '/content/themes/cyclorun/app/assets/images/cycling.svg;' ?>" alt="cycling">
+                <p class="selected__practice__level"><?php echo $userMeta['cycling_level'][0]  ?></p>
+              </div> 
+              
+              <?php elseif (array_key_exists('running_level', $userMeta)) :?> 
+              <div class="my__practice__level">
+                <img class="profile__infos__sports__practice__svg" src="<?php echo get_bloginfo('url') . '/content/themes/cyclorun/app/assets/images/running.svg;' ?>" alt="running">
+                <p class="selected__practice__level"><?php echo $userMeta['running_level'][0]  ?></p>
+              </div>
+              <?php endif; ?>
+            <?php else : ?>
+              <div class="my__practice__level">
+                <img class="profile__infos__sports__practice__svg" src="<?php echo get_bloginfo('url') . '/content/themes/cyclorun/app/assets/images/cycling.svg;' ?>" alt="cycling">
+                <p class="selected__practice__level"><?php echo $userMeta['cycling_level'][0]  ?></p>
+              </div>
+              <div class="my__practice__level">
+                <img class="profile__infos__sports__practice__svg" src="<?php echo get_bloginfo('url') . '/content/themes/cyclorun/app/assets/images/running.svg;' ?>" alt="running">
+                <p class="selected__practice__level"><?php echo $userMeta['running_level'][0]  ?></p>
+              </div>
+            <?php endif; ?>
           </div>
         </div>
       </div>
     </div>
     <div class="profile__outings">
         <div class="profile__outings__created">
-            <h3 class="profile__outings__created__title">Liste de mes sorties</h3>
+            <h3 class="profile__outings__created__title">Mes prochaines sorties</h3>
+            <h4 class="profile__outings__created__title__author">dont je suis l'auteur : </h4>
             <div class="profile__outings_created__content">
-                <p class="profile__outings__list">nom sortie</p>
-                <p class="profile__outings__list">nom sortie</p>
-                <p class="profile__outings__list">nom sortie</p>
-            </div>
-        </div>
-        <div class="profile__outings__future">
-            <h3 class="profile__outings__future__title">Les sorties auxquelles je participe</h3>
-            <div class="profile__outings_future__content">
-                <p class="profile__outings__list">nom sortie</p>
-                <p class="profile__outings__list">nom sortie</p>
-                <p class="profile__outings__list">nom sortie</p>
+              <?php if (empty($outingUserAuthor)) {
+                echo '<p class="profile__outings__list">Vous n\'avez pas encore proposé de sortie .... très bientôt peut-être</p>';
+              }else{
+                  foreach($outingUserAuthor as $key=> $currentOuting): ?>
+                  <?php if($currentOuting['practiced_sport'] == 1) :?>
+                  <img class="profile__infos__sports__practice__svg__right" src="<?php echo get_bloginfo('url') . '/content/themes/cyclorun/app/assets/images/cycling.svg;' ?>" alt="cycling">
+                  <?php endif; ?>
+                  <?php if($currentOuting['practiced_sport'] == 2) : ?>
+                    <img class="profile__infos__sports__practice__svg__right" src="<?php echo get_bloginfo('url') . '/content/themes/cyclorun/app/assets/images/running.svg;' ?>" alt="running">
+                  <?php endif; ?>
+                  <p class="profile__outings__list"><?= $currentOuting['outing_name']; ?> prévue le : <?= date("d-m-Y", strtotime($currentOuting['date'])); ?> à <?= substr($currentOuting['time'], 0, -3);?></p>
+                  <a class="link__to__details" href="<?= get_bloginfo('url') . '/outing-details/?outingId=' . $currentOuting['outing_id']; ?>">Voir le détail</a>
+                  <?php endforeach; ?>
+              <?php } ?>              
+            </div>        
+            <h4 class="profile__outings__created__title__participant">en tant que participant(e) : </h4>
+            <div class="profile__outings__future__content">
+            <?php if (empty($outingUserParticipant)) {
+                echo '<p class="profile__outings__list">Vous n\'êtes pas encore inscrit sur une sortie</p>';
+              }else{
+                  foreach($outingUserParticipant as $key=> $currentParticipation): ?>
+                  <?php if($currentParticipation['practiced_sport'] == 1) :?>
+                  <img class="profile__infos__sports__practice__svg__right" src="<?php echo get_bloginfo('url') . '/content/themes/cyclorun/app/assets/images/cycling.svg;' ?>" alt="cycling">
+                  <?php endif; ?>
+                  <?php if($currentParticipation['practiced_sport'] == 2) : ?>
+                    <img class="profile__infos__sports__practice__svg__right" src="<?php echo get_bloginfo('url') . '/content/themes/cyclorun/app/assets/images/running.svg;' ?>" alt="running">
+                  <?php endif; ?>
+                  <p class="profile__outings__list"><?= $currentParticipation['outing_name']; ?> prévue le : <?= date("d/m/Y", strtotime($currentParticipation['date'])); ?> à <?= substr($currentParticipation['time'], 0, -3);?></p>
+                  <a class="link__to__details" href="<?= get_bloginfo('url') . '/outing-details/?outingId=' . $currentParticipation['outing_id']; ?>">Voir le détail</a>
+                  <?php endforeach; ?>
+              <?php } ?> 
             </div>
         </div>
     </div>
