@@ -1,12 +1,19 @@
 /* Entete de la page */
 .outing-reg__organisation{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     text-align: center;
     padding-top: 4rem;
     padding-bottom: 4rem;
     border-bottom: 3px solid #00757F;
+}
+
+//Les inputs
+.outing-reg__input{
+    border: 2px solid $blueduck;
+    border-radius: 0.2rem;
+}
+
+.outing-reg__input:hover{
+    background-color: $lightgrey;
 }
 
 /* Formulaire global */
@@ -18,7 +25,6 @@
 .outing-reg__top__form{
     display: flex;
     justify-content: space-between;
-    padding-bottom: 3rem;
 }
 
 /* Partie gauche du form */
@@ -35,10 +41,13 @@
 /* Partie insertion de l'image */
 .outing-reg__image{
     width: 33%;
+    margin-bottom: .5rem;
 }
 
 /* Input nom de la sortie */
 #outing_name{
+    height: 3rem;
+    font-weight: bold;
     display: block;
     margin: auto;
     margin-bottom: 3rem;
@@ -57,7 +66,8 @@
 
 /* Input distance du parcours */
 .outing-reg__length{
-    width: 50%;
+    line-height: 2rem;
+    width: 70%;
     padding-left: 5%;
 }
 
@@ -80,14 +90,24 @@
     margin-top: 1rem;
     line-height: 2rem;
     margin-bottom: 1rem;
+    padding: .5rem;
+    border: 2px solid $blueduck;
+    border-radius: 0.2rem;
+}
+
+//"label" par défaut dans le sélect
+.default__select{
+    line-height: 1.5rem;
 }
 
 
 //Description de la sortie
 .outing-reg__description{
     display: flex;
+    justify-content: center;
     flex-direction: column;
-    width: 70%;
+    margin-top: 2rem;
+    width: 95%;
     padding-left: 5%;
 }
 
@@ -95,10 +115,59 @@
 .outing-reg__submit{
     margin-top: 3rem;
     margin-bottom: 3rem;
-    margin: auto;
+    display: flex;
+    justify-content: center;
 }
 
 //Bouton de soumission du formulaire
 .outing-reg__input__submit{
     background-color: $blueduck;
+    border-radius: 0.5rem;
+    color: white;
+    height: 2rem;
+}
+
+
+
+
+
+//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+//MESSAGES D'ERREURS
+
+.outing-reg__errors{
+    background-color: white;
+    width: 30%;
+    position: absolute;
+    top: 75%;
+    right: 5%;
+    padding-left: 1rem;
+    border: 1px solid $blueduck;
+    border-radius:1rem;
+}
+
+.outing-reg__errors__ul{
+
+}
+
+.outing-reg__errors__li{
+    color: red;
+}
+
+
+//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+//FORMULAIRE OK
+
+.outing-reg__ok{
+    display: flex;
+    flex-direction: column;
+    color: $blueduck;
+    position: absolute;
+    top: 80%;
+    right: 5%;
+    border-radius:1rem;
+}
+
+.navbar__button{
+    background-color: $blueduck;
+    border-radius: 0.5rem;
 }

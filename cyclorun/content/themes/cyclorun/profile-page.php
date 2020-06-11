@@ -76,11 +76,13 @@ $outingUserParticipant = $wpdb->get_results(
 
 <!----------------VIEW------------------->
 
-  <main class="profile">
+
+
+<main class="profile">
     <div class="profile__infos">
       <h1 class="profile__title">Mon Profil</h1>
       <div class="profile__infos__personal__avatar">
-          <img class="avatar__img" src="<?php echo $userMeta['picture'][0]  ?>" alt="Here comes the user avatar"/>
+          <img class="avatar__img" src="<?php get_bloginfo('url') . '/content/themes/cyclorun/app/assets/images/avatar.png' ?>" alt="Here comes the user avatar"/>
       </div>
       <div class="profile__infos__personal">
         <h2 class="profile__infos__title"><?php echo str_replace("_", " ", $userData->display_name) ;?></h2>

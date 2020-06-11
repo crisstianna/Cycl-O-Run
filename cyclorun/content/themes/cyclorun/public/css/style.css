@@ -9724,13 +9724,17 @@ a:visited {
 
 /* Entete de la page */
 .outing-reg__organisation {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   text-align: center;
   padding-top: 4rem;
   padding-bottom: 4rem;
   border-bottom: 3px solid #00757F; }
+
+.outing-reg__input {
+  border: 2px solid #00757F;
+  border-radius: 0.2rem; }
+
+.outing-reg__input:hover {
+  background-color: #F5F5F5; }
 
 /* Formulaire global */
 .outing-reg__creation {
@@ -9739,8 +9743,7 @@ a:visited {
 /* Haut du formulaire */
 .outing-reg__top__form {
   display: flex;
-  justify-content: space-between;
-  padding-bottom: 3rem; }
+  justify-content: space-between; }
 
 /* Partie gauche du form */
 .outing-reg__left {
@@ -9753,10 +9756,13 @@ a:visited {
 
 /* Partie insertion de l'image */
 .outing-reg__image {
-  width: 33%; }
+  width: 33%;
+  margin-bottom: .5rem; }
 
 /* Input nom de la sortie */
 #outing_name {
+  height: 3rem;
+  font-weight: bold;
   display: block;
   margin: auto;
   margin-bottom: 3rem;
@@ -9773,7 +9779,8 @@ a:visited {
 
 /* Input distance du parcours */
 .outing-reg__length {
-  width: 50%;
+  line-height: 2rem;
+  width: 70%;
   padding-left: 5%; }
 
 /* Titre de la sortie*/
@@ -9790,21 +9797,59 @@ a:visited {
 .outing-reg__select {
   margin-top: 1rem;
   line-height: 2rem;
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+  padding: .5rem;
+  border: 2px solid #00757F;
+  border-radius: 0.2rem; }
+
+.default__select {
+  line-height: 1.5rem; }
 
 .outing-reg__description {
   display: flex;
+  justify-content: center;
   flex-direction: column;
-  width: 70%;
+  margin-top: 2rem;
+  width: 95%;
   padding-left: 5%; }
 
 .outing-reg__submit {
   margin-top: 3rem;
   margin-bottom: 3rem;
-  margin: auto; }
+  display: flex;
+  justify-content: center; }
 
 .outing-reg__input__submit {
-  background-color: #00757F; }
+  background-color: #00757F;
+  border-radius: 0.5rem;
+  color: white;
+  height: 2rem; }
+
+.outing-reg__errors {
+  background-color: white;
+  width: 30%;
+  position: absolute;
+  top: 75%;
+  right: 5%;
+  padding-left: 1rem;
+  border: 1px solid #00757F;
+  border-radius: 1rem; }
+
+.outing-reg__errors__li {
+  color: red; }
+
+.outing-reg__ok {
+  display: flex;
+  flex-direction: column;
+  color: #00757F;
+  position: absolute;
+  top: 80%;
+  right: 5%;
+  border-radius: 1rem; }
+
+.navbar__button {
+  background-color: #00757F;
+  border-radius: 0.5rem; }
 
 .connexion {
   width: 30%;
