@@ -121,7 +121,7 @@ $outingUserParticipant = $wpdb->get_results(
             <h4 class="profile__outings__created__title__author">dont je suis l'auteur : </h4>
             <div class="profile__outings_created__content">
               <?php if (empty($outingUserAuthor)): ?>
-                <p class="profile__outings__list">Vous n\'avez pas encore proposé de sortie .... très bientôt peut-être</p>
+                <p class="profile__outings__list">Vous n'avez pas encore proposé de sortie .... très bientôt peut-être</p>
               <?php else : ?>
                   <?php foreach($outingUserAuthor as $key=> $currentOuting): ?>
                   <div class="profile__outings__list__item">
@@ -140,7 +140,7 @@ $outingUserParticipant = $wpdb->get_results(
             <h4 class="profile__outings__created__title__participant">en tant que participant(e) : </h4>
             <div class="profile__outings__future__content">
             <?php if (empty($outingUserParticipant)) : ?>
-                <p class="profile__outings__list">Vous n\'êtes pas encore inscrit sur une sortie</p>
+                <p class="profile__outings__list">Vous n'êtes pas encore inscrit sur une sortie</p>
               <?php else: ?>
                   <?php foreach($outingUserParticipant as $key=> $currentParticipation): ?>
                   <div class="profile__outings__list__item">
