@@ -98,8 +98,9 @@
 
 //Un item de la liste
 
-.profile__outings_created__content, .profile__outings__future__content{
+.profile__outings__list__item{
     display: flex;
+    margin-top: 1rem;
 }
 
 .link__to__details:hover{

@@ -9708,8 +9708,9 @@ a:visited {
   font-size: 1.2rem;
   margin-top: 3rem; }
 
-.profile__outings_created__content, .profile__outings__future__content {
-  display: flex; }
+.profile__outings__list__item {
+  display: flex;
+  margin-top: 1rem; }
 
 .link__to__details:hover {
   color: #00757F;
