@@ -1,50 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cycl'O'Run</title>
-  <link rel="stylesheet" type="text/html" href="css/style.css" />
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cycl'O'Run</title>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
 <body>
-  <header class="home-header">
-    <nav class="navbar home-header__navbar navbar-light ">
-      <a class="navbar-brand home-header__brand" href="#">
-        <img src="images/logo-lightgrey.png" class="d-inline-block align-top home-header__logo" alt="" loading="lazy">
-      </a>
-       <a class="btn btn-primary home-header__button" href="#" role="button">Connexion</a>
-    </nav>
-   
-  </header>
-  <main class="home-main">
-    <main class="home-main">
-    
-      <!--<?php echo do_shortcode('[metaslider id="124"]'); ?>-->
-  
-      <div class="home-main__welcome">
-        <div class="home-main__welcome__message">
-          <p> En France, il y a</p>
-          <div  class="home-main__welcome__sentence" >
-            <p class="item-1"><span>12 Millions de runners</span><p>
-            <p class="item-2"><span>9 Millions de cyclistes<span></p>   
-          </div>
-        </div>
-        
-        <div class="home-main__welcome__wrap">
-          <p>Pourquoi,</p>
-          <div class="home-main__welcome__word">
-              <p class="item-1"><span>courir</span><p>       
-              <p class="item-2"><span>pedaler</span></p>
-              
-          </div>
-          <p>tout seul ?</p>
-        </div>
-         
-  
-      </div>
-
-
-  </main>
-  <script src="js/app.js"></script>
+    <header class="header">
+        <nav class="navbar authentified navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#"><img class="logo" src="images/logo-complet.png" alt=""></a>
+            <a class="navbar__item" href="#">Home</a>
+            <a class="navbar__item" href="#">Profil</a>
+            <a class="navbar__item" href="#">Participer à une sortie</a>
+            <a class="navbar__item" href="#">Organiser une sortie</a>   
+            <button type="logout-button" class="btn">Déconnexion</button>
+        </nav>
+    </header>
+    <main class="outing-reg"> 
+        <section class="outing-reg__organisation">
+            <h1 class="outing-reg__organisation__page__title">Envie d'organiser une sortie ? Vous êtes au bon endroit ! </h1>
+        </section>
+        <form class="outing-reg__creation" action="" method="post" enctype="multipart/form-data">            
+            <div class="outing-reg__title">
+                <input class="outing-reg__input" type="text" id="outing_name" name="outing_name" placeholder="Nom de la sortie">
+            </div>
+            <div class="outing-reg__top__form">
+                <div class="outing-reg__left">
+                    <div class="outing-reg__rdv">
+                        <input  class="outing-reg__input" type="date" id="date" name="date">
+                        <label for="hour">Choix de l'heure</label>
+                        <input class="outing-reg__input" type="time" id="hour" name="time">
+                    </div>
+                    <div class="outing-reg__length">
+                        <input class="outing-reg__input" type="number" id="length" name="distance" placeholder="Distance du parcours (en km)">
+                    </div>
+                    <div class="outing-reg__location">
+                        <label for="location">Lieu de Rendez-vous</label>
+                        <input class="outing-reg__input" type="text" id="address" name="address" placeholder="Lieu du rendez-vous (ne pas oublier le code postal">
+                    </div>
+                </div>
+                <div class="outing-reg__practice">
+                    <label for="cycling">Vélo</label>
+                    <input class="outing-reg__input" type="radio" id="cycling" name="practiced_sport" value="1">
+                        <!-- Select à afficher uniquement si le bouton est coché - A voir en JS-->
+                    <select class="form-control outing-reg__select" name="cycling_level">
+                        <option value="" selected>Niveau de la sortie</option>
+                        <option value="1">Loisirs (-15km)</option>
+                        <option value="2">Régulier (15-30km)</option>
+                        <option value="3">Avancé (30-60km)</option>
+                        <option value="4">Intensif (+60km)</option>
+                    </select>
+                    <label for="running">Course à pieds</label>
+                    <input class="outing-reg__input" type="radio" id="running" name="practiced_sport" value="2">
+                        <!-- Select à afficher uniquement si le bouton est coché-->
+                    <select class="form-control outing-reg__select" name="running_level">
+                        <option value="" selected>Niveau de la sortie</option>
+                        <option value="11">Loisirs (-5km)</option>
+                        <option value="12">Régulier (5-10km)</option>
+                        <option value="13">Avancé (10-15km)</option>
+                        <option value="14">Intensif (+15km)</option>
+                    </select>
+                </div>    
+                <div class="outing-reg__image">
+                    <label for="outing-image">Image associée au parcours ou parcours</label>
+                    <input class="outing-reg__input" type="file" id="image" name="picture" alt="image du parcours" src="">
+                </div>
+            </div>
+            <div class="outing-reg__description">
+                <label for="description">Description de la sortie</label>
+                <textarea name="description" id="description" cols="30" rows="10" placeholder=""></textarea>
+            </div>
+            <div class="outing-reg__course">
+            </div>
+            <div class="outing-reg__submit">
+                <input class="outing-reg__input__submit" type="submit" value="Valider la sortie">
+            </div>
+        </form>
+    </main>   
 </body>
 </html>
