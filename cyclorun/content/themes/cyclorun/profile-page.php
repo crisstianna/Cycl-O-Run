@@ -124,37 +124,41 @@ $outingUserParticipant = $wpdb->get_results(
             <h3 class="profile__outings__created__title">Mes prochaines sorties</h3>
             <h4 class="profile__outings__created__title__author">dont je suis l'auteur : </h4>
             <div class="profile__outings_created__content">
-              <?php if (empty($outingUserAuthor)) {
-                echo '<p class="profile__outings__list">Vous n\'avez pas encore proposé de sortie .... très bientôt peut-être</p>';
-              }else{
-                  foreach($outingUserAuthor as $key=> $currentOuting): ?>
+              <?php if (empty($outingUserAuthor)): ?>
+                <p class="profile__outings__list">Vous n\'avez pas encore proposé de sortie .... très bientôt peut-être</p>
+              <?php else : ?>
+                  <?php foreach($outingUserAuthor as $key=> $currentOuting): ?>
+                  <div class="profile__outings__list__item">
                   <?php if($currentOuting['practiced_sport'] == 1) :?>
                   <img class="profile__infos__sports__practice__svg__right" src="<?php echo get_bloginfo('url') . '/content/themes/cyclorun/app/assets/images/cycling.svg;' ?>" alt="cycling">
                   <?php endif; ?>
                   <?php if($currentOuting['practiced_sport'] == 2) : ?>
                     <img class="profile__infos__sports__practice__svg__right" src="<?php echo get_bloginfo('url') . '/content/themes/cyclorun/app/assets/images/running.svg;' ?>" alt="running">
                   <?php endif; ?>
-                  <p class="profile__outings__list"><?= $currentOuting['outing_name']; ?> prévue le : <?= date("d-m-Y", strtotime($currentOuting['date'])); ?> à <?= substr($currentOuting['time'], 0, -3);?></p>
+                  <p class="profile__outings__list"><strong><?= $currentOuting['outing_name']; ?></strong> prévue le : <?= date("d-m-Y", strtotime($currentOuting['date'])); ?> à <?= substr($currentOuting['time'], 0, -3);?></p>
                   <a class="link__to__details" href="<?= get_bloginfo('url') . '/outing-details/?outingId=' . $currentOuting['outing_id']; ?>">Voir le détail</a>
+                  </div>
                   <?php endforeach; ?>
-              <?php } ?>              
+              <?php endif; ?>              
             </div>        
             <h4 class="profile__outings__created__title__participant">en tant que participant(e) : </h4>
             <div class="profile__outings__future__content">
-            <?php if (empty($outingUserParticipant)) {
-                echo '<p class="profile__outings__list">Vous n\'êtes pas encore inscrit sur une sortie</p>';
-              }else{
-                  foreach($outingUserParticipant as $key=> $currentParticipation): ?>
+            <?php if (empty($outingUserParticipant)) : ?>
+                <p class="profile__outings__list">Vous n\'êtes pas encore inscrit sur une sortie</p>
+              <?php else: ?>
+                  <?php foreach($outingUserParticipant as $key=> $currentParticipation): ?>
+                  <div class="profile__outings__list__item">
                   <?php if($currentParticipation['practiced_sport'] == 1) :?>
                   <img class="profile__infos__sports__practice__svg__right" src="<?php echo get_bloginfo('url') . '/content/themes/cyclorun/app/assets/images/cycling.svg;' ?>" alt="cycling">
                   <?php endif; ?>
                   <?php if($currentParticipation['practiced_sport'] == 2) : ?>
                     <img class="profile__infos__sports__practice__svg__right" src="<?php echo get_bloginfo('url') . '/content/themes/cyclorun/app/assets/images/running.svg;' ?>" alt="running">
                   <?php endif; ?>
-                  <p class="profile__outings__list"><?= $currentParticipation['outing_name']; ?> prévue le : <?= date("d/m/Y", strtotime($currentParticipation['date'])); ?> à <?= substr($currentParticipation['time'], 0, -3);?></p>
+                  <p class="profile__outings__list"><strong><?= $currentParticipation['outing_name']; ?></strong> prévue le : <?= date("d/m/Y", strtotime($currentParticipation['date'])); ?> à <?= substr($currentParticipation['time'], 0, -3);?></p>
                   <a class="link__to__details" href="<?= get_bloginfo('url') . '/outing-details/?outingId=' . $currentParticipation['outing_id']; ?>">Voir le détail</a>
+                  </div>
                   <?php endforeach; ?>
-              <?php } ?> 
+                <?php endif; ?> 
             </div>
         </div>
     </div>

@@ -1,117 +1,8 @@
 
-/*
-.inscription{
-    background: url('../assets/images/cycl/cycl2.jpg'),  url('../assets/images/run/run2.jpg');
-    background-size: 50%;
-    background-repeat: no-repeat, no-repeat;
-
-    background-position: left, right;
-
-	background-position: left, right;
-	min-width: 100%;
-	min-height: 100%;
-
-
-    &__title{
-        width:30%;
-        margin: auto;
-        text-align: center;
-        color: $lightgrey
-;
-    }
-
-    &__form{
-        background-color: $lightgrey
-;
-        display: flex;
-        width: 60%;
-        margin: auto;
-        border: 1px solid $dark;
-        border-radius: $font-size-default;
-
-    &__form{
-        background-color: $ligthgrey;
-        display: flex;
-		width: 60%;
-		min-height: 100mvh;
-        margin: auto;
-        border: 1px solid $dark;
-        border-radius: $font-size-default;
-
-        &__selects{
-            display: flex;
-        }
-        &__select{
-            width: 50%;
-        }
-        &__submit{
-            margin-top: $gutter-large-very;
-            margin-left: 45%;
-        }
-        &__conditions{
-            display: flex;
-            margin-top: $gutter-large-very;
-        }
-        &__input{
-            display: block;
-
-            margin: $gutter-small;
-
-            margin: $gutter-large-very;
-
-            &__birthdate{
-               width: 15%;
-               margin: $gutter-small;
-            }
-        }
-        &__label{
-            display: block;
-
-            margin: $gutter-small;
-
-            margin: $gutter-large-very;
-
-            &__birthdate{
-                display: flex;
-                margin: $gutter-small;
-            }
-            &__title{                
-                font-weight: bolder;
-                margin: $gutter;
-            }
-        }
-        &__subsection{     
-            padding: 2rem;
-            &__left{
-            border-right: 1px solid $dark;
-            max-width: 50%;
-            }
-        }
-    }
-
-}
-
-}*/
-//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-.inscription{
-    background-size: 50%;
-    background-repeat: no-repeat, no-repeat;
-	background-position: left, right;
-	min-width: 100%;
-	min-height: 100%;
-}
-
-.inscription__title{
-	width:30%;
-	margin: auto;
-	text-align: center;
-	color: $lightgrey;
-}
-
 .inscription__form{
 	background-color: $lightgrey;
 	display: flex;
-	width: 60%;
+	width: 45%;
 	min-height: 100mvh;
 	margin: auto;
 	border: 1px solid $dark;
@@ -125,134 +16,99 @@
 }
 
 .inscription__form__subsection__right{
-	border-right: 1px solid $dark;
+	//border-right: 1px solid $dark;
 	max-width: 50%;
 	padding: 2rem;
 }
 
 .inscription__form__label{
 	display: block;
-    margin: $gutter-large-very;
+
+	&__cycling{
+		margin-top: 2rem;
+	}
+    
 }
 
 .inscription__form__label__title{
-	font-weight: bolder;
-    margin: $gutter-large-very*3;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: large;
 }
+    
 
 .inscription__form__input{
 	display: block;
-    margin: $gutter-large-very;
+    margin-top: 2rem;
 }
 
+.custom-select{
+	background: white;
+}
 
-//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-	* {
-		box-sizing: border-box;
-	}
-	
-	.body {
-		display: flex;
-		flex-direction: column;
-		min-width: 100% ;
-	}
-	
-	.container {
-		background-repeat: no-repeat, no-repeat;
-		background-position: left, right;
-		background-size: 50%;
-		border-radius: 5px;
-		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-		overflow: hidden;
-		width: 100%;
-	}
-	
+.birthdate{
+	margin-top: 2rem;
+	display: block;
+}
 
-	
-	.header h2 {
-		margin: 0;
+.input__birthdate{
+	width:20%;
+}
+
+.avatar{
+	display:block;
+	margin-bottom: 0;
+	margin-top: 2rem;
+}
+
+.inscription__form__conditions{
+	display: flex;
+	margin-top: 2rem;
+}
+
+.terms{
+	font-size: small;
+}
+
+.input-checkbox{
+	margin-top:0.2rem;
+	margin-right: 0.5rem;
+}
+
+.inscription__form__submit{
+	margin: 1rem 8rem 0 8rem;
+	background-color: $blueduck;
+	padding: $gutter-small;
+	border-radius: $gutter-small;
+	color: $lightgrey;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.errors{
+	color:red;
+	font-weight: bold;
+	margin-top: 2rem;
+
+	&__list{
+		list-style: none;
+
+		&__item{
+			margin-top: 1rem;
+		}
 	}
-	
-	.form {
-		padding: 30px 40px;	
-	}
-	
-	.form-control {
-		float: left;
-		margin-bottom: 100px;
-		padding-bottom: 20px;
-		position: relative;
-	}
-	
-	.form-control label {
-		display: inline-block;
-		margin-bottom: 3rem;
-	}
-	
-	.form-control input {
-		border: 2px solid #f0f0f0;
-		border-radius: 4px;
-		display: block;
-		font-family: inherit;
-		font-size: 14px;
-		padding: 10px;
-		margin-bottom: 1rem;
-		width: 100%;
-	}
-	
-	.form-control input:focus {
-		outline: 0;
-		border-color: #777;
-	}
-	
-	.form-control.success input {
-		border-color: #2ecc71;
-	}
-	
-	.form-control.error input {
-		border-color: #e74c3c;
-	}
-	
-	.form-control i {
-		visibility: hidden;
-		position: absolute;
-		top: 40px;
-		right: 10px;
-	}
-	
-	.form-control.success i.fa-check-circle {
-		color: #2ecc71;
-		visibility: visible;
-	}
-	
-	.form-control.error i.fa-exclamation-circle {
-		color: #e74c3c;
-		visibility: visible;
-	}
-	
-	.form-control small {
-		color: #e74c3c;
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		visibility: hidden;
-	}
-	
-	.form-control.error small {
-		visibility: visible;
-	}
-	
-	.form button {
-		background-color: $blueduck;
-		border: 2px solid #8e44ad;
-		border-radius: 4px;
-		color:silver;
-		display: block;
-		font-family: inherit;
-		font-size: 16px;
-		padding: 10px;
-		margin-top: 20px;
-		width: 100%;
+}
+
+.advise{
+	&__img{
+		float:left;
+		margin-right: 0.5rem;
 	}
 
+}
+
+.advise p{
+	text-align: justify;
+	
+}
 

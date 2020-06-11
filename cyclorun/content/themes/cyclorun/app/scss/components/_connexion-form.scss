@@ -26,16 +26,20 @@
                 margin-top: 2rem;
                 margin-right: 2rem;
                 background-color: $blueduck;
-                //padding: $gutter-small;
+                padding: $gutter-small;
                 border-radius: $gutter-small;
                 color: $lightgrey;
+                text-transform: uppercase;
+                font-weight: bold;
             }
             &__inscription{   
                 margin-top: 2rem;
                 background-color: $dark;
-                //padding: $gutter-small;
+                padding: $gutter-small;
                 border-radius: $gutter-small;
                 color: $lightgrey;
+                text-transform: uppercase;
+                font-weight: bold;
 
                 &__link{
                     color: $lightgrey;
