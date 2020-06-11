@@ -4,25 +4,30 @@
     &__header{
         padding-bottom: $gutter-large-very;
 
-        &__img{
-            display: block;
-            max-width: 10%;
-            margin-left: auto;
-            margin-right: auto;
-            padding-bottom: $gutter-large-very;
-        }
-
         &__title{
             text-align: center;
             padding-bottom: $gutter-large-very;
+            height: 2rem;
         }
     }
 
     &__content{
         display: flex;
+        max-width: 80%;
 
         &__informations{
+
+            &__img{
+                display: block;
+                max-width: 30%;
+                margin-bottom: $gutter;
+            }
+
             &__date{
+                margin-bottom: $gutter;
+            }
+
+            &__time{
                 margin-bottom: $gutter-large-very;
             }
 
@@ -37,35 +42,48 @@
                     max-width: 5%;
                     float: left;
                 }
+
+                &__pseudo{
+                    margin-left: 4rem;
+                }
             }
 
             &__practice{
                 display: flex;
-                justify-content: space-around;
+                justify-content: center;
                 padding-bottom: $gutter-large-very;
                 margin-top: $gutter-large-very;
 
-                &__div{
-                    margin-left:$gutter-large-very*2;
+                &__sport,
+                &__level{
+                    text-align:center;
+                    width: 25%;
+                }
 
+                &__sport{
                     &__svg{
-                        width: 3%;
+                        width:15%;
                     }
                 }
-            }
 
-            &__level{
-                margin-right: $gutter-large-very*2;
+                &__level p{
+                    margin:0;
+                }
             }
 
             &__rdv{
                 margin-bottom: $gutter-large;
+
+                &__adress {
+                    margin-bottom: $gutter-large-very;
+                }
             }
 
             &__description{
 
                 &__text{
                     max-width: 80%;
+                    margin-bottom: $gutter-large-very;
                 }
             }
         }
@@ -87,5 +105,45 @@
                 }
             }
         }
+    }
+    &__participants{
+                
+        &__div{
+            display: flex;
+            flex-wrap: wrap;
+
+            &__content{
+                display: flex;
+
+                &__img{
+                    border-radius: 50%;
+                    max-width: 10%;  
+                    margin-bottom: 1rem;                   
+                }
+            }
+        }        
+    }
+}
+
+.message{
+    text-align: center;
+    
+    &__ok{
+        color: $blueduck;
+        font-size: 1.2rem;
+    }
+
+    &__ko{
+        color: red;
+    }
+
+    &__button{
+        background-color: $blueduck;
+        color:$lightgrey;
+        border: none;
+    }
+
+    &__button:visited{
+        color:$lightgrey;
     }
 }

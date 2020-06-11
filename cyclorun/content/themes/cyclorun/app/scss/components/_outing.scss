@@ -19,5 +19,11 @@
 
     &__button{
         background-color: $blueduck;
+        color:$lightgrey;
+        border: none;
+    }
+
+    &__button:visited{
+        color: $lightgrey;
     }
 }

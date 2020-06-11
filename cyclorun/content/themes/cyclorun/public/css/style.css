@@ -9587,18 +9587,20 @@ a:visited {
   padding: 4rem; }
   .details__header {
     padding-bottom: 4rem; }
-    .details__header__img {
-      display: block;
-      max-width: 10%;
-      margin-left: auto;
-      margin-right: auto;
-      padding-bottom: 4rem; }
     .details__header__title {
       text-align: center;
-      padding-bottom: 4rem; }
+      padding-bottom: 4rem;
+      height: 2rem; }
   .details__content {
-    display: flex; }
+    display: flex;
+    max-width: 80%; }
+    .details__content__informations__img {
+      display: block;
+      max-width: 30%;
+      margin-bottom: 1rem; }
     .details__content__informations__date {
+      margin-bottom: 1rem; }
+    .details__content__informations__time {
       margin-bottom: 4rem; }
     .details__content__informations__author {
       margin-bottom: 4rem; }
@@ -9607,21 +9609,27 @@ a:visited {
       .details__content__informations__author__img {
         max-width: 5%;
         float: left; }
+      .details__content__informations__author__pseudo {
+        margin-left: 4rem; }
     .details__content__informations__practice {
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
       padding-bottom: 4rem;
       margin-top: 4rem; }
-      .details__content__informations__practice__div {
-        margin-left: 8rem; }
-        .details__content__informations__practice__div__svg {
-          width: 3%; }
-    .details__content__informations__level {
-      margin-right: 8rem; }
+      .details__content__informations__practice__sport, .details__content__informations__practice__level {
+        text-align: center;
+        width: 25%; }
+      .details__content__informations__practice__sport__svg {
+        width: 15%; }
+      .details__content__informations__practice__level p {
+        margin: 0; }
     .details__content__informations__rdv {
       margin-bottom: 2rem; }
+      .details__content__informations__rdv__adress {
+        margin-bottom: 4rem; }
     .details__content__informations__description__text {
-      max-width: 80%; }
+      max-width: 80%;
+      margin-bottom: 4rem; }
     .details__content__map {
       float: right; }
       .details__content__map__button {
@@ -9634,6 +9642,29 @@ a:visited {
         margin-right: auto; }
         .details__content__map__button__content {
           color: #F5F5F5; }
+  .details__participants__div {
+    display: flex;
+    flex-wrap: wrap; }
+    .details__participants__div__content {
+      display: flex; }
+      .details__participants__div__content__img {
+        border-radius: 50%;
+        max-width: 10%;
+        margin-bottom: 1rem; }
+
+.message {
+  text-align: center; }
+  .message__ok {
+    color: #00757F;
+    font-size: 1.2rem; }
+  .message__ko {
+    color: red; }
+  .message__button {
+    background-color: #00757F;
+    color: #F5F5F5;
+    border: none; }
+  .message__button:visited {
+    color: #F5F5F5; }
 
 /* Taille des icones cycling et running */
 .profile__infos__sports__practice__svg {
@@ -10008,7 +10039,11 @@ a:visited {
       top: 0rem;
       left: 0rem; }
   .outing__button {
-    background-color: #00757F; }
+    background-color: #00757F;
+    color: #F5F5F5;
+    border: none; }
+  .outing__button:visited {
+    color: #F5F5F5; }
 
 .menu {
   list-style: none;

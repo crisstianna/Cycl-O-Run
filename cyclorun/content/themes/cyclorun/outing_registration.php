@@ -91,8 +91,11 @@ if (!empty($_POST)) {
             echo '</ul>';
             echo '</div>';
         }
-    } else {
-        if (empty($picture)) {
+    
+        exit;
+    }
+    else {
+        if(empty($picture)) {
             $picture = get_bloginfo('url') . '/content/themes/public/images/logo-o.png';
         }
         if ($practicedSport) {
