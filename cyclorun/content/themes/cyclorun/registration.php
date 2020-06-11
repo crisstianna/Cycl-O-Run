@@ -46,7 +46,7 @@ if ( ! function_exists( 'wf_insert_update_user_meta' ) ) {
 
 // If the form is submitted
 
-if (!empty($_POST)) {
+if (isset($_POST['submit'])) {
         
     $errors=[];
 
@@ -94,6 +94,28 @@ if (!empty($_POST)) {
         $errors += [
             'emptyEmail' => "Veuillez renseigner votre adresse e-mail"
         ];
+    }
+
+    //*PASSWORD
+    if(!empty($_POST['password'])){
+        if(strlen($_POST['password']) >= 8){
+            if(!empty($_POST['password_confirmation'])){
+            
+                if($_POST['password'] == $_POST['password_confirmation']){
+                    $password= sanitize_text_field($_POST['password']);
+                }else{
+                    $errors+=['password_confirmation_failed'=> "Veuillez saisir 2 mots de passe identiques"];
+                }
+            } else {
+                $errors+= ['password_confirmation' => "Veuillez confirmer votre mot de passe"];
+            }
+
+        }else {
+            $errors+= ['password_length' => "Veuillez saisir un mot de passe de 8 caractères minimum"];
+           
+        }
+    } else {
+        $errors+= ['password'=> 'Veuillez saisir un mot de passe'];
     }
 
     //*ADDRESS
@@ -155,30 +177,47 @@ if (!empty($_POST)) {
     }
 
     //*SPORT
-    if (!empty($_POST['cycling']) && !empty($_POST['running'])) {
-        $cycling = sanitize_text_field($_POST['cycling']);
-        $running= sanitize_text_field($_POST['running']);
-    } else{
-        $errors += [
-            'sport' => "Veuillez choisir un sport"
-        ];
+    if(!empty($_POST['cycling']) || !empty($_POST['running'])){
+        if(!empty($_POST['cycling'])){
+            $cycling=$_POST['cycling'];
+        }
+
+        if(!empty($_POST['running'])){
+            $running=$_POST['running'];
+        }
+    } elseif(empty($_POST['cycling'] && empty($_POST['running']))){
+        $errors+=['sport' => "Veuillez renseigner un sport"];
     }
+    
 
     //*CYCLING LEVEL
-    if (!empty($_POST['cycling']) && !empty($_POST['cycling_level'])) {
-        $cyclinglevel = $_POST['cycling_level'];
-    } else {
-        $errors += [
-            'cyclingLevel' => "Veuillez renseigner votre niveau de cyclisme"
-        ];
+    if (!empty($_POST['cycling'])) {
+
+        if(!empty($_POST['cycling_level'])){
+            $cyclinglevel = $_POST['cycling_level'];
+        }else{
+            $errors += [
+                'cyclingLevel' => "Veuillez renseigner votre niveau de cyclisme"
+            ];
+        }
     }
 
     //*RUNNING LEVEL
-    if (!empty($_POST['running']) && !empty($_POST['running_level'])) {
-        $runninglevel = $_POST['running_level'];
-    } else {
-        $errors += [
-            'runningLevel' => "Veuillez renseigner votre niveau de course à pied"
+    if (!empty($_POST['running'])) {
+        
+        if(!empty($_POST['running_level'])){
+            $runninglevel = $_POST['running_level'];
+        }else{
+            $errors += [
+                'runningLevel' => "Veuillez renseigner votre niveau de running"
+            ];
+        }
+    }
+
+    //*TERMS
+    if(empty($_POST['terms'])){
+        $errors +=[
+            'terms' => "Veuillez lire et accepter les Conditions Générales d'Utilisation"
         ];
     }
 
@@ -227,7 +266,7 @@ if (!empty($_POST)) {
           echo '<div class="errors">';
             echo '<ul class="errors__list">';
             foreach($errors as $key){
-                echo '<li>' . $key . '</li>';
+                echo '<li class="errors__list__item">' . $key . '</li>';
             }  
             echo '</ul>';
             echo '</div>';
@@ -236,9 +275,7 @@ if (!empty($_POST)) {
     }
      
 
-} else {
-    $errors =['formulaire' => 'Le formulaire ne peut être vide'];
-}
+} 
     
 
 
@@ -264,9 +301,9 @@ if (!empty($_POST)) {
                 
                 
                 <label class="birthdate" for="birthdate">Date de naissance</label>
-                    <input class=" input__birthdate" type="number" pattern="[0-9]*" min="01" max="31" name="day_birth" id="day_birth" placeholder="JJ" />
-                    <input class=" input__birthdate" type="number" pattern="[0-9]*" min="01" max="12" name="month_birth" id="month_birth" placeholder="MM"/>
-                    <input class=" input__birthdate" type="number" pattern="[0-9]*" min="1950" max="2002" name="year_birth" id="year_birth" placeholder="AAAA"/>
+                    <input class=" input__birthdate" type="number"  min="01" max="31" name="day_birth" id="day_birth" placeholder="JJ" />
+                    <input class=" input__birthdate" type="number"  min="01" max="12" name="month_birth" id="month_birth" placeholder="MM"/>
+                    <input class=" input__birthdate" type="number"  min="1950" max="2002" name="year_birth" id="year_birth" placeholder="AAAA"/>
 
                 <!--TODO: create a function to retrieve dynamically max year attribute. Ex: currentYear= 2020-18(min user age) = 2002 -->
                 
@@ -352,7 +389,7 @@ if (!empty($_POST)) {
 
                     if(function_exists('displayErrors')){
                         displayErrors($errors);
-                    } 
+                    }
                 ?>
 
         </form>

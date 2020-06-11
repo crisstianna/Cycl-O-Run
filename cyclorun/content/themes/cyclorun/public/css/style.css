@@ -9859,7 +9859,7 @@ a:visited {
 .inscription__form {
   background-color: #F5F5F5;
   display: flex;
-  width: 60%;
+  width: 45%;
   min-height: 100mvh;
   margin: auto;
   border: 1px solid #333333;
@@ -9922,6 +9922,8 @@ a:visited {
   margin-top: 2rem; }
   .errors__list {
     list-style: none; }
+    .errors__list__item {
+      margin-top: 1rem; }
 
 .navbar {
   background-color: #00757F;

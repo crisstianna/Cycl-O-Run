@@ -2,7 +2,7 @@
 .inscription__form{
 	background-color: $lightgrey;
 	display: flex;
-	width: 60%;
+	width: 45%;
 	min-height: 100mvh;
 	margin: auto;
 	border: 1px solid $dark;
@@ -82,6 +82,10 @@
 
 	&__list{
 		list-style: none;
+
+		&__item{
+			margin-top: 1rem;
+		}
 	}
 }
 
