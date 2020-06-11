@@ -174,6 +174,8 @@ if (isset($_POST['submit'])) {
 
       
 
+    } else {
+        $picture = get_bloginfo('url') . '/content/themes/cyclorun/public/images/logo-o.png';
     }
 
     //*SPORT

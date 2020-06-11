@@ -89,8 +89,8 @@ if(!empty($_POST)) {
             echo '</ul>';
             echo '</div>';            
         }
-        // todo l'affichage des erreurs pourait-il se faire sur la droite du formulaire ?
-        
+    
+        exit;
     }
     else {
         if(empty($picture)) {
@@ -129,7 +129,6 @@ if(!empty($_POST)) {
     $wpError = $wpdb->show_errors();
 
     $outingId = $wpdb->insert_id;
-    var_dump($outingId);
 
     if (!empty($id && $outingId)) {
         $wpdb->insert(
