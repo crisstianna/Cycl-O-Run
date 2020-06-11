@@ -185,7 +185,7 @@ if (isset($_POST['submit'])) {
         if(!empty($_POST['running'])){
             $running=$_POST['running'];
         }
-    } elseif(empty($_POST['cycling'] && empty($_POST['running']))){
+    } elseif(empty($_POST['cycling']) && empty($_POST['running'])){
         $errors+=['sport' => "Veuillez renseigner un sport"];
     }
     
