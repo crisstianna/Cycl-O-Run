@@ -96,7 +96,7 @@ if (!empty($_POST)) {
     }
     else {
         if(empty($picture)) {
-            $picture = get_bloginfo('url') . '/content/themes/public/images/logo-o.png';
+            $picture = get_bloginfo('url') . '/content/themes/cyclorun/public/images/logo-o.png';
         }
         if ($practicedSport) {
             if ($practicedSport === 1 && empty($cycling_level) || $practicedSport === 2 && empty($running_level)) {

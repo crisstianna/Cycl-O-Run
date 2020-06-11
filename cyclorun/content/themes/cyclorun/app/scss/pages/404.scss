@@ -1,0 +1,17 @@
+.forOfor{
+    background-color: $blueduck;
+    padding-top: 5%;
+
+    &__title{
+        text-align: center;
+        color: $lightgrey;
+    }
+    
+    &__img {
+        max-width: 75vw;
+        max-height: 75vh;
+        display: block;
+        margin: auto;
+    }
+}
+

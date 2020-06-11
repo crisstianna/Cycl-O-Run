@@ -9530,6 +9530,20 @@ a:visited {
 .custom-home__button {
   background-color: #00757F; }
 
+.outing__attachments__image {
+  max-width: 100%;
+  max-height: 100%;
+  display: block; }
+
+.outing__body__title {
+  text-align: center; }
+
+.messageEmpty {
+  text-align: center; }
+  .messageEmpty__content {
+    text-align: center;
+    margin-bottom: 1rem; }
+
 .home-main__welcome {
   font-size: 2rem;
   line-height: 2rem;
@@ -9720,7 +9734,7 @@ a:visited {
 
 /* Titres des listes de la partie droite de la page */
 .profile__outings__created__title, .profile__outings__future__title {
-  text-decoration: underline;
+  font-weight: bold;
   line-height: 1.5rem;
   margin-bottom: 3rem; }
 
@@ -9752,6 +9766,18 @@ a:visited {
   margin: auto;
   font-style: italic;
   margin-left: 1rem; }
+
+.forOfor {
+  background-color: #00757F;
+  padding-top: 5%; }
+  .forOfor__title {
+    text-align: center;
+    color: #F5F5F5; }
+  .forOfor__img {
+    max-width: 75vw;
+    max-height: 75vh;
+    display: block;
+    margin: auto; }
 
 /* Entete de la page */
 .outing-reg__organisation {
