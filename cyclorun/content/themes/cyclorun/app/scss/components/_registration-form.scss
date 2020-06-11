@@ -23,6 +23,10 @@
 
 .inscription__form__label{
 	display: block;
+
+	&__cycling{
+		margin-top: 2rem;
+	}
     
 }
 
@@ -49,6 +53,12 @@
 
 .input__birthdate{
 	width:20%;
+}
+
+.avatar{
+	display:block;
+	margin-bottom: 0;
+	margin-top: 2rem;
 }
 
 .inscription__form__conditions{
@@ -87,5 +97,18 @@
 			margin-top: 1rem;
 		}
 	}
+}
+
+.advise{
+	&__img{
+		float:left;
+		margin-right: 0.5rem;
+	}
+
+}
+
+.advise p{
+	text-align: justify;
+	
 }
 

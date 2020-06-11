@@ -9877,6 +9877,8 @@ a:visited {
 
 .inscription__form__label {
   display: block; }
+  .inscription__form__label__cycling {
+    margin-top: 2rem; }
 
 .inscription__form__label__title {
   text-transform: uppercase;
@@ -9896,6 +9898,11 @@ a:visited {
 
 .input__birthdate {
   width: 20%; }
+
+.avatar {
+  display: block;
+  margin-bottom: 0;
+  margin-top: 2rem; }
 
 .inscription__form__conditions {
   display: flex;
@@ -9925,6 +9932,13 @@ a:visited {
     list-style: none; }
     .errors__list__item {
       margin-top: 1rem; }
+
+.advise__img {
+  float: left;
+  margin-right: 0.5rem; }
+
+.advise p {
+  text-align: justify; }
 
 .navbar {
   background-color: #00757F;

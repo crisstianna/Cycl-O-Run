@@ -288,6 +288,12 @@ if (isset($_POST['submit'])) {
             <div class="inscription__form__subsection__left">
                 <label class="inscription__form__label__title" for="form-group-connexion-infos">Mes Informations de connexion</label> 
                 
+                <div class="advise">
+                <img class="advise__img" src="https://img.icons8.com/metro/26/000000/box-important.png"/>
+                <p>
+                    Afin de pouvoir bénéficier de tous les services, tous les champs ci-dessous doivent être renseignés. Seul l'avatar est facultatif.
+                </p>
+                </div>
                 
                 <!-- <label>Nom</label> -->
                 <input class="inscription__form__input" type="text" name="first_name" id="first_name" value="" placeholder="Prénom"/>
@@ -308,10 +314,11 @@ if (isset($_POST['submit'])) {
                 <!--TODO: create a function to retrieve dynamically max year attribute. Ex: currentYear= 2020-18(min user age) = 2002 -->
                 
              
-                <div class="existing-prof-pic-cont">
-                <!-- <label class="inscription__form__label" for="user_profile_pic">Avatar</label> -->
-                    <input class="inscription__form__input" type="file" name="picture" id="picture" />
-                </div>
+                
+                    <label class="avatar" for="picture">Avatar</label>
+                    <input class="avatar__input" type="file" name="picture" id="picture" />
+                    
+             
                 
 
                 <!-- <label class="inscription__form__label" for="email">Adresse Email</label> -->
@@ -350,10 +357,16 @@ if (isset($_POST['submit'])) {
             </div>
             <div class="inscription__form__subsection__right">
                  <label class="inscription__form__label__title form-group sport-profile" for="form-group-sport-profile">Mon Profil Sportif</label>
+                 <div class="advise">
+                <img class="advise__img" src="https://img.icons8.com/metro/26/000000/box-important.png"/>
+                <p>
+                    Veuillez choisir 1 sport au minimum.
+                </p>
+                </div>
                 <div class="inscription__form__selects">
                     <div class="custom-control custom-switch inscription__form__select">
                         <input class="inscription__form__input custom-control-input" type="checkbox" name="cycling" value="cycling" id="cycling">
-                         <label class="inscription__form__label custom-control-label" for="cycling">Vélo</label> 
+                         <label class="inscription__form__label__cycling custom-control-label" for="cycling">Vélo</label> 
                          <label class="inscription__form__label mr-sm-2 sr-only" for="cycling-level">Mon Niveau</label> 
                             <select class="custom-select" name="cycling_level" id="cycling_level_select">
                                 <option value="" selected>Choisir</option>
