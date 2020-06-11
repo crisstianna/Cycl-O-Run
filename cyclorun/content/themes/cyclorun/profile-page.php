@@ -47,12 +47,11 @@ $wp_users = $wpdb->prefix . 'users';
 // we recover the current date to display only the next outings
 $currentDateTime = date('Y-m-d');
 
+
 //? FIND OUTINGS WICH USER IS CREATOR
 $outingUserAuthor = $wpdb->get_results(
     "SELECT *
     FROM $wp_outings
-    INNER JOIN $wp_participations
-        ON $wp_outings.`outing_id` = $wp_participations.`outing_id`
     WHERE $wp_outings.`author` = $id AND $wp_outings.`date` >= $currentDateTime
     ORDER BY `date` ASC",
     ARRAY_A
@@ -64,11 +63,8 @@ $outingUserParticipant = $wpdb->get_results(
     FROM $wp_outings
     INNER JOIN $wp_participations
       ON $wp_outings.`outing_id` = $wp_participations.`outing_id`
-    INNER JOIN $wp_users
-      ON $wp_users.`ID` = $wp_participations.`user_id`
-    WHERE $wp_users.`ID` = $id AND $wp_outings.`date` >= $currentDateTime
-    ORDER BY `date` ASC
-    LIMIT 3",
+    WHERE $wp_participations.`user_id` = $id AND $wp_outings.`date` >= $currentDateTime
+    ORDER BY `date` ASC",
     ARRAY_A 
 );
 
@@ -82,7 +78,7 @@ $outingUserParticipant = $wpdb->get_results(
     <div class="profile__infos">
       <h1 class="profile__title">Mon Profil</h1>
       <div class="profile__infos__personal__avatar">
-          <img class="avatar__img" src="<?php get_bloginfo('url') . '/content/themes/cyclorun/app/assets/images/avatar.png' ?>" alt="Here comes the user avatar"/>
+          <img class="avatar__img" src="<?= $userMeta['picture'][0]; ?>" alt="Here comes the user avatar"/>
       </div>
       <div class="profile__infos__personal">
         <h2 class="profile__infos__title"><?php echo str_replace("_", " ", $userData->display_name) ;?></h2>
