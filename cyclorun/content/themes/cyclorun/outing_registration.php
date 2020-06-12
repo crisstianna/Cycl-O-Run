@@ -148,8 +148,8 @@ if (!empty($_POST)) {
     }
     if ($wpError !== false && $id && $outingId) {
         echo '<div class ="outing-reg__ok">Votre sortie a bien été créée !! ';
-        echo '<button type="button" class="btn btn-dark navbar__button"><a class="navbar__link" href="' . get_bloginfo('url') . '/outing-details/?outingId=' . $outingId . '">Voir ma sortie en détails</a></button>';
-        echo '<button type="button" class="btn btn-dark navbar__button"><a class="navbar__link" href="' . get_bloginfo('url') . '/profile-page/' . '">Retour sur mon profil</a></button>';
+        echo '<button type="button" class="btn btn-dark navbar__button btn__success__outing"><a class="navbar__link" href="' . get_bloginfo('url') . '/outing-details/?outingId=' . $outingId . '">Voir ma sortie en détails</a></button>';
+        echo '<button type="button" class="btn btn-dark navbar__button btn__success__outing"><a class="navbar__link" href="' . get_bloginfo('url') . '/profile-page/' . '">Retour sur mon profil</a></button>';
         echo '</div>';
     }if ($wpError === false) {
         echo '<div style="font-size:24px;color:#00757f;margin-top:40px;">Quelque chose s\'est mal passé, veuillez recommencer</div>';

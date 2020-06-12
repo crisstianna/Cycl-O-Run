@@ -9951,7 +9951,8 @@ a:visited {
   right: 5%;
   border-radius: 1rem; }
 
-.navbar__button {
+.btn__success__outing {
+  margin-top: 1rem;
   background-color: #00757F;
   border-radius: 0.5rem; }
 
