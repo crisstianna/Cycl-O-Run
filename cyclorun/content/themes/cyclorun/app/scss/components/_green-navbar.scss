@@ -2,7 +2,14 @@
     background-color: $blueduck;
     display: flex;
     justify-content: space-between;
-   
+    
+    &__button{
+        background-color: $dark;
+    }
+
+    &__button:hover{
+        background-color: $blueduck;
+    }
 
     &__link{
         color: $lightgrey;

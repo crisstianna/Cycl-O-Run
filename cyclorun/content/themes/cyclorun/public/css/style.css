@@ -10020,6 +10020,10 @@ a:visited {
   background-color: #00757F;
   display: flex;
   justify-content: space-between; }
+  .navbar__button {
+    background-color: #333333; }
+  .navbar__button:hover {
+    background-color: #00757F; }
   .navbar__link {
     color: #F5F5F5; }
     .navbar__link:visited {
