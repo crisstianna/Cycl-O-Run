@@ -9794,7 +9794,7 @@ a:visited {
     float: left;
     margin-right: 0.5rem; }
 
-span {
+.outing-reg__span {
   color: red; }
 
 .outing-reg__input {
@@ -9936,6 +9936,8 @@ span {
   border: 1px solid #00757F;
   border-radius: 1rem;
   padding-top: 1rem; }
+  .outing-reg__errors__strong {
+    font-weight: bold; }
 
 .outing-reg__errors__li {
   color: red; }

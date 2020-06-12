@@ -8,38 +8,38 @@ get_header();
         </section>
         <div class="adviseForm">
                 <img class="adviseForm__img" src="https://img.icons8.com/metro/26/000000/box-important.png"/>
-                <p><span>*</span> Champs obligatoires - <span>**</span>  Choisir un sport et son niveau</p>                
+                <p><span>*</span> Champs obligatoires - <span class="outing-reg__span">**</span>  Choisir un sport et son niveau</p>                
         </div>
         <form class="outing-reg__creation" action="" method="post" enctype="multipart/form-data">            
             <div class="outing-reg__title">
-                <label for="outing_name">Nom de la sortie <span>*</span></label>
+                <label for="outing_name">Nom de la sortie <span class="outing-reg__span">*</span></label>
                 <input class="outing-reg__input__name" type="text" id="outing_name" name="outing_name" placeholder="ex : Balade autour du lac d'Annecy">
             </div>
             <div class="outing-reg__top__form">
                 <div class="outing-reg__left">
                     <div class="outing-reg__rdv">
                       <div class="outing-reg__date">
-                        <label for="date">Date <span>*</span></label>
+                        <label for="date">Date <span class="outing-reg__span">*</span></label>
                         <input  class="outing-reg__input__date" type="date" id="date" name="date">
                       </div>
                       <div class="outing-reg__time">
-                        <label for="hour">Choix de l'heure <span>*</span></label>
+                        <label for="hour">Choix de l'heure <span class="outing-reg__span">*</span></label>
                         <input class="outing-reg__input__time" type="time" id="hour" name="time">
                       </div>
                     </div>
                     <div class="outing-reg__length">
-                        <label for="distance">Distance du parcours <span>*</span></label>
+                        <label for="distance">Distance du parcours <span class="outing-reg__span">*</span></label>
                         <input class="outing-reg__input__length" type="number" id="length" name="distance" placeholder=" en km">
                     </div>
                     <div class="outing-reg__location">
-                        <label for="address">Lieu de Rendez-vous <span>*</span></label>
+                        <label for="address">Lieu de Rendez-vous <span class="outing-reg__span">*</span></label>
                         <input class="outing-reg__input" type="text" id="address" name="address" placeholder=" ne pas oublier le code postal">
                     </div>
                 </div>
                 <div class="outing-reg__practice">
                     <div>
                         <input class="outing-reg__input__radio" type="radio" id="cycling" name="practiced_sport" value="1">
-                        <label for="cycling">Vélo <span>**</span></label>
+                        <label for="cycling">Vélo <span class="outing-reg__span">**</span></label>
                     </div>
                         <!-- Select à afficher uniquement si le bouton est coché - A voir en JS-->
                     <select class=" outing-reg__select" name="cycling_level">
@@ -51,7 +51,7 @@ get_header();
                     </select>
                     <div>
                         <input class="outing-reg__input__radio" type="radio" id="running" name="practiced_sport" value="2">
-                        <label for="running">Course à pied <span>**</span></label>
+                        <label for="running">Course à pied <span class="outing-reg__span">**</span></label>
                     </div>
                         <!-- Select à afficher uniquement si le bouton est coché-->
                     <select class="outing-reg__select" name="running_level">
