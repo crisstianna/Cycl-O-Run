@@ -93,9 +93,9 @@ $outings_participations = $wpdb->get_results(
       ?>
         <!--OUTING-->
         <article class="card outing">
+        <img src="<?= get_stylesheet_directory_uri(). '/public/images/'. $outingSportName .'.svg'?>" class=" outing__attachments__pycto" alt="...">
           <div class="outing__attachments">
-            <embed  src="<?= $value['picture']; ?>" class="card-img-top outing__attachments__image" alt="...">
-            <img src="<?= get_stylesheet_directory_uri(). '/public/images/'. $outingSportName .'.svg'?>" class=" outing__attachments__pycto" alt="...">
+            <img  src="<?= $value['picture']; ?>" class="card-img-top outing__attachments__image" alt="...">
           </div>
           <div class="card-body outing__body" style="width:50%;" >
             <h5 class="card-title outing__body__title"><?= $outingName ?></h5>
@@ -121,7 +121,7 @@ $outings_participations = $wpdb->get_results(
     <?php if(empty($outings_participations)) {
       echo '<div class="messageEmpty">';
       echo '<div class="messageEmpty__content">Vous n\'êtes encore inscrit à aucune sortie. Joignez-vous à nous en cliquant sur l\'une des sorties ci-dessus ou en cliquant sur le lien ci-dessous</div>';
-      echo '<a class="btn btn-primary message__button" style="text-align:center;" href="' . get_bloginfo('url') . '/participation-outing/' . '">Participer à une sortie</a>';
+      echo '<a class="btn btn-primary outing__button" href="' . get_bloginfo('url') . '/participation-outing/' . '">Participer à une sortie</a>';
       echo '</div>';
     }else { ?> 
       <div class="custom-home__wrap">      
@@ -154,9 +154,9 @@ $outings_participations = $wpdb->get_results(
       <!--OUTING-->
         
       <article class="card outing">
+      <img src="<?= get_stylesheet_directory_uri(). '/public/images/'. $outingWichUserParticipate_Sport .'.svg'?>" class=" outing__attachments__pycto" alt="...">
         <div class="outing__attachments">
-          <embed  src="<?= $outingWichUserParticipate_Picture; ?>" class="card-img-top outing__attachments__image" alt="...">
-          <img src="<?= get_stylesheet_directory_uri(). '/public/images/'. $outingWichUserParticipate_Sport .'.svg'?>" class=" outing__attachments__pycto" alt="...">
+          <img  src="<?= $outingWichUserParticipate_Picture; ?>" class="card-img-top outing__attachments__image" alt="...">
         </div>
         <div class="card-body outing__body" style="width:50%;" >
           <h5 class="card-title outing__body__title"><?= $outingWichUserParticipate_Name  ?></h5>

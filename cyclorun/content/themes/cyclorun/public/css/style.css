@@ -9531,9 +9531,9 @@ a:visited {
   background-color: #00757F; }
 
 .outing__attachments__image {
-  max-width: 100%;
-  max-height: 100%;
-  display: block; }
+  object-fit: cover;
+  min-width: 100%;
+  min-height: 100%; }
 
 .outing__body__title {
   text-align: center; }
@@ -9687,7 +9687,9 @@ a:visited {
 /* photo de profile */
 .avatar__img {
   display: block;
-  border-radius: 50%; }
+  width: 80%;
+  border-radius: 50%;
+  margin: auto; }
 
 /* Toute la page */
 .profile {
@@ -9704,13 +9706,18 @@ a:visited {
   align-items: center; }
 
 .profile__title {
-  margin-bottom: 4rem; }
+  margin-bottom: 2rem; }
 
 /* Infos perso sous la photo */
 .profile__infos__personal {
   display: flex;
   flex-direction: column;
+  text-align: center;
   align-items: center; }
+  .profile__infos__personal__avatar {
+    max-width: 50%; }
+  .profile__infos__personal__title {
+    margin-top: 2rem; }
 
 .profile__infos__content {
   text-align: center; }
@@ -10120,15 +10127,18 @@ a:visited {
     position: relative; }
     .outing__attachments__pycto {
       position: absolute;
-      width: 25%;
-      top: 0rem;
-      left: 0rem; }
+      width: 10%;
+      bottom: 0rem;
+      right: 1rem; }
   .outing__button {
+    margin-top: 0.5rem;
     background-color: #00757F;
     color: #F5F5F5;
     border: none; }
-  .outing__button:visited {
-    color: #F5F5F5; }
+    .outing__button:hover {
+      background-color: #333333; }
+    .outing__button:visited {
+      color: #F5F5F5; }
 
 .menu {
   list-style: none;

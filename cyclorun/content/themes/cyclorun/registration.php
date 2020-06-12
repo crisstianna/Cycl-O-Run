@@ -361,10 +361,10 @@ if (isset($_POST['submit'])) {
                          <label class="inscription__form__label mr-sm-2 sr-only" for="cycling-level">Mon Niveau</label> 
                             <select class="custom-select" name="cycling_level" id="cycling_level_select">
                                 <option value="" selected>Choisir</option>
-                                <option value="loisirs">Loisirs (inferieur à 15km/sortie)</option>
-                                <option value="regulier">Régulier (15-30 km)</option>
-                                <option value="avance">Avancé (30-60 km)</option>
-                                <option value="intensif">Intensif (+60 km)</option>
+                                <option value="Loisirs">Loisirs (inferieur à 15km/sortie)</option>
+                                <option value="Régulier">Régulier (15-30 km)</option>
+                                <option value="Avancé">Avancé (30-60 km)</option>
+                                <option value="Intensif">Intensif (+60 km)</option>
                             </select>
                             
                         
@@ -375,10 +375,10 @@ if (isset($_POST['submit'])) {
                         <label class="inscription__form__label mr-sm-2 sr-only" for="running_level">Mon Niveau </label>
                         <select class="custom-select mr-sm-2" name="running_level" id="running_level_select">
                             <option value="" selected>Choisir</option>
-                            <option value="loisirs">Loisirs (inferieur à 15km/sortie)</option>
-                            <option value="regulier">Régulier (15-30 km)</option>
-                            <option value="avance">Avancé (30-60 km)</option>
-                            <option value="intensif">Intensif (+60 km)</option>
+                            <option value="Loisirs">Loisirs (inferieur à 15km/sortie)</option>
+                            <option value="Régulier">Régulier (15-30 km)</option>
+                            <option value="Avancé">Avancé (30-60 km)</option>
+                            <option value="Intensif">Intensif (+60 km)</option>
                         </select>
                     </div>
                 </div>

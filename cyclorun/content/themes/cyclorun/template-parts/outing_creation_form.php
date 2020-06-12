@@ -8,7 +8,7 @@ get_header();
         </section>
         <div class="adviseForm">
                 <img class="adviseForm__img" src="https://img.icons8.com/metro/26/000000/box-important.png"/>
-                <p><span>*</span> Champs obligatoires - <span class="outing-reg__span">**</span>  Choisir un sport et son niveau</p>                
+                <p><span class="outing-reg__span">*</span> Champs obligatoires - <span class="outing-reg__span">**</span>  Choisir un sport et son niveau</p>                
         </div>
         <form class="outing-reg__creation" action="" method="post" enctype="multipart/form-data">            
             <div class="outing-reg__title">

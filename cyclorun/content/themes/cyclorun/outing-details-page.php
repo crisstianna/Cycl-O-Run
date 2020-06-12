@@ -119,7 +119,7 @@ $numberParticipants = $wpdb->get_results(
     </div>
     <div class="details__content">
       <section class="details__content__informations">
-        <embed  src="<?= $outingQueries[0]['picture']; ?>" class="details__content__informations__img" alt="...">
+        <img  src="<?= $outingQueries[0]['picture']; ?>" class="details__content__informations__img" alt="...">
         <h3 class="details__content__informations__title"><?= $outingQueries[0]['outing_name']; ?></h3>
         <p class="details__content__informations__date">Date de la sortie : <?= date("d/m/Y", strtotime($outingQueries[0]['date'])); ?></p>
         <p class="details__content__informations__time">à <?= substr($outingQueries[0]['time'], 0, -3); ?></p>

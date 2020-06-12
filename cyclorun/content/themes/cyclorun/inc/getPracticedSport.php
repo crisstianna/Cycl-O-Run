@@ -11,7 +11,7 @@ if (!function_exists('getPracticedSport')) {
         }
         else if($idSport === '2') {
 
-            $practicedSport = 'course à pieds';
+            $practicedSport = 'course à pied';
             //return $practicedSport;
         }
         return $practicedSport;
