@@ -6,14 +6,69 @@
     border-bottom: 3px solid #00757F;
 }
 
-//Les inputs
-.outing-reg__input{
-    border: 2px solid $blueduck;
-    border-radius: 0.2rem;
+.adviseForm {
+    margin-left: 1rem;
+    margin-top: 1rem;
+    font-style: italic;
+
+    &__img {
+        float: left;
+        margin-right: 0.5rem;
+    }
 }
 
-.outing-reg__input:hover{
+// "*"
+span{
+    color: red;
+}
+
+//Les inputs
+.outing-reg__input{
+    border: 2px solid $dark;
+    border-radius: 0.2rem;
+
+    &__name{
+        border: 2px solid $dark;
+        width:60%;
+
+        &:focus{
+            background-color: $lightgrey;
+            border: 2px solid $blueduck;
+        }
+    }
+
+
+    &__time,
+    &__date{
+        border: 2px solid $dark;
+        text-align:center;
+
+        &:focus{
+            background-color: $lightgrey;
+            border: 2px solid $blueduck;
+        }
+    }
+   
+
+    &__length{
+        border: 2px solid $dark;
+        width: 20%;
+
+        &:focus{
+            background-color: $lightgrey;
+            border: 2px solid $blueduck;
+        }
+    }
+
+    &__picture{
+        width: 50%;
+        border: 2px solid $dark;
+    }
+}
+
+.outing-reg__input:focus{
     background-color: $lightgrey;
+    border: 2px solid $blueduck;
 }
 
 /* Formulaire global */
@@ -32,6 +87,13 @@
     width:33%;
 }
 
+.outing-reg__date,
+.outing-reg__time{
+    display:flex;
+    flex-direction: column;
+}
+
+
 /* Partie centrale du form */
 .outing-reg__practice{
     display:flex;
@@ -40,6 +102,8 @@
 
 /* Partie insertion de l'image */
 .outing-reg__image{
+    display:flex;
+    flex-direction: column;
     width: 33%;
     margin-bottom: .5rem;
 }
@@ -56,9 +120,8 @@
 
 /* Inputs date et heure */
 .outing-reg__rdv{
-    width:50%;
     display: flex;
-    flex-direction: column;
+    justify-content: space-around;
     padding-left: 5%;
     padding-bottom: 3rem;
     line-height: 2rem;
@@ -66,6 +129,8 @@
 
 /* Input distance du parcours */
 .outing-reg__length{
+    display: flex;
+    flex-direction: column;
     line-height: 2rem;
     width: 70%;
     padding-left: 5%;
@@ -73,6 +138,7 @@
 
 /* Titre de la sortie*/
 .outing-reg__title{
+    text-align:center;
     margin: auto;
     width: 50%;
 }
@@ -83,16 +149,20 @@
     line-height: 2rem;
     flex-direction: column;
     padding-left: 5%;
+    margin-top: 1.5rem;
 }
 
 //Selects de niveau
 .outing-reg__select{
-    margin-top: 1rem;
     line-height: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     padding: .5rem;
-    border: 2px solid $blueduck;
+    border: 2px solid $dark;
     border-radius: 0.2rem;
+
+    &:focus{
+        border: 2px solid $blueduck;
+    }
 }
 
 //"label" par défaut dans le sélect
@@ -143,10 +213,12 @@
     padding-left: 1rem;
     border: 1px solid $blueduck;
     border-radius:1rem;
-}
+    padding-top: 1rem;
 
-.outing-reg__errors__ul{
-
+    &__strong{
+        font-weight: bold;
+        
+    }
 }
 
 .outing-reg__errors__li{

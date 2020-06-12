@@ -3,24 +3,7 @@
  * Template Name: Registration Page
  */
 
-ob_start();
 get_header();
-$user_id = get_current_user_id();
-$existing_firstname = ( get_user_meta( $user_id, 'first_name', true ) ) ? get_user_meta( $user_id, 'first_name', true ) : '';
-$existing_lastname = ( get_user_meta( $user_id, 'last_name', true ) ) ? get_user_meta( $user_id, 'last_name', true ) : '';
-$existing_daybirth = ( get_user_meta( $user_id, 'day_birth', true ) ) ? get_user_meta( $user_id, 'day_birth', true ) : '';
-$existing_monthbirth = ( get_user_meta( $user_id, 'month_birth', true ) ) ? get_user_meta( $user_id, 'month_birth', true ) : '';
-$existing_yearbirth = ( get_user_meta( $user_id, 'year_birth', true ) ) ? get_user_meta( $user_id, 'year_birth', true ) : '';
-$existing_email = ( get_user_meta( $user_id, 'email', true ) ) ? get_user_meta( $user_id, 'email', true ) : '';
-$existing_address = ( get_user_meta( $user_id, 'adress', true ) ) ? get_user_meta( $user_id, 'adress', true ) : '';
-$existing_postcode = ( get_user_meta( $user_id, 'postcode', true ) ) ? get_user_meta( $user_id, 'postcode', true ) : '';
-$existing_city = ( get_user_meta( $user_id, 'city', true ) ) ? get_user_meta( $user_id, 'city', true ) : '';
-
-
-// Attachment for profile image.
-$attachment_id = ( get_user_meta( $user_id, 'user_prfl_img_post_id', true ) ) ? get_user_meta( $user_id, 'user_prfl_img_post_id', true ) : '';
-$attachment_id = intval( $attachment_id );
-$profile_pic_img =  wp_get_attachment_image( $attachment_id, array('700', '600'), "", array( "class" => "wf-profile-page-prof-img" ) );
 
 if ( ! function_exists( 'wf_insert_update_user_meta' ) ) {
     /**
@@ -165,14 +148,13 @@ if (isset($_POST['submit'])) {
             
         } else {
 
-            if($action['error'] !== "No file was uploaded."){
+            if($action['error'] !== "Aucun fichier n’a été envoyé."){
                 $errors += [
                     'picture' => $action['error']
                 ];
             }
         }
-
-      
+    
 
     } else {
         $picture = get_bloginfo('url') . '/content/themes/cyclorun/public/images/logo-o.png';
@@ -181,10 +163,15 @@ if (isset($_POST['submit'])) {
     //*SPORT
     if(!empty($_POST['cycling']) || !empty($_POST['running'])){
         if(!empty($_POST['cycling'])){
-            $cycling=$_POST['cycling'];
+            $sport=$_POST['cycling'];
         }
 
         if(!empty($_POST['running'])){
+            $sport=$_POST['running'];
+        }
+
+        if(!empty($_POST['cycling']) && !empty($_POST['running'])){
+            $cycling=$_POST['cycling'];
             $running=$_POST['running'];
         }
     } elseif(empty($_POST['cycling']) && empty($_POST['running'])){
