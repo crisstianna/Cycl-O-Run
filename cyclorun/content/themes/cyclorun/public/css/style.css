@@ -9786,12 +9786,45 @@ a:visited {
   padding-bottom: 4rem;
   border-bottom: 3px solid #00757F; }
 
-.outing-reg__input {
-  border: 2px solid #00757F;
-  border-radius: 0.2rem; }
+.adviseForm {
+  margin-left: 1rem;
+  margin-top: 1rem;
+  font-style: italic; }
+  .adviseForm__img {
+    float: left;
+    margin-right: 0.5rem; }
 
-.outing-reg__input:hover {
-  background-color: #F5F5F5; }
+span {
+  color: red; }
+
+.outing-reg__input {
+  border: 2px solid #333333;
+  border-radius: 0.2rem; }
+  .outing-reg__input__name {
+    border: 2px solid #333333;
+    width: 60%; }
+    .outing-reg__input__name:focus {
+      background-color: #F5F5F5;
+      border: 2px solid #00757F; }
+  .outing-reg__input__time, .outing-reg__input__date {
+    border: 2px solid #333333;
+    text-align: center; }
+    .outing-reg__input__time:focus, .outing-reg__input__date:focus {
+      background-color: #F5F5F5;
+      border: 2px solid #00757F; }
+  .outing-reg__input__length {
+    border: 2px solid #333333;
+    width: 20%; }
+    .outing-reg__input__length:focus {
+      background-color: #F5F5F5;
+      border: 2px solid #00757F; }
+  .outing-reg__input__picture {
+    width: 50%;
+    border: 2px solid #333333; }
+
+.outing-reg__input:focus {
+  background-color: #F5F5F5;
+  border: 2px solid #00757F; }
 
 /* Formulaire global */
 .outing-reg__creation {
@@ -9806,6 +9839,11 @@ a:visited {
 .outing-reg__left {
   width: 33%; }
 
+.outing-reg__date,
+.outing-reg__time {
+  display: flex;
+  flex-direction: column; }
+
 /* Partie centrale du form */
 .outing-reg__practice {
   display: flex;
@@ -9813,6 +9851,8 @@ a:visited {
 
 /* Partie insertion de l'image */
 .outing-reg__image {
+  display: flex;
+  flex-direction: column;
   width: 33%;
   margin-bottom: .5rem; }
 
@@ -9827,21 +9867,23 @@ a:visited {
 
 /* Inputs date et heure */
 .outing-reg__rdv {
-  width: 50%;
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
   padding-left: 5%;
   padding-bottom: 3rem;
   line-height: 2rem; }
 
 /* Input distance du parcours */
 .outing-reg__length {
+  display: flex;
+  flex-direction: column;
   line-height: 2rem;
   width: 70%;
   padding-left: 5%; }
 
 /* Titre de la sortie*/
 .outing-reg__title {
+  text-align: center;
   margin: auto;
   width: 50%; }
 
@@ -9849,15 +9891,17 @@ a:visited {
   display: flex;
   line-height: 2rem;
   flex-direction: column;
-  padding-left: 5%; }
+  padding-left: 5%;
+  margin-top: 1.5rem; }
 
 .outing-reg__select {
-  margin-top: 1rem;
   line-height: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   padding: .5rem;
-  border: 2px solid #00757F;
+  border: 2px solid #333333;
   border-radius: 0.2rem; }
+  .outing-reg__select:focus {
+    border: 2px solid #00757F; }
 
 .default__select {
   line-height: 1.5rem; }
@@ -9890,7 +9934,8 @@ a:visited {
   right: 5%;
   padding-left: 1rem;
   border: 1px solid #00757F;
-  border-radius: 1rem; }
+  border-radius: 1rem;
+  padding-top: 1rem; }
 
 .outing-reg__errors__li {
   color: red; }
