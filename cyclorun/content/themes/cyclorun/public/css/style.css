@@ -10082,6 +10082,13 @@ a:visited {
     .errors__list__item {
       margin-top: 1rem; }
 
+.success {
+  text-align: center;
+  color: #00757f;
+  font-weight: bold;
+  margin-top: 2rem;
+  width: 103%; }
+
 .advise__img {
   float: left;
   margin-right: 0.5rem; }

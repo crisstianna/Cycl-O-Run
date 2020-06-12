@@ -148,7 +148,7 @@ if (isset($_POST['submit'])) {
             
         } else {
 
-            if($action['error'] !== "Aucun fichier n’a été envoyé."){
+            if($action['error'] !== "No file was uploaded."){
                 $errors += [
                     'picture' => $action['error']
                 ];
@@ -161,28 +161,29 @@ if (isset($_POST['submit'])) {
     }
 
     //*SPORT
-    if(!empty($_POST['cycling']) || !empty($_POST['running'])){
-        if(!empty($_POST['cycling'])){
+    if(array_key_exists('cycling', $_POST) || array_key_exists('running', $_POST)){
+        if(array_key_exists('cycling', $_POST)){
             $sport=$_POST['cycling'];
         }
 
-        if(!empty($_POST['running'])){
+        if(array_key_exists('running', $_POST)){
             $sport=$_POST['running'];
         }
 
-        if(!empty($_POST['cycling']) && !empty($_POST['running'])){
+        if(array_key_exists('cycling', $_POST) && array_key_exists('running', $_POST)){
             $cycling=$_POST['cycling'];
             $running=$_POST['running'];
         }
-    } elseif(empty($_POST['cycling']) && empty($_POST['running'])){
+
+    } else{
         $errors+=['sport' => "Veuillez renseigner un sport"];
     }
     
 
     //*CYCLING LEVEL
-    if (!empty($_POST['cycling'])) {
+    if (array_key_exists('cycling', $_POST)) {
 
-        if(!empty($_POST['cycling_level'])){
+        if(array_key_exists('cycling_level', $_POST)){
             $cyclinglevel = $_POST['cycling_level'];
         }else{
             $errors += [
@@ -192,9 +193,9 @@ if (isset($_POST['submit'])) {
     }
 
     //*RUNNING LEVEL
-    if (!empty($_POST['running'])) {
+    if (array_key_exists('running',$_POST)) {
         
-        if(!empty($_POST['running_level'])){
+        if(array_key_exists('running_level',$_POST)){
             $runninglevel = $_POST['running_level'];
         }else{
             $errors += [
@@ -227,27 +228,28 @@ if (isset($_POST['submit'])) {
         wf_insert_update_user_meta($new_user_id, 'postcode', $postcode);
         wf_insert_update_user_meta($new_user_id, 'city', $city);
 
-        if ($cycling && $running) {
+        if (isset($cycling) && isset($running)) {
             wf_insert_update_user_meta($new_user_id, 'cycling', $cycling);
             wf_insert_update_user_meta($new_user_id, 'running', $running);
-        } elseif ($sport) {
+        } elseif (isset($sport)) {
             wf_insert_update_user_meta($new_user_id, 'sport', $sport);
         }
 
-        if ($cyclinglevel) {
+        if (isset($cyclinglevel)) {
             wf_insert_update_user_meta($new_user_id, 'cycling_level', $cyclinglevel);
         }
 
-        if ($runninglevel) {
+        if (isset($runninglevel)) {
             wf_insert_update_user_meta($new_user_id, 'running_level', $runninglevel);
         }
          
-        // Once everything is done redirect the user back to the same page
-        $location =  get_bloginfo('url') . '/login/';
-        wp_safe_redirect($location);
+        function displaySuccess(){
+            echo '<div class="success">';
+                echo '<p class="success__text">Inscription reussie ! <br/> Vous pouvez maintenant vous connecter <br/>';
+                echo '<button type="button" class="btn btn-dark navbar__button"><a class="navbar__link" href="' . get_bloginfo('url') . '/login/">Connexion</a></button>';
+            echo '</div>';
+          }
 
-
-        exit;
 
     } else {
     
@@ -391,6 +393,10 @@ if (isset($_POST['submit'])) {
 
                     if(function_exists('displayErrors')){
                         displayErrors($errors);
+                    }
+
+                    if(function_exists('displaySuccess')){
+                        displaySuccess();
                     }
                 ?>
 

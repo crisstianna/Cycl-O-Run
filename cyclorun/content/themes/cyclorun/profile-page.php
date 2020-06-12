@@ -88,7 +88,7 @@ $outingUserParticipant = $wpdb->get_results(
         </div>
         <div class="profile__infos__sports">
           <div class="profile__infos__sports__practice">
-             
+            <?php if(array_key_exists('sport', $userMeta)) : ?> 
               <?php if (array_key_exists('cycling_level', $userMeta)) : ?>             
               <div class="my__practice__level">
                 <img class="profile__infos__sports__practice__svg" src="<?php echo get_bloginfo('url') . '/content/themes/cyclorun/app/assets/images/cycling.svg;' ?>" alt="cycling">
@@ -100,8 +100,8 @@ $outingUserParticipant = $wpdb->get_results(
                 <img class="profile__infos__sports__practice__svg" src="<?php echo get_bloginfo('url') . '/content/themes/cyclorun/app/assets/images/running.svg;' ?>" alt="running">
                 <p class="selected__practice__level"><?php echo $userMeta['running_level'][0]  ?></p>
               </div>
-              <?php //endif; ?>
-            <?php else : ?>
+              <?php endif; ?>
+              <?php else : ?>
               <div class="my__practice__level">
                 <img class="profile__infos__sports__practice__svg" src="<?php echo get_bloginfo('url') . '/content/themes/cyclorun/app/assets/images/cycling.svg;' ?>" alt="cycling">
                 <p class="selected__practice__level"><?php echo $userMeta['cycling_level'][0]  ?></p>
