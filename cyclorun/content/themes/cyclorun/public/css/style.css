@@ -9722,6 +9722,116 @@ a:visited {
   font-style: italic;
   margin-left: 1rem; }
 
+.outing-participation-page-title {
+  text-align: center;
+  margin-top: 2rem; }
+
+.filter-outing {
+  display: flex; }
+
+.filter-by {
+  text-align: center; }
+
+.outing-filters {
+  padding: 2rem; }
+
+.participation-paragraph {
+  text-align: center;
+  font-weight: bold; }
+
+.filter-sport {
+  width: 33%;
+  display: flex;
+  flex-direction: column; }
+
+.filter-level {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+.label-input {
+  padding-left: 3rem; }
+
+.filter-date-input {
+  padding-left: 3rem;
+  border-color: #00757F;
+  border-radius: 0.5rem;
+  background-color: #F5F5F5; }
+
+.filter-submit {
+  min-width: 100%;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2rem;
+  border-bottom: 3px solid #00757F; }
+
+.filter-button {
+  height: 2.2rem;
+  margin: 1rem;
+  background-color: #00757F;
+  border-radius: 0.5rem;
+  color: #F5F5F5; }
+
+.articles-list {
+  display: flex;
+  justify-content: space-around; }
+
+.outing__article__img {
+  border-radius: 50%;
+  max-width: 10%;
+  margin-bottom: 1rem; }
+
+.bottom-buttons {
+  display: flex;
+  justify-content: center; }
+
+.participation-button {
+  height: 2.3rem; }
+
+.details-link {
+  padding-top: 0.25rem;
+  box-shadow: 2px 2px 2px black;
+  text-decoration: none;
+  color: #F5F5F5;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem; }
+
+.details-link:visited {
+  color: #F5F5F5; }
+
+.participation-participants {
+  display: flex;
+  justify-content: space-around; }
+
+.outing-organisator {
+  display: flex;
+  justify-content: center; }
+
+.single-article {
+  border-radius: 1rem;
+  margin: 0;
+  width: 45%;
+  max-width: 45%;
+  min-width: 45%;
+  background-color: white; }
+
+.date-hour {
+  display: flex;
+  justify-content: space-around; }
+
+.outing__article__title {
+  text-align: center; }
+
+.participation-h4 {
+  text-align: center;
+  margin-bottom: 1rem;
+  margin-top: 1rem; }
+
+.font-weight {
+  font-weight: bolder; }
+
 /* Entete de la page */
 .outing-reg__organisation {
   text-align: center;
