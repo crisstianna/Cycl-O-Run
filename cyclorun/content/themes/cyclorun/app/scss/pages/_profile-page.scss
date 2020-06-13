@@ -7,7 +7,9 @@
 /* photo de profile */
 .avatar__img{
     display: block;
+    width: 80%;
     border-radius: 50%;
+    margin: auto;
 }
 
 /* Toute la page */
@@ -18,24 +20,33 @@
 //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 /* Partie gauche de la page */
 .profile__infos{
-    border-right: 2px solid #00757F;
     max-width: 50%;
     min-width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: fixed;
 }
 
 //Titre "mon profile"
 .profile__title{
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
 }
 
 /* Infos perso sous la photo */
 .profile__infos__personal{
     display: flex;
     flex-direction: column;
+    text-align: center;
     align-items: center;
+
+    &__avatar{
+        max-width: 50%;
+    }
+
+    &__title{
+        margin-top:2rem;
+    }
 }
 
 // age et ville
@@ -63,11 +74,14 @@
 /* Partie droite de la page (listes des sorties */
 .profile__outings{
     padding-left: 5rem;
+    border-left: 2px solid $blueduck;
+    position: absolute;
+    right: 13%;
 }
 
 /* Titres des listes de la partie droite de la page */
 .profile__outings__created__title, .profile__outings__future__title{
-    text-decoration: underline;
+    font-weight: bold;
     line-height: 1.5rem;
     margin-bottom: 3rem;
 }

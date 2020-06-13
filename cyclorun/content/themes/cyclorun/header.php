@@ -32,7 +32,10 @@
     <?php else : ?>
       <nav class="navbar navbar-expand-lg">
         <a class="navbar__brand" href="<?php home_url() ?>"><img src="<?= get_stylesheet_directory_uri(). '/public/images/logo-lightgrey.png'?>" alt=""></a>
+      <div>
         <button type="button" class="btn btn-dark navbar__button"><a class="navbar__link" href="<?= get_bloginfo('url') . '/login/' ?>">Connexion</a></button>
+        <button type="button" class="btn btn-dark navbar__button"><a class="navbar__link" href="<?= get_bloginfo('url') . '/registration/' ?>">Inscription</a></button>
+      </div>
       </nav>
     <?php endif; ?>
 

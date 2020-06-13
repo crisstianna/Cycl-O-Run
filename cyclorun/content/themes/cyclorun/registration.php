@@ -3,24 +3,7 @@
  * Template Name: Registration Page
  */
 
-ob_start();
 get_header();
-$user_id = get_current_user_id();
-$existing_firstname = ( get_user_meta( $user_id, 'first_name', true ) ) ? get_user_meta( $user_id, 'first_name', true ) : '';
-$existing_lastname = ( get_user_meta( $user_id, 'last_name', true ) ) ? get_user_meta( $user_id, 'last_name', true ) : '';
-$existing_daybirth = ( get_user_meta( $user_id, 'day_birth', true ) ) ? get_user_meta( $user_id, 'day_birth', true ) : '';
-$existing_monthbirth = ( get_user_meta( $user_id, 'month_birth', true ) ) ? get_user_meta( $user_id, 'month_birth', true ) : '';
-$existing_yearbirth = ( get_user_meta( $user_id, 'year_birth', true ) ) ? get_user_meta( $user_id, 'year_birth', true ) : '';
-$existing_email = ( get_user_meta( $user_id, 'email', true ) ) ? get_user_meta( $user_id, 'email', true ) : '';
-$existing_address = ( get_user_meta( $user_id, 'adress', true ) ) ? get_user_meta( $user_id, 'adress', true ) : '';
-$existing_postcode = ( get_user_meta( $user_id, 'postcode', true ) ) ? get_user_meta( $user_id, 'postcode', true ) : '';
-$existing_city = ( get_user_meta( $user_id, 'city', true ) ) ? get_user_meta( $user_id, 'city', true ) : '';
-
-
-// Attachment for profile image.
-$attachment_id = ( get_user_meta( $user_id, 'user_prfl_img_post_id', true ) ) ? get_user_meta( $user_id, 'user_prfl_img_post_id', true ) : '';
-$attachment_id = intval( $attachment_id );
-$profile_pic_img =  wp_get_attachment_image( $attachment_id, array('700', '600'), "", array( "class" => "wf-profile-page-prof-img" ) );
 
 if ( ! function_exists( 'wf_insert_update_user_meta' ) ) {
     /**
@@ -171,31 +154,36 @@ if (isset($_POST['submit'])) {
                 ];
             }
         }
-
-      
+    
 
     } else {
         $picture = get_bloginfo('url') . '/content/themes/cyclorun/public/images/logo-o.png';
     }
 
     //*SPORT
-    if(!empty($_POST['cycling']) || !empty($_POST['running'])){
-        if(!empty($_POST['cycling'])){
-            $cycling=$_POST['cycling'];
+    if(array_key_exists('cycling', $_POST) || array_key_exists('running', $_POST)){
+        if(array_key_exists('cycling', $_POST)){
+            $sport=$_POST['cycling'];
         }
 
-        if(!empty($_POST['running'])){
+        if(array_key_exists('running', $_POST)){
+            $sport=$_POST['running'];
+        }
+
+        if(array_key_exists('cycling', $_POST) && array_key_exists('running', $_POST)){
+            $cycling=$_POST['cycling'];
             $running=$_POST['running'];
         }
-    } elseif(empty($_POST['cycling']) && empty($_POST['running'])){
+
+    } else{
         $errors+=['sport' => "Veuillez renseigner un sport"];
     }
     
 
     //*CYCLING LEVEL
-    if (!empty($_POST['cycling'])) {
+    if (array_key_exists('cycling', $_POST)) {
 
-        if(!empty($_POST['cycling_level'])){
+        if(array_key_exists('cycling_level', $_POST)){
             $cyclinglevel = $_POST['cycling_level'];
         }else{
             $errors += [
@@ -205,9 +193,9 @@ if (isset($_POST['submit'])) {
     }
 
     //*RUNNING LEVEL
-    if (!empty($_POST['running'])) {
+    if (array_key_exists('running',$_POST)) {
         
-        if(!empty($_POST['running_level'])){
+        if(array_key_exists('running_level',$_POST)){
             $runninglevel = $_POST['running_level'];
         }else{
             $errors += [
@@ -240,27 +228,28 @@ if (isset($_POST['submit'])) {
         wf_insert_update_user_meta($new_user_id, 'postcode', $postcode);
         wf_insert_update_user_meta($new_user_id, 'city', $city);
 
-        if ($cycling && $running) {
+        if (isset($cycling) && isset($running)) {
             wf_insert_update_user_meta($new_user_id, 'cycling', $cycling);
             wf_insert_update_user_meta($new_user_id, 'running', $running);
-        } elseif ($sport) {
+        } elseif (isset($sport)) {
             wf_insert_update_user_meta($new_user_id, 'sport', $sport);
         }
 
-        if ($cyclinglevel) {
+        if (isset($cyclinglevel)) {
             wf_insert_update_user_meta($new_user_id, 'cycling_level', $cyclinglevel);
         }
 
-        if ($runninglevel) {
+        if (isset($runninglevel)) {
             wf_insert_update_user_meta($new_user_id, 'running_level', $runninglevel);
         }
          
-        // Once everything is done redirect the user back to the same page
-        $location =  get_bloginfo('url') . '/login/';
-        wp_safe_redirect($location);
+        function displaySuccess(){
+            echo '<div class="success">';
+                echo '<p class="success__text">Inscription reussie ! <br/> Vous pouvez maintenant vous connecter <br/>';
+                echo '<button type="button" class="btn btn-dark navbar__button"><a class="navbar__link" href="' . get_bloginfo('url') . '/login/">Connexion</a></button>';
+            echo '</div>';
+          }
 
-
-        exit;
 
     } else {
     
@@ -372,10 +361,10 @@ if (isset($_POST['submit'])) {
                          <label class="inscription__form__label mr-sm-2 sr-only" for="cycling-level">Mon Niveau</label> 
                             <select class="custom-select" name="cycling_level" id="cycling_level_select">
                                 <option value="" selected>Choisir</option>
-                                <option value="loisirs">Loisirs (inferieur à 15km/sortie)</option>
-                                <option value="regulier">Régulier (15-30 km)</option>
-                                <option value="avance">Avancé (30-60 km)</option>
-                                <option value="intensif">Intensif (+60 km)</option>
+                                <option value="Loisirs">Loisirs (inferieur à 15km/sortie)</option>
+                                <option value="Régulier">Régulier (15-30 km)</option>
+                                <option value="Avancé">Avancé (30-60 km)</option>
+                                <option value="Intensif">Intensif (+60 km)</option>
                             </select>
                             
                         
@@ -386,10 +375,10 @@ if (isset($_POST['submit'])) {
                         <label class="inscription__form__label mr-sm-2 sr-only" for="running_level">Mon Niveau </label>
                         <select class="custom-select mr-sm-2" name="running_level" id="running_level_select">
                             <option value="" selected>Choisir</option>
-                            <option value="loisirs">Loisirs (inferieur à 15km/sortie)</option>
-                            <option value="regulier">Régulier (15-30 km)</option>
-                            <option value="avance">Avancé (30-60 km)</option>
-                            <option value="intensif">Intensif (+60 km)</option>
+                            <option value="Loisirs">Loisirs (inferieur à 15km/sortie)</option>
+                            <option value="Régulier">Régulier (15-30 km)</option>
+                            <option value="Avancé">Avancé (30-60 km)</option>
+                            <option value="Intensif">Intensif (+60 km)</option>
                         </select>
                     </div>
                 </div>
@@ -404,6 +393,10 @@ if (isset($_POST['submit'])) {
 
                     if(function_exists('displayErrors')){
                         displayErrors($errors);
+                    }
+
+                    if(function_exists('displaySuccess')){
+                        displaySuccess();
                     }
                 ?>
 

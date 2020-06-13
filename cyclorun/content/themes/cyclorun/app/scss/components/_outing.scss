@@ -11,19 +11,28 @@
 
         &__pycto{
             position: absolute; 
-            width:25%; 
-            top:0rem; 
-            left:0rem;
+            width:10%; 
+            bottom:0rem; 
+            right:1rem;
         }
     }
 
     &__button{
+        margin-top:0.5rem;
         background-color: $blueduck;
         color:$lightgrey;
         border: none;
+
+        &:hover{
+            background-color: $dark;
+        }
+
+        &:visited{
+            color: $lightgrey;
+        }
     }
 
-    &__button:visited{
-        color: $lightgrey;
-    }
+
+
+   
 }

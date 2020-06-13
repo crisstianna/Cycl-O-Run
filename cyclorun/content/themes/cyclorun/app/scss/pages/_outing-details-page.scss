@@ -13,7 +13,7 @@
 
     &__content{
         display: flex;
-        max-width: 80%;
+       
 
         &__informations{
 
@@ -21,6 +21,7 @@
                 display: block;
                 max-width: 30%;
                 margin-bottom: $gutter;
+               
             }
 
             &__date{
@@ -41,6 +42,7 @@
                 &__img{
                     max-width: 5%;
                     float: left;
+                    border-radius: 50%;
                 }
 
                 &__pseudo{

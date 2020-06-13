@@ -9519,6 +9519,311 @@ a:visited {
   .main__right {
     width: 20%; }
 
+.outing-participation-page-title {
+  text-align: center;
+  margin-top: 2rem; }
+
+.filter-outing {
+  display: flex; }
+
+.filter-by {
+  text-align: center; }
+
+.outing-filters {
+  padding: 2rem; }
+
+.participation-paragraph {
+  text-align: center;
+  font-weight: bold; }
+
+.filter-sport {
+  width: 33%;
+  display: flex;
+  flex-direction: column; }
+
+.filter-level {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+.label-input {
+  padding-left: 3rem; }
+
+.filter-date-input {
+  padding-left: 3rem;
+  border-color: #00757F;
+  border-radius: 0.5rem;
+  background-color: #F5F5F5; }
+
+.filter-submit {
+  min-width: 100%;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2rem;
+  border-bottom: 3px solid #00757F; }
+
+.filter-button {
+  height: 2.2rem;
+  margin: 1rem;
+  background-color: #00757F;
+  border-radius: 0.5rem;
+  color: #F5F5F5; }
+
+.articles-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 2rem; }
+
+.outing__article__img {
+  border-radius: 50%;
+  max-width: 10%;
+  margin-bottom: 1rem; }
+
+.bottom-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 1rem; }
+
+.participation-button {
+  height: 2.3rem; }
+
+.details-link {
+  margin-top: 0.5rem;
+  height: 2.2rem;
+  background-color: #00757F;
+  color: #F5F5F5;
+  border: none; }
+  .details-link:hover {
+    background-color: #333333; }
+  .details-link:visited {
+    color: #F5F5F5; }
+
+.participation-participants {
+  display: flex;
+  justify-content: space-around; }
+
+.outing-organisator {
+  display: flex;
+  justify-content: center; }
+
+.single-article {
+  border-radius: 1rem;
+  margin-top: 2rem;
+  width: 45%;
+  max-width: 45%;
+  min-width: 45%;
+  background-color: white; }
+
+.date-hour {
+  display: flex;
+  justify-content: space-around; }
+
+.outing__article__title {
+  text-align: center; }
+
+.participation-h4 {
+  text-align: center;
+  margin-bottom: 1rem;
+  margin-top: 1rem; }
+
+.font-weight {
+  font-weight: bolder; }
+
+.participants-list {
+  display: flex; }
+  .participants-list__item {
+    display: flex;
+    justify-content: center;
+    min-width: 30%; }
+  .participants-list__avatar {
+    width: 15%;
+    margin: auto 0; }
+  .participants-list__img {
+    border-radius: 50%;
+    max-width: 100%; }
+
+/* Entete de la page */
+.outing-reg__organisation {
+  text-align: center;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  border-bottom: 3px solid #00757F; }
+
+.adviseForm {
+  margin-left: 1rem;
+  margin-top: 1rem;
+  font-style: italic; }
+  .adviseForm__img {
+    float: left;
+    margin-right: 0.5rem; }
+
+.outing-reg__span {
+  color: red; }
+
+.outing-reg__input {
+  border: 2px solid #333333;
+  border-radius: 0.2rem; }
+  .outing-reg__input__name {
+    border: 2px solid #333333;
+    width: 60%; }
+    .outing-reg__input__name:focus {
+      background-color: #F5F5F5;
+      border: 2px solid #00757F; }
+  .outing-reg__input__time, .outing-reg__input__date {
+    border: 2px solid #333333;
+    text-align: center; }
+    .outing-reg__input__time:focus, .outing-reg__input__date:focus {
+      background-color: #F5F5F5;
+      border: 2px solid #00757F; }
+  .outing-reg__input__length {
+    border: 2px solid #333333;
+    width: 20%; }
+    .outing-reg__input__length:focus {
+      background-color: #F5F5F5;
+      border: 2px solid #00757F; }
+  .outing-reg__input__picture {
+    width: 50%;
+    border: 2px solid #333333; }
+
+.outing-reg__input:focus {
+  background-color: #F5F5F5;
+  border: 2px solid #00757F; }
+
+/* Formulaire global */
+.outing-reg__creation {
+  margin-top: 4rem; }
+
+/* Haut du formulaire */
+.outing-reg__top__form {
+  display: flex;
+  justify-content: space-between; }
+
+/* Partie gauche du form */
+.outing-reg__left {
+  width: 33%; }
+
+.outing-reg__date,
+.outing-reg__time {
+  display: flex;
+  flex-direction: column; }
+
+/* Partie centrale du form */
+.outing-reg__practice {
+  display: flex;
+  flex-direction: column; }
+
+/* Partie insertion de l'image */
+.outing-reg__image {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  margin-bottom: .5rem; }
+
+/* Input nom de la sortie */
+#outing_name {
+  height: 3rem;
+  font-weight: bold;
+  display: block;
+  margin: auto;
+  margin-bottom: 3rem;
+  text-align: center; }
+
+/* Inputs date et heure */
+.outing-reg__rdv {
+  display: flex;
+  justify-content: space-around;
+  padding-left: 5%;
+  padding-bottom: 3rem;
+  line-height: 2rem; }
+
+/* Input distance du parcours */
+.outing-reg__length {
+  display: flex;
+  flex-direction: column;
+  line-height: 2rem;
+  width: 70%;
+  padding-left: 5%;
+  margin-left: 4rem; }
+
+/* Titre de la sortie*/
+.outing-reg__title {
+  text-align: center;
+  margin: auto;
+  width: 50%; }
+
+.outing-reg__location {
+  display: flex;
+  line-height: 2rem;
+  flex-direction: column;
+  padding-left: 5%;
+  margin-top: 1.5rem;
+  margin-left: 4rem; }
+
+.outing-reg__select {
+  line-height: 2rem;
+  margin-bottom: 1.5rem;
+  padding: .5rem;
+  border: 2px solid #333333;
+  border-radius: 0.2rem; }
+  .outing-reg__select:focus {
+    border: 2px solid #00757F; }
+
+.default__select {
+  line-height: 1.5rem; }
+
+.outing-reg__description {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 2rem;
+  width: 95%;
+  padding-left: 5%; }
+
+.outing-reg__submit {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center; }
+
+.outing-reg__input__submit {
+  background-color: #00757F;
+  border-radius: 0.5rem;
+  color: white;
+  height: 2rem; }
+
+.outing-reg__errors {
+  background-color: white;
+  width: 30%;
+  position: absolute;
+  top: 75%;
+  right: 5%;
+  padding-left: 1rem;
+  border: 1px solid #00757F;
+  border-radius: 1rem;
+  padding-top: 1rem; }
+  .outing-reg__errors__strong {
+    font-weight: bold; }
+
+.outing-reg__errors__li {
+  color: red; }
+
+.outing-reg__ok {
+  display: flex;
+  flex-direction: column;
+  color: #00757F;
+  position: absolute;
+  top: 80%;
+  right: 5%;
+  border-radius: 1rem; }
+
+.btn__success__outing {
+  margin-top: 1rem;
+  background-color: #00757F;
+  border-radius: 0.5rem; }
+
 .custom-home__title {
   text-align: center;
   margin: 2rem; }
@@ -9529,6 +9834,20 @@ a:visited {
 
 .custom-home__button {
   background-color: #00757F; }
+
+.outing__attachments__image {
+  object-fit: cover;
+  min-width: 100%;
+  min-height: 100%; }
+
+.outing__body__title {
+  text-align: center; }
+
+.messageEmpty {
+  text-align: center; }
+  .messageEmpty__content {
+    text-align: center;
+    margin-bottom: 1rem; }
 
 .home-main__welcome {
   font-size: 2rem;
@@ -9592,8 +9911,7 @@ a:visited {
       padding-bottom: 4rem;
       height: 2rem; }
   .details__content {
-    display: flex;
-    max-width: 80%; }
+    display: flex; }
     .details__content__informations__img {
       display: block;
       max-width: 30%;
@@ -9608,7 +9926,8 @@ a:visited {
         margin-bottom: 2rem; }
       .details__content__informations__author__img {
         max-width: 5%;
-        float: left; }
+        float: left;
+        border-radius: 50%; }
       .details__content__informations__author__pseudo {
         margin-left: 4rem; }
     .details__content__informations__practice {
@@ -9673,7 +9992,9 @@ a:visited {
 /* photo de profile */
 .avatar__img {
   display: block;
-  border-radius: 50%; }
+  width: 80%;
+  border-radius: 50%;
+  margin: auto; }
 
 /* Toute la page */
 .profile {
@@ -9682,21 +10003,26 @@ a:visited {
 
 /* Partie gauche de la page */
 .profile__infos {
-  border-right: 2px solid #00757F;
   max-width: 50%;
   min-width: 50%;
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  position: fixed; }
 
 .profile__title {
-  margin-bottom: 4rem; }
+  margin-bottom: 2rem; }
 
 /* Infos perso sous la photo */
 .profile__infos__personal {
   display: flex;
   flex-direction: column;
+  text-align: center;
   align-items: center; }
+  .profile__infos__personal__avatar {
+    max-width: 50%; }
+  .profile__infos__personal__title {
+    margin-top: 2rem; }
 
 .profile__infos__content {
   text-align: center; }
@@ -9716,11 +10042,14 @@ a:visited {
 
 /* Partie droite de la page (listes des sorties */
 .profile__outings {
-  padding-left: 5rem; }
+  padding-left: 5rem;
+  border-left: 2px solid #00757F;
+  position: absolute;
+  right: 13%; }
 
 /* Titres des listes de la partie droite de la page */
 .profile__outings__created__title, .profile__outings__future__title {
-  text-decoration: underline;
+  font-weight: bold;
   line-height: 1.5rem;
   margin-bottom: 3rem; }
 
@@ -9753,134 +10082,19 @@ a:visited {
   font-style: italic;
   margin-left: 1rem; }
 
-/* Entete de la page */
-.outing-reg__organisation {
-  text-align: center;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-  border-bottom: 3px solid #00757F; }
-
-.outing-reg__input {
-  border: 2px solid #00757F;
-  border-radius: 0.2rem; }
-
-.outing-reg__input:hover {
-  background-color: #F5F5F5; }
-
-/* Formulaire global */
-.outing-reg__creation {
-  margin-top: 4rem; }
-
-/* Haut du formulaire */
-.outing-reg__top__form {
-  display: flex;
-  justify-content: space-between; }
-
-/* Partie gauche du form */
-.outing-reg__left {
-  width: 33%; }
-
-/* Partie centrale du form */
-.outing-reg__practice {
-  display: flex;
-  flex-direction: column; }
-
-/* Partie insertion de l'image */
-.outing-reg__image {
-  width: 33%;
-  margin-bottom: .5rem; }
-
-/* Input nom de la sortie */
-#outing_name {
-  height: 3rem;
-  font-weight: bold;
-  display: block;
-  margin: auto;
-  margin-bottom: 3rem;
-  text-align: center; }
-
-/* Inputs date et heure */
-.outing-reg__rdv {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  padding-left: 5%;
-  padding-bottom: 3rem;
-  line-height: 2rem; }
-
-/* Input distance du parcours */
-.outing-reg__length {
-  line-height: 2rem;
-  width: 70%;
-  padding-left: 5%; }
-
-/* Titre de la sortie*/
-.outing-reg__title {
-  margin: auto;
-  width: 50%; }
-
-.outing-reg__location {
-  display: flex;
-  line-height: 2rem;
-  flex-direction: column;
-  padding-left: 5%; }
-
-.outing-reg__select {
-  margin-top: 1rem;
-  line-height: 2rem;
-  margin-bottom: 1rem;
-  padding: .5rem;
-  border: 2px solid #00757F;
-  border-radius: 0.2rem; }
-
-.default__select {
-  line-height: 1.5rem; }
-
-.outing-reg__description {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin-top: 2rem;
-  width: 95%;
-  padding-left: 5%; }
-
-.outing-reg__submit {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-  display: flex;
-  justify-content: center; }
-
-.outing-reg__input__submit {
+.forOfor {
   background-color: #00757F;
-  border-radius: 0.5rem;
-  color: white;
-  height: 2rem; }
-
-.outing-reg__errors {
-  background-color: white;
-  width: 30%;
-  position: absolute;
-  top: 75%;
-  right: 5%;
-  padding-left: 1rem;
-  border: 1px solid #00757F;
-  border-radius: 1rem; }
-
-.outing-reg__errors__li {
-  color: red; }
-
-.outing-reg__ok {
-  display: flex;
-  flex-direction: column;
-  color: #00757F;
-  position: absolute;
-  top: 80%;
-  right: 5%;
-  border-radius: 1rem; }
-
-.navbar__button {
-  background-color: #00757F;
-  border-radius: 0.5rem; }
+  padding-top: 5%;
+  padding-bottom: 2rem; }
+  .forOfor__title {
+    text-align: center;
+    color: #F5F5F5; }
+  .forOfor__img {
+    max-width: 75vw;
+    max-height: 75vh;
+    display: block;
+    margin: auto;
+    padding: 2rem; }
 
 .connexion {
   width: 30%;
@@ -10009,6 +10223,13 @@ a:visited {
     .errors__list__item {
       margin-top: 1rem; }
 
+.success {
+  text-align: center;
+  color: #00757f;
+  font-weight: bold;
+  margin-top: 2rem;
+  width: 103%; }
+
 .advise__img {
   float: left;
   margin-right: 0.5rem; }
@@ -10020,6 +10241,10 @@ a:visited {
   background-color: #00757F;
   display: flex;
   justify-content: space-between; }
+  .navbar__button {
+    background-color: #333333; }
+  .navbar__button:hover {
+    background-color: #00757F; }
   .navbar__link {
     color: #F5F5F5; }
     .navbar__link:visited {
@@ -10035,15 +10260,18 @@ a:visited {
     position: relative; }
     .outing__attachments__pycto {
       position: absolute;
-      width: 25%;
-      top: 0rem;
-      left: 0rem; }
+      width: 10%;
+      bottom: 0rem;
+      right: 1rem; }
   .outing__button {
+    margin-top: 0.5rem;
     background-color: #00757F;
     color: #F5F5F5;
     border: none; }
-  .outing__button:visited {
-    color: #F5F5F5; }
+    .outing__button:hover {
+      background-color: #333333; }
+    .outing__button:visited {
+      color: #F5F5F5; }
 
 .menu {
   list-style: none;
@@ -10065,6 +10293,9 @@ a:visited {
 .authentified {
   background-color: #F5F5F5;
   border-bottom: 0.16667rem solid #00757F; }
+
+.navbar-brand {
+  margin-left: 1rem; }
 
 
 /*# sourceMappingURL=style.css.map*/

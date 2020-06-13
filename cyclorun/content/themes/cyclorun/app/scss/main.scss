@@ -12,14 +12,15 @@
     'layout/main';
 
 @import
+    'pages/participation-outing-page',
+    'pages/outing-creation-page',
     'pages/custom-home',
     'pages/home-visitors',
     'pages/outing-details-page',
-    'pages/profile-page';
+    'pages/profile-page',
+    'pages/404';
 
 @import
-    'components/participation-outing-page',
-    'components/outing-creation-page',
     'components/connexion-form',
     'components/registration-form',
     'components/green-navbar',

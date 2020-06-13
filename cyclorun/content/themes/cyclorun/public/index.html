@@ -1,215 +1,66 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Cycl'O'Run</title>
-        <link rel="stylesheet" href="css/style.css" />
-    </head>
-<body>
-    <header class="header">
-        <nav class="navbar authentified navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#"><img class="logo" src="images/logo-complet.png" alt=""></a>
-            <a class="navbar__item" href="#">Home</a>
-            <a class="navbar__item" href="#">Profil</a>
-            <a class="navbar__item" href="#">Participer à une sortie</a>
-            <a class="navbar__item" href="#">Organiser une sortie</a>   
-            <button type="logout-button" class="btn">Déconnexion</button>
-        </nav>
-    </header>
-    <main class="outing-reg"> 
-        <section class="outing-reg__organisation">
-            <h1 class="outing-reg__organisation__page__title">Envie d'organiser une sortie ? Vous êtes au bon endroit ! </h1>
-        </section>
-        <form class="outing-reg__creation" action="" method="post" enctype="multipart/form-data">            
-            <div class="outing-reg__title">
-                <input class="outing-reg__input" type="text" id="outing_name" name="outing_name" placeholder="Nom de la sortie">
-            </div>
-            <div class="outing-reg__top__form">
-                <div class="outing-reg__left">
-                    <div class="outing-reg__rdv">
-                        <input  class="outing-reg__input" type="date" id="date" name="date">
-                        <label for="hour">Choix de l'heure</label>
-                        <input class="outing-reg__input" type="time" id="hour" name="time">
-                    </div>
-                    <div class="outing-reg__length">
-                        <input class="outing-reg__input" type="number" id="length" name="distance" placeholder="Distance du parcours (en km)">
-                    </div>
-                    <div class="outing-reg__location">
-                        <label for="location">Lieu de Rendez-vous</label>
-                        <input class="outing-reg__input" type="text" id="address" name="address" placeholder="Lieu du rendez-vous (ne pas oublier le code postal">
-                    </div>
-                </div>
-                <div class="outing-reg__practice">
-                    <label for="cycling">Vélo</label>
-                    <input class="outing-reg__input" type="radio" id="cycling" name="practiced_sport" value="1">
-                        <!-- Select à afficher uniquement si le bouton est coché - A voir en JS-->
-                    <select class="form-control outing-reg__select" name="cycling_level">
-                        <option value="" selected>Niveau de la sortie</option>
-                        <option value="1">Loisirs (-15km)</option>
-                        <option value="2">Régulier (15-30km)</option>
-                        <option value="3">Avancé (30-60km)</option>
-                        <option value="4">Intensif (+60km)</option>
-                    </select>
-                    <label for="running">Course à pieds</label>
-                    <input class="outing-reg__input" type="radio" id="running" name="practiced_sport" value="2">
-                        <!-- Select à afficher uniquement si le bouton est coché-->
-                    <select class="form-control outing-reg__select" name="running_level">
-                        <option value="" selected>Niveau de la sortie</option>
-                        <option value="11">Loisirs (-5km)</option>
-                        <option value="12">Régulier (5-10km)</option>
-                        <option value="13">Avancé (10-15km)</option>
-                        <option value="14">Intensif (+15km)</option>
-                    </select>
-                </div>    
-                <div class="outing-reg__image">
-                    <label for="outing-image">Image associée au parcours ou parcours</label>
-                    <input class="outing-reg__input" type="file" id="image" name="picture" alt="image du parcours" src="">
-                </div>
-            </div>
-            <div class="outing-reg__description">
-                <label for="description">Description de la sortie</label>
-                <textarea name="description" id="description" cols="30" rows="10" placeholder=""></textarea>
-            </div>
-            <div class="outing-reg__course">
-            </div>
-            <div class="outing-reg__submit">
-                <input class="outing-reg__input__submit" type="submit" value="Valider la sortie">
-            </div>
-        </form>
-    </main>   
-</body>
-</html>
-=======
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cycl'O'Run</title>
-  <link rel="stylesheet" type="text/html" href="css/style.css" />
+  <title>Webpack</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header class="home-header">
-    <nav class="navbar home-header__navbar navbar-light ">
-      <a class="navbar-brand home-header__brand" href="#">
-        <img src="images/logo-lightgrey.png" class="d-inline-block align-top home-header__logo" alt="" loading="lazy">
-      </a>
-       <a class="btn btn-primary home-header__button" href="#" role="button">Connexion</a>
-    </nav>
-   
-  </header>
-
-<main class="inscription">
-    <div class="inscription__page">
-      <form class="inscription__form" id="wp_signup_form" action="" method="post" enctype="multipart/form-data">  
-            <div class="inscription__form__subsection__left">
-                <label class="inscription__form__label__title" for="form-group-connexion-infos">Mes Informations de connexion</label> 
-                
-                
-                <!-- <label>Nom</label> -->
-                <input class="inscription__form__input" type="text" name="first_name" id="first_name" value="" placeholder="Prénom" required/>
-                
-                
-                
-               
-                    <!-- <label>Prenom</label> -->
-                <input class="inscription__form__input" type="text" name="last_name" id="last_name" value="" placeholder="Nom" required/>
-                
-                
-                
-                <label class="birthdate" for="birthdate">Date de naissance</label>
-                    <input class=" input__birthdate" type="number" min="01" max="31" name="day_birth" id="day_birth"/>
-                    <input class=" input__birthdate" type="number" min="01" max="12" name="month_birth" id="month_birth"/>
-                    <input class=" input__birthdate" type="number" min="1950" max="2002" name="year_birth" id="year_birth"/>
-                <!--TODO: create a function to retrieve dynamically max year attribute. Ex: currentYear= 2020-18(min user age) = 2002 -->
-                
-                
-                
-                
-                
-                <div class="existing-prof-pic-cont">
-                <!-- <label class="inscription__form__label" for="user_profile_pic">Avatar</label> -->
-                    <input class="inscription__form__input" type="file" name="picture" id="picture" />
-                </div>
-                
-
-                <!-- <label class="inscription__form__label" for="email">Adresse Email</label> -->
-                    <input class="inscription__form__input" type="email" name="email" id="email" value="" placeholder="email" required/>
-                
-                
-
-               
-                <!-- <label class="inscription__form__label" for="password"> Mot de Passe</label> -->
-                    <input class="inscription__form__input" type="password" name="password" id="password" placeholder="Mot de passe" required/>  
-                
-                
-
-                
-                <!-- <label class="inscription__form__label" for="password_confimation"> Confirmation du mot de passe</label> -->
-                    <input class="inscription__form__input" type="password" name="password_confirmation" id="password_confirmation" placeholder="Confirmation du mot de passe" required/>
-                
-                
-
-                
-                <!-- <label class="inscription__form__label" for="address"> Adresse Postale</label> -->
-                    <textarea class="inscription__form__input" name="address" id="address" value="" placeholder="Adresse" required></textarea>
-                
-               
-                
-                <!-- <label class="inscription__form__label" for="postcode"> Code Postal</label> -->
-                    <input class="inscription__form__input" type="text" name="postcode" id="postcode" value="" placeholder="Code postal" required/>
-                
-                
-
-                
-                <!-- <label class="inscription__form__label" for="city"> Ville</label> -->
-                    <input class="inscription__form__input" type="text" name="city" id="city" value="" placeholder="Ville" required/>
-                
-                
+    <header class="header">
+        <nav class="navbar authentified navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"><img class="logo" src="images/logo-complet.png" alt=""></a>
+        <a class="navbar__item__is-active" href="#">Home</a>
+        <a class="navbar__item" href="#">Profil</a>
+        <a class="navbar__item" href="#">Participer à une sortie</a>
+        <a class="navbar__item" href="#">Organiser une sortie</a>   
+        <button type="logout-button" class="btn">Déconnexion</button>
+        </nav>
+    </header>
+    <main>
+        <section>
+         <h1 class="outing-participation-page-title">Les sorties organisées</h1> 
+         <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Filtres
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
             </div>
-            <div class="inscription__form__subsection__right">
-                 <label class="inscription__form__label__title form-group sport-profile" for="form-group-sport-profile">Mon Profil Sportif</label>
-                <div class="inscription__form__selects">
-                    <div class="custom-control custom-switch inscription__form__select">
-                        <input class="inscription__form__input custom-control-input" type="checkbox" name="cycling" value="cycling" id="cycling">
-                         <label class="inscription__form__label custom-control-label" for="cycling">Vélo</label> 
-                         <label class="inscription__form__label mr-sm-2 sr-only" for="cycling-level">Mon Niveau</label> 
-                            <select class="custom-select" name="cycling_level" id="cycling_level_select">
-                                <option value="" selected>Choisir</option>
-                                <option value="loisirs">Loisirs (inferieur à 15km/sortie)</option>
-                                <option value="regulier">Régulier (15-30 km)</option>
-                                <option value="avance">Avancé (30-60 km)</option>
-                                <option value="intensif">Intensif (+60 km)</option>
-                            </select>
-                            
-                        
-                    </div>
-                    <div class="custom-control custom-switch inscription__form__select">
-                        <input class="inscription__form__input custom-control-input" type="checkbox" name="running" value="running" id="running">
-                        <label class="inscription__form__label custom-control-label" for="running">Running</label> 
-                        <label class="inscription__form__label mr-sm-2 sr-only" for="running_level">Mon Niveau </label>
-                        <select class="custom-select mr-sm-2" name="running_level" id="running_level_select">
-                            <option value="" selected>Choisir</option>
-                            <option value="loisirs">Loisirs (inferieur à 15km/sortie)</option>
-                            <option value="regulier">Régulier (15-30 km)</option>
-                            <option value="avance">Avancé (30-60 km)</option>
-                            <option value="intensif">Intensif (+60 km)</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="inscription__form__conditions">
-                    <input class="input-checkbox" name="terms" id="terms" type="checkbox" value="Yes">  
-                    <label class="inscription__form__label  terms" for="terms">J'ai lu et j'accepte les <a href="#">Conditions Générales d'Utilisation</a></label>
-                </div>
-                <input class="inscription__form__submit" type="submit" id="submitbtn" name="submit" value="S'inscrire"/>
-            </div>
-        </form>
-    </div>
-  </main>
+          </div>
 
-  <script src="js/app.js"></script>
+        </section>
+        <section class="outing">
+            <article class="outing__article">
+                <div class="outing__article__image">
+                    <img class="outing__article__img" src="images/logo-o.png" alt="">
+                </div>
+                    <h3 class="outing__article__title">Nom de l'évènement</h3>
+                    <p class="outing__article__date">date</p>
+                    <p class="outing__article__time">heure</p>
+                    <p class="outing__article__sport">sport pratiqué</p>
+                    <div class="outing__article__pict">
+                        <img src="images/Running.svg" alt="" class="outing__article__pict__svg">
+                        <img src="images/Cycling.svg" alt="" class="outing__article__pict__svg">
+                    </div>
+                    <p class="outing__article__level">Niveau</p>
+                    <p class="outing__article__location">Adresse du rdv</p>
+                    <p class="outing__article__distance">Distance parcourue</p>
+                    <h4>Organisateur de la sortie</h4>
+                    <img class="outing__article__img" src="images/avatar.png" alt="AVATAR DE L'AUTEUR">
+                    <p class="outing__article__author">Pseudo du créateur</p>
+                    <ul>
+                        <li>
+                            <img class="outing__article__img" src="images/avatar.png" alt="AVATAR DU PARTICIPANT">
+                            <p class="outing__article__author">Pseudo du participant</p>
+                        </li>            
+                    </ul>    
+                    <button class="outing__article__button" type="button">Détails de la sortie</button>
+                    <button class="outing__article__button" type="button">Je participe</button>                
+            </article>
+        </section> 
+    </main>
 </body>
 </html>
->>>>>>> develop

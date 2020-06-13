@@ -22,7 +22,6 @@ $description = filter_input(INPUT_POST, 'description');
 
 // if the form was submit
 if (!empty($_POST)) {
-    $pictureData = $_FILES['picture']['name'];
 
     $errors = [];
 
@@ -41,16 +40,16 @@ if (!empty($_POST)) {
     if ($action && !isset($action['error'])) {
         $picture = $action['url'];
     } else {
-        if($action['error']) {
+        if($action['error'] !== "Aucun fichier n’a été envoyé." || $action['error'] !== "No file was uploaded.") {
             $errors += [
-                'pictureError' => 'Une image valide'
+                'picture' => $action['error']
             ];
+
         }
     }
   
-    if (empty($outingName) && empty($address) && empty($date) && empty($time) && empty($distance) && empty($practicedSport)) {
+    if (empty($outingName) || empty($address) || empty($date) || empty($time) || empty($distance) || empty($practicedSport)) {
         
-
         if (empty($outingName)) {
             $errors += [
                 'outingName' => 'un titre',
@@ -83,21 +82,25 @@ if (!empty($_POST)) {
         }
 
         if (!empty($errors)) {
-            echo '<div class ="outing-reg__errors">Veuillez renseigner : ';
+            echo '<div class ="outing-reg__errors"><strong class ="outing-reg__errors__strong">Veuillez renseigner : </strong>';
             echo '<ul class ="outing-reg__errors__ul">';
             foreach ($errors as $errorKey) {
                 echo '<li class ="outing-reg__errors__li">' . $errorKey . '</li>';
             }
             echo '</ul>';
             echo '</div>';
+
+            exit;
         }
     
-        exit;
+        
     }
     else {
+        
         if(empty($picture)) {
-            $picture = get_bloginfo('url') . '/content/themes/public/images/logo-o.png';
+            $picture = get_bloginfo('url') . '/content/themes/cyclorun/public/images/logo-o.png';
         }
+
         if ($practicedSport) {
             if ($practicedSport === 1 && empty($cycling_level) || $practicedSport === 2 && empty($running_level)) {
                 echo 'Veuillez renseigner le niveau associé au sport choisi';
@@ -144,8 +147,8 @@ if (!empty($_POST)) {
     }
     if ($wpError !== false && $id && $outingId) {
         echo '<div class ="outing-reg__ok">Votre sortie a bien été créée !! ';
-        echo '<button type="button" class="btn btn-dark navbar__button"><a class="navbar__link" href="' . get_bloginfo('url') . '/outing-details/?outingId=' . $outingId . '">Voir ma sortie en détails</a></button>';
-        echo '<button type="button" class="btn btn-dark navbar__button"><a class="navbar__link" href="' . get_bloginfo('url') . '/profile-page/' . '">Retour sur mon profil</a></button>';
+        echo '<button type="button" class="btn btn-dark navbar__button btn__success__outing"><a class="navbar__link" href="' . get_bloginfo('url') . '/outing-details/?outingId=' . $outingId . '">Détails</a></button>';
+        echo '<button type="button" class="btn btn-dark navbar__button btn__success__outing"><a class="navbar__link" href="' . get_bloginfo('url') . '/profile-page/' . '">Mon profil</a></button>';
         echo '</div>';
     }if ($wpError === false) {
         echo '<div style="font-size:24px;color:#00757f;margin-top:40px;">Quelque chose s\'est mal passé, veuillez recommencer</div>';

@@ -81,9 +81,9 @@ $outingUserParticipant = $wpdb->get_results(
           <img class="avatar__img" src="<?= $userMeta['picture'][0]; ?>" alt="Here comes the user avatar"/>
       </div>
       <div class="profile__infos__personal">
-        <h2 class="profile__infos__title"><?php echo str_replace("_", " ", $userData->display_name) ;?></h2>
-        <div class="profile__infos__content">
-        Date de naissance : <?php echo $dayBirth . '/' . $monthBirth . '/'. $yearBirth ?>
+        <h2 class="profile__infos__personal__title"><?php echo str_replace("_", " ", $userData->display_name) ;?></h2>
+        <div class="profile__infos__personal__content">
+          <p class="user__infos">Date de naissance : <?php echo $dayBirth . '/' . $monthBirth . '/'. $yearBirth ?></p>
           <p class="user__infos"><?= $userMeta['city'][0] ;?></p>
         </div>
         <div class="profile__infos__sports">
@@ -101,7 +101,7 @@ $outingUserParticipant = $wpdb->get_results(
                 <p class="selected__practice__level"><?php echo $userMeta['running_level'][0]  ?></p>
               </div>
               <?php endif; ?>
-            <?php else : ?>
+              <?php else : ?>
               <div class="my__practice__level">
                 <img class="profile__infos__sports__practice__svg" src="<?php echo get_bloginfo('url') . '/content/themes/cyclorun/app/assets/images/cycling.svg;' ?>" alt="cycling">
                 <p class="selected__practice__level"><?php echo $userMeta['cycling_level'][0]  ?></p>
@@ -121,7 +121,11 @@ $outingUserParticipant = $wpdb->get_results(
             <h4 class="profile__outings__created__title__author">dont je suis l'auteur : </h4>
             <div class="profile__outings_created__content">
               <?php if (empty($outingUserAuthor)): ?>
-                <p class="profile__outings__list">Vous n'avez pas encore proposé de sortie .... très bientôt peut-être</p>
+                <div class="messageEmpty">
+                  <div class="messageEmpty__content">Vous n'avez organisé aucune sortie</div>
+                    <a class="btn btn-primary outing__button" style="text-align:center;" href="<?= get_bloginfo('url') ?> /outing-registration/">Organiser une sortie</a>
+                  </div>
+                
               <?php else : ?>
                   <?php foreach($outingUserAuthor as $key=> $currentOuting): ?>
                   <div class="profile__outings__list__item">
@@ -140,7 +144,10 @@ $outingUserParticipant = $wpdb->get_results(
             <h4 class="profile__outings__created__title__participant">en tant que participant(e) : </h4>
             <div class="profile__outings__future__content">
             <?php if (empty($outingUserParticipant)) : ?>
-                <p class="profile__outings__list">Vous n'êtes pas encore inscrit sur une sortie</p>
+              <div class="messageEmpty">
+                  <div class="messageEmpty__content">Vous n'êtes encore inscrit(e) à aucune sortie</div>
+                    <a class="btn btn-primary outing__button" style="text-align:center;" href="<?= get_bloginfo('url') ?> /participation-outing/">Participer à une sortie</a>
+                  </div>
               <?php else: ?>
                   <?php foreach($outingUserParticipant as $key=> $currentParticipation): ?>
                   <div class="profile__outings__list__item">
@@ -158,3 +165,7 @@ $outingUserParticipant = $wpdb->get_results(
             </div>
         </div>
     </div>
+
+    <?php
+    get_footer();
+    ?>
