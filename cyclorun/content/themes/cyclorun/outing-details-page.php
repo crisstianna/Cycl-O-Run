@@ -203,8 +203,8 @@ $numberParticipants = $wpdb->get_results(
                 <p class="details__participants__div__content__name"><?= str_replace("_", " ", $currentParticipant['display_name']) ?></p>
               </div>
               <?php endforeach; ?>  
-              </div>          
-        </div>
+          </div>          
+    </div>
   
 
 

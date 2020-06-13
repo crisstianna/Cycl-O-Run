@@ -1,0 +1,190 @@
+// Titre de la page
+.outing-participation-page-title{
+    text-align: center;
+    margin-top: 2rem;
+}
+
+// section sous les titres
+.filter-outing{
+    display: flex;
+}
+
+// Sous titre "filtré par"
+.filter-by{
+    text-align: center;
+}
+
+// Section des filtres des sorties
+.outing-filters{
+    padding: 2rem;
+}
+
+//sport pratique
+.participation-paragraph {
+     text-align: center;
+     font-weight: bold;
+ }
+
+ // Sport pratiqué
+ .filter-sport{
+     width: 33%;
+     display: flex;
+     flex-direction: column;
+ }
+
+ //Niveau de la sortie
+ .filter-level{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+ }
+
+ // Div contenant les labels et les inputs
+ .label-input{
+     padding-left: 3rem;
+ }
+
+ // Section date
+ .filter-date-input{
+    padding-left: 3rem;
+    border-color: $blueduck;
+    border-radius: 0.5rem;
+    background-color: $lightgrey;
+ }
+
+// Div qui contient le submit button
+ .filter-submit{
+    min-width: 100%;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2rem;
+    border-bottom: 3px solid $blueduck;
+ }
+
+//Bouton de soumission du form
+ .filter-button{
+    height: 2.2rem; 
+    margin: 1rem;
+    background-color: $blueduck;
+    border-radius: $gutter-small;
+    color:$lightgrey;
+ }
+
+
+
+ //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+ // Skill des sorties après le filtre
+.articles-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+}
+
+//Avatar author and participants
+.outing__article__img{
+    border-radius: 50%;
+    max-width: 10%;
+    margin-bottom: 1rem;
+}
+
+
+// Boutons "détails de la sortie" et "je participe"
+.bottom-buttons{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1rem;
+}
+
+//participation-button
+.participation-button{
+    height: 2.3rem;
+
+}
+
+//bouton "a" lien vers détails de la sortie
+.details-link{
+    margin-top:0.5rem;
+    height: 2.2rem;
+    background-color: $blueduck;
+    color:$lightgrey;
+    border: none;
+
+    &:hover{
+        background-color: $dark;
+    }
+
+    &:visited{
+        color: $lightgrey;
+    }
+}
+
+
+
+
+//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxXX
+// Affichage des Participants à la sortie
+.participation-participants{
+    display: flex;
+    justify-content: space-around;
+}
+
+// Div organisateur de la sortie
+.outing-organisator{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.single-article{
+    border-radius: 1rem;
+    margin-top: 2rem;
+    width: 45%;
+    max-width: 45%;
+    min-width: 45%;
+    background-color: white;
+}
+
+.date-hour{
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.outing__article__title{
+    text-align: center;
+}
+
+.participation-h4{
+    text-align: center;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.font-weight{
+    font-weight: bolder;
+}
+
+.participants-list{
+    display:flex;
+
+    &__item{
+        display:flex;
+        justify-content: center;
+        min-width: 30%;
+    }
+
+    &__avatar{
+        width: 15%;
+        margin: auto 0;
+    }
+
+    &__img{
+        border-radius: 50%;
+        max-width: 100%;
+        
+    }
+}

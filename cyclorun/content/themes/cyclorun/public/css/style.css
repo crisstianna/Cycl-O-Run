@@ -9519,272 +9519,131 @@ a:visited {
   .main__right {
     width: 20%; }
 
-.custom-home__title {
+.outing-participation-page-title {
   text-align: center;
-  margin: 2rem; }
+  margin-top: 2rem; }
 
-.custom-home__wrap {
+.filter-outing {
+  display: flex; }
+
+.filter-by {
+  text-align: center; }
+
+.outing-filters {
+  padding: 2rem; }
+
+.participation-paragraph {
+  text-align: center;
+  font-weight: bold; }
+
+.filter-sport {
+  width: 33%;
+  display: flex;
+  flex-direction: column; }
+
+.filter-level {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+.label-input {
+  padding-left: 3rem; }
+
+.filter-date-input {
+  padding-left: 3rem;
+  border-color: #00757F;
+  border-radius: 0.5rem;
+  background-color: #F5F5F5; }
+
+.filter-submit {
+  min-width: 100%;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2rem;
+  border-bottom: 3px solid #00757F; }
+
+.filter-button {
+  height: 2.2rem;
+  margin: 1rem;
+  background-color: #00757F;
+  border-radius: 0.5rem;
+  color: #F5F5F5; }
+
+.articles-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 2rem; }
+
+.outing__article__img {
+  border-radius: 50%;
+  max-width: 10%;
+  margin-bottom: 1rem; }
+
+.bottom-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 1rem; }
+
+.participation-button {
+  height: 2.3rem; }
+
+.details-link {
+  margin-top: 0.5rem;
+  height: 2.2rem;
+  background-color: #00757F;
+  color: #F5F5F5;
+  border: none; }
+  .details-link:hover {
+    background-color: #333333; }
+  .details-link:visited {
+    color: #F5F5F5; }
+
+.participation-participants {
   display: flex;
   justify-content: space-around; }
 
-.custom-home__button {
-  background-color: #00757F; }
+.outing-organisator {
+  display: flex;
+  justify-content: center; }
 
-.outing__attachments__image {
-  object-fit: cover;
-  min-width: 100%;
-  min-height: 100%; }
+.single-article {
+  border-radius: 1rem;
+  margin-top: 2rem;
+  width: 45%;
+  max-width: 45%;
+  min-width: 45%;
+  background-color: white; }
 
-.outing__body__title {
+.date-hour {
+  display: flex;
+  justify-content: space-around; }
+
+.outing__article__title {
   text-align: center; }
 
-.messageEmpty {
-  text-align: center; }
-  .messageEmpty__content {
-    text-align: center;
-    margin-bottom: 1rem; }
-
-.home-main__welcome {
-  font-size: 2rem;
-  line-height: 2rem;
+.participation-h4 {
   text-align: center;
-  width: 50%;
-  background-color: #F5F5F5;
-  position: absolute;
-  top: 40%;
-  left: 25%;
-  padding: 2rem;
-  text-transform: uppercase; }
-  .home-main__welcome__sentence, .home-main__welcome__word {
-    color: #00757F; }
-  .home-main__welcome__wrap {
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center; }
-
-.item-1,
-.item-2 {
-  animation-duration: 10s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite; }
-
-.item-1 {
-  animation-name: anim-1; }
-
-.item-2 {
-  margin-top: -2.5rem;
-  animation-name: anim-2; }
-
-@keyframes anim-1 {
-  0%, 8.3% {
-    left: -100%;
-    opacity: 0; }
-  8.3%, 50% {
-    left: 25%;
-    opacity: 1; }
-  53.33%, 100% {
-    left: 110%;
-    opacity: 0; } }
-
-@keyframes anim-2 {
-  0%, 53.33% {
-    left: -100%;
-    opacity: 0; }
-  56.50%, 95% {
-    left: 25%;
-    opacity: 1; }
-  100% {
-    left: 110%;
-    opacity: 0; } }
-
-.details {
-  padding: 4rem; }
-  .details__header {
-    padding-bottom: 4rem; }
-    .details__header__title {
-      text-align: center;
-      padding-bottom: 4rem;
-      height: 2rem; }
-  .details__content {
-    display: flex;
-    max-width: 80%; }
-    .details__content__informations__img {
-      display: block;
-      max-width: 30%;
-      margin-bottom: 1rem; }
-    .details__content__informations__date {
-      margin-bottom: 1rem; }
-    .details__content__informations__time {
-      margin-bottom: 4rem; }
-    .details__content__informations__author {
-      margin-bottom: 4rem; }
-      .details__content__informations__author__title {
-        margin-bottom: 2rem; }
-      .details__content__informations__author__img {
-        max-width: 5%;
-        float: left; }
-      .details__content__informations__author__pseudo {
-        margin-left: 4rem; }
-    .details__content__informations__practice {
-      display: flex;
-      justify-content: center;
-      padding-bottom: 4rem;
-      margin-top: 4rem; }
-      .details__content__informations__practice__sport, .details__content__informations__practice__level {
-        text-align: center;
-        width: 25%; }
-      .details__content__informations__practice__sport__svg {
-        width: 15%; }
-      .details__content__informations__practice__level p {
-        margin: 0; }
-    .details__content__informations__rdv {
-      margin-bottom: 2rem; }
-      .details__content__informations__rdv__adress {
-        margin-bottom: 4rem; }
-    .details__content__informations__description__text {
-      max-width: 80%;
-      margin-bottom: 4rem; }
-    .details__content__map {
-      float: right; }
-      .details__content__map__button {
-        background-color: #00757F;
-        border-radius: 0.5rem;
-        font-size: 1.5rem;
-        display: block;
-        margin-top: 8rem;
-        margin-left: auto;
-        margin-right: auto; }
-        .details__content__map__button__content {
-          color: #F5F5F5; }
-  .details__participants__div {
-    display: flex;
-    flex-wrap: wrap; }
-    .details__participants__div__content {
-      display: flex; }
-      .details__participants__div__content__img {
-        border-radius: 50%;
-        max-width: 10%;
-        margin-bottom: 1rem; }
-
-.message {
-  text-align: center; }
-  .message__ok {
-    color: #00757F;
-    font-size: 1.2rem; }
-  .message__ko {
-    color: red; }
-  .message__button {
-    background-color: #00757F;
-    color: #F5F5F5;
-    border: none; }
-  .message__button:visited {
-    color: #F5F5F5; }
-
-/* Taille des icones cycling et running */
-.profile__infos__sports__practice__svg {
-  width: 3em; }
-
-/* photo de profile */
-.avatar__img {
-  display: block;
-  width: 80%;
-  border-radius: 50%;
-  margin: auto; }
-
-/* Toute la page */
-.profile {
-  display: flex;
-  margin-top: 3rem; }
-
-/* Partie gauche de la page */
-.profile__infos {
-  border-right: 2px solid #00757F;
-  max-width: 50%;
-  min-width: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center; }
-
-.profile__title {
-  margin-bottom: 2rem; }
-
-/* Infos perso sous la photo */
-.profile__infos__personal {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center; }
-  .profile__infos__personal__avatar {
-    max-width: 50%; }
-  .profile__infos__personal__title {
-    margin-top: 2rem; }
-
-.profile__infos__content {
-  text-align: center; }
-
-/* sport pratiqué */
-.profile__infos__sports__practice {
-  display: flex; }
-
-.profile__infos__sports {
-  min-width: 50%; }
-
-.my__practice__level {
-  margin: 3rem; }
-
-.selected__practice__level {
-  text-align: center; }
-
-/* Partie droite de la page (listes des sorties */
-.profile__outings {
-  padding-left: 5rem; }
-
-/* Titres des listes de la partie droite de la page */
-.profile__outings__created__title, .profile__outings__future__title {
-  font-weight: bold;
-  line-height: 1.5rem;
-  margin-bottom: 3rem; }
-
-/* Les sorties que j'ai créé */
-.profile__outings__created {
-  padding-bottom: 3rem; }
-
-/* Infos de chacune des sorties */
-.profile__outings__list {
-  padding-left: 0; }
-
-.profile__infos__sports__practice__svg__right {
-  width: 1.5rem; }
-
-.profile__outings__created__title__author, .profile__outings__created__title__participant {
-  font-size: 1.2rem;
-  margin-top: 3rem; }
-
-.profile__outings__list__item {
-  display: flex;
+  margin-bottom: 1rem;
   margin-top: 1rem; }
 
-.link__to__details:hover {
-  color: #00757F;
-  text-decoration: underline; }
+.font-weight {
+  font-weight: bolder; }
 
-.link__to__details {
-  font-size: 0.8rem;
-  margin: auto;
-  font-style: italic;
-  margin-left: 1rem; }
-
-.forOfor {
-  background-color: #00757F;
-  padding-top: 5%; }
-  .forOfor__title {
-    text-align: center;
-    color: #F5F5F5; }
-  .forOfor__img {
-    max-width: 75vw;
-    max-height: 75vh;
-    display: block;
-    margin: auto; }
+.participants-list {
+  display: flex; }
+  .participants-list__item {
+    display: flex;
+    justify-content: center;
+    min-width: 30%; }
+  .participants-list__avatar {
+    width: 15%;
+    margin: auto 0; }
+  .participants-list__img {
+    border-radius: 50%;
+    max-width: 100%; }
 
 /* Entete de la page */
 .outing-reg__organisation {
@@ -9886,7 +9745,8 @@ a:visited {
   flex-direction: column;
   line-height: 2rem;
   width: 70%;
-  padding-left: 5%; }
+  padding-left: 5%;
+  margin-left: 4rem; }
 
 /* Titre de la sortie*/
 .outing-reg__title {
@@ -9899,7 +9759,8 @@ a:visited {
   line-height: 2rem;
   flex-direction: column;
   padding-left: 5%;
-  margin-top: 1.5rem; }
+  margin-top: 1.5rem;
+  margin-left: 4rem; }
 
 .outing-reg__select {
   line-height: 2rem;
@@ -9962,6 +9823,278 @@ a:visited {
   margin-top: 1rem;
   background-color: #00757F;
   border-radius: 0.5rem; }
+
+.custom-home__title {
+  text-align: center;
+  margin: 2rem; }
+
+.custom-home__wrap {
+  display: flex;
+  justify-content: space-around; }
+
+.custom-home__button {
+  background-color: #00757F; }
+
+.outing__attachments__image {
+  object-fit: cover;
+  min-width: 100%;
+  min-height: 100%; }
+
+.outing__body__title {
+  text-align: center; }
+
+.messageEmpty {
+  text-align: center; }
+  .messageEmpty__content {
+    text-align: center;
+    margin-bottom: 1rem; }
+
+.home-main__welcome {
+  font-size: 2rem;
+  line-height: 2rem;
+  text-align: center;
+  width: 50%;
+  background-color: #F5F5F5;
+  position: absolute;
+  top: 40%;
+  left: 25%;
+  padding: 2rem;
+  text-transform: uppercase; }
+  .home-main__welcome__sentence, .home-main__welcome__word {
+    color: #00757F; }
+  .home-main__welcome__wrap {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center; }
+
+.item-1,
+.item-2 {
+  animation-duration: 10s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite; }
+
+.item-1 {
+  animation-name: anim-1; }
+
+.item-2 {
+  margin-top: -2.5rem;
+  animation-name: anim-2; }
+
+@keyframes anim-1 {
+  0%, 8.3% {
+    left: -100%;
+    opacity: 0; }
+  8.3%, 50% {
+    left: 25%;
+    opacity: 1; }
+  53.33%, 100% {
+    left: 110%;
+    opacity: 0; } }
+
+@keyframes anim-2 {
+  0%, 53.33% {
+    left: -100%;
+    opacity: 0; }
+  56.50%, 95% {
+    left: 25%;
+    opacity: 1; }
+  100% {
+    left: 110%;
+    opacity: 0; } }
+
+.details {
+  padding: 4rem; }
+  .details__header {
+    padding-bottom: 4rem; }
+    .details__header__title {
+      text-align: center;
+      padding-bottom: 4rem;
+      height: 2rem; }
+  .details__content {
+    display: flex; }
+    .details__content__informations__img {
+      display: block;
+      max-width: 30%;
+      margin-bottom: 1rem; }
+    .details__content__informations__date {
+      margin-bottom: 1rem; }
+    .details__content__informations__time {
+      margin-bottom: 4rem; }
+    .details__content__informations__author {
+      margin-bottom: 4rem; }
+      .details__content__informations__author__title {
+        margin-bottom: 2rem; }
+      .details__content__informations__author__img {
+        max-width: 5%;
+        float: left;
+        border-radius: 50%; }
+      .details__content__informations__author__pseudo {
+        margin-left: 4rem; }
+    .details__content__informations__practice {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 4rem;
+      margin-top: 4rem; }
+      .details__content__informations__practice__sport, .details__content__informations__practice__level {
+        text-align: center;
+        width: 25%; }
+      .details__content__informations__practice__sport__svg {
+        width: 15%; }
+      .details__content__informations__practice__level p {
+        margin: 0; }
+    .details__content__informations__rdv {
+      margin-bottom: 2rem; }
+      .details__content__informations__rdv__adress {
+        margin-bottom: 4rem; }
+    .details__content__informations__description__text {
+      max-width: 80%;
+      margin-bottom: 4rem; }
+    .details__content__map {
+      float: right; }
+      .details__content__map__button {
+        background-color: #00757F;
+        border-radius: 0.5rem;
+        font-size: 1.5rem;
+        display: block;
+        margin-top: 8rem;
+        margin-left: auto;
+        margin-right: auto; }
+        .details__content__map__button__content {
+          color: #F5F5F5; }
+  .details__participants__div {
+    display: flex;
+    flex-wrap: wrap; }
+    .details__participants__div__content {
+      display: flex; }
+      .details__participants__div__content__img {
+        border-radius: 50%;
+        max-width: 10%;
+        margin-bottom: 1rem; }
+
+.message {
+  text-align: center; }
+  .message__ok {
+    color: #00757F;
+    font-size: 1.2rem; }
+  .message__ko {
+    color: red; }
+  .message__button {
+    background-color: #00757F;
+    color: #F5F5F5;
+    border: none; }
+  .message__button:visited {
+    color: #F5F5F5; }
+
+/* Taille des icones cycling et running */
+.profile__infos__sports__practice__svg {
+  width: 3em; }
+
+/* photo de profile */
+.avatar__img {
+  display: block;
+  width: 80%;
+  border-radius: 50%;
+  margin: auto; }
+
+/* Toute la page */
+.profile {
+  display: flex;
+  margin-top: 3rem; }
+
+/* Partie gauche de la page */
+.profile__infos {
+  max-width: 50%;
+  min-width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed; }
+
+.profile__title {
+  margin-bottom: 2rem; }
+
+/* Infos perso sous la photo */
+.profile__infos__personal {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center; }
+  .profile__infos__personal__avatar {
+    max-width: 50%; }
+  .profile__infos__personal__title {
+    margin-top: 2rem; }
+
+.profile__infos__content {
+  text-align: center; }
+
+/* sport pratiqué */
+.profile__infos__sports__practice {
+  display: flex; }
+
+.profile__infos__sports {
+  min-width: 50%; }
+
+.my__practice__level {
+  margin: 3rem; }
+
+.selected__practice__level {
+  text-align: center; }
+
+/* Partie droite de la page (listes des sorties */
+.profile__outings {
+  padding-left: 5rem;
+  border-left: 2px solid #00757F;
+  position: absolute;
+  right: 13%; }
+
+/* Titres des listes de la partie droite de la page */
+.profile__outings__created__title, .profile__outings__future__title {
+  font-weight: bold;
+  line-height: 1.5rem;
+  margin-bottom: 3rem; }
+
+/* Les sorties que j'ai créé */
+.profile__outings__created {
+  padding-bottom: 3rem; }
+
+/* Infos de chacune des sorties */
+.profile__outings__list {
+  padding-left: 0; }
+
+.profile__infos__sports__practice__svg__right {
+  width: 1.5rem; }
+
+.profile__outings__created__title__author, .profile__outings__created__title__participant {
+  font-size: 1.2rem;
+  margin-top: 3rem; }
+
+.profile__outings__list__item {
+  display: flex;
+  margin-top: 1rem; }
+
+.link__to__details:hover {
+  color: #00757F;
+  text-decoration: underline; }
+
+.link__to__details {
+  font-size: 0.8rem;
+  margin: auto;
+  font-style: italic;
+  margin-left: 1rem; }
+
+.forOfor {
+  background-color: #00757F;
+  padding-top: 5%;
+  padding-bottom: 2rem; }
+  .forOfor__title {
+    text-align: center;
+    color: #F5F5F5; }
+  .forOfor__img {
+    max-width: 75vw;
+    max-height: 75vh;
+    display: block;
+    margin: auto;
+    padding: 2rem; }
 
 .connexion {
   width: 30%;
@@ -10160,6 +10293,9 @@ a:visited {
 .authentified {
   background-color: #F5F5F5;
   border-bottom: 0.16667rem solid #00757F; }
+
+.navbar-brand {
+  margin-left: 1rem; }
 
 
 /*# sourceMappingURL=style.css.map*/

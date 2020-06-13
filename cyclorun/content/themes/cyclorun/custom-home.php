@@ -58,6 +58,7 @@ $outings_participations = $wpdb->get_results(
   ARRAY_A  
 );
 
+
 ?>
 
 
@@ -84,7 +85,7 @@ $outings_participations = $wpdb->get_results(
           $outingSportName= getPracticedSport($value['practiced_sport']);
           $outingLevel= getLevel($value['level'], $value['practiced_sport']);
     
-          if($outingSportName == 'course à pieds'){
+          if($outingSportName == 'course à pied'){
             $outingSportName= 'running';
           } elseif( $outingSportName == 'vélo') {
             $outingSportName= 'cycling';
@@ -117,7 +118,7 @@ $outings_participations = $wpdb->get_results(
   <section class="custom-home__section">
 
      <!--NEWS ABOUT MY OUTINGS -->
-    <h2 class="custom-home__title"> News sur mes sorties...</h2>
+    <h2 class="custom-home__title"> J'y participe prochainement...</h2>
     <?php if(empty($outings_participations)) {
       echo '<div class="messageEmpty">';
       echo '<div class="messageEmpty__content">Vous n\'êtes encore inscrit à aucune sortie. Joignez-vous à nous en cliquant sur l\'une des sorties ci-dessus ou en cliquant sur le lien ci-dessous</div>';
@@ -136,7 +137,9 @@ $outings_participations = $wpdb->get_results(
           $outingWichUserParticipate_Sport = getPracticedSport($currentValue['practiced_sport']);
           $outingWichUserParticipate_Picture = $currentValue['picture'];
 
-          if($outingWichUserParticipate_Sport == 'course à pieds'){
+          
+
+          if($outingWichUserParticipate_Sport == 'course à pied'){
             $outingWichUserParticipate_Sport= 'running';
           } elseif( $outingWichUserParticipate_Sport == 'vélo') {
             $outingWichUserParticipate_Sport= 'cycling';
