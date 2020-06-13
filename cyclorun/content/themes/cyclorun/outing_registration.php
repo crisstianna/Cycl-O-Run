@@ -40,7 +40,7 @@ if (!empty($_POST)) {
     if ($action && !isset($action['error'])) {
         $picture = $action['url'];
     } else {
-        if($action['error'] !== "Aucun fichier n’a été envoyé." || $action['error'] !== "No file was uploaded.") {
+        if($action['error'] !== "Aucun fichier n’a été envoyé.") {
             $errors += [
                 'picture' => $action['error']
             ];
