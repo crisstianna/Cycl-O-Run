@@ -8,10 +8,8 @@ require 'template-parts/participation_outing_form.php';
 
 ?>        
 
-
-        <article class="outing__article">
-
-
+        
+        <div class="articles-list">
 <?php
 
 //recovery of user id
@@ -32,26 +30,37 @@ $results = getOutingFilteredResults($practicedSport, $level, $date, $department)
 
 foreach($results as $key => $filteredValue) { ?>
 
+    
+        <div class="single-article">
+    
+
             <div class="outing__article__image">
                 <img class="outing__article__img" src="images/logo-o.png" alt="">      <!-- VOIR POUR LE LOGO -->
             </div>
-            <div>
-                <h3 class="outing__article__title"><?php echo $filteredValue['outing_name']; ?></h3>
-                <p class="outing__article__date"><?php echo date("d-m-Y", strtotime($filteredValue['date'])); ?></p>
-                <p class="outing__article__time"><?php echo substr($filteredValue['time'], 0, -3); ?></p>
-                <p class="outing__article__sport"><?php getPracticedSport($filteredValue['practiced_sport']); ?></p>
-                <p class="outing__article__level"><?php getLevel($filteredValue['level'], $filteredValue['practiced_sport']); ?></p>
-                <p class="outing__article__location"><?php echo $filteredValue['address']; ?></p>
-                <p class="outing__article__distance"><?php echo $filteredValue['distance']; ?></p>
-                <h4>Organisateur de la sortie</h4>
-                    <?php $user = new WP_User( $filteredValue['author']); 
+            
+                <h3 class="outing__article__title"> Nom de la sortie : <?php echo $filteredValue['outing_name']; ?></h3>
+                <div class="date-hour">
+                    <div class="date-hour-left">
+                        <p class="outing__article__date"><span class="font-weight">Date :</span> <?php echo date("d-m-Y", strtotime($filteredValue['date'])); ?></p>
+                        <p class="outing__article__sport"><span class="font-weight">Activité :</span> <?php echo getPracticedSport($filteredValue['practiced_sport']); ?></p>
+                        <p class="outing__article__location"><span class="font-weight">Lieu de rendez-vous :</span> <?php echo $filteredValue['address']; ?></p>
+                    </div>
+                    <div class="date-hour-right">
+                        <p class="outing__article__time"><span class="font-weight">Heure :</span> <?php echo substr($filteredValue['time'], 0, -3); ?></p>
+                        <p class="outing__article__level"><span class="font-weight">Niveau :</span> <?php echo getLevel($filteredValue['level'], $filteredValue['practiced_sport']); ?></p>
+                        <p class="outing__article__distance"><span class="font-weight">Distance :</span> <?php echo $filteredValue['distance']; ?>km</p>
+                    </div>   
+                </div>
+                <h4 class="participation-h4">Organisateur de la sortie</h4>
+                    <?php $user = new WP_User($filteredValue['author']);
                     $author = $user->display_name;
                     $modifiedAuthor = str_replace("_", " ", $author);?>
-                <img class="outing__article__img" src="images/logo-o.png" alt="AVATAR DE L'AUTEUR">
-                <p class="outing__article__author"><?php echo $modifiedAuthor; ?></p>
+                <div class="outing-organisator">
+                    <img class="outing__article__img" src="<?php echo $filteredValue['picture']; ?>" alt="author's avatar">
+                    <p class="outing__article__author"><?php echo $modifiedAuthor; ?></p>
+                </div>
 
-
-    <?php 
+    <?php
     
     
     $currentOutingId = $filteredValue['outing_id'];
@@ -68,9 +77,9 @@ foreach($results as $key => $filteredValue) { ?>
     );
     //var_dump($numberParticipants);
     
-    foreach($numberParticipants as $key => $nbRows) : ?>
-                <h4>Participants : <?= $nbRows['COUNT(*)']; ?></h4>
-    <?php endforeach; 
+    foreach ($numberParticipants as $key => $nbRows) { ?>
+                <h4 class="participation-h4">Participants : <?= $nbRows['COUNT(*)']; ?></h4>
+    <?php }
 
 
     $wp_outings = $wpdb->prefix . 'outings';
@@ -85,7 +94,7 @@ foreach($results as $key => $filteredValue) { ?>
         WHERE $wp_outings.`outing_id` = $currentOutingId AND $wp_outings.`date` >= $currentDateTime
         ORDER BY `date` ASC
         LIMIT 5",
-        ARRAY_A  
+        ARRAY_A
     );
     //var_dump($outings_participations);
 
@@ -94,25 +103,28 @@ foreach($results as $key => $filteredValue) { ?>
     ?>
 
 
-                <ul>
+                <ul class="participation-participants">
                     <?php foreach ($outings_participations as $key => $currentParticipant) : ?>
+                    <?php $participantId = get_user_meta($currentParticipant['user_id']);
+                    //var_dump($participantId);?>
                     <li>
-                        <img class="outing__article__img" src="images/logo-o.png" alt="AVATAR DU PARTICIPANT">
+                        <img class="outing__article__img" src="<?php $participantId['picture'][0]; ?>" alt="AVATAR DU PARTICIPANT">
                         <p class="outing__article__author"><?= str_replace("_", " ", $currentParticipant['display_name']); ?></p>
                     </li>
                     <?php endforeach; ?>               
                 </ul>    
         
-                
-                <a class="outing__article__button"type="button" href="<?= get_bloginfo('url') . '/outing-details/?outingId=' . $filteredValue['outing_id']; ?>">Détails de la sortie</a>
-                <form action="" method="post">
-                    <input type="hidden" id="userId" name="userId" value="<?php echo $id; ?>">
-                    <input type="hidden" id="outingId" name="outingId" value="<?php echo $filteredValue['outing_id']; ?>">
-                    <button class="outing__article__button" type="submit">Je participe</button>
-                </form>
-                
+                <div class="bottom-buttons">
+                    <a class="filter-button details-link"type="button" href="<?= get_bloginfo('url') . '/outing-details/?outingId=' . $filteredValue['outing_id']; ?>">Détails de la sortie</a>
+                    <form action="" method="post">
+                        <input type="hidden" id="userId" name="userId" value="<?php echo $id; ?>">
+                        <input type="hidden" id="outingId" name="outingId" value="<?php echo $filteredValue['outing_id']; ?>">
+                        <button class="filter-button participation-button" type="submit">Je participe</button>
+                    </form>
+                </div>
+                </div>      
 
-    <?php } 
+    <?php }
 
     $userId = intval(filter_input(INPUT_POST, 'userId'));
     $outingId = intval(filter_input(INPUT_POST, 'outingId'));
@@ -131,14 +143,14 @@ foreach($results as $key => $filteredValue) { ?>
     
 ?>
                 
-            </div> 
+            
 
+                
+            </div>
 
-
-
-               
-        </article>
-    </section> -->
+                          
+        
+    </section> 
 </body>
 
 
