@@ -54,6 +54,7 @@ if(! is_user_logged_in()){
             </div>
         </section>
         <div class="filter-submit">
-            <input class="filter-button" type="submit" value="Appliquer les filtres">
+            <input class="filter-button" type="submit" name="filtrer" value="Appliquer les filtres">
+            <a class="cancel-filter" href="<?php get_bloginfo('url') . '/participation-outing/' ?>">Annuler</a>
         </div>
     </form>

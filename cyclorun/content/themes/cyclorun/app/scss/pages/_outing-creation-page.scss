@@ -27,14 +27,16 @@
     border: 2px solid $dark;
     border-radius: 0.2rem;
 
+    &:focus{
+        background-color: $lightgrey;
+        border: 2px solid $blueduck;
+    }
+
     &__name{
         border: 2px solid $dark;
         width:60%;
 
-        &:focus{
-            background-color: $lightgrey;
-            border: 2px solid $blueduck;
-        }
+       
     }
 
 
@@ -43,10 +45,7 @@
         border: 2px solid $dark;
         text-align:center;
 
-        &:focus{
-            background-color: $lightgrey;
-            border: 2px solid $blueduck;
-        }
+        
     }
    
 
@@ -54,10 +53,6 @@
         border: 2px solid $dark;
         width: 20%;
 
-        &:focus{
-            background-color: $lightgrey;
-            border: 2px solid $blueduck;
-        }
     }
 
     &__picture{
@@ -66,10 +61,7 @@
     }
 }
 
-.outing-reg__input:focus{
-    background-color: $lightgrey;
-    border: 2px solid $blueduck;
-}
+
 
 /* Formulaire global */
 .outing-reg__creation{

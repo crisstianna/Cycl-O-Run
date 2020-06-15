@@ -44,7 +44,6 @@ if (!empty($_POST)) {
             $errors += [
                 'picture' => $action['error']
             ];
-
         }
     }
   
