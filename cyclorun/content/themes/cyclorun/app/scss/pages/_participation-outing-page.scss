@@ -70,9 +70,22 @@
     background-color: $blueduck;
     border-radius: $gutter-small;
     color:$lightgrey;
+    border: none;
  }
 
+ // reset filter button
+.cancel-filter {
+    height: 2.2rem;
+    margin: 1rem;
+    background-color: $blueduck;
+    border-radius: $gutter-small;
+    color:$lightgrey;
+    padding: 5px 6px;
 
+    &:visited{
+        color: $lightgrey;
+    }
+}
 
  //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
  // Skill des sorties après le filtre
@@ -120,9 +133,6 @@
         color: $lightgrey;
     }
 }
-
-
-
 
 //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxXX
 // Affichage des Participants à la sortie

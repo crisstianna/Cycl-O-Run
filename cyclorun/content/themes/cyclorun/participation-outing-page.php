@@ -141,8 +141,8 @@ if (empty($results)) {
             <h4 class="participation-h4">Organisateur de la sortie</h4>
 
                 <?php $user = new WP_User($filteredValue['author']);
-        $author = $user->display_name;
-        $modifiedAuthor = str_replace("_", " ", $author); ?>
+                    $author = $user->display_name;
+                    $modifiedAuthor = str_replace("_", " ", $author); ?>
             <div class="outing-organisator">
                 <img class="outing__article__img" src="<?php echo $user->picture; ?>" alt="author's avatar">
                 <p class="outing__article__author"><?php echo $modifiedAuthor; ?></p>
