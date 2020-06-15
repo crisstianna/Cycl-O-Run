@@ -148,7 +148,7 @@ if (isset($_POST['submit'])) {
             
         } else {
 
-            if($action['error'] !== "No file was uploaded."){
+            if($action['error'] !== "Aucun fichier n’a été envoyé."){
                 $errors += [
                     'picture' => $action['error']
                 ];
@@ -204,12 +204,14 @@ if (isset($_POST['submit'])) {
         }
     }
 
+    /*
     //*TERMS
     if(empty($_POST['terms'])){
         $errors +=[
             'terms' => "Veuillez lire et accepter les Conditions Générales d'Utilisation"
         ];
     }
+    */
 
     //* SEND DATA TO DB
     if(empty($errors)){
@@ -382,10 +384,13 @@ if (isset($_POST['submit'])) {
                         </select>
                     </div>
                 </div>
+
+                <!--
                 <div class="inscription__form__conditions">
                     <input class="input-checkbox" name="terms" id="terms" type="checkbox" value="Yes">  
                     <label class="inscription__form__label  terms" for="terms">J'ai lu et j'accepte les <a href="#">Conditions Générales d'Utilisation</a></label>
                 </div>
+                -->
                 
                 <input class="inscription__form__submit" type="submit" id="submitbtn" name="submit"/>
 
