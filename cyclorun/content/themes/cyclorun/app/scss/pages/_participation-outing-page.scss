@@ -125,6 +125,10 @@
     color:$lightgrey;
     border: none;
 
+    &:focus{
+        background-color: $blueduck;
+    }
+
     &:hover{
         background-color: $dark;
     }
