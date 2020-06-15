@@ -123,7 +123,7 @@ $outingUserParticipant = $wpdb->get_results(
               <?php if (empty($outingUserAuthor)): ?>
                 <div class="messageEmpty">
                   <div class="messageEmpty__content">Vous n'avez organisé aucune sortie</div>
-                    <a class="btn btn-primary outing__button" style="text-align:center;" href="<?= get_bloginfo('url') ?> /outing-registration/">Organiser une sortie</a>
+                    <a class="btn btn-primary outing__button" style="text-align:center;" href="<?= get_bloginfo('url') . '/outing-registration/' ?>">Organiser une sortie</a>
                   </div>
                 
               <?php else : ?>
@@ -146,7 +146,7 @@ $outingUserParticipant = $wpdb->get_results(
             <?php if (empty($outingUserParticipant)) : ?>
               <div class="messageEmpty">
                   <div class="messageEmpty__content">Vous n'êtes encore inscrit(e) à aucune sortie</div>
-                    <a class="btn btn-primary outing__button" style="text-align:center;" href="<?= get_bloginfo('url') ?> /participation-outing/">Participer à une sortie</a>
+                    <a class="btn btn-primary outing__button" style="text-align:center;" href="<?= get_bloginfo('url') . '/participation-outing/'?>">Participer à une sortie</a>
                   </div>
               <?php else: ?>
                   <?php foreach($outingUserParticipant as $key=> $currentParticipation): ?>
