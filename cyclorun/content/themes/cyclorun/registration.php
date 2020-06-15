@@ -375,10 +375,10 @@ if (isset($_POST['submit'])) {
                         <label class="inscription__form__label mr-sm-2 sr-only" for="running_level">Mon Niveau </label>
                         <select class="custom-select mr-sm-2" name="running_level" id="running_level_select">
                             <option value="" selected>Choisir</option>
-                            <option value="Loisirs">Loisirs (inferieur à 15km/sortie)</option>
-                            <option value="Régulier">Régulier (15-30 km)</option>
-                            <option value="Avancé">Avancé (30-60 km)</option>
-                            <option value="Intensif">Intensif (+60 km)</option>
+                            <option value="Loisirs">Loisirs (-5km)</option>
+                            <option value="Régulier">Régulier (5-10km)</option>
+                            <option value="Avancé">Avancé (10-15km)</option>
+                            <option value="Intensif">Avancé (+15km)</option>
                         </select>
                     </div>
                 </div>
