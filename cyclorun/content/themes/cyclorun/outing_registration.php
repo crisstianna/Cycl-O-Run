@@ -132,6 +132,8 @@ if (!empty($_POST)) {
     
     // function who returns false if he insert didn't work
     $wpError = $wpdb->show_errors();
+
+    var_dump($wpError);
     //recovery of the last insert
     $outingId = $wpdb->insert_id;
 
@@ -144,12 +146,12 @@ if (!empty($_POST)) {
             )
         );
     }
-    if ($wpError !== false && $id && $outingId) {
+    if ($wpError == true && $id && $outingId) {
         echo '<div class ="outing-reg__ok">Votre sortie a bien été créée !! ';
         echo '<button type="button" class="btn btn-dark navbar__button btn__success__outing"><a class="navbar__link" href="' . get_bloginfo('url') . '/outing-details/?outingId=' . $outingId . '">Détails</a></button>';
         echo '<button type="button" class="btn btn-dark navbar__button btn__success__outing"><a class="navbar__link" href="' . get_bloginfo('url') . '/profile-page/' . '">Mon profil</a></button>';
         echo '</div>';
-    }if ($wpError === false) {
+    }elseif ($wpError == false) {
         echo '<div style="font-size:24px;color:#00757f;margin-top:40px;">Quelque chose s\'est mal passé, veuillez recommencer</div>';
     }    
 }
